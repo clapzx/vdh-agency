@@ -1,0 +1,103 @@
+import {getTranslations} from 'next-intl/server';
+import {Search, Video, Globe, CheckCircle2} from 'lucide-react';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import SectionLabel from '@/components/ui/SectionLabel';
+import CTA from '@/components/sections/CTA';
+
+export default async function DienstenPage() {
+  const t = await getTranslations('dienstenPage');
+
+  const services = [
+    {
+      Icon: Search,
+      title: t('seoTitle'),
+      subtitle: t('seoSubtitle'),
+      desc: t('seoDesc'),
+      bullets: [t('seoBullet1'), t('seoBullet2'), t('seoBullet3'), t('seoBullet4')],
+    },
+    {
+      Icon: Video,
+      title: t('socialTitle'),
+      subtitle: t('socialSubtitle'),
+      desc: t('socialDesc'),
+      bullets: [t('socialBullet1'), t('socialBullet2'), t('socialBullet3'), t('socialBullet4')],
+    },
+    {
+      Icon: Globe,
+      title: t('webTitle'),
+      subtitle: t('webSubtitle'),
+      desc: t('webDesc'),
+      bullets: [t('webBullet1'), t('webBullet2'), t('webBullet3'), t('webBullet4')],
+    },
+  ];
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-primary pt-36 pb-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="block w-6 h-px bg-gold" />
+              <span className="text-gold text-xs font-semibold tracking-widest uppercase">
+                {t('label')}
+              </span>
+            </div>
+            <h1 className="text-white font-black text-4xl lg:text-6xl leading-tight mb-5">
+              {t('title')}
+            </h1>
+            <p className="text-white/60 text-xl">{t('sub')}</p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="bg-light py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-20">
+          {services.map(({Icon, title, subtitle, desc, bullets}, i) => (
+            <AnimatedSection key={title} delay={0.05}>
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                {/* Text */}
+                <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
+                  <SectionLabel>{subtitle}</SectionLabel>
+                  <h2 className="text-primary font-black text-3xl lg:text-4xl mb-4">{title}</h2>
+                  <p className="text-primary/60 text-base leading-relaxed mb-6">{desc}</p>
+                  <ul className="flex flex-col gap-3">
+                    {bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3">
+                        <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
+                        <span className="text-primary/70 text-sm">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Visual card */}
+                <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
+                  <div className="bg-primary rounded-sm p-10 flex flex-col items-start gap-4 border-l-4 border-gold">
+                    <div className="w-14 h-14 rounded-sm bg-gold/10 flex items-center justify-center">
+                      <Icon size={26} className="text-gold" />
+                    </div>
+                    <h3 className="text-white font-bold text-xl">{title}</h3>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {bullets.map((b) => (
+                        <span
+                          key={b}
+                          className="text-xs bg-white/5 border border-white/10 text-white/60 px-3 py-1 rounded-full"
+                        >
+                          {b}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </section>
+
+      <CTA />
+    </>
+  );
+}
