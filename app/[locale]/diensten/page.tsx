@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {Search, Video, Globe, CheckCircle2} from 'lucide-react';
+import {Search, Video, Globe, ShoppingCart, BarChart2, CheckCircle2} from 'lucide-react';
 
 const BASE = 'https://www.vdh-agency.com';
 
@@ -50,7 +50,7 @@ export async function generateMetadata({
     },
   };
 }
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
 import {ArrowRight} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -88,6 +88,22 @@ export default async function DienstenPage({
       desc: t('webDesc'),
       bullets: [t('webBullet1'), t('webBullet2'), t('webBullet3'), t('webBullet4')],
       href: '/diensten/website-maken',
+    },
+    {
+      Icon: ShoppingCart,
+      title: t('ecomTitle'),
+      subtitle: t('ecomSubtitle'),
+      desc: t('ecomDesc'),
+      bullets: [t('ecomBullet1'), t('ecomBullet2'), t('ecomBullet3'), t('ecomBullet4')],
+      href: '/diensten/e-commerce',
+    },
+    {
+      Icon: BarChart2,
+      title: t('analyseTitle'),
+      subtitle: t('analyseSubtitle'),
+      desc: t('analyseDesc'),
+      bullets: [t('analyseBullet1'), t('analyseBullet2'), t('analyseBullet3'), t('analyseBullet4')],
+      href: '/diensten/digitale-analyse',
     },
   ];
 

@@ -12,30 +12,50 @@ const outfit = Outfit({subsets: ['latin'], variable: '--font-outfit'});
 
 const BASE = 'https://www.vdh-agency.com';
 
-export const metadata: Metadata = {
-  metadataBase: new URL(BASE),
-  title: {
-    default: 'Marketing Bureau Nederland — SEO, Social Media & Webdesign | VDH Agency',
-    template: '%s | VDH Agency',
-  },
-  description: 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat. Vraag gratis een consult aan.',
-  openGraph: {
-    title: 'Marketing Bureau Nederland — SEO, Social Media & Webdesign | VDH Agency',
-    description: 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat. Vraag gratis een consult aan.',
-    siteName: 'VDH Agency',
-    type: 'website',
-    url: BASE,
-    locale: 'nl_NL',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Marketing Bureau Nederland | VDH Agency',
-    description: 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat.',
-  },
-  verification: {
-    google: 'kg9q-mJMSAnhPF5GgYtIZJ0KAEU_2riXpv8P4UFCSF8',
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params?: Promise<{locale: string}>;
+}): Promise<Metadata> {
+  const {locale = 'nl'} = params ? await params : {};
+  const isNl = locale === 'nl';
+  return {
+    metadataBase: new URL(BASE),
+    title: {
+      default: isNl
+        ? 'Marketing Bureau Nederland — SEO, Social Media & Webdesign | VDH Agency'
+        : 'Marketing Agency Netherlands — SEO, Social Media & Web Design | VDH Agency',
+      template: '%s | VDH Agency',
+    },
+    description: isNl
+      ? 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat. Vraag gratis een consult aan.'
+      : 'VDH Agency helps businesses grow online through SEO, Social Media and professional custom websites. Request a free consultation.',
+    openGraph: {
+      title: isNl
+        ? 'Marketing Bureau Nederland — SEO, Social Media & Webdesign | VDH Agency'
+        : 'Marketing Agency Netherlands — SEO, Social Media & Web Design | VDH Agency',
+      description: isNl
+        ? 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat. Vraag gratis een consult aan.'
+        : 'VDH Agency helps businesses grow online through SEO, Social Media and professional custom websites. Request a free consultation.',
+      siteName: 'VDH Agency',
+      type: 'website',
+      url: isNl ? BASE : `${BASE}/en`,
+      locale: isNl ? 'nl_NL' : 'en_GB',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: isNl
+        ? 'Marketing Bureau Nederland | VDH Agency'
+        : 'Marketing Agency Netherlands | VDH Agency',
+      description: isNl
+        ? 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat.'
+        : 'VDH Agency helps businesses grow online through SEO, Social Media and professional custom websites.',
+    },
+    verification: {
+      google: 'kg9q-mJMSAnhPF5GgYtIZJ0KAEU_2riXpv8P4UFCSF8',
+    },
+  };
+}
 
 const jsonLd = {
   '@context': 'https://schema.org',
