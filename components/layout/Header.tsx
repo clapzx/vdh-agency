@@ -46,35 +46,13 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <svg
-            viewBox="300 295 600 325"
-            height="42"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-label="VDH Agency"
-          >
-            <text
-              x="600" y="520"
-              fontFamily="Arial, Helvetica, sans-serif"
-              fontSize="250"
-              fontWeight="700"
-              textAnchor="middle"
-              fill="#D4AF37"
-            >
-              VDH
-            </text>
-            <text
-              x="600" y="600"
-              fontFamily="Arial, Helvetica, sans-serif"
-              fontSize="54"
-              fontWeight="400"
-              letterSpacing="8"
-              textAnchor="middle"
-              fill="white"
-            >
-              AGENCY
-            </text>
-          </svg>
+        <Link href="/" className="flex flex-col items-start leading-none group">
+          <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 26, fontWeight: 700, color: '#D4AF37', lineHeight: 1, letterSpacing: -0.5}}>
+            VDH
+          </span>
+          <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 10, fontWeight: 400, color: 'white', letterSpacing: 4, lineHeight: 1, marginTop: 3}}>
+            AGENCY
+          </span>
         </Link>
 
         {/* Desktop nav */}
