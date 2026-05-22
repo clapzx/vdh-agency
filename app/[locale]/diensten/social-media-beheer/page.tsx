@@ -14,11 +14,11 @@ function serviceJsonLd(locale: string) {
     '@graph': [
       {
         '@type': 'Service',
-        name: isNl ? 'Social Media Beheer' : 'Social Media Management',
+        name: isNl ? 'Social Media Marketing' : 'Social Media Management',
         provider: {'@id': `${BASE}/#organization`},
         areaServed: {'@type': 'Country', name: 'Netherlands'},
         description: isNl
-          ? 'Volledig social media beheer: strategie, opnames op locatie, video editing en wekelijkse publicatie.'
+          ? 'Volledig social media marketing: strategie, opnames op locatie, video editing en wekelijkse publicatie.'
           : 'Full social media management: strategy, on-location filming, video editing and weekly publishing.',
         url: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`,
       },
@@ -27,7 +27,7 @@ function serviceJsonLd(locale: string) {
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
           {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: isNl ? 'Social Media Beheer' : 'Social Media Management', item: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`},
+          {'@type': 'ListItem', position: 3, name: isNl ? 'Social Media Marketing' : 'Social Media Management', item: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`},
         ],
       },
     ],
@@ -43,7 +43,7 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Social Media Beheer uitbesteden — Volledig ontzorgd | VDH Agency'
+      ? 'Social Media Marketing uitbesteden — Volledig ontzorgd | VDH Agency'
       : 'Outsource Social Media Management — Fully managed | VDH Agency',
     description: isNl
       ? 'VDH Agency neemt jouw social media volledig over: strategie, opnames op locatie, professionele video editing en wekelijkse publicatie. Voor Instagram, LinkedIn, Facebook en TikTok.'

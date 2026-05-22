@@ -45,7 +45,7 @@ const jsonLd = {
       '@id': `${BASE}/#organization`,
       name: 'VDH Agency',
       url: `${BASE}/`,
-      description: 'Nederlands marketing bureau gespecialiseerd in SEO/SEA, social media beheer en websites op maat voor het MKB.',
+      description: 'Nederlands marketing bureau gespecialiseerd in SEO/SEA, social media marketing en websites op maat voor het MKB.',
       email: 'lars@vdhagency.nl',
       founder: {
         '@type': 'Person',
@@ -77,7 +77,7 @@ const jsonLd = {
         name: 'Marketing Diensten',
         itemListElement: [
           {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'SEO & SEA'}},
-          {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'Social Media Beheer'}},
+          {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'Social Media Marketing'}},
           {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'Website Maken'}},
         ],
       },

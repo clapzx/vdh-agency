@@ -55,7 +55,7 @@ function NlVersion() {
             <p>
               <strong>VDH Agency:</strong> de eenmanszaak gedreven door Lars van der Hoek, gevestigd in Nederland.<br />
               <strong>Opdrachtgever:</strong> de natuurlijke of rechtspersoon die een overeenkomst aangaat met VDH Agency.<br />
-              <strong>Diensten:</strong> alle werkzaamheden die VDH Agency uitvoert, waaronder SEO/SEA, social media beheer en website-ontwikkeling.
+              <strong>Diensten:</strong> alle werkzaamheden die VDH Agency uitvoert, waaronder SEO/SEA, social media marketing en website-ontwikkeling.
             </p>
 
             <h2>2. Toepasselijkheid</h2>
