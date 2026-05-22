@@ -1,5 +1,7 @@
 import type {Metadata} from 'next';
 
+const BASE = 'https://www.vdh-agency.com';
+
 export async function generateMetadata({
   params,
 }: {
@@ -12,6 +14,14 @@ export async function generateMetadata({
     description: isNl
       ? 'Neem contact op met VDH Agency voor een vrijblijvend gesprek. Reactie binnen 24 uur.'
       : 'Get in touch with VDH Agency for a free consultation. Response within 24 hours.',
+    alternates: {
+      canonical: isNl ? `${BASE}/contact` : `${BASE}/en/contact`,
+      languages: {
+        nl: `${BASE}/contact`,
+        en: `${BASE}/en/contact`,
+        'x-default': `${BASE}/contact`,
+      },
+    },
   };
 }
 

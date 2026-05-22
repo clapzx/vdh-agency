@@ -2,6 +2,8 @@ import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
 import {Search, Video, Globe, CheckCircle2} from 'lucide-react';
 
+const BASE = 'https://www.vdh-agency.com';
+
 export async function generateMetadata({
   params,
 }: {
@@ -16,6 +18,14 @@ export async function generateMetadata({
     description: isNl
       ? 'Ontdek alle diensten van VDH Agency: SEO/SEA-beheer, social media content en websites op maat. Volledig ontzorgd, meetbaar resultaat.'
       : 'Explore VDH Agency services: SEO/SEA management, social media content and custom websites. Fully managed, measurable results.',
+    alternates: {
+      canonical: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`,
+      languages: {
+        nl: `${BASE}/diensten`,
+        en: `${BASE}/en/diensten`,
+        'x-default': `${BASE}/diensten`,
+      },
+    },
   };
 }
 import AnimatedSection from '@/components/ui/AnimatedSection';

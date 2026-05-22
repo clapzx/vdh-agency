@@ -2,6 +2,8 @@ import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
 import {User, Target, Eye, Heart} from 'lucide-react';
 
+const BASE = 'https://www.vdh-agency.com';
+
 export async function generateMetadata({
   params,
 }: {
@@ -16,6 +18,14 @@ export async function generateMetadata({
     description: isNl
       ? 'Leer meer over VDH Agency en oprichter Lars van der Hoek. Persoonlijk betrokken bij elk project, gericht op meetbare online groei.'
       : 'Learn more about VDH Agency and founder Lars van der Hoek. Personally involved in every project, focused on measurable online growth.',
+    alternates: {
+      canonical: isNl ? `${BASE}/over-ons` : `${BASE}/en/over-ons`,
+      languages: {
+        nl: `${BASE}/over-ons`,
+        en: `${BASE}/en/over-ons`,
+        'x-default': `${BASE}/over-ons`,
+      },
+    },
   };
 }
 import AnimatedSection from '@/components/ui/AnimatedSection';

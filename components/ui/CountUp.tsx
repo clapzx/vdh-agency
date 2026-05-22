@@ -13,7 +13,7 @@ interface Props {
 export default function CountUp({to, suffix = '', prefix = '', duration = 1800, delay = 0}: Props) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, {once: true, amount: 0.5});
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(to);
   const started = useRef(false);
 
   useEffect(() => {
@@ -23,6 +23,7 @@ export default function CountUp({to, suffix = '', prefix = '', duration = 1800, 
     let raf: number;
 
     const start = () => {
+      setCount(0);
       const startTime = performance.now();
       const tick = (now: number) => {
         const elapsed = now - startTime;
