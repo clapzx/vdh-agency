@@ -1,6 +1,6 @@
 'use client';
 import {useState, useEffect} from 'react';
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
 import {useLocale, useTranslations} from 'next-intl';
 import {usePathname, useRouter} from '@/i18n/navigation';
 import {Menu, X, ArrowRight} from 'lucide-react';

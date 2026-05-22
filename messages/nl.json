@@ -11,7 +11,12 @@
     "highlight": "groeien.",
     "sub": "VDH Agency helpt bedrijven groeien met bewezen SEO/SEA strategieën, social media marketing en op maat gemaakte websites.",
     "cta1": "Bekijk diensten",
-    "cta2": "Neem contact op"
+    "cta2": "Neem contact op",
+    "dashboardTitle": "Live Resultaten",
+    "dashboardLabel": "Organisch bereik afgelopen kwartaal",
+    "happyClients": "Tevreden klanten",
+    "activeProjects": "Actieve projecten",
+    "websitesBuilt": "Websites gebouwd"
   },
   "services": {
     "label": "Wat wij doen",
@@ -48,7 +53,8 @@
     "cta": "Leer mij kennen",
     "point1": "Directe communicatie, altijd bereikbaar",
     "point2": "Transparante rapportages elke maand",
-    "point3": "100% maatwerk — geen standaard pakket"
+    "point3": "100% maatwerk — geen standaard pakket",
+    "founderTitle": "Oprichter — VDH Agency"
   },
   "process": {
     "label": "Werkwijze",
@@ -85,7 +91,8 @@
     "privacy": "Privacybeleid",
     "terms": "Algemene voorwaarden",
     "kvk": "KvK: 95792414",
-    "copy": "© {year} VDH Agency. Alle rechten voorbehouden."
+    "copy": "© {year} VDH Agency. Alle rechten voorbehouden.",
+    "location": "Nederland"
   },
   "dienstenPage": {
     "label": "Onze diensten",
@@ -220,7 +227,9 @@
     "v2title": "Transparant",
     "v2desc": "Geen vaagheden of verborgen kosten. Je weet altijd precies waar je aan toe bent.",
     "v3title": "Persoonlijk",
-    "v3desc": "Directe lijn met Lars. Geen accountmanagers, geen tussenpersonen. Altijd."
+    "v3desc": "Directe lijn met Lars. Geen accountmanagers, geen tussenpersonen. Altijd.",
+    "founderTitle": "Oprichter — VDH Agency",
+    "founderBio": "Gepassioneerd door digitale marketing en gedreven door resultaten. Elke klant is uniek — elk project krijgt mijn volledige aandacht."
   },
   "contactPage": {
     "label": "Contact",

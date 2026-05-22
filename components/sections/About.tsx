@@ -50,7 +50,7 @@ export default async function About() {
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-xl leading-tight">Lars van der Hoek</h3>
-                  <p className="text-gold text-sm mt-0.5">Oprichter — VDH Agency</p>
+                  <p className="text-gold text-sm mt-0.5">{t('founderTitle')}</p>
                 </div>
               </div>
 

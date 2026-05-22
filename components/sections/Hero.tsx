@@ -50,6 +50,7 @@ function MagneticCTA({children}: {children: React.ReactNode}) {
 
 function FloatingDashboard() {
   const [ready, setReady] = useState(false);
+  const t = useTranslations('hero');
 
   return (
     <motion.div
@@ -67,7 +68,7 @@ function FloatingDashboard() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <span className="text-white/50 text-xs font-medium tracking-widest uppercase">
-            Live Resultaten
+            {t('dashboardTitle')}
           </span>
           <span className="flex items-center gap-2">
             <motion.span
@@ -85,7 +86,7 @@ function FloatingDashboard() {
             +{ready ? <CountUp to={127} suffix="%" duration={1800} /> : '0%'}
           </div>
           <div className="text-white/40 text-sm mt-2 leading-snug">
-            Organisch bereik afgelopen kwartaal
+            {t('dashboardLabel')}
           </div>
         </div>
 
@@ -95,13 +96,13 @@ function FloatingDashboard() {
             <div className="text-white font-bold text-2xl">
               {ready ? <CountUp to={47} duration={1600} /> : '0'}
             </div>
-            <div className="text-white/40 text-xs mt-0.5">Tevreden klanten</div>
+            <div className="text-white/40 text-xs mt-0.5">{t('happyClients')}</div>
           </div>
           <div className="bg-white/5 border border-white/5 rounded-xl p-4">
             <div className="text-white font-bold text-2xl">
               {ready ? <CountUp to={23} duration={1400} /> : '0'}
             </div>
-            <div className="text-white/40 text-xs mt-0.5">Actieve projecten</div>
+            <div className="text-white/40 text-xs mt-0.5">{t('activeProjects')}</div>
           </div>
         </div>
 
@@ -110,7 +111,7 @@ function FloatingDashboard() {
           {[
             {label: 'SEO / SEA', to: 47, suffix: '%', prefix: '+'},
             {label: 'Social Media', to: 32, suffix: '%', prefix: '+'},
-            {label: 'Websites gebouwd', to: 12, suffix: '', prefix: ''},
+            {label: t('websitesBuilt'), to: 12, suffix: '', prefix: ''},
           ].map(({label, to, suffix, prefix}) => (
             <div key={label} className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">

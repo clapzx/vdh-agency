@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
 import {getTranslations} from 'next-intl/server';
 import {Mail, MapPin, FileText} from 'lucide-react';
 
@@ -31,7 +31,7 @@ export default async function Footer() {
                 <Mail size={14} /> lars@vdhagency.nl
               </a>
               <span className="flex items-center gap-2 text-white/50 text-sm">
-                <MapPin size={14} /> Nederland
+                <MapPin size={14} /> {t('location')}
               </span>
             </div>
           </div>

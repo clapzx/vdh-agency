@@ -127,11 +127,8 @@ export default async function OverOnsPage({
                   <User size={36} className="text-gold" />
                 </div>
                 <h3 className="text-white font-bold text-2xl mb-1">Lars van der Hoek</h3>
-                <p className="text-gold text-sm mb-4">Oprichter — VDH Agency</p>
-                <p className="text-white/50 text-sm leading-relaxed">
-                  Gepassioneerd door digitale marketing en gedreven door resultaten. Elke klant is
-                  uniek — elk project krijgt mijn volledige aandacht.
-                </p>
+                <p className="text-gold text-sm mb-4">{t('founderTitle')}</p>
+                <p className="text-white/50 text-sm leading-relaxed">{t('founderBio')}</p>
               </div>
             </AnimatedSection>
           </div>

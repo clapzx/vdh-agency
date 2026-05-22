@@ -11,7 +11,12 @@
     "highlight": "grow.",
     "sub": "VDH Agency helps businesses grow with proven SEO/SEA strategies, social media management and custom-built websites.",
     "cta1": "View services",
-    "cta2": "Get in touch"
+    "cta2": "Get in touch",
+    "dashboardTitle": "Live Results",
+    "dashboardLabel": "Organic reach last quarter",
+    "happyClients": "Happy clients",
+    "activeProjects": "Active projects",
+    "websitesBuilt": "Websites built"
   },
   "services": {
     "label": "What we do",
@@ -48,7 +53,8 @@
     "cta": "Meet Lars",
     "point1": "Direct communication, always reachable",
     "point2": "Transparent monthly reports",
-    "point3": "100% custom — no off-the-shelf packages"
+    "point3": "100% custom — no off-the-shelf packages",
+    "founderTitle": "Founder — VDH Agency"
   },
   "process": {
     "label": "How we work",
@@ -85,7 +91,8 @@
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "kvk": "CoC: 95792414",
-    "copy": "© {year} VDH Agency. All rights reserved."
+    "copy": "© {year} VDH Agency. All rights reserved.",
+    "location": "The Netherlands"
   },
   "dienstenPage": {
     "label": "Our services",
@@ -220,7 +227,9 @@
     "v2title": "Transparent",
     "v2desc": "No vagueness or hidden costs. You always know exactly where you stand.",
     "v3title": "Personal",
-    "v3desc": "Direct line with Lars. No account managers, no middlemen. Always."
+    "v3desc": "Direct line with Lars. No account managers, no middlemen. Always.",
+    "founderTitle": "Founder — VDH Agency",
+    "founderBio": "Passionate about digital marketing and driven by results. Every client is unique — every project gets my full attention."
   },
   "contactPage": {
     "label": "Contact",
