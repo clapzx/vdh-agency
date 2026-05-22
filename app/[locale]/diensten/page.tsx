@@ -1,5 +1,23 @@
+import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
 import {Search, Video, Globe, CheckCircle2} from 'lucide-react';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{locale: string}>;
+}): Promise<Metadata> {
+  const {locale} = await params;
+  const isNl = locale === 'nl';
+  return {
+    title: isNl
+      ? 'Onze Diensten — SEO, Social Media & Websites'
+      : 'Our Services — SEO, Social Media & Websites',
+    description: isNl
+      ? 'Ontdek alle diensten van VDH Agency: SEO/SEA-beheer, social media content en websites op maat. Volledig ontzorgd, meetbaar resultaat.'
+      : 'Explore VDH Agency services: SEO/SEA management, social media content and custom websites. Fully managed, measurable results.',
+  };
+}
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTA from '@/components/sections/CTA';

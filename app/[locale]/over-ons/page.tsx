@@ -1,5 +1,23 @@
+import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
 import {User, Target, Eye, Heart} from 'lucide-react';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{locale: string}>;
+}): Promise<Metadata> {
+  const {locale} = await params;
+  const isNl = locale === 'nl';
+  return {
+    title: isNl
+      ? 'Over VDH Agency — Lars van der Hoek'
+      : 'About VDH Agency — Lars van der Hoek',
+    description: isNl
+      ? 'Leer meer over VDH Agency en oprichter Lars van der Hoek. Persoonlijk betrokken bij elk project, gericht op meetbare online groei.'
+      : 'Learn more about VDH Agency and founder Lars van der Hoek. Personally involved in every project, focused on measurable online growth.',
+  };
+}
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTA from '@/components/sections/CTA';
