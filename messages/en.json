@@ -76,11 +76,15 @@
     "tagline": "Your growth is our mission.",
     "colServices": "Services",
     "colCompany": "Company",
+    "colLegal": "Legal",
     "seo": "SEO / SEA Management",
     "social": "Social Media Management",
     "web": "Website Development",
     "about": "About us",
     "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "kvk": "CoC: fill in",
     "copy": "© {year} VDH Agency. All rights reserved."
   },
   "dienstenPage": {

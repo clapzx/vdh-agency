@@ -1,21 +1,37 @@
 import type {MetadataRoute} from 'next';
 
 const BASE = 'https://www.vdh-agency.com';
-const routes = ['', '/diensten', '/over-ons', '/contact'];
+
+type RouteConfig = {
+  path: string;
+  lastModified: string;
+  changeFrequency: 'weekly' | 'monthly' | 'yearly';
+  nlPriority: number;
+  enPriority: number;
+};
+
+const routes: RouteConfig[] = [
+  {path: '',                       lastModified: '2026-05-22', changeFrequency: 'weekly',  nlPriority: 1.0, enPriority: 0.9},
+  {path: '/diensten',              lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
+  {path: '/over-ons',              lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
+  {path: '/contact',               lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
+  {path: '/privacybeleid',         lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
+  {path: '/algemene-voorwaarden',  lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const nlUrls = routes.map((route) => ({
-    url: `${BASE}${route}`,
-    lastModified: new Date(),
-    changeFrequency: (route === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
-    priority: route === '' ? 1 : 0.8,
+  const nlUrls = routes.map(({path, lastModified, changeFrequency, nlPriority}) => ({
+    url: `${BASE}${path}`,
+    lastModified: new Date(lastModified),
+    changeFrequency,
+    priority: nlPriority,
   }));
 
-  const enUrls = routes.map((route) => ({
-    url: `${BASE}/en${route}`,
-    lastModified: new Date(),
-    changeFrequency: (route === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
-    priority: route === '' ? 0.9 : 0.7,
+  const enUrls = routes.map(({path, lastModified, changeFrequency, enPriority}) => ({
+    url: `${BASE}/en${path}`,
+    lastModified: new Date(lastModified),
+    changeFrequency,
+    priority: enPriority,
   }));
 
   return [...nlUrls, ...enUrls];

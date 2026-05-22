@@ -2,6 +2,28 @@ import type {Metadata} from 'next';
 
 const BASE = 'https://www.vdh-agency.com';
 
+function breadcrumbJsonLd(locale: string) {
+  const isNl = locale === 'nl';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: isNl ? BASE : `${BASE}/en`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Contact',
+        item: isNl ? `${BASE}/contact` : `${BASE}/en/contact`,
+      },
+    ],
+  };
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -25,6 +47,21 @@ export async function generateMetadata({
   };
 }
 
-export default function ContactLayout({children}: {children: React.ReactNode}) {
-  return <>{children}</>;
+export default async function ContactLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbJsonLd(locale))}}
+      />
+      {children}
+    </>
+  );
 }

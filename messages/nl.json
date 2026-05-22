@@ -76,11 +76,15 @@
     "tagline": "Jouw groei is onze missie.",
     "colServices": "Diensten",
     "colCompany": "Bedrijf",
+    "colLegal": "Juridisch",
     "seo": "SEO / SEA Beheer",
     "social": "Social Media Beheer",
     "web": "Website Maken",
     "about": "Over ons",
     "contact": "Contact",
+    "privacy": "Privacybeleid",
+    "terms": "Algemene voorwaarden",
+    "kvk": "KvK: vul in",
     "copy": "© {year} VDH Agency. Alle rechten voorbehouden."
   },
   "dienstenPage": {

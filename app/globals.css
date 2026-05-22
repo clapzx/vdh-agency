@@ -44,6 +44,43 @@ body {
   width: 100%;
 }
 
+/* Legal page prose */
+.prose-legal h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.prose-legal p {
+  color: rgba(17, 24, 39, 0.65);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+.prose-legal ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: rgba(17, 24, 39, 0.65);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+.prose-legal ul li {
+  margin-bottom: 0.25rem;
+}
+.prose-legal a {
+  color: #D4AF37;
+  text-decoration: underline;
+}
+.prose-legal a:hover {
+  color: #E8CC55;
+}
+.prose-legal strong {
+  color: #111827;
+  font-weight: 600;
+}
+
 /* Noise overlay */
 .noise::before {
   content: '';

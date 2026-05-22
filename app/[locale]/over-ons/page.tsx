@@ -4,6 +4,40 @@ import {User, Target, Eye, Heart} from 'lucide-react';
 
 const BASE = 'https://www.vdh-agency.com';
 
+function breadcrumbJsonLd(locale: string) {
+  const isNl = locale === 'nl';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: isNl ? BASE : `${BASE}/en`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: isNl ? 'Over ons' : 'About',
+        item: isNl ? `${BASE}/over-ons` : `${BASE}/en/over-ons`,
+      },
+    ],
+  };
+}
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${BASE}/#lars`,
+  name: 'Lars van der Hoek',
+  jobTitle: 'Founder & Marketing Specialist',
+  worksFor: {'@id': `${BASE}/#organization`},
+  email: 'lars@vdhagency.nl',
+  url: `${BASE}/over-ons`,
+  knowsAbout: ['SEO', 'Google Ads', 'Social Media Marketing', 'Web Development'],
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -32,7 +66,12 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTA from '@/components/sections/CTA';
 
-export default async function OverOnsPage() {
+export default async function OverOnsPage({
+  params,
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
   const t = await getTranslations('overPage');
 
   const values = [
@@ -43,6 +82,14 @@ export default async function OverOnsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbJsonLd(locale))}}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(personJsonLd)}}
+      />
       {/* Hero */}
       <section className="bg-primary pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

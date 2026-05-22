@@ -4,6 +4,28 @@ import {Search, Video, Globe, CheckCircle2} from 'lucide-react';
 
 const BASE = 'https://www.vdh-agency.com';
 
+function breadcrumbJsonLd(locale: string) {
+  const isNl = locale === 'nl';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: isNl ? BASE : `${BASE}/en`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: isNl ? 'Diensten' : 'Services',
+        item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`,
+      },
+    ],
+  };
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -32,7 +54,12 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTA from '@/components/sections/CTA';
 
-export default async function DienstenPage() {
+export default async function DienstenPage({
+  params,
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
   const t = await getTranslations('dienstenPage');
 
   const services = [
@@ -61,6 +88,10 @@ export default async function DienstenPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbJsonLd(locale))}}
+      />
       {/* Hero */}
       <section className="bg-primary pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
