@@ -47,10 +47,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Logo */}
         <Link href="/" className="flex flex-col items-start leading-none group">
-          <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 26, fontWeight: 700, color: '#D4AF37', lineHeight: 1, letterSpacing: -0.5}}>
+          <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 26, fontWeight: 700, color: 'white', lineHeight: 1, letterSpacing: -0.5}}>
             VDH
           </span>
-          <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 10, fontWeight: 400, color: 'white', letterSpacing: 4, lineHeight: 1, marginTop: 3}}>
+          <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 10, fontWeight: 400, color: '#D4AF37', letterSpacing: 4, lineHeight: 1, marginTop: 3}}>
             AGENCY
           </span>
         </Link>
