@@ -51,7 +51,7 @@ export default function Header() {
             VDH
           </span>
           <span style={{display: 'block', alignSelf: 'stretch', height: 1.5, background: '#D4AF37', marginTop: 3, marginBottom: 3}}/>
-          <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 10, fontWeight: 400, color: '#D4AF37', letterSpacing: 4, lineHeight: 1}}>
+          <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 10, fontWeight: 400, color: '#D4AF37', letterSpacing: 4, lineHeight: 1, paddingLeft: 4}}>
             AGENCY
           </span>
         </Link>
