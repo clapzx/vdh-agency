@@ -5,9 +5,9 @@ import {User, Target, Eye, Heart} from 'lucide-react';
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{locale: string}>;
+  params?: Promise<{locale: string}>;
 }): Promise<Metadata> {
-  const {locale} = await params;
+  const {locale = 'nl'} = params ? await params : {};
   const isNl = locale === 'nl';
   return {
     title: isNl
