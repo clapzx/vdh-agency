@@ -15,8 +15,11 @@ const routes: RouteConfig[] = [
   {path: '/diensten',              lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
   {path: '/over-ons',              lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
   {path: '/contact',               lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
-  {path: '/privacybeleid',         lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
-  {path: '/algemene-voorwaarden',  lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
+  {path: '/diensten/seo-sea',              lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
+  {path: '/diensten/social-media-beheer',  lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
+  {path: '/diensten/website-maken',        lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
+  {path: '/privacybeleid',                 lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
+  {path: '/algemene-voorwaarden',          lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -50,6 +50,8 @@ export async function generateMetadata({
     },
   };
 }
+import Link from 'next/link';
+import {ArrowRight} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTA from '@/components/sections/CTA';
@@ -69,6 +71,7 @@ export default async function DienstenPage({
       subtitle: t('seoSubtitle'),
       desc: t('seoDesc'),
       bullets: [t('seoBullet1'), t('seoBullet2'), t('seoBullet3'), t('seoBullet4')],
+      href: '/diensten/seo-sea',
     },
     {
       Icon: Video,
@@ -76,6 +79,7 @@ export default async function DienstenPage({
       subtitle: t('socialSubtitle'),
       desc: t('socialDesc'),
       bullets: [t('socialBullet1'), t('socialBullet2'), t('socialBullet3'), t('socialBullet4')],
+      href: '/diensten/social-media-beheer',
     },
     {
       Icon: Globe,
@@ -83,6 +87,7 @@ export default async function DienstenPage({
       subtitle: t('webSubtitle'),
       desc: t('webDesc'),
       bullets: [t('webBullet1'), t('webBullet2'), t('webBullet3'), t('webBullet4')],
+      href: '/diensten/website-maken',
     },
   ];
 
@@ -113,7 +118,7 @@ export default async function DienstenPage({
       {/* Services */}
       <section className="bg-light py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-20">
-          {services.map(({Icon, title, subtitle, desc, bullets}, i) => (
+          {services.map(({Icon, title, subtitle, desc, bullets, href}, i) => (
             <AnimatedSection key={title} delay={0.05}>
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Text */}
@@ -121,7 +126,7 @@ export default async function DienstenPage({
                   <SectionLabel>{subtitle}</SectionLabel>
                   <h2 className="text-primary font-black text-3xl lg:text-4xl mb-4">{title}</h2>
                   <p className="text-primary/60 text-base leading-relaxed mb-6">{desc}</p>
-                  <ul className="flex flex-col gap-3">
+                  <ul className="flex flex-col gap-3 mb-6">
                     {bullets.map((b) => (
                       <li key={b} className="flex items-start gap-3">
                         <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
@@ -129,6 +134,13 @@ export default async function DienstenPage({
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    href={href}
+                    className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-3 transition-all group"
+                  >
+                    {t('readMore')}
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
 
                 {/* Visual card */}
