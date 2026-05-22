@@ -3,8 +3,8 @@ import {ImageResponse} from 'next/og';
 export const size = {width: 1200, height: 630};
 export const contentType = 'image/png';
 
-export default async function Image({params}: {params: Promise<{locale: string}>}) {
-  const {locale} = await params;
+export default async function Image({params}: {params?: Promise<{locale: string}>}) {
+  const {locale = 'nl'} = params ? await params : {};
   const isNl = locale === 'nl';
 
   const tagline = isNl ? 'Jouw groei is onze missie.' : 'Your growth is our mission.';
