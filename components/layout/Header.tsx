@@ -46,13 +46,35 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1 group">
-          <span className="bg-gold text-primary font-black text-sm px-2 py-0.5 rounded-sm">
-            VDH
-          </span>
-          <span className="text-white font-semibold tracking-wide text-sm">
-            Agency
-          </span>
+        <Link href="/" className="flex items-center group">
+          <svg
+            viewBox="300 295 600 325"
+            height="42"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="VDH Agency"
+          >
+            <text
+              x="600" y="520"
+              fontFamily="Arial, Helvetica, sans-serif"
+              fontSize="250"
+              fontWeight="700"
+              textAnchor="middle"
+              fill="#D4AF37"
+            >
+              VDH
+            </text>
+            <text
+              x="600" y="600"
+              fontFamily="Arial, Helvetica, sans-serif"
+              fontSize="54"
+              fontWeight="400"
+              letterSpacing="8"
+              textAnchor="middle"
+              fill="white"
+            >
+              AGENCY
+            </text>
+          </svg>
         </Link>
 
         {/* Desktop nav */}
