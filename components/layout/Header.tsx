@@ -19,6 +19,11 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
   // Close menu on route change
   useEffect(() => {
     setOpen(false);
@@ -38,7 +43,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 will-change-transform ${
         isScrolledOrOpen
           ? 'bg-primary/96 backdrop-blur-md shadow-xl shadow-black/20'
           : 'bg-transparent'
