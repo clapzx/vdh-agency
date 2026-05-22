@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {useLocale, useTranslations} from 'next-intl';
 import {usePathname, useRouter} from '@/i18n/navigation';
 import {Menu, X, ArrowRight} from 'lucide-react';
+import {NL, GB} from 'country-flag-icons/react/3x2';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -80,20 +81,22 @@ export default function Header() {
           <div className="flex items-center gap-1 text-xs font-semibold">
             <button
               onClick={() => switchLocale('nl')}
-              className={`transition-colors px-1 py-0.5 rounded cursor-pointer ${
-                locale === 'nl' ? 'text-gold' : 'text-white/50 hover:text-white/80'
+              className={`flex items-center gap-1.5 transition-opacity px-1 py-0.5 rounded cursor-pointer ${
+                locale === 'nl' ? 'opacity-100' : 'opacity-40 hover:opacity-70'
               }`}
             >
-              🇳🇱 NL
+              <NL className="w-5 h-auto rounded-sm" />
+              <span className={locale === 'nl' ? 'text-gold' : 'text-white'}>NL</span>
             </button>
             <span className="text-white/30">|</span>
             <button
               onClick={() => switchLocale('en')}
-              className={`transition-colors px-1 py-0.5 rounded cursor-pointer ${
-                locale === 'en' ? 'text-gold' : 'text-white/50 hover:text-white/80'
+              className={`flex items-center gap-1.5 transition-opacity px-1 py-0.5 rounded cursor-pointer ${
+                locale === 'en' ? 'opacity-100' : 'opacity-40 hover:opacity-70'
               }`}
             >
-              🇬🇧 EN
+              <GB className="w-5 h-auto rounded-sm" />
+              <span className={locale === 'en' ? 'text-gold' : 'text-white'}>EN</span>
             </button>
           </div>
 
@@ -134,16 +137,18 @@ export default function Header() {
             <div className="flex items-center gap-3 text-xs font-semibold">
               <button
                 onClick={() => switchLocale('nl')}
-                className={locale === 'nl' ? 'text-gold' : 'text-white/50'}
+                className={`flex items-center gap-1.5 transition-opacity ${locale === 'nl' ? 'opacity-100' : 'opacity-40'}`}
               >
-                🇳🇱 NL
+                <NL className="w-5 h-auto rounded-sm" />
+                <span className={locale === 'nl' ? 'text-gold' : 'text-white'}>NL</span>
               </button>
               <span className="text-white/30">|</span>
               <button
                 onClick={() => switchLocale('en')}
-                className={locale === 'en' ? 'text-gold' : 'text-white/50'}
+                className={`flex items-center gap-1.5 transition-opacity ${locale === 'en' ? 'opacity-100' : 'opacity-40'}`}
               >
-                🇬🇧 EN
+                <GB className="w-5 h-auto rounded-sm" />
+                <span className={locale === 'en' ? 'text-gold' : 'text-white'}>EN</span>
               </button>
             </div>
             <Link
