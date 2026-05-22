@@ -3,13 +3,7 @@ import {ImageResponse} from 'next/og';
 export const size = {width: 1200, height: 630};
 export const contentType = 'image/png';
 
-export default async function Image({params}: {params?: Promise<{locale: string}>}) {
-  const {locale = 'nl'} = params ? await params : {};
-  const isNl = locale === 'nl';
-
-  const tagline = isNl ? 'Jouw groei is onze missie.' : 'Your growth is our mission.';
-  const services = 'SEO / SEA  ·  Social Media  ·  Websites';
-
+export default function Image() {
   return new ImageResponse(
     (
       <div
@@ -37,7 +31,7 @@ export default async function Image({params}: {params?: Promise<{locale: string}
           }}
         />
 
-        {/* Dot grid — right side decoration */}
+        {/* Dot grid */}
         <div
           style={{
             position: 'absolute',
@@ -70,33 +64,17 @@ export default async function Image({params}: {params?: Promise<{locale: string}
         {/* Main content */}
         <div style={{display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center'}}>
 
-          {/* Logo — matches SVG: stacked VDH / AGENCY */}
+          {/* Logo */}
           <div style={{display: 'flex', flexDirection: 'column', marginBottom: 48}}>
-            <span
-              style={{
-                color: 'white',
-                fontWeight: 700,
-                fontSize: 52,
-                lineHeight: 1,
-                letterSpacing: 2,
-              }}
-            >
+            <span style={{color: 'white', fontWeight: 700, fontSize: 52, lineHeight: 1, letterSpacing: 2}}>
               VDH
             </span>
-            <span
-              style={{
-                color: '#D4AF37',
-                fontWeight: 400,
-                fontSize: 16,
-                letterSpacing: 10,
-                marginTop: 4,
-              }}
-            >
+            <span style={{color: '#D4AF37', fontWeight: 400, fontSize: 16, letterSpacing: 10, marginTop: 4}}>
               AGENCY
             </span>
           </div>
 
-          {/* Gold divider line */}
+          {/* Gold divider */}
           <div
             style={{
               width: 56,
@@ -120,23 +98,16 @@ export default async function Image({params}: {params?: Promise<{locale: string}
               letterSpacing: -1.5,
             }}
           >
-            {tagline}
+            Jouw groei is onze missie.
           </div>
 
           {/* Services */}
-          <div
-            style={{
-              color: '#D4AF37',
-              fontSize: 22,
-              opacity: 0.85,
-              letterSpacing: 0.5,
-            }}
-          >
-            {services}
+          <div style={{color: '#D4AF37', fontSize: 22, opacity: 0.85, letterSpacing: 0.5}}>
+            SEO / SEA  ·  Social Media  ·  Websites
           </div>
         </div>
 
-        {/* Bottom domain */}
+        {/* Domain */}
         <div style={{color: 'rgba(255,255,255,0.25)', fontSize: 18, letterSpacing: 0.5}}>
           www.vdh-agency.com
         </div>
