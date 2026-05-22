@@ -50,6 +50,9 @@ export async function generateMetadata({
       title: 'VDH Agency',
       description: isNl ? 'Jouw groei is onze missie.' : 'Your growth is our mission.',
     },
+    verification: {
+      google: 'kg9q-mJMSAnhPF5GgYtIZJ0KAEU_2riXpv8P4UFCSF8',
+    },
   };
 }
 
