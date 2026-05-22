@@ -46,11 +46,11 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Logo */}
-        <Link href="/" className="flex flex-col items-start leading-none group">
+        <Link href="/" className="flex flex-col items-center leading-none group" style={{width: 'fit-content'}}>
           <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 26, fontWeight: 700, color: 'white', lineHeight: 1, letterSpacing: -0.5}}>
             VDH
           </span>
-          <span style={{display: 'block', width: '100%', height: 1.5, background: '#D4AF37', marginTop: 3, marginBottom: 3}}/>
+          <span style={{display: 'block', alignSelf: 'stretch', height: 1.5, background: '#D4AF37', marginTop: 3, marginBottom: 3}}/>
           <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 10, fontWeight: 400, color: '#D4AF37', letterSpacing: 4, lineHeight: 1}}>
             AGENCY
           </span>
