@@ -70,23 +70,29 @@ export default async function Image({params}: {params: Promise<{locale: string}>
         {/* Main content */}
         <div style={{display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center'}}>
 
-          {/* Logo badge */}
-          <div style={{display: 'flex', alignItems: 'center', marginBottom: 48}}>
-            <div
+          {/* Logo — matches SVG: stacked VDH / AGENCY */}
+          <div style={{display: 'flex', flexDirection: 'column', marginBottom: 48}}>
+            <span
               style={{
-                background: '#D4AF37',
-                padding: '10px 16px',
-                borderRadius: 6,
-                marginRight: 14,
-                display: 'flex',
+                color: 'white',
+                fontWeight: 700,
+                fontSize: 52,
+                lineHeight: 1,
+                letterSpacing: 2,
               }}
             >
-              <span style={{color: '#111827', fontWeight: 900, fontSize: 26, letterSpacing: -1}}>
-                VDH
-              </span>
-            </div>
-            <span style={{color: 'white', fontWeight: 700, fontSize: 26, letterSpacing: -0.5}}>
-              Agency
+              VDH
+            </span>
+            <span
+              style={{
+                color: '#D4AF37',
+                fontWeight: 400,
+                fontSize: 16,
+                letterSpacing: 10,
+                marginTop: 4,
+              }}
+            >
+              AGENCY
             </span>
           </div>
 
