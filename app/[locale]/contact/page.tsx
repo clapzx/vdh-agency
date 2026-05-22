@@ -81,7 +81,7 @@ export default function ContactPage() {
                           className="w-full border border-primary/15 rounded-sm px-4 py-3 text-sm text-primary placeholder:text-primary/30 focus:outline-none focus:border-gold transition-colors"
                         />
                         {errors.name && (
-                          <p className="text-red-500 text-xs mt-1">Verplicht veld</p>
+                          <p className="text-red-500 text-xs mt-1">{t('fieldRequired')}</p>
                         )}
                       </div>
 
@@ -96,7 +96,7 @@ export default function ContactPage() {
                           className="w-full border border-primary/15 rounded-sm px-4 py-3 text-sm text-primary placeholder:text-primary/30 focus:outline-none focus:border-gold transition-colors"
                         />
                         {errors.email && (
-                          <p className="text-red-500 text-xs mt-1">Ongeldig e-mailadres</p>
+                          <p className="text-red-500 text-xs mt-1">{t('emailInvalid')}</p>
                         )}
                       </div>
                     </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                         className="w-full border border-primary/15 rounded-sm px-4 py-3 text-sm text-primary placeholder:text-primary/30 focus:outline-none focus:border-gold transition-colors resize-none"
                       />
                       {errors.message && (
-                        <p className="text-red-500 text-xs mt-1">Minimaal 10 tekens</p>
+                        <p className="text-red-500 text-xs mt-1">{t('minChars')}</p>
                       )}
                     </div>
 
@@ -132,7 +132,7 @@ export default function ContactPage() {
                       disabled={isSubmitting}
                       className="flex items-center justify-center gap-2 bg-gold text-primary font-bold text-sm px-8 py-3.5 rounded-sm hover:bg-gold-light transition-colors disabled:opacity-60 group"
                     >
-                      {isSubmitting ? 'Versturen...' : t('submit')}
+                      {isSubmitting ? t('sending') : t('submit')}
                       {!isSubmitting && (
                         <ArrowRight
                           size={14}
@@ -159,7 +159,7 @@ export default function ContactPage() {
                       <Mail size={16} className="text-gold" />
                     </div>
                     <div>
-                      <p className="text-white/40 text-xs mb-0.5">E-mail</p>
+                      <p className="text-white/40 text-xs mb-0.5">{t('emailLabel')}</p>
                       <p className="text-white text-sm font-medium group-hover:text-gold transition-colors">
                         {t('emailInfo')}
                       </p>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                       <MapPin size={16} className="text-gold" />
                     </div>
                     <div>
-                      <p className="text-white/40 text-xs mb-0.5">Locatie</p>
+                      <p className="text-white/40 text-xs mb-0.5">{t('locationLabel')}</p>
                       <p className="text-white text-sm font-medium">{t('locationInfo')}</p>
                     </div>
                   </div>
@@ -181,7 +181,7 @@ export default function ContactPage() {
                       <Clock size={16} className="text-gold" />
                     </div>
                     <div>
-                      <p className="text-white/40 text-xs mb-0.5">Reactietijd</p>
+                      <p className="text-white/40 text-xs mb-0.5">{t('responseLabel')}</p>
                       <p className="text-white text-sm font-medium">{t('responseTime')}</p>
                     </div>
                   </div>
@@ -189,8 +189,7 @@ export default function ContactPage() {
 
                 <div className="mt-8 pt-6 border-t border-white/10">
                   <p className="text-white/40 text-sm leading-relaxed">
-                    Geen verkooppraatjes. Gewoon een eerlijk gesprek over wat digitale marketing
-                    voor jouw bedrijf kan betekenen.
+                    {t('pitch')}
                   </p>
                 </div>
               </div>

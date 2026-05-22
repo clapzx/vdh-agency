@@ -250,6 +250,14 @@
     "infoTitle": "Direct contact",
     "emailInfo": "lars@vdhagency.nl",
     "locationInfo": "Nederland",
-    "responseTime": "Reactietijd: < 24 uur"
+    "responseTime": "Reactietijd: < 24 uur",
+    "fieldRequired": "Verplicht veld",
+    "emailInvalid": "Ongeldig e-mailadres",
+    "minChars": "Minimaal 10 tekens",
+    "sending": "Versturen...",
+    "emailLabel": "E-mail",
+    "locationLabel": "Locatie",
+    "responseLabel": "Reactietijd",
+    "pitch": "Geen verkooppraatjes. Gewoon een eerlijk gesprek over wat digitale marketing voor jouw bedrijf kan betekenen."
   }
 }
