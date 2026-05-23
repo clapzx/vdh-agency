@@ -30,6 +30,14 @@ export async function generateMetadata({
     description: isNl
       ? 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat. Vraag gratis een consult aan.'
       : 'VDH Agency helps businesses grow online through SEO, Social Media and professional custom websites. Request a free consultation.',
+    alternates: {
+      canonical: isNl ? BASE : `${BASE}/en`,
+      languages: {
+        nl: BASE,
+        en: `${BASE}/en`,
+        'x-default': BASE,
+      },
+    },
     openGraph: {
       title: isNl
         ? 'Marketing Bureau Nederland — SEO, Social Media & Webdesign | VDH Agency'
@@ -57,53 +65,56 @@ export async function generateMetadata({
   };
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': `${BASE}/#organization`,
-      name: 'VDH Agency',
-      url: `${BASE}/`,
-      description: 'Nederlands marketing bureau gespecialiseerd in SEO/SEA, social media marketing en websites op maat voor het MKB.',
-      email: 'lars@vdhagency.nl',
-      founder: {
-        '@type': 'Person',
-        '@id': `${BASE}/#lars`,
-        name: 'Lars van der Hoek',
+function buildSiteJsonLd(locale: string) {
+  const isNl = locale === 'nl';
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': ['LocalBusiness', 'ProfessionalService'],
+        '@id': `${BASE}/#organization`,
+        name: 'VDH Agency',
+        legalName: 'VDH Agency',
+        url: `${BASE}/`,
+        description: isNl
+          ? 'Nederlands marketing bureau gespecialiseerd in SEO/SEA, social media marketing en websites op maat voor het MKB.'
+          : 'Dutch marketing agency specialising in SEO/SEA, social media marketing and custom websites for SMEs.',
+        email: 'lars@vdhagency.nl',
+        taxID: 'KvK 95792414',
+        priceRange: '€€',
+        founder: {
+          '@type': 'Person',
+          '@id': `${BASE}/#lars`,
+          name: 'Lars van der Hoek',
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'NL',
+        },
+        areaServed: {'@type': 'Country', name: 'Netherlands'},
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: isNl ? 'Marketing Diensten' : 'Marketing Services',
+          itemListElement: [
+            {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'SEO & SEA'}},
+            {'@type': 'Offer', itemOffered: {'@type': 'Service', name: isNl ? 'Social Media Marketing' : 'Social Media Marketing'}},
+            {'@type': 'Offer', itemOffered: {'@type': 'Service', name: isNl ? 'Website Maken' : 'Website Development'}},
+            {'@type': 'Offer', itemOffered: {'@type': 'Service', name: isNl ? 'Branding & Huisstijl' : 'Branding & Brand Identity'}},
+            {'@type': 'Offer', itemOffered: {'@type': 'Service', name: isNl ? 'Digitale Analyse' : 'Digital Analytics & Reporting'}},
+          ],
+        },
       },
-      address: {'@type': 'PostalAddress', addressCountry: 'NL'},
-      areaServed: {'@type': 'Country', name: 'Netherlands'},
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `${BASE}/#website`,
-      url: `${BASE}/`,
-      name: 'VDH Agency',
-      publisher: {'@id': `${BASE}/#organization`},
-      inLanguage: 'nl-NL',
-    },
-    {
-      '@type': 'ProfessionalService',
-      '@id': `${BASE}/#service`,
-      name: 'VDH Agency',
-      url: `${BASE}/`,
-      email: 'lars@vdhagency.nl',
-      priceRange: '€€',
-      founder: {'@type': 'Person', '@id': `${BASE}/#lars`},
-      areaServed: {'@type': 'Country', name: 'Netherlands'},
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Marketing Diensten',
-        itemListElement: [
-          {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'SEO & SEA'}},
-          {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'Social Media Marketing'}},
-          {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'Website Maken'}},
-        ],
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE}/#website`,
+        url: isNl ? `${BASE}/` : `${BASE}/en`,
+        name: 'VDH Agency',
+        publisher: {'@id': `${BASE}/#organization`},
+        inLanguage: isNl ? 'nl-NL' : 'en-GB',
       },
-    },
-  ],
-};
+    ],
+  };
+}
 
 export default async function LocaleLayout({
   children,
@@ -122,7 +133,7 @@ export default async function LocaleLayout({
       <body className="min-h-screen flex flex-col antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(buildSiteJsonLd(locale))}}
         />
         <NextIntlClientProvider messages={messages}>
           <Header />
