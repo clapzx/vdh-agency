@@ -4,7 +4,7 @@ import {useTranslations} from 'next-intl';
 import {useForm} from 'react-hook-form';
 import {z} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {Mail, MapPin, Clock, CheckCircle, ArrowRight} from 'lucide-react';
+import {Mail, MapPin, Clock, FileText, CheckCircle, ArrowRight} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
 const schema = z.object({
@@ -183,6 +183,16 @@ export default function ContactPage() {
                     <div>
                       <p className="text-white/40 text-xs mb-0.5">{t('responseLabel')}</p>
                       <p className="text-white text-sm font-medium">{t('responseTime')}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center shrink-0">
+                      <FileText size={16} className="text-gold" />
+                    </div>
+                    <div>
+                      <p className="text-white/40 text-xs mb-0.5">{t('kvkLabel')}</p>
+                      <p className="text-white text-sm font-medium">{t('kvkInfo')}</p>
                     </div>
                   </div>
                 </div>

@@ -422,6 +422,8 @@
     "emailLabel": "E-mail",
     "locationLabel": "Locatie",
     "responseLabel": "Reactietijd",
+    "kvkLabel": "KvK-nummer",
+    "kvkInfo": "95792414",
     "pitch": "Geen verkooppraatjes. Gewoon een eerlijk gesprek over wat digitale marketing voor jouw bedrijf kan betekenen."
   }
 }

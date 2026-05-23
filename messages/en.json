@@ -422,6 +422,8 @@
     "emailLabel": "Email",
     "locationLabel": "Location",
     "responseLabel": "Response time",
+    "kvkLabel": "Chamber of Commerce",
+    "kvkInfo": "95792414",
     "pitch": "No sales talk. Just an honest conversation about what digital marketing can do for your business."
   }
 }
