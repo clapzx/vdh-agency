@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {Search, Video, Globe, ShoppingCart, BarChart2, CheckCircle2, ArrowRight} from 'lucide-react';
+import {TrendingUp, Globe, Palette, BarChart2, Video, CheckCircle2, ArrowRight} from 'lucide-react';
 import {Link} from '@/i18n/navigation';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import CTA from '@/components/sections/CTA';
@@ -38,11 +38,11 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Onze Diensten — SEO, Social Media & Websites'
-      : 'Our Services — SEO, Social Media & Websites',
+      ? 'Onze Diensten — Online Marketing, Websites, Branding & Meer'
+      : 'Our Services — Online Marketing, Websites, Branding & More',
     description: isNl
-      ? 'Ontdek alle diensten van VDH Agency: SEO/SEA-beheer, social media content en websites op maat. Volledig ontzorgd, meetbaar resultaat.'
-      : 'Explore VDH Agency services: SEO/SEA management, social media content and custom websites. Fully managed, measurable results.',
+      ? 'Ontdek alle diensten van VDH Agency: online marketing, websites op maat, branding, digitale analyse en social media beheer. Meetbaar resultaat, persoonlijk contact.'
+      : 'Explore VDH Agency services: online marketing, custom websites, branding, digital analytics and social media management. Measurable results, personal contact.',
     alternates: {
       canonical: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`,
       languages: {
@@ -64,20 +64,12 @@ export default async function DienstenPage({
 
   const services = [
     {
-      Icon: Search,
-      title: t('seoTitle'),
-      subtitle: t('seoSubtitle'),
-      desc: t('seoDesc'),
-      bullets: [t('seoBullet1'), t('seoBullet2'), t('seoBullet3'), t('seoBullet4')],
-      href: '/diensten/seo-sea' as const,
-    },
-    {
-      Icon: Video,
-      title: t('socialTitle'),
-      subtitle: t('socialSubtitle'),
-      desc: t('socialDesc'),
-      bullets: [t('socialBullet1'), t('socialBullet2'), t('socialBullet3'), t('socialBullet4')],
-      href: '/diensten/social-media-beheer' as const,
+      Icon: TrendingUp,
+      title: t('onlineMarketingTitle'),
+      subtitle: t('onlineMarketingSubtitle'),
+      desc: t('onlineMarketingDesc'),
+      bullets: [t('onlineMarketingBullet1'), t('onlineMarketingBullet2'), t('onlineMarketingBullet3'), t('onlineMarketingBullet4')],
+      href: '/diensten/online-marketing' as const,
     },
     {
       Icon: Globe,
@@ -88,12 +80,12 @@ export default async function DienstenPage({
       href: '/diensten/website-maken' as const,
     },
     {
-      Icon: ShoppingCart,
-      title: t('ecomTitle'),
-      subtitle: t('ecomSubtitle'),
-      desc: t('ecomDesc'),
-      bullets: [t('ecomBullet1'), t('ecomBullet2'), t('ecomBullet3'), t('ecomBullet4')],
-      href: '/diensten/e-commerce' as const,
+      Icon: Palette,
+      title: t('brandingTitle'),
+      subtitle: t('brandingSubtitle'),
+      desc: t('brandingDesc'),
+      bullets: [t('brandingBullet1'), t('brandingBullet2'), t('brandingBullet3'), t('brandingBullet4')],
+      href: '/diensten/branding' as const,
     },
     {
       Icon: BarChart2,
@@ -102,6 +94,14 @@ export default async function DienstenPage({
       desc: t('analyseDesc'),
       bullets: [t('analyseBullet1'), t('analyseBullet2'), t('analyseBullet3'), t('analyseBullet4')],
       href: '/diensten/digitale-analyse' as const,
+    },
+    {
+      Icon: Video,
+      title: t('socialTitle'),
+      subtitle: t('socialSubtitle'),
+      desc: t('socialDesc'),
+      bullets: [t('socialBullet1'), t('socialBullet2'), t('socialBullet3'), t('socialBullet4')],
+      href: '/diensten/social-media-beheer' as const,
     },
   ];
 

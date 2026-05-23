@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {Video, CheckCircle2, ChevronDown} from 'lucide-react';
+import {Palette, CheckCircle2, ChevronDown} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTA from '@/components/sections/CTA';
@@ -14,20 +14,20 @@ function serviceJsonLd(locale: string) {
     '@graph': [
       {
         '@type': 'Service',
-        name: isNl ? 'Social Media Beheer' : 'Social Media Management',
+        name: isNl ? 'Branding & Huisstijl' : 'Branding & Brand Identity',
         provider: {'@id': `${BASE}/#organization`},
         areaServed: {'@type': 'Country', name: 'Netherlands'},
         description: isNl
-          ? 'Volledig social media beheer: strategie, opnames op locatie, video editing, Meta Ads en wekelijkse publicatie.'
-          : 'Full social media management: strategy, on-location filming, video editing, Meta Ads and weekly publishing.',
-        url: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`,
+          ? 'Logo ontwerp, kleurenpalet, typografie en brand guidelines voor een professionele visuele identiteit.'
+          : 'Logo design, colour palette, typography and brand guidelines for a professional visual identity.',
+        url: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/diensten/branding`,
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
           {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: isNl ? 'Social Media Beheer' : 'Social Media Management', item: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`},
+          {'@type': 'ListItem', position: 3, name: isNl ? 'Branding & Huisstijl' : 'Branding & Identity', item: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/diensten/branding`},
         ],
       },
     ],
@@ -43,29 +43,29 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Social Media Beheer uitbesteden — Content, Video & Meta Ads | VDH Agency'
-      : 'Outsource Social Media Management — Content, Video & Meta Ads | VDH Agency',
+      ? 'Logo & Huisstijl Laten Maken Nederland — Branding die werkt'
+      : 'Logo & Brand Identity Design Netherlands — Branding that works',
     description: isNl
-      ? 'VDH Agency neemt jouw social media volledig over: strategie, opnames op locatie, professionele video editing, Meta Ads en wekelijkse publicatie. Voor Instagram, LinkedIn, Facebook en TikTok.'
-      : 'VDH Agency fully takes over your social media: strategy, on-location filming, professional video editing, Meta Ads and weekly publishing. For Instagram, LinkedIn, Facebook and TikTok.',
+      ? 'VDH Agency ontwerpt professionele logo\'s en huisstijlen. Van merkstrategie tot brand guidelines — een visuele identiteit die vertrouwen uitstraalt en klanten aantrekt.'
+      : 'VDH Agency designs professional logos and brand identities. From brand strategy to brand guidelines — a visual identity that radiates trust and attracts customers.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`,
+      canonical: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/diensten/branding`,
       languages: {
-        nl: `${BASE}/diensten/social-media-beheer`,
-        en: `${BASE}/en/diensten/social-media-beheer`,
-        'x-default': `${BASE}/diensten/social-media-beheer`,
+        nl: `${BASE}/diensten/branding`,
+        en: `${BASE}/en/diensten/branding`,
+        'x-default': `${BASE}/diensten/branding`,
       },
     },
   };
 }
 
-export default async function SocialMediaPage({
+export default async function BrandingPage({
   params,
 }: {
   params: Promise<{locale: string}>;
 }) {
   const {locale} = await params;
-  const t = await getTranslations('socialPage');
+  const t = await getTranslations('brandingPage');
 
   const steps = [
     {num: '01', title: t('step1Title'), desc: t('step1Desc')},
@@ -83,12 +83,11 @@ export default async function SocialMediaPage({
   ];
 
   const includes = [
-    'Instagram & TikTok',
-    'LinkedIn & Facebook',
-    'Meta Ads (Facebook & Instagram)',
-    'Contentplanning & strategie',
-    'Opnames op locatie',
-    'Professionele video editing',
+    'Logo ontwerp (vector)',
+    'Kleurenpalet & typografie',
+    'Huisstijl uitwerking',
+    'Social media templates',
+    'Brand guidelines document',
   ];
 
   return (
@@ -128,7 +127,7 @@ export default async function SocialMediaPage({
             <AnimatedSection direction="right" delay={0.15}>
               <div className="bg-primary rounded-sm p-10 border-l-4 border-gold">
                 <div className="w-14 h-14 rounded-sm bg-gold/10 flex items-center justify-center mb-6">
-                  <Video size={26} className="text-gold" />
+                  <Palette size={26} className="text-gold" />
                 </div>
                 <h3 className="text-white font-bold text-xl mb-4">{t('label')}</h3>
                 <ul className="flex flex-col gap-3">

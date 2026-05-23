@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {ShoppingCart, CheckCircle2, ChevronDown} from 'lucide-react';
+import {TrendingUp, CheckCircle2, ChevronDown} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTA from '@/components/sections/CTA';
@@ -14,20 +14,20 @@ function serviceJsonLd(locale: string) {
     '@graph': [
       {
         '@type': 'Service',
-        name: isNl ? 'E-commerce & Webshop Ontwikkeling' : 'E-commerce & Webshop Development',
+        name: isNl ? 'Online Marketing' : 'Online Marketing',
         provider: {'@id': `${BASE}/#organization`},
         areaServed: {'@type': 'Country', name: 'Netherlands'},
         description: isNl
-          ? 'Op maat gebouwde webshops die converteren, snel laden en goed scoren in Google.'
-          : 'Custom-built webshops that convert, load fast and rank well in Google.',
-        url: isNl ? `${BASE}/diensten/e-commerce` : `${BASE}/en/diensten/e-commerce`,
+          ? 'SEO, Google Ads, Meta Ads, e-mail marketing en copywriting — alles onder één dak.'
+          : 'SEO, Google Ads, Meta Ads, email marketing and copywriting — all under one roof.',
+        url: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/diensten/online-marketing`,
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
           {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: 'E-commerce', item: isNl ? `${BASE}/diensten/e-commerce` : `${BASE}/en/diensten/e-commerce`},
+          {'@type': 'ListItem', position: 3, name: 'Online Marketing', item: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/diensten/online-marketing`},
         ],
       },
     ],
@@ -43,29 +43,29 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Webshop Laten Maken Nederland — E-commerce die verkoopt'
-      : 'Webshop Development Netherlands — E-commerce that sells',
+      ? 'Online Marketing Bureau Nederland — SEO, Ads, E-mail & Copy'
+      : 'Online Marketing Agency Netherlands — SEO, Ads, Email & Copy',
     description: isNl
-      ? 'VDH Agency bouwt professionele webshops op maat: Shopify, WooCommerce of maatwerk. SEO-geoptimaliseerd, snel en mobiel. Vraag gratis offerte aan.'
-      : 'VDH Agency builds professional custom webshops: Shopify, WooCommerce or bespoke. SEO-optimised, fast and mobile-friendly. Request a free quote.',
+      ? 'VDH Agency verzorgt online marketing van A tot Z: SEO, Google Ads, Meta Ads (Facebook & Instagram), e-mail marketing en copywriting. Vraag gratis adviesgesprek aan.'
+      : 'VDH Agency handles online marketing end-to-end: SEO, Google Ads, Meta Ads (Facebook & Instagram), email marketing and copywriting. Request a free consultation.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten/e-commerce` : `${BASE}/en/diensten/e-commerce`,
+      canonical: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/diensten/online-marketing`,
       languages: {
-        nl: `${BASE}/diensten/e-commerce`,
-        en: `${BASE}/en/diensten/e-commerce`,
-        'x-default': `${BASE}/diensten/e-commerce`,
+        nl: `${BASE}/diensten/online-marketing`,
+        en: `${BASE}/en/diensten/online-marketing`,
+        'x-default': `${BASE}/diensten/online-marketing`,
       },
     },
   };
 }
 
-export default async function EcommercePage({
+export default async function OnlineMarketingPage({
   params,
 }: {
   params: Promise<{locale: string}>;
 }) {
   const {locale} = await params;
-  const t = await getTranslations('ecommercePage');
+  const t = await getTranslations('onlineMarketingPage');
 
   const steps = [
     {num: '01', title: t('step1Title'), desc: t('step1Desc')},
@@ -83,11 +83,11 @@ export default async function EcommercePage({
   ];
 
   const includes = [
-    'Shopify / WooCommerce',
-    'Google Shopping',
-    'Conversie-optimalisatie',
-    'Productpagina SEO',
-    'Betaalintegraties',
+    'SEO & Google Ads',
+    'Meta Ads (Facebook & Instagram)',
+    'E-mail marketing',
+    'Copywriting & webteksten',
+    'Maandelijkse rapportage',
   ];
 
   return (
@@ -127,9 +127,9 @@ export default async function EcommercePage({
             <AnimatedSection direction="right" delay={0.15}>
               <div className="bg-primary rounded-sm p-10 border-l-4 border-gold">
                 <div className="w-14 h-14 rounded-sm bg-gold/10 flex items-center justify-center mb-6">
-                  <ShoppingCart size={26} className="text-gold" />
+                  <TrendingUp size={26} className="text-gold" />
                 </div>
-                <h3 className="text-white font-bold text-xl mb-4">E-commerce</h3>
+                <h3 className="text-white font-bold text-xl mb-4">{t('label')}</h3>
                 <ul className="flex flex-col gap-3">
                   {includes.map((item) => (
                     <li key={item} className="flex items-center gap-3">
