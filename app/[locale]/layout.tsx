@@ -49,6 +49,16 @@ export async function generateMetadata({
       type: 'website',
       url: isNl ? BASE : `${BASE}/en`,
       locale: isNl ? 'nl_NL' : 'en_GB',
+      images: [
+        {
+          url: isNl ? `${BASE}/opengraph-image` : `${BASE}/en/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: isNl
+            ? 'VDH Agency — Marketing Bureau Nederland'
+            : 'VDH Agency — Marketing Agency Netherlands',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -58,6 +68,7 @@ export async function generateMetadata({
       description: isNl
         ? 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat.'
         : 'VDH Agency helps businesses grow online through SEO, Social Media and professional custom websites.',
+      images: [isNl ? `${BASE}/opengraph-image` : `${BASE}/en/opengraph-image`],
     },
     verification: {
       google: 'kg9q-mJMSAnhPF5GgYtIZJ0KAEU_2riXpv8P4UFCSF8',
