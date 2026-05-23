@@ -2,6 +2,37 @@ import type {Metadata} from 'next';
 
 const BASE = 'https://www.vdh-agency.com';
 
+function professionalServiceJsonLd(locale: string) {
+  const isNl = locale === 'nl';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': `${BASE}/#organization`,
+    name: 'VDH Agency',
+    url: `${BASE}/`,
+    email: 'lars@vdhagency.nl',
+    taxID: 'KvK 95792414',
+    priceRange: '€€',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'NL',
+    },
+    areaServed: {'@type': 'Country', name: 'Netherlands'},
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: isNl ? 'Marketing Diensten' : 'Marketing Services',
+      itemListElement: [
+        {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'SEO & SEA', url: `${BASE}/diensten/seo-sea`}},
+        {'@type': 'Offer', itemOffered: {'@type': 'Service', name: isNl ? 'Social Media Beheer' : 'Social Media Management', url: `${BASE}/diensten/social-media-beheer`}},
+        {'@type': 'Offer', itemOffered: {'@type': 'Service', name: isNl ? 'Website Maken' : 'Website Development', url: `${BASE}/diensten/website-maken`}},
+        {'@type': 'Offer', itemOffered: {'@type': 'Service', name: 'Online Marketing', url: `${BASE}/diensten/online-marketing`}},
+        {'@type': 'Offer', itemOffered: {'@type': 'Service', name: isNl ? 'Branding & Huisstijl' : 'Branding & Identity', url: `${BASE}/diensten/branding`}},
+        {'@type': 'Offer', itemOffered: {'@type': 'Service', name: isNl ? 'Digitale Analyse' : 'Digital Analytics', url: `${BASE}/diensten/digitale-analyse`}},
+      ],
+    },
+  };
+}
+
 function breadcrumbJsonLd(locale: string) {
   const isNl = locale === 'nl';
   return {
@@ -57,6 +88,10 @@ export default async function ContactLayout({
   const {locale} = await params;
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(professionalServiceJsonLd(locale))}}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbJsonLd(locale))}}

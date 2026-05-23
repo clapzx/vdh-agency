@@ -30,6 +30,30 @@ function breadcrumbJsonLd(locale: string) {
   };
 }
 
+function serviceListJsonLd(locale: string) {
+  const isNl = locale === 'nl';
+  const base = isNl ? BASE : `${BASE}/en`;
+  const items = [
+    {name: isNl ? 'Online Marketing' : 'Online Marketing', path: '/diensten/online-marketing'},
+    {name: isNl ? 'Website Maken' : 'Website Development', path: '/diensten/website-maken'},
+    {name: isNl ? 'Branding & Huisstijl' : 'Branding & Identity', path: '/diensten/branding'},
+    {name: isNl ? 'Digitale Analyse' : 'Digital Analytics', path: '/diensten/digitale-analyse'},
+    {name: isNl ? 'Social Media Beheer' : 'Social Media Management', path: '/diensten/social-media-beheer'},
+    {name: isNl ? 'SEO & SEA' : 'SEO & SEA', path: '/diensten/seo-sea'},
+  ];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: isNl ? 'Diensten van VDH Agency' : 'VDH Agency Services',
+    itemListElement: items.map(({name, path}, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name,
+      url: `${base}${path}`,
+    })),
+  };
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -111,6 +135,10 @@ export default async function DienstenPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbJsonLd(locale))}}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(serviceListJsonLd(locale))}}
       />
 
       {/* Hero */}
