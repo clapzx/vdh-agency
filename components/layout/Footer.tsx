@@ -44,9 +44,9 @@ export default async function Footer() {
             <h4 className="text-white font-semibold text-sm mb-4">{t('colServices')}</h4>
             <ul className="flex flex-col gap-2.5">
               {[
-                {href: '/diensten', label: t('seo')},
-                {href: '/diensten', label: t('social')},
-                {href: '/diensten', label: t('web')},
+                {href: '/diensten/seo-sea', label: t('seo')},
+                {href: '/diensten/social-media-beheer', label: t('social')},
+                {href: '/diensten/website-maken', label: t('web')},
               ].map(({href, label}) => (
                 <li key={label}>
                   <Link

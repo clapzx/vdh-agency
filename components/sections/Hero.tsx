@@ -83,7 +83,7 @@ function FloatingDashboard() {
         {/* Big stat */}
         <div className="mb-8">
           <div className="text-gold font-black text-5xl tracking-tight leading-none">
-            +{ready ? <CountUp to={127} suffix="%" duration={1800} /> : '0%'}
+            +{ready ? <CountUp to={127} suffix="%" duration={1800} /> : '127%'}
           </div>
           <div className="text-white/40 text-sm mt-2 leading-snug">
             {t('dashboardLabel')}
@@ -94,13 +94,13 @@ function FloatingDashboard() {
         <div className="grid grid-cols-2 gap-3 mb-8">
           <div className="bg-white/5 border border-white/5 rounded-xl p-4">
             <div className="text-white font-bold text-2xl">
-              {ready ? <CountUp to={47} duration={1600} /> : '0'}
+              {ready ? <CountUp to={47} duration={1600} /> : '47'}
             </div>
             <div className="text-white/40 text-xs mt-0.5">{t('happyClients')}</div>
           </div>
           <div className="bg-white/5 border border-white/5 rounded-xl p-4">
             <div className="text-white font-bold text-2xl">
-              {ready ? <CountUp to={23} duration={1400} /> : '0'}
+              {ready ? <CountUp to={23} duration={1400} /> : '23'}
             </div>
             <div className="text-white/40 text-xs mt-0.5">{t('activeProjects')}</div>
           </div>
@@ -119,7 +119,7 @@ function FloatingDashboard() {
                 <span className="text-white/40 text-xs">{label}</span>
               </div>
               <span className="text-gold text-xs font-semibold">
-                {ready ? <CountUp to={to} suffix={suffix} prefix={prefix} duration={1400} /> : `${prefix}0${suffix}`}
+                {ready ? <CountUp to={to} suffix={suffix} prefix={prefix} duration={1400} /> : `${prefix}${to}${suffix}`}
               </span>
             </div>
           ))}
