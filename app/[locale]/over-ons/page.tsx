@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {User, Target, Eye, Heart} from 'lucide-react';
+import {User, Target, Eye, Heart, ArrowRight} from 'lucide-react';
+import Link from 'next/link';
 
 const BASE = 'https://www.vdh-agency.com';
 
@@ -74,10 +75,22 @@ export default async function OverOnsPage({
   const {locale} = await params;
   const t = await getTranslations('overPage');
 
+  const isNl = locale === 'nl';
+  const base = isNl ? '' : '/en';
+
   const values = [
     {Icon: Target, title: t('v1title'), desc: t('v1desc')},
     {Icon: Eye, title: t('v2title'), desc: t('v2desc')},
     {Icon: Heart, title: t('v3title'), desc: t('v3desc')},
+  ];
+
+  const services = [
+    {href: `${base}/diensten/seo-sea`,             label: isNl ? 'SEO & SEA' : 'SEO & SEA',                       desc: isNl ? 'Meer zichtbaarheid in Google' : 'More visibility in Google'},
+    {href: `${base}/diensten/social-media-beheer`, label: isNl ? 'Social Media' : 'Social Media',                  desc: isNl ? 'Content, opnames en advertenties' : 'Content, shoots and ads'},
+    {href: `${base}/diensten/website-maken`,       label: isNl ? 'Website Maken' : 'Website Development',          desc: isNl ? 'Snel, mobiel en SEO-ready' : 'Fast, mobile and SEO-ready'},
+    {href: `${base}/diensten/online-marketing`,    label: isNl ? 'Online Marketing' : 'Online Marketing',          desc: isNl ? 'Volledige digitale groeistrategie' : 'Full digital growth strategy'},
+    {href: `${base}/diensten/branding`,            label: isNl ? 'Branding & Huisstijl' : 'Branding & Identity',  desc: isNl ? 'Logo, kleuren en merkidentiteit' : 'Logo, colours and brand identity'},
+    {href: `${base}/diensten/digitale-analyse`,    label: isNl ? 'Digitale Analyse' : 'Digital Analytics',        desc: isNl ? 'GA4, conversies en dashboards' : 'GA4, conversions and dashboards'},
   ];
 
   return (
@@ -118,6 +131,7 @@ export default async function OverOnsPage({
                 <p className="text-primary/70 text-base leading-relaxed">{t('p1')}</p>
                 <p className="text-primary/70 text-base leading-relaxed">{t('p2')}</p>
                 <p className="text-primary/70 text-base leading-relaxed">{t('p3')}</p>
+                <p className="text-primary/70 text-base leading-relaxed">{t('p4')}</p>
               </div>
             </AnimatedSection>
 
@@ -131,6 +145,31 @@ export default async function OverOnsPage({
                 <p className="text-white/50 text-sm leading-relaxed">{t('founderBio')}</p>
               </div>
             </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="max-w-2xl mb-12">
+            <SectionLabel>{t('servicesTitle')}</SectionLabel>
+            <p className="text-primary/60 text-base">{t('servicesSub')}</p>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map(({href, label, desc}) => (
+              <Link
+                key={href}
+                href={href}
+                className="group flex items-center justify-between gap-4 border border-primary/10 rounded-sm px-6 py-5 hover:border-gold/50 hover:bg-gold/5 transition-colors"
+              >
+                <div>
+                  <p className="text-primary font-semibold text-sm mb-0.5">{label}</p>
+                  <p className="text-primary/50 text-xs">{desc}</p>
+                </div>
+                <ArrowRight size={14} className="text-gold shrink-0 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import NoServiceCard from '@/components/ui/NoServiceCard';
 import CTA from '@/components/sections/CTA';
+import RelatedServices from '@/components/ui/RelatedServices';
 
 const BASE = 'https://www.vdh-agency.com';
 
@@ -204,6 +205,14 @@ export default async function OnlineMarketingPage({
         </div>
       </section>
 
+      <RelatedServices
+        title={locale === 'nl' ? 'Combineer met' : 'Combine with'}
+        services={[
+          {href: `${locale === 'nl' ? '' : '/en'}/diensten/seo-sea`,              label: 'SEO & SEA',                                                    desc: locale === 'nl' ? 'Organisch verkeer via Google' : 'Organic traffic via Google'},
+          {href: `${locale === 'nl' ? '' : '/en'}/diensten/social-media-beheer`,  label: locale === 'nl' ? 'Social Media' : 'Social Media',              desc: locale === 'nl' ? 'Content en advertenties op social' : 'Content and ads on social'},
+          {href: `${locale === 'nl' ? '' : '/en'}/diensten/digitale-analyse`,     label: locale === 'nl' ? 'Digitale Analyse' : 'Digital Analytics',     desc: locale === 'nl' ? 'Meet je ROI per kanaal' : 'Measure ROI per channel'},
+        ]}
+      />
       <CTA />
     </>
   );

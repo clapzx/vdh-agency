@@ -4,6 +4,7 @@ import {Search, CheckCircle2, ChevronDown} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTA from '@/components/sections/CTA';
+import RelatedServices from '@/components/ui/RelatedServices';
 
 const BASE = 'https://www.vdh-agency.com';
 
@@ -200,6 +201,14 @@ export default async function SeoSeaPage({
         </div>
       </section>
 
+      <RelatedServices
+        title={locale === 'nl' ? 'Combineer met' : 'Combine with'}
+        services={[
+          {href: `${locale === 'nl' ? '' : '/en'}/diensten/website-maken`,     label: locale === 'nl' ? 'Website Maken' : 'Website Development',    desc: locale === 'nl' ? 'SEO-ready website op maat' : 'SEO-ready custom website'},
+          {href: `${locale === 'nl' ? '' : '/en'}/diensten/online-marketing`,  label: 'Online Marketing',                                           desc: locale === 'nl' ? 'Volledige digitale groeistrategie' : 'Full digital growth strategy'},
+          {href: `${locale === 'nl' ? '' : '/en'}/diensten/digitale-analyse`,  label: locale === 'nl' ? 'Digitale Analyse' : 'Digital Analytics',   desc: locale === 'nl' ? 'Meet je SEO-resultaten nauwkeurig' : 'Track your SEO results precisely'},
+        ]}
+      />
       <CTA />
     </>
   );
