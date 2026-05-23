@@ -57,6 +57,13 @@
     "whyTitle": "Why VDH Agency?",
     "founderTitle": "Founder at VDH Agency"
   },
+  "contentSection": {
+    "label": "Who we work for",
+    "title": "Marketing for Dutch SMEs",
+    "p1": "VDH Agency helps independent entrepreneurs, SMEs and startups across the Netherlands grow through targeted online marketing. Whether you're based in Amsterdam, Rotterdam, Utrecht, Eindhoven or anywhere else in the Netherlands: we work remotely and are flexible in how we collaborate.",
+    "p2": "We combine SEO, SEA, social media marketing, web design and digital analytics into a coherent package. But you can also use a single service: we help you figure out what fits your situation and budget, without pushing you towards more than you need.",
+    "p3": "At VDH Agency you always work directly with the specialist on your project. No middlemen, no account managers — just clear communication and full involvement in your growth."
+  },
   "process": {
     "label": "How we work",
     "title": "From introduction to growth",
