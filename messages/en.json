@@ -48,12 +48,13 @@
   "about": {
     "label": "About VDH Agency",
     "title": "Personal. Committed. Results-driven.",
-    "p1": "VDH Agency was founded by Lars van der Hoek with one goal: to truly grow businesses online. No empty promises, just measurable results.",
-    "p2": "At VDH Agency, I am personally involved in every project. You always have one dedicated point of contact and direct communication — without middlemen.",
-    "cta": "Meet Lars",
+    "p1": "VDH Agency was founded in 2026 with one goal: to truly grow businesses online. No empty promises, just measurable results.",
+    "p2": "You always have one dedicated point of contact and direct communication — no middlemen, no hidden costs.",
+    "cta": "Learn more about us",
     "point1": "Direct communication, always reachable",
     "point2": "Transparent monthly reports",
     "point3": "100% custom — no off-the-shelf packages",
+    "whyTitle": "Why VDH Agency?",
     "founderTitle": "Founder — VDH Agency"
   },
   "process": {

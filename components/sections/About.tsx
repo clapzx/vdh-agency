@@ -1,5 +1,5 @@
 import {getTranslations} from 'next-intl/server';
-import {ArrowRight, User, MessageSquare, BarChart2, Layers} from 'lucide-react';
+import {ArrowRight, MessageSquare, BarChart2, Layers} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import {Link} from '@/i18n/navigation';
@@ -36,28 +36,21 @@ export default async function About() {
             </Link>
           </AnimatedSection>
 
-          {/* Right: Lars card */}
+          {/* Right: Why VDH Agency card */}
           <AnimatedSection direction="right" delay={0.15}>
             <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-10 overflow-hidden">
 
-              {/* Subtle gold glow top-right */}
               <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
 
-              {/* Avatar + name */}
-              <div className="flex items-center gap-5 mb-8">
-                <div className="w-16 h-16 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center shrink-0">
-                  <User size={28} className="text-gold" />
-                </div>
-                <div>
-                  <h3 className="text-white font-bold text-xl leading-tight">Lars van der Hoek</h3>
-                  <p className="text-gold text-sm mt-0.5">{t('founderTitle')}</p>
-                </div>
+              <div className="mb-8">
+                <span className="text-gold text-xs font-semibold tracking-widest uppercase block mb-2">
+                  VDH Agency
+                </span>
+                <h3 className="text-white font-bold text-xl leading-tight">{t('whyTitle')}</h3>
               </div>
 
-              {/* Divider */}
               <div className="h-px bg-white/8 mb-8" />
 
-              {/* Key points */}
               <div className="flex flex-col gap-5">
                 {points.map(({Icon, text}) => (
                   <div key={text} className="flex items-center gap-4">
