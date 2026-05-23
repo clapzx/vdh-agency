@@ -3,6 +3,7 @@ import {getTranslations} from 'next-intl/server';
 import {TrendingUp, Globe, Palette, BarChart2, Video, CheckCircle2, ArrowRight} from 'lucide-react';
 import {Link} from '@/i18n/navigation';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import NoServiceCard from '@/components/ui/NoServiceCard';
 import CTA from '@/components/sections/CTA';
 
 const BASE = 'https://www.vdh-agency.com';
@@ -196,6 +197,9 @@ export default async function DienstenPage({
                 </Link>
               </AnimatedSection>
             ))}
+            <AnimatedSection delay={services.length * 0.07} className="flex">
+              <NoServiceCard variant="grid" />
+            </AnimatedSection>
           </div>
         </div>
       </section>

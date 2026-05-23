@@ -3,6 +3,7 @@ import {getTranslations} from 'next-intl/server';
 import {BarChart2, CheckCircle2, ChevronDown} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
+import NoServiceCard from '@/components/ui/NoServiceCard';
 import CTA from '@/components/sections/CTA';
 
 const BASE = 'https://www.vdh-agency.com';
@@ -161,6 +162,9 @@ export default async function DigitaleAnalysePage({
                 </div>
               </AnimatedSection>
             ))}
+            <AnimatedSection delay={steps.length * 0.08}>
+              <NoServiceCard variant="step" />
+            </AnimatedSection>
           </div>
         </div>
       </section>
