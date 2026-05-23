@@ -12,13 +12,16 @@ export default async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-1 mb-4">
-              <span className="bg-gold text-primary font-black text-sm px-2 py-0.5 rounded-sm">
-                VDH
-              </span>
-              <span className="text-white font-semibold tracking-wide text-sm">
-                Agency
-              </span>
+            <div className="mb-4">
+              <Link href="/" className="flex flex-col items-center leading-none" style={{width: 'fit-content'}}>
+                <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 26, fontWeight: 700, color: 'white', lineHeight: 1, letterSpacing: -0.5}}>
+                  VDH
+                </span>
+                <span style={{display: 'block', alignSelf: 'stretch', height: 1.5, background: '#D4AF37', marginTop: 3, marginBottom: 3}} />
+                <span style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 10, fontWeight: 400, color: '#D4AF37', letterSpacing: 4, lineHeight: 1, paddingLeft: 4}}>
+                  AGENCY
+                </span>
+              </Link>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
               {t('tagline')}
