@@ -1,6 +1,9 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {Search, Video, Globe, ShoppingCart, BarChart2, CheckCircle2} from 'lucide-react';
+import {Search, Video, Globe, ShoppingCart, BarChart2, CheckCircle2, ArrowRight} from 'lucide-react';
+import {Link} from '@/i18n/navigation';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import CTA from '@/components/sections/CTA';
 
 const BASE = 'https://www.vdh-agency.com';
 
@@ -50,11 +53,6 @@ export async function generateMetadata({
     },
   };
 }
-import {Link} from '@/i18n/navigation';
-import {ArrowRight} from 'lucide-react';
-import AnimatedSection from '@/components/ui/AnimatedSection';
-import SectionLabel from '@/components/ui/SectionLabel';
-import CTA from '@/components/sections/CTA';
 
 export default async function DienstenPage({
   params,
@@ -71,7 +69,7 @@ export default async function DienstenPage({
       subtitle: t('seoSubtitle'),
       desc: t('seoDesc'),
       bullets: [t('seoBullet1'), t('seoBullet2'), t('seoBullet3'), t('seoBullet4')],
-      href: '/diensten/seo-sea',
+      href: '/diensten/seo-sea' as const,
     },
     {
       Icon: Video,
@@ -79,7 +77,7 @@ export default async function DienstenPage({
       subtitle: t('socialSubtitle'),
       desc: t('socialDesc'),
       bullets: [t('socialBullet1'), t('socialBullet2'), t('socialBullet3'), t('socialBullet4')],
-      href: '/diensten/social-media-beheer',
+      href: '/diensten/social-media-beheer' as const,
     },
     {
       Icon: Globe,
@@ -87,7 +85,7 @@ export default async function DienstenPage({
       subtitle: t('webSubtitle'),
       desc: t('webDesc'),
       bullets: [t('webBullet1'), t('webBullet2'), t('webBullet3'), t('webBullet4')],
-      href: '/diensten/website-maken',
+      href: '/diensten/website-maken' as const,
     },
     {
       Icon: ShoppingCart,
@@ -95,7 +93,7 @@ export default async function DienstenPage({
       subtitle: t('ecomSubtitle'),
       desc: t('ecomDesc'),
       bullets: [t('ecomBullet1'), t('ecomBullet2'), t('ecomBullet3'), t('ecomBullet4')],
-      href: '/diensten/e-commerce',
+      href: '/diensten/e-commerce' as const,
     },
     {
       Icon: BarChart2,
@@ -103,7 +101,7 @@ export default async function DienstenPage({
       subtitle: t('analyseSubtitle'),
       desc: t('analyseDesc'),
       bullets: [t('analyseBullet1'), t('analyseBullet2'), t('analyseBullet3'), t('analyseBullet4')],
-      href: '/diensten/digitale-analyse',
+      href: '/diensten/digitale-analyse' as const,
     },
   ];
 
@@ -113,6 +111,7 @@ export default async function DienstenPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbJsonLd(locale))}}
       />
+
       {/* Hero */}
       <section className="bg-primary pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -126,61 +125,78 @@ export default async function DienstenPage({
             <h1 className="text-white font-black text-4xl lg:text-6xl leading-tight mb-5">
               {t('title')}
             </h1>
-            <p className="text-white/60 text-xl">{t('sub')}</p>
+            <p className="text-white/60 text-xl mb-10">{t('sub')}</p>
+
+            {/* Service pills */}
+            <div className="flex flex-wrap gap-2">
+              {services.map(({title, href}) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="text-xs font-medium border border-white/15 text-white/60 hover:border-gold hover:text-gold px-3 py-1.5 rounded-full transition-colors"
+                >
+                  {title}
+                </Link>
+              ))}
+            </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services grid */}
       <section className="bg-light py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-20">
-          {services.map(({Icon, title, subtitle, desc, bullets, href}, i) => (
-            <AnimatedSection key={title} delay={0.05}>
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                {/* Text */}
-                <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <SectionLabel>{subtitle}</SectionLabel>
-                  <h2 className="text-primary font-black text-3xl lg:text-4xl mb-4">{title}</h2>
-                  <p className="text-primary/60 text-base leading-relaxed mb-6">{desc}</p>
-                  <ul className="flex flex-col gap-3 mb-6">
-                    {bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3">
-                        <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
-                        <span className="text-primary/70 text-sm">{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={href}
-                    className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-3 transition-all group"
-                  >
-                    {t('readMore')}
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map(({Icon, title, subtitle, desc, bullets, href}, i) => (
+              <AnimatedSection key={href} delay={i * 0.07} className="flex">
+                <Link
+                  href={href}
+                  className="group relative flex flex-col w-full bg-white border border-primary/8 rounded-sm overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                >
+                  {/* Gold top border */}
+                  <div className="h-0.5 bg-gold/30 group-hover:bg-gold transition-colors duration-300" />
 
-                {/* Visual card */}
-                <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="bg-primary rounded-sm p-10 flex flex-col items-start gap-4 border-l-4 border-gold">
-                    <div className="w-14 h-14 rounded-sm bg-gold/10 flex items-center justify-center">
-                      <Icon size={26} className="text-gold" />
+                  <div className="flex flex-col flex-1 p-8">
+                    {/* Icon */}
+                    <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mb-5 shrink-0">
+                      <Icon size={22} className="text-gold" />
                     </div>
-                    <h3 className="text-white font-bold text-xl">{title}</h3>
-                    <div className="flex flex-wrap gap-2 mt-2">
+
+                    {/* Title area */}
+                    <div className="mb-3">
+                      <span className="text-gold text-xs font-semibold tracking-widest uppercase">
+                        {subtitle}
+                      </span>
+                      <h2 className="text-primary font-black text-xl leading-tight mt-1">
+                        {title}
+                      </h2>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-primary/55 text-sm leading-relaxed mb-5 line-clamp-3">
+                      {desc}
+                    </p>
+
+                    {/* Bullets */}
+                    <ul className="flex flex-col gap-2 mb-6 flex-1">
                       {bullets.map((b) => (
-                        <span
-                          key={b}
-                          className="text-xs bg-white/5 border border-white/10 text-white/60 px-3 py-1 rounded-full"
-                        >
-                          {b}
-                        </span>
+                        <li key={b} className="flex items-start gap-2">
+                          <CheckCircle2 size={13} className="text-gold mt-0.5 shrink-0" />
+                          <span className="text-primary/65 text-xs leading-snug">{b}</span>
+                        </li>
                       ))}
+                    </ul>
+
+                    {/* CTA */}
+                    <div className="flex items-center gap-1.5 text-gold text-sm font-semibold mt-auto group-hover:gap-3 transition-all">
+                      {t('readMore')}
+                      <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
+                </Link>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 
