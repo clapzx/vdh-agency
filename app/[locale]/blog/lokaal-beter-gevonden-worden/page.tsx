@@ -185,13 +185,13 @@ export default async function BlogPostPage({
           {/* Sectie 1 */}
           <AnimatedSection>
             <h2 className="text-primary font-black text-2xl mb-4">
-              Hoe Google bepaalt wie bovenaan staat
+              Wat wij voor jou onderzoeken en aanpakken
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
               Wie bovenaan staat in de zoekresultaten, zijn niet altijd de bedrijven die het beste werk leveren. Het zijn de bedrijven die Google als meest relevant beschouwt. Die beoordeling is gebaseerd op honderden factoren tegelijk, en wordt continu herberekend.
             </p>
             <p className="text-primary/70 leading-relaxed mb-6">
-              Die factoren vallen globaal in vier groepen:
+              Wij weten waar Google naar kijkt. Dit zijn de vier gebieden die we voor onze klanten doorlichten en optimaliseren:
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -199,22 +199,22 @@ export default async function BlogPostPage({
                 {
                   icon: MapPin,
                   title: 'Je online bedrijfsprofiel',
-                  desc: 'Google kijkt naar veel meer dan naam en adres. Elk detail dat klopt of ontbreekt, weegt mee in hoe relevant jij gevonden wordt ten opzichte van je concurrent.',
+                  desc: 'Wij analyseren hoe jouw profiel ervoor staat ten opzichte van je concurrenten en stellen alles in om jou zo relevant mogelijk te maken in de ogen van Google.',
                 },
                 {
                   icon: Star,
-                  title: 'Je reviews',
-                  desc: 'Google beoordeelt niet alleen hoeveel reviews je hebt. Ook het patroon eromheen telt mee. Dat is complexer dan het lijkt en vereist een doordachte aanpak.',
+                  title: 'Reviews',
+                  desc: 'We kijken naar hoe jouw reviews scoren en wat er beter kan. Niet alleen het aantal, maar het hele patroon eromheen. Wij begeleiden je daarin.',
                 },
                 {
                   icon: BarChart2,
                   title: 'Vermeldingen op andere websites',
-                  desc: 'Hoe consistent jouw bedrijf terugkomt op het internet als geheel, bepaalt mede hoe betrouwbaar Google jou vindt. Dit te monitoren is een vak apart.',
+                  desc: 'We controleren hoe jouw bedrijf terugkomt op het hele internet en zorgen dat dit consistent en betrouwbaar is — iets wat de meeste ondernemers nooit controleren.',
                 },
                 {
                   icon: RefreshCw,
-                  title: 'Activiteit en relevantie in de tijd',
-                  desc: 'Lokale vindbaarheid is niet statisch. Wie niet actief bijhoudt en inspeelt op veranderingen, verliest terrein aan concurrenten die dat wel doen.',
+                  title: 'Activiteit en concurrentiepositie',
+                  desc: 'We houden bij hoe jij scoort ten opzichte van concurrenten en spelen in op veranderingen. Maand na maand, zodat je niet ongemerkt wegzakt.',
                 },
               ].map(({icon: Icon, title, desc}) => (
                 <div key={title} className="bg-white border border-primary/10 rounded-sm p-6">
