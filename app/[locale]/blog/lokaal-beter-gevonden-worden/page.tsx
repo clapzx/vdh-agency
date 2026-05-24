@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'Kan ik dit niet gewoon zelf doen?',
-    a: 'Lokale vindbaarheid is een vak apart. Het vergt specialistische kennis, de juiste tools en doorlopend onderhoud. De meeste ondernemers die we spreken, hebben er al tijd in gestoken zonder het gewenste resultaat. Wij halen meer uit dezelfde tijd omdat we precies weten waar het verschil zit.',
+    a: 'Lokale vindbaarheid is een vak apart. Het vergt specialistische kennis, de juiste tools en doorlopend onderhoud. De meeste ondernemers die er zelf mee aan de slag gaan, merken na een tijdje dat het resultaat tegenvalt of dat het te veel tijd kost naast het runnen van een bedrijf.',
   },
   {
     q: 'Hoeveel reviews heb ik nodig?',
