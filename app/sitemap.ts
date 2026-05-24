@@ -1,14 +1,8 @@
 import type {MetadataRoute} from 'next';
+import {readdirSync, statSync} from 'fs';
+import {join} from 'path';
 
 const BASE = 'https://www.vdh-agency.com';
-
-type RouteConfig = {
-  path: string;
-  lastModified: string;
-  changeFrequency: 'weekly' | 'monthly' | 'yearly';
-  nlPriority: number;
-  enPriority: number;
-};
 
 type RouteEntry = {
   path: string;
@@ -16,7 +10,7 @@ type RouteEntry = {
   nlOnly?: boolean;
 };
 
-const routes: RouteEntry[] = [
+const staticRoutes: RouteEntry[] = [
   {path: '',                                      lastModified: '2026-05-22'},
   {path: '/diensten',                             lastModified: '2026-05-22'},
   {path: '/over-ons',                             lastModified: '2026-05-22'},
@@ -29,14 +23,32 @@ const routes: RouteEntry[] = [
   {path: '/diensten/digitale-analyse',            lastModified: '2026-05-22'},
   {path: '/seo-bureau',                           lastModified: '2026-05-24'},
   {path: '/blog',                                 lastModified: '2026-05-24'},
-  {path: '/blog/lokaal-beter-gevonden-worden',    lastModified: '2026-05-24', nlOnly: true},
   {path: '/privacybeleid',                        lastModified: '2026-05-22'},
   {path: '/algemene-voorwaarden',                 lastModified: '2026-05-22'},
 ];
 
+function getBlogPostRoutes(): RouteEntry[] {
+  const blogDir = join(process.cwd(), 'app/[locale]/blog');
+  try {
+    return readdirSync(blogDir, {withFileTypes: true})
+      .filter(e => e.isDirectory())
+      .map(e => {
+        const mtime = statSync(join(blogDir, e.name)).mtime;
+        return {
+          path: `/blog/${e.name}`,
+          lastModified: mtime.toISOString().split('T')[0],
+          nlOnly: true,
+        };
+      });
+  } catch {
+    return [];
+  }
+}
+
 const LANGS = ['nl', 'en'] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const routes = [...staticRoutes, ...getBlogPostRoutes()];
   const entries: MetadataRoute.Sitemap = [];
 
   for (const {path, lastModified, nlOnly} of routes) {
