@@ -44,7 +44,7 @@ export default async function Footer() {
             <h4 className="text-white font-semibold text-sm mb-4">{t('colServices')}</h4>
             <ul className="flex flex-col gap-2.5">
               {[
-                {href: '/diensten/online-marketing', label: 'Online Marketing'},
+                {href: '/diensten/online-marketing', label: t('onlineMarketing')},
                 {href: '/diensten/website-maken', label: t('web')},
               ].map(({href, label}) => (
                 <li key={label}>
@@ -58,7 +58,7 @@ export default async function Footer() {
               ))}
               <li>
                 <Link href="/diensten" className="text-gold/70 hover:text-gold text-sm transition-colors">
-                  Alle diensten bekijken →
+                  {t('allServices')}
                 </Link>
               </li>
             </ul>
