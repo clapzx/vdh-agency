@@ -22,7 +22,7 @@ const routes: RouteConfig[] = [
   {path: '/diensten/branding',             lastModified: '2026-05-23', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
   {path: '/diensten/digitale-analyse',     lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
   {path: '/blog',                                                      lastModified: '2026-05-24', changeFrequency: 'weekly',  nlPriority: 0.8, enPriority: 0.7},
-  {path: '/blog/lokale-vindbaarheid-google-profiel',                   lastModified: '2026-05-24', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
+  {path: '/blog/lokaal-beter-gevonden-worden',                          lastModified: '2026-05-24', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
   {path: '/privacybeleid',                 lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
   {path: '/algemene-voorwaarden',          lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
 ];

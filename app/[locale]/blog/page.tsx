@@ -36,7 +36,7 @@ export async function generateMetadata({
 
 const posts = [
   {
-    slug: '/blog/lokale-vindbaarheid-google-profiel',
+    slug: '/blog/lokaal-beter-gevonden-worden',
     date: '24 mei 2026',
     dateTime: '2026-05-24',
     category: 'Lokale SEO',
