@@ -3,10 +3,10 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import CountUp from '@/components/ui/CountUp';
 
 const stats = [
-  {to: 50, suffix: '+', labelKey: 'stat1'},
-  {to: 100, suffix: '+', labelKey: 'stat2'},
-  {to: 98, suffix: '%', labelKey: 'stat3'},
-  {to: 3, suffix: 'x', labelKey: 'stat4'},
+  {to: 6, suffix: '', labelKey: 'stat1'},
+  {to: 24, suffix: 'u', labelKey: 'stat2'},
+  {to: 100, suffix: '%', labelKey: 'stat3'},
+  {to: 1, suffix: '', labelKey: 'stat4'},
 ];
 
 export default async function Stats() {
