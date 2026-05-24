@@ -82,6 +82,7 @@ export async function generateMetadata({
     title: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen | VDH Agency',
     description:
       'Iemand googelt op "kitbedrijf Zwolle" en belt jouw concurrent. Wat gaat er mis? En hoe groei je lokaal via Google?',
+    ...(locale !== 'nl' && {robots: {index: false, follow: false}}),
     alternates: {
       canonical,
       languages: {

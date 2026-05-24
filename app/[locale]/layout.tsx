@@ -93,16 +93,23 @@ function buildSiteJsonLd(locale: string) {
         email: 'lars@vdhagency.nl',
         taxID: 'KvK 95792414',
         priceRange: '€€',
+        foundingDate: '2026',
         founder: {
           '@type': 'Person',
           '@id': `${BASE}/#lars`,
           name: 'Lars van der Hoek',
+          sameAs: 'https://www.linkedin.com/in/lars-van-der-hoek',
         },
         address: {
           '@type': 'PostalAddress',
           addressCountry: 'NL',
+          addressRegion: 'Nederland',
         },
         areaServed: {'@type': 'Country', name: 'Netherlands'},
+        sameAs: [
+          'https://www.linkedin.com/company/vdh-agency',
+          'https://www.google.com/maps/search/VDH+Agency',
+        ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: isNl ? 'Marketing Diensten' : 'Marketing Services',

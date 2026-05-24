@@ -10,37 +10,53 @@ type RouteConfig = {
   enPriority: number;
 };
 
-const routes: RouteConfig[] = [
-  {path: '',                       lastModified: '2026-05-22', changeFrequency: 'weekly',  nlPriority: 1.0, enPriority: 0.9},
-  {path: '/diensten',              lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
-  {path: '/over-ons',              lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
-  {path: '/contact',               lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
-  {path: '/diensten/seo-sea',              lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
-  {path: '/diensten/social-media-beheer',  lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
-  {path: '/diensten/online-marketing',     lastModified: '2026-05-23', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
-  {path: '/diensten/website-maken',        lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
-  {path: '/diensten/branding',             lastModified: '2026-05-23', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
-  {path: '/diensten/digitale-analyse',     lastModified: '2026-05-22', changeFrequency: 'monthly', nlPriority: 0.9, enPriority: 0.8},
-  {path: '/blog',                                                      lastModified: '2026-05-24', changeFrequency: 'weekly',  nlPriority: 0.8, enPriority: 0.7},
-  {path: '/blog/lokaal-beter-gevonden-worden',                          lastModified: '2026-05-24', changeFrequency: 'monthly', nlPriority: 0.8, enPriority: 0.7},
-  {path: '/privacybeleid',                 lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
-  {path: '/algemene-voorwaarden',          lastModified: '2026-05-22', changeFrequency: 'yearly',  nlPriority: 0.3, enPriority: 0.3},
+type RouteEntry = {
+  path: string;
+  lastModified: string;
+  nlOnly?: boolean;
+};
+
+const routes: RouteEntry[] = [
+  {path: '',                                      lastModified: '2026-05-22'},
+  {path: '/diensten',                             lastModified: '2026-05-22'},
+  {path: '/over-ons',                             lastModified: '2026-05-22'},
+  {path: '/contact',                              lastModified: '2026-05-22'},
+  {path: '/diensten/seo-sea',                     lastModified: '2026-05-22'},
+  {path: '/diensten/social-media-beheer',         lastModified: '2026-05-22'},
+  {path: '/diensten/online-marketing',            lastModified: '2026-05-24'},
+  {path: '/diensten/website-maken',               lastModified: '2026-05-22'},
+  {path: '/diensten/branding',                    lastModified: '2026-05-24'},
+  {path: '/diensten/digitale-analyse',            lastModified: '2026-05-22'},
+  {path: '/seo-bureau',                           lastModified: '2026-05-24'},
+  {path: '/blog',                                 lastModified: '2026-05-24'},
+  {path: '/blog/lokaal-beter-gevonden-worden',    lastModified: '2026-05-24', nlOnly: true},
+  {path: '/privacybeleid',                        lastModified: '2026-05-22'},
+  {path: '/algemene-voorwaarden',                 lastModified: '2026-05-22'},
 ];
 
+const LANGS = ['nl', 'en'] as const;
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const nlUrls = routes.map(({path, lastModified, changeFrequency, nlPriority}) => ({
-    url: `${BASE}${path}`,
-    lastModified: new Date(lastModified),
-    changeFrequency,
-    priority: nlPriority,
-  }));
+  const entries: MetadataRoute.Sitemap = [];
 
-  const enUrls = routes.map(({path, lastModified, changeFrequency, enPriority}) => ({
-    url: `${BASE}/en${path}`,
-    lastModified: new Date(lastModified),
-    changeFrequency,
-    priority: enPriority,
-  }));
+  for (const {path, lastModified, nlOnly} of routes) {
+    for (const lang of LANGS) {
+      if (nlOnly && lang !== 'nl') continue;
+      const url = lang === 'nl' ? `${BASE}${path}` : `${BASE}/en${path}`;
+      const nlUrl = `${BASE}${path}`;
+      const enUrl = nlOnly ? undefined : `${BASE}/en${path}`;
+      entries.push({
+        url,
+        lastModified: new Date(lastModified),
+        alternates: {
+          languages: {
+            nl: nlUrl,
+            ...(enUrl && {en: enUrl}),
+          },
+        },
+      });
+    }
+  }
 
-  return [...nlUrls, ...enUrls];
+  return entries;
 }

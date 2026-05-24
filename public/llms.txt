@@ -13,12 +13,13 @@ Werkgebied: Heel Nederland
 
 ## Diensten
 
-- SEO & SEA: Zoekmachineoptimalisatie en betaalde Google Ads campagnes voor meer organisch en betaald verkeer. Inclusief technische audit, zoekwoordonderzoek en maandelijkse rapportage.
-- Social Media Beheer: Strategie, opnames op locatie, professionele videobewerking en wekelijkse publicatie op Instagram, Facebook, LinkedIn en TikTok. Inclusief Meta Ads.
-- Website Maken: Op maat gebouwde websites, SEO-geoptimaliseerd en mobiel-vriendelijk, met CMS-integratie.
-- Online Marketing: Combinatie van SEO, Google Ads, Meta Ads, e-mail marketing en copywriting.
-- Branding & Huisstijl: Logo ontwerp, kleurenpalet, typografie en brand guidelines.
-- Digitale Analyse: GA4 setup, Google Tag Manager, conversiemeting en dashboards.
+- [SEO Bureau Nederland](https://www.vdh-agency.com/seo-bureau): Dedicated SEO landingspagina voor MKB — inclusief lokale SEO, technische optimalisatie en maandelijkse rapportage.
+- [SEO & SEA](https://www.vdh-agency.com/diensten/seo-sea): Zoekmachineoptimalisatie en betaalde Google Ads campagnes voor meer organisch en betaald verkeer. Inclusief technische audit, zoekwoordonderzoek en maandelijkse rapportage.
+- [Social Media Beheer](https://www.vdh-agency.com/diensten/social-media-beheer): Strategie, opnames op locatie, professionele videobewerking en wekelijkse publicatie op Instagram, Facebook, LinkedIn en TikTok. Inclusief Meta Ads.
+- [Website Maken](https://www.vdh-agency.com/diensten/website-maken): Op maat gebouwde websites, SEO-geoptimaliseerd en mobiel-vriendelijk, met CMS-integratie.
+- [Online Marketing](https://www.vdh-agency.com/diensten/online-marketing): Combinatie van SEO, Google Ads, Meta Ads, e-mail marketing en copywriting.
+- [Branding & Huisstijl](https://www.vdh-agency.com/diensten/branding): Logo ontwerp, kleurenpalet, typografie en brand guidelines.
+- [Digitale Analyse](https://www.vdh-agency.com/diensten/digitale-analyse): GA4 setup, Google Tag Manager, conversiemeting en dashboards.
 
 ## Over ons
 

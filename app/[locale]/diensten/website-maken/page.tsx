@@ -59,6 +59,9 @@ export async function generateMetadata({
         'x-default': `${BASE}/diensten/website-maken`,
       },
     },
+    openGraph: {
+      url: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/diensten/website-maken`,
+    },
   };
 }
 

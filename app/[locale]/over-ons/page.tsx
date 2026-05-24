@@ -73,12 +73,14 @@ export async function generateMetadata({
         'x-default': `${BASE}/over-ons`,
       },
     },
+    openGraph: {
+      url: isNl ? `${BASE}/over-ons` : `${BASE}/en/over-ons`,
+    },
   };
 }
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
 import Breadcrumb from '@/components/ui/Breadcrumb';
-import Process from '@/components/sections/Process';
 import CTA from '@/components/sections/CTA';
 
 export default async function OverOnsPage({
@@ -180,9 +182,6 @@ export default async function OverOnsPage({
           </div>
         </div>
       </section>
-
-      {/* Process */}
-      <Process />
 
       {/* Services */}
       <section className="bg-white py-20 lg:py-28">

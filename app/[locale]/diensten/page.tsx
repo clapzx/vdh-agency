@@ -76,6 +76,9 @@ export async function generateMetadata({
         'x-default': `${BASE}/diensten`,
       },
     },
+    openGraph: {
+      url: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`,
+    },
   };
 }
 

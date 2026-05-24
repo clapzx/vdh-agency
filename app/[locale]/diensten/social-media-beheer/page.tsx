@@ -59,6 +59,9 @@ export async function generateMetadata({
         'x-default': `${BASE}/diensten/social-media-beheer`,
       },
     },
+    openGraph: {
+      url: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`,
+    },
   };
 }
 

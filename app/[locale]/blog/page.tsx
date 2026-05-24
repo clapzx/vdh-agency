@@ -18,8 +18,8 @@ export async function generateMetadata({
 
   return {
     title: isNl
-      ? 'Blog | Lokale SEO & Online Marketing Inzichten | VDH Agency'
-      : 'Blog | Local SEO & Online Marketing Insights | VDH Agency',
+      ? 'Blog | Lokale SEO & Online Marketing Inzichten'
+      : 'Blog | Local SEO & Online Marketing Insights',
     description: isNl
       ? 'Praktische inzichten over lokale SEO, online marketing en digitale groei voor het Nederlandse MKB. Geschreven door Lars van der Hoek, oprichter VDH Agency.'
       : 'Practical insights on local SEO, online marketing and digital growth for Dutch SMEs. Written by Lars van der Hoek, founder of VDH Agency.',
@@ -30,6 +30,9 @@ export async function generateMetadata({
         en: `${BASE}/en/blog`,
         'x-default': `${BASE}/blog`,
       },
+    },
+    openGraph: {
+      url: canonical,
     },
   };
 }

@@ -58,6 +58,9 @@ export async function generateMetadata({
         'x-default': `${BASE}/diensten/seo-sea`,
       },
     },
+    openGraph: {
+      url: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/diensten/seo-sea`,
+    },
   };
 }
 

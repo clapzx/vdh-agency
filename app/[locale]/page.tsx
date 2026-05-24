@@ -6,6 +6,7 @@ import ContentSection from '@/components/sections/ContentSection';
 import About from '@/components/sections/About';
 import Process from '@/components/sections/Process';
 import CTA from '@/components/sections/CTA';
+import AnimatedSection from '@/components/ui/AnimatedSection';
 
 const BASE = 'https://www.vdh-agency.com';
 
@@ -34,10 +35,31 @@ export async function generateMetadata({
   };
 }
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  const isNl = locale === 'nl';
+
   return (
     <>
       <Hero />
+
+      {/* Citeerbare entiteitsomschrijving — crawlable intro voor AI & zoekmachines */}
+      <section className="bg-light py-10 border-b border-primary/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection>
+            <p className="text-primary/60 text-sm leading-relaxed max-w-3xl">
+              {isNl
+                ? 'VDH Agency is een Nederlands digitaal marketingbureau, opgericht in 2026 door Lars van der Hoek. Het bureau helpt MKB-bedrijven, freelancers en startups in heel Nederland online groeien via SEO, SEA, social media beheer, website-ontwikkeling en branding. VDH Agency staat voor persoonlijk contact, meetbare resultaten en volledige transparantie.'
+                : 'VDH Agency is a Dutch digital marketing agency, founded in 2026 by Lars van der Hoek. The agency helps SMEs, freelancers and startups across the Netherlands grow online through SEO, SEA, social media management, website development and branding. VDH Agency stands for personal contact, measurable results and full transparency.'}
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
       <Services />
       <Stats />
       <ContentSection />

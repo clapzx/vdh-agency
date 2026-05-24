@@ -59,6 +59,9 @@ export async function generateMetadata({
         'x-default': `${BASE}/diensten/digitale-analyse`,
       },
     },
+    openGraph: {
+      url: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/diensten/digitale-analyse`,
+    },
   };
 }
 
