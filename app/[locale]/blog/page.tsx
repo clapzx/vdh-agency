@@ -18,8 +18,8 @@ export async function generateMetadata({
 
   return {
     title: isNl
-      ? 'Blog — Lokale SEO & Online Marketing Inzichten | VDH Agency'
-      : 'Blog — Local SEO & Online Marketing Insights | VDH Agency',
+      ? 'Blog | Lokale SEO & Online Marketing Inzichten | VDH Agency'
+      : 'Blog | Local SEO & Online Marketing Insights | VDH Agency',
     description: isNl
       ? 'Praktische inzichten over lokale SEO, online marketing en digitale groei voor het Nederlandse MKB. Geschreven door Lars van der Hoek, oprichter VDH Agency.'
       : 'Practical insights on local SEO, online marketing and digital growth for Dutch SMEs. Written by Lars van der Hoek, founder of VDH Agency.',
@@ -43,7 +43,7 @@ const posts = [
     readTime: '8 min',
     title: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt',
     excerpt:
-      'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Hoe zit dat? We leggen uit wat er écht voor nodig is om bovenaan te staan — in gewone taal, zonder vakjargon.',
+      'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Hoe zit dat? We leggen uit wat er écht voor nodig is om bovenaan te staan, in gewone taal, zonder vakjargon.',
   },
 ];
 
@@ -72,8 +72,8 @@ export default async function BlogIndexPage({
             </h1>
             <p className="text-white/60 text-xl">
               {isNl
-                ? 'Praktische kennis over lokale SEO, online marketing en digitale strategie — geschreven voor het Nederlandse MKB.'
-                : 'Practical knowledge on local SEO, online marketing and digital strategy — written for Dutch SMEs.'}
+                ? 'Praktische kennis over lokale SEO, online marketing en digitale strategie, geschreven voor het Nederlandse MKB.'
+                : 'Practical knowledge on local SEO, online marketing and digital strategy, written for Dutch SMEs.'}
             </p>
           </AnimatedSection>
         </div>

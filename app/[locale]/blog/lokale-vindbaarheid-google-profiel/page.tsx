@@ -12,11 +12,11 @@ const MODIFIED = '2026-05-24';
 const faqs = [
   {
     q: 'Hoe snel zie ik resultaat?',
-    a: 'Dat verschilt per branche en per gemeente. In rustigere markten zien we na 8 tot 12 weken al duidelijke verbetering. In drukke steden of competitieve sectoren duurt het wat langer — reken op 4 tot 6 maanden voor een stabiele plek bovenaan.',
+    a: 'Dat verschilt per branche en per gemeente. In rustigere markten zien we na 8 tot 12 weken al duidelijke verbetering. In drukke steden of competitieve sectoren duurt het wat langer. Reken op 4 tot 6 maanden voor een stabiele plek bovenaan.',
   },
   {
     q: 'Kan ik dit niet gewoon zelf doen?',
-    a: 'Je kunt de basis zelf instellen, maar Google kijkt naar veel meer dan alleen een ingevuld profiel. Reviews bijhouden, vermeldingen op andere sites controleren, je profiel maandelijks updaten — dat kost al snel een halve werkdag per week. De meeste ondernemers besteden die tijd liever aan hun echte werk.',
+    a: 'Je kunt de basis zelf instellen, maar Google kijkt naar veel meer dan alleen een ingevuld profiel. Reviews bijhouden, vermeldingen op andere sites controleren, je profiel maandelijks updaten: dat kost al snel een halve werkdag per week. De meeste ondernemers besteden die tijd liever aan hun echte werk.',
   },
   {
     q: 'Hoeveel reviews heb ik nodig?',
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Wat kost het om dit uit te besteden?',
-    a: 'Dat hangt af van je situatie: hoeveel concurrenten je hebt, hoe groot je verzorgingsgebied is en hoe je er nu voorstaat. We kijken er altijd eerst gratis naar. Plan een gesprek en we geven je eerlijk advies — zonder verkooppraatje.',
+    a: 'Dat hangt af van je situatie: hoeveel concurrenten je hebt, hoe groot je verzorgingsgebied is en hoe je er nu voorstaat. We kijken er altijd eerst gratis naar. Plan een gesprek en we geven je eerlijk advies, zonder verkooppraatje.',
   },
 ];
 
@@ -82,9 +82,9 @@ export async function generateMetadata({
   const canonical = locale === 'nl' ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
 
   return {
-    title: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt — VDH Agency',
+    title: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt | VDH Agency',
     description:
-      'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Hoe komt dat? We leggen het uit in gewone taal — zonder vakjargon.',
+      'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Hoe komt dat? We leggen het uit in gewone taal, zonder vakjargon.',
     alternates: {
       canonical,
       languages: {
@@ -98,7 +98,7 @@ export async function generateMetadata({
       url: canonical,
       title: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt',
       description:
-        'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Wat gaat er mis — en wat is er écht voor nodig?',
+        'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Wat gaat er mis? En wat is er écht voor nodig?',
       publishedTime: PUBLISHED,
       modifiedTime: MODIFIED,
       authors: ['Lars van der Hoek'],
@@ -135,7 +135,7 @@ export default async function BlogPostPage({
               <span className="text-gold">waarom het lastiger is dan het lijkt</span>
             </h1>
             <p className="text-white/60 text-lg">
-              Je hebt je bedrijf aangemeld bij Google. Toch vinden klanten je niet. Hoe zit dat — en wat is er écht voor nodig?
+              Je hebt je bedrijf aangemeld bij Google. Toch vinden klanten je niet. Hoe zit dat? En wat is er écht voor nodig?
             </p>
             <div className="flex items-center gap-4 mt-8 text-white/40 text-sm">
               <span>Lars van der Hoek</span>
@@ -155,13 +155,13 @@ export default async function BlogPostPage({
           {/* Intro */}
           <AnimatedSection>
             <p className="text-primary/80 text-lg leading-relaxed mb-4">
-              Stel: iemand in jouw stad zoekt op Google naar een loodgieter, een kapper of een boekhoudkantoor. Bovenaan verschijnt een kaartje met drie bedrijven. Die drie bedrijven pakken het grootste deel van de klikken. De rest — hoe goed ook — wordt nauwelijks gezien.
+              Stel: iemand in jouw stad zoekt op Google naar een loodgieter, een kapper of een boekhoudkantoor. Bovenaan verschijnt een kaartje met drie bedrijven. Die drie bedrijven pakken het grootste deel van de klikken. De rest, hoe goed ook, wordt nauwelijks gezien.
             </p>
             <p className="text-primary/70 leading-relaxed mb-4">
               Dat kaartje heet de Google Bedrijfskaart, en die drie plekken zijn felbegeerd. In bijna elke branche dingen tientallen tot honderden bedrijven mee. Toch denken de meeste ondernemers dat ze er al bij horen zodra ze hun bedrijf hebben "aangemeld" bij Google.
             </p>
             <p className="text-primary/70 leading-relaxed">
-              Dat is helaas niet zo. Aanmelden is het begin — niet het eindpunt.
+              Dat is helaas niet zo. Aanmelden is het begin, niet het eindpunt.
             </p>
           </AnimatedSection>
 
@@ -238,7 +238,7 @@ export default async function BlogPostPage({
             </p>
             <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
               <p className="text-primary text-sm leading-relaxed">
-                <span className="font-bold text-primary">Wat wij zien in de praktijk:</span> Als we een nieuw klantprofiel onder de loep nemen, vinden we gemiddeld meer dan twintig punten waar het beter kan — bij profielen waarvan de ondernemer dacht dat ze al goed stonden.
+                <span className="font-bold text-primary">Wat wij zien in de praktijk:</span> Als we een nieuw klantprofiel onder de loep nemen, vinden we gemiddeld meer dan twintig punten waar het beter kan. Dat geldt ook voor profielen waarvan de ondernemer dacht dat ze al goed stonden.
               </p>
             </div>
           </AnimatedSection>
@@ -249,7 +249,7 @@ export default async function BlogPostPage({
               Wat het je kost als je niet gevonden wordt
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Stel dat er in jouw stad elke dag tien mensen zoeken naar jouw soort bedrijf. De drie bovenste bedrijven pakken samen 44% van die klikken. Als jij daar niet bij zit, loop je dagelijks klanten mis aan iemand die het spel beter speelt — niet per se beter werk levert.
+              Stel dat er in jouw stad elke dag tien mensen zoeken naar jouw soort bedrijf. De drie bovenste bedrijven pakken samen 44% van die klikken. Als jij daar niet bij zit, loop je dagelijks klanten mis aan iemand die het spel beter speelt. Niet per se beter werk levert.
             </p>
             <p className="text-primary/70 leading-relaxed">
               Dat is de kern van lokale vindbaarheid. Het gaat er niet om wie het beste product heeft. Het gaat erom wie gevonden wordt. En dat is een discipline op zich.
