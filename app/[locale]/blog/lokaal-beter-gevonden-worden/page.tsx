@@ -14,10 +14,7 @@ const faqs = [
     q: 'Hoe snel zie ik resultaat?',
     a: 'Dat verschilt per branche en per gemeente. In rustigere markten zien we na 8 tot 12 weken al duidelijke verbetering. In drukke steden of competitieve sectoren duurt het wat langer. Reken op 4 tot 6 maanden voor een stabiele plek bovenaan.',
   },
-  {
-    q: 'Kan ik dit niet gewoon zelf doen?',
-    a: 'Lokale vindbaarheid is een vak apart. Het vergt specialistische kennis, de juiste tools en doorlopend onderhoud. De meeste ondernemers die er zelf mee aan de slag gaan, merken na een tijdje dat het resultaat tegenvalt of dat het te veel tijd kost naast het runnen van een bedrijf.',
-  },
+
   {
     q: 'Hoeveel reviews heb ik nodig?',
     a: 'Er is geen magisch getal. Google kijkt niet alleen naar het aantal, maar ook naar hoe recent ze zijn, of je erop reageert en wat klanten precies schrijven. Twintig recente reviews met antwoorden werken beter dan honderd oude reviews zonder reactie.',
