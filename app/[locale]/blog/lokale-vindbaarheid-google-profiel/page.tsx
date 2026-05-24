@@ -40,7 +40,7 @@ function blogJsonLd() {
         '@type': 'BlogPosting',
         headline: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen en niet jou',
         description:
-          'Iemand googelt op "kitbedrijf Zwolle" of "loodgieter Utrecht" en belt jouw concurrent. Hoe komt dat? En wat is er écht voor nodig om lokaal bovenaan te staan?',
+          'Iemand googelt op "kitbedrijf Zwolle" en belt jouw concurrent. Hoe komt dat? En wat is er écht voor nodig om lokaal bovenaan te staan?',
         datePublished: PUBLISHED,
         dateModified: MODIFIED,
         author: {
@@ -84,7 +84,7 @@ export async function generateMetadata({
   return {
     title: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen | VDH Agency',
     description:
-      'Iemand googelt op "kitbedrijf Zwolle" of "loodgieter Utrecht" en belt jouw concurrent. Wat gaat er mis? En hoe groei je lokaal via Google?',
+      'Iemand googelt op "kitbedrijf Zwolle" en belt jouw concurrent. Wat gaat er mis? En hoe groei je lokaal via Google?',
     alternates: {
       canonical,
       languages: {
@@ -135,7 +135,7 @@ export default async function BlogPostPage({
               <span className="text-gold">waarom klanten jouw concurrent bellen en niet jou</span>
             </h1>
             <p className="text-white/60 text-lg">
-              Iemand googelt "kitbedrijf Zwolle" of "schilder Utrecht" en neemt contact op met jouw concurrent. Hoe komt dat? En wat is er nodig om dat om te draaien?
+              Iemand googelt "kitbedrijf Zwolle" en neemt contact op met jouw concurrent. Hoe komt dat? En wat is er nodig om dat om te draaien?
             </p>
             <div className="flex items-center gap-4 mt-8 text-white/40 text-sm">
               <span>Lars van der Hoek</span>
@@ -155,7 +155,7 @@ export default async function BlogPostPage({
           {/* Intro */}
           <AnimatedSection>
             <p className="text-primary/80 text-lg leading-relaxed mb-4">
-              Elke dag zoeken mensen in jouw stad op Google naar wat jij aanbiedt. "Dakdekker Groningen." "Kapper Den Haag." "Boekhoudkantoor Eindhoven." Ze klikken op de eerste paar namen die ze zien, bellen en maken een afspraak.
+              Elke dag zoeken mensen in jouw stad op Google naar wat jij aanbiedt. Ze klikken op de eerste paar namen die ze zien, bellen en maken een afspraak.
             </p>
             <p className="text-primary/70 leading-relaxed mb-4">
               Als jij niet bij die eerste namen staat, bestaat je bedrijf voor die zoeker simpelweg niet. Niet omdat je slechtere diensten levert. Niet omdat je duurder bent. Maar omdat iemand anders beter scoort in de zoekresultaten.
@@ -188,7 +188,7 @@ export default async function BlogPostPage({
               Hoe Google bepaalt wie bovenaan staat
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Als iemand googelt op "loodgieter Haarlem", verschijnen bovenaan niet de bedrijven die het beste werk leveren. Het zijn de bedrijven die Google als meest relevant beschouwt. Die beoordeling is gebaseerd op honderden factoren tegelijk, en wordt continu herberekend.
+              Wie bovenaan staat in de zoekresultaten, zijn niet altijd de bedrijven die het beste werk leveren. Het zijn de bedrijven die Google als meest relevant beschouwt. Die beoordeling is gebaseerd op honderden factoren tegelijk, en wordt continu herberekend.
             </p>
             <p className="text-primary/70 leading-relaxed mb-6">
               Die factoren vallen globaal in vier groepen:
@@ -261,7 +261,7 @@ export default async function BlogPostPage({
               Een veel gemaakte fout: het profiel eenmalig goed instellen en daarna niets meer doen. Het probleem is dat Google zijn regels regelmatig aanpast. Wat vorig jaar werkte, werkt nu misschien minder goed. En je concurrenten staan ook niet stil.
             </p>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Neem een installatiebedrijf in Arnhem. Goed vindbaar vorig jaar. Dit jaar zijn er drie nieuwe concurrenten bij gekomen, allemaal met verse reviews en actieve profielen. Zonder aanpassingen zakt het installatiebedrijf weg, terwijl ze verder niets veranderd hebben aan hun bedrijf.
+              Een bedrijf dat vorig jaar goed vindbaar was, kan dit jaar al zijn weggezakt. Niet omdat er iets mis is gegaan, maar omdat concurrenten zijn bijgekomen of actiever zijn geworden. Google herberekent rankings voortdurend.
             </p>
             <p className="text-primary/70 leading-relaxed">
               Lokale vindbaarheid is geen instelling. Het is iets wat je bijhoudt, aanpast en optimaliseert. Maand na maand.
