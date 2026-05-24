@@ -3,8 +3,7 @@ import {motion, useMotionValue, useSpring} from 'framer-motion';
 import {useTranslations} from 'next-intl';
 import {ArrowRight, ChevronDown} from 'lucide-react';
 import {Link} from '@/i18n/navigation';
-import {useRef, useState} from 'react';
-import CountUp from '@/components/ui/CountUp';
+import {useRef} from 'react';
 
 const container = {
   hidden: {},
@@ -49,15 +48,28 @@ function MagneticCTA({children}: {children: React.ReactNode}) {
 }
 
 function FloatingDashboard() {
-  const [ready, setReady] = useState(false);
   const t = useTranslations('hero');
+
+  const services = [
+    'SEO / SEA',
+    'Social Media',
+    'Online Marketing',
+    'Website Maken',
+    'Branding',
+    'Digitale Analyse',
+  ];
+
+  const promises = [
+    {value: '24u', label: t('promiseResponse')},
+    {value: '1', label: t('promiseContact')},
+    {value: '100%', label: t('promiseTransparant')},
+  ];
 
   return (
     <motion.div
       initial={{opacity: 0, x: 50, y: 10}}
       animate={{opacity: 1, x: 0, y: 0}}
       transition={{type: 'spring', stiffness: 120, damping: 22, delay: 0.5}}
-      onAnimationComplete={() => setReady(true)}
       className="relative"
     >
       <motion.div
@@ -66,61 +78,28 @@ function FloatingDashboard() {
         className="bg-white/5 border border-white/10 rounded-2xl p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-sm"
       >
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-6">
           <span className="text-white/50 text-xs font-medium tracking-widest uppercase">
             {t('dashboardTitle')}
           </span>
-          <span className="flex items-center gap-2">
-            <motion.span
-              animate={{opacity: [1, 0.2, 1]}}
-              transition={{duration: 2.2, repeat: Infinity}}
-              className="block w-2 h-2 rounded-full bg-emerald-400"
-            />
-            <span className="text-emerald-400 text-xs font-semibold">Live</span>
-          </span>
         </div>
 
-        {/* Big stat */}
-        <div className="mb-8">
-          <div className="text-gold font-black text-5xl tracking-tight leading-none">
-            +{ready ? <CountUp to={127} suffix="%" duration={1800} /> : '127%'}
-          </div>
-          <div className="text-white/40 text-sm mt-2 leading-snug">
-            {t('dashboardLabel')}
-          </div>
-        </div>
-
-        {/* Mini stats */}
-        <div className="grid grid-cols-2 gap-3 mb-8">
-          <div className="bg-white/5 border border-white/5 rounded-xl p-4">
-            <div className="text-white font-bold text-2xl">
-              {ready ? <CountUp to={47} duration={1600} /> : '47'}
+        {/* Services */}
+        <div className="flex flex-col gap-2.5 mb-7">
+          {services.map((service) => (
+            <div key={service} className="flex items-center gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-gold/70 shrink-0" />
+              <span className="text-white/70 text-sm">{service}</span>
             </div>
-            <div className="text-white/40 text-xs mt-0.5">{t('happyClients')}</div>
-          </div>
-          <div className="bg-white/5 border border-white/5 rounded-xl p-4">
-            <div className="text-white font-bold text-2xl">
-              {ready ? <CountUp to={23} duration={1400} /> : '23'}
-            </div>
-            <div className="text-white/40 text-xs mt-0.5">{t('activeProjects')}</div>
-          </div>
+          ))}
         </div>
 
-        {/* Service rows */}
-        <div className="flex flex-col gap-3 pt-4 border-t border-white/5">
-          {[
-            {label: 'SEO / SEA', to: 47, suffix: '%', prefix: '+'},
-            {label: 'Social Media', to: 32, suffix: '%', prefix: '+'},
-            {label: t('websitesBuilt'), to: 12, suffix: '', prefix: ''},
-          ].map(({label, to, suffix, prefix}) => (
-            <div key={label} className="flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-gold/70" />
-                <span className="text-white/40 text-xs">{label}</span>
-              </div>
-              <span className="text-gold text-xs font-semibold">
-                {ready ? <CountUp to={to} suffix={suffix} prefix={prefix} duration={1400} /> : `${prefix}${to}${suffix}`}
-              </span>
+        {/* Promises */}
+        <div className="grid grid-cols-3 gap-2 pt-5 border-t border-white/5">
+          {promises.map(({value, label}) => (
+            <div key={label} className="bg-white/5 rounded-xl p-3 text-center">
+              <div className="text-gold font-black text-xl leading-none mb-1">{value}</div>
+              <div className="text-white/40 text-xs leading-snug">{label}</div>
             </div>
           ))}
         </div>

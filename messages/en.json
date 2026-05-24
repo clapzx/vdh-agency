@@ -12,11 +12,10 @@
     "sub": "VDH Agency helps businesses grow with proven SEO/SEA strategies, social media management and custom-built websites.",
     "cta1": "View services",
     "cta2": "Get in touch",
-    "dashboardTitle": "Live Results",
-    "dashboardLabel": "Organic reach last quarter",
-    "happyClients": "Happy clients",
-    "activeProjects": "Active projects",
-    "websitesBuilt": "Websites built"
+    "dashboardTitle": "What we do",
+    "promiseResponse": "Response time",
+    "promiseContact": "Point of contact",
+    "promiseTransparant": "Transparent"
   },
   "services": {
     "label": "What we do",
