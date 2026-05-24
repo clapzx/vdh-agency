@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'Kan ik dit niet gewoon zelf doen?',
-    a: 'Je kunt de basis zelf instellen, maar Google kijkt naar veel meer dan alleen een ingevuld profiel. Reviews bijhouden, vermeldingen op andere sites controleren, je profiel maandelijks updaten: dat kost al snel een halve werkdag per week. De meeste ondernemers besteden die tijd liever aan hun echte werk.',
+    a: 'Lokale vindbaarheid is een vak apart. Het vergt specialistische kennis, de juiste tools en doorlopend onderhoud. De meeste ondernemers die we spreken, hebben er al tijd in gestoken zonder het gewenste resultaat. Wij halen meer uit dezelfde tijd omdat we precies weten waar het verschil zit.',
   },
   {
     q: 'Hoeveel reviews heb ik nodig?',
