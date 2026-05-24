@@ -37,6 +37,7 @@ export default function Header() {
   const links = [
     {href: '/diensten', label: t('services')},
     {href: '/over-ons', label: t('about')},
+    {href: '/blog', label: 'Blog'},
     {href: '/contact', label: t('contact')},
   ];
 
