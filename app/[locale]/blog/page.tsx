@@ -41,9 +41,9 @@ const posts = [
     dateTime: '2026-05-24',
     category: 'Lokale SEO',
     readTime: '8 min',
-    title: 'Waarom Uw Bedrijf de Google Local Pack Mist (en Wat Dat U Per Dag Kost)',
+    title: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt',
     excerpt:
-      '46% van alle Google-zoekopdrachten heeft lokale intentie. De top 3 in de local pack pakt 44% van alle klikken. Ontdek waarom de meeste bedrijven onzichtbaar blijven en wat er werkelijk voor nodig is om te verschijnen.',
+      'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Hoe zit dat? We leggen uit wat er écht voor nodig is om bovenaan te staan — in gewone taal, zonder vakjargon.',
   },
 ];
 
