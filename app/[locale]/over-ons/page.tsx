@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {User, Target, Eye, Heart, ArrowRight} from 'lucide-react';
+import {User, Target, Eye, Heart, ArrowRight, ChevronDown} from 'lucide-react';
 import Link from 'next/link';
 
 const BASE = 'https://www.vdh-agency.com';
@@ -39,6 +39,18 @@ const personJsonLd = {
   knowsAbout: ['SEO', 'Google Ads', 'Social Media Marketing', 'Web Development'],
 };
 
+function faqJsonLd(faqs: {q: string; a: string}[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({q, a}) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: {'@type': 'Answer', text: a},
+    })),
+  };
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -65,6 +77,8 @@ export async function generateMetadata({
 }
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import Process from '@/components/sections/Process';
 import CTA from '@/components/sections/CTA';
 
 export default async function OverOnsPage({
@@ -93,6 +107,13 @@ export default async function OverOnsPage({
     {href: `${base}/diensten/digitale-analyse`,    label: isNl ? 'Digitale Analyse' : 'Digital Analytics',        desc: isNl ? 'GA4, conversies en dashboards' : 'GA4, conversions and dashboards'},
   ];
 
+  const faqs = [
+    {q: t('faq1Q'), a: t('faq1A')},
+    {q: t('faq2Q'), a: t('faq2A')},
+    {q: t('faq3Q'), a: t('faq3A')},
+    {q: t('faq4Q'), a: t('faq4A')},
+  ];
+
   return (
     <>
       <script
@@ -103,10 +124,19 @@ export default async function OverOnsPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{__html: JSON.stringify(personJsonLd)}}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(faqJsonLd(faqs))}}
+      />
+
       {/* Hero */}
       <section className="bg-primary pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="max-w-3xl">
+            <Breadcrumb crumbs={[
+              {label: 'Home', href: isNl ? '/' : '/en/'},
+              {label: isNl ? 'Over ons' : 'About'},
+            ]} />
             <div className="flex items-center gap-3 mb-6">
               <span className="block w-6 h-px bg-gold" />
               <span className="text-gold text-xs font-semibold tracking-widest uppercase">
@@ -132,6 +162,8 @@ export default async function OverOnsPage({
                 <p className="text-primary/70 text-base leading-relaxed">{t('p2')}</p>
                 <p className="text-primary/70 text-base leading-relaxed">{t('p3')}</p>
                 <p className="text-primary/70 text-base leading-relaxed">{t('p4')}</p>
+                <p className="text-primary/70 text-base leading-relaxed">{t('p5')}</p>
+                <p className="text-primary/70 text-base leading-relaxed">{t('p6')}</p>
               </div>
             </AnimatedSection>
 
@@ -148,6 +180,9 @@ export default async function OverOnsPage({
           </div>
         </div>
       </section>
+
+      {/* Process */}
+      <Process />
 
       {/* Services */}
       <section className="bg-white py-20 lg:py-28">
@@ -193,6 +228,29 @@ export default async function OverOnsPage({
                   <h3 className="text-white font-bold text-lg mb-2">{title}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
                 </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-light py-24 lg:py-32">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="mb-12">
+            <SectionLabel>{t('faqLabel')}</SectionLabel>
+            <h2 className="text-primary font-black text-3xl lg:text-4xl">{t('faqTitle')}</h2>
+          </AnimatedSection>
+          <div className="flex flex-col gap-4">
+            {faqs.map(({q, a}, i) => (
+              <AnimatedSection key={i} delay={i * 0.06}>
+                <details className="bg-white border border-primary/10 rounded-sm group">
+                  <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-primary text-sm">
+                    {q}
+                    <ChevronDown size={16} className="text-gold shrink-0 group-open:rotate-180 transition-transform" />
+                  </summary>
+                  <p className="px-6 pb-5 text-primary/60 text-sm leading-relaxed">{a}</p>
+                </details>
               </AnimatedSection>
             ))}
           </div>

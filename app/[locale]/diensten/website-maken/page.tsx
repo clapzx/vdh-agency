@@ -3,6 +3,7 @@ import {getTranslations} from 'next-intl/server';
 import {Globe, CheckCircle2, ChevronDown} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 import NoServiceCard from '@/components/ui/NoServiceCard';
 import CTA from '@/components/sections/CTA';
 import RelatedServices from '@/components/ui/RelatedServices';
@@ -116,6 +117,11 @@ export default async function WebsiteMakenPage({
       <section className="bg-primary pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="max-w-3xl">
+            <Breadcrumb crumbs={[
+              {label: 'Home', href: locale === 'nl' ? '/' : '/en/'},
+              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/diensten'},
+              {label: t('label')},
+            ]} />
             <div className="flex items-center gap-3 mb-6">
               <span className="block w-6 h-px bg-gold" />
               <span className="text-gold text-xs font-semibold tracking-widest uppercase">{t('label')}</span>

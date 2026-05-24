@@ -397,7 +397,19 @@
     "v3title": "Personal",
     "v3desc": "Direct line with Lars, always. No account managers, no middlemen. You call or email the person who is actually working on your project.",
     "founderTitle": "Founder at VDH Agency",
-    "founderBio": "I help Dutch businesses grow through SEO, Social Media and web design. Honest about what works, direct in communication and personally involved in every project — from the first call to the final result."
+    "founderBio": "I help Dutch businesses grow through SEO, Social Media and web design. Honest about what works, direct in communication and personally involved in every project — from the first call to the final result.",
+    "p5": "My background covers the full digital marketing toolkit. I work daily with Google Analytics 4, Google Search Console, Google Ads, Meta Business Suite and WordPress. For websites I use modern technology that is fast, secure and easy to manage — so everything is technically sound and you never have to worry about the details.",
+    "p6": "What sets me apart from larger agencies: there's no handover. You have one person who knows your project inside out, from the first conversation to the monthly report. Nothing gets lost between what you want and what actually gets done.",
+    "faqLabel": "FAQ",
+    "faqTitle": "Questions about VDH Agency",
+    "faq1Q": "Do you work with small businesses and startups?",
+    "faq1A": "Yes. A large part of my clients are small SMEs or entrepreneurs just starting out. I adapt my approach to suit you, and there's no minimum budget. There is, however, an honest conversation about what's realistic for your situation and goals.",
+    "faq2Q": "Do you do everything yourself or work with others?",
+    "faq2A": "I do everything myself: strategy, execution and communication. No external freelancers, no outsourced tasks. That means one point of contact, no surprises, and someone who is genuinely invested in your results.",
+    "faq3Q": "Which cities and regions do you serve?",
+    "faq3A": "VDH Agency works remotely for clients across the Netherlands. Location doesn't matter. Clients in Amsterdam, Rotterdam, Utrecht, The Hague, Eindhoven and Groningen. Everything goes via video, email and phone — efficient collaboration without travel time.",
+    "faq4Q": "What does working with VDH Agency cost?",
+    "faq4A": "It depends on the service and scope. I don't work with fixed packages — I propose a price based on your specific situation. Request a no-obligation quote via the contact page and I'll send you a proposal within 24 hours."
   },
   "contactPage": {
     "label": "Contact",
