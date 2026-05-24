@@ -15,14 +15,14 @@ function pageJsonLd(locale: string) {
 
   const faqs = isNl
     ? [
-        {q: 'Wat kost een SEO bureau in Nederland?', a: 'De kosten voor een SEO bureau in Nederland liggen gemiddeld tussen €300 en €1.500 per maand, afhankelijk van de omvang en competitiviteit van het project. Bij VDH Agency start onze SEO-dienstverlening vanaf €350 per maand voor lokale SEO, inclusief technische audit, zoekwoordonderzoek en maandelijkse rapportage.'},
+        {q: 'Wat kost een SEO bureau in Nederland?', a: 'De kosten voor een SEO bureau in Nederland liggen gemiddeld tussen €300 en €1.500 per maand, afhankelijk van de omvang en competitiviteit van het project. De exacte investering bij VDH Agency bespreken we altijd in een gratis kennismakingsgesprek — zo weet je precies wat je kunt verwachten.'},
         {q: 'Hoe snel zie ik resultaat van SEO?', a: 'De eerste meetbare verbeteringen zijn doorgaans zichtbaar na 8 tot 16 weken. Een stabiele positie in de top van Google bereik je meestal na 3 tot 6 maanden. In minder competitieve markten kan dit sneller gaan. Wij rapporteren maandelijks over posities, organisch verkeer en conversies.'},
         {q: 'Kan een SEO bureau Google-posities garanderen?', a: 'Elk bureau dat specifieke posities garandeert, liegt. Google bepaalt zijn eigen rankings op basis van honderden factoren. Wat wij garanderen: transparant werken, bewezen methodieken, maandelijkse rapportage en aantoonbare groei in organisch verkeer. Geen loze beloftes.'},
         {q: 'Wat is het verschil tussen SEO en SEA?', a: 'SEO (Search Engine Optimization) richt zich op organische vindbaarheid — posities die je verdient op basis van relevantie en autoriteit. SEA (Search Engine Advertising) zijn betaalde advertenties in Google. SEO heeft een langere aanlooptijd maar levert duurzaam resultaat; SEA is direct zichtbaar maar stopt zodra het budget op is. Wij combineren beide voor maximaal effect.'},
         {q: 'Werkt SEO ook voor lokale bedrijven?', a: 'Absoluut. Lokale SEO is juist bijzonder effectief voor MKB-bedrijven. 46% van alle Google-zoekopdrachten heeft een lokale intentie (Google, 2025). Door je Google Business Profile te optimaliseren, lokale zoekwoorden te targeten en consistente NAP-vermeldingen te bouwen, word je aantoonbaar beter gevonden in jouw regio.'},
       ]
     : [
-        {q: 'What does an SEO agency in the Netherlands cost?', a: 'SEO agency costs in the Netherlands typically range from €300 to €1,500 per month depending on project scope and competitiveness. At VDH Agency, our SEO services start from €350 per month for local SEO, including technical audit, keyword research and monthly reporting.'},
+        {q: 'What does an SEO agency in the Netherlands cost?', a: 'SEO agency costs in the Netherlands typically range from €300 to €1,500 per month depending on project scope and competitiveness. The exact investment at VDH Agency is always discussed in a free introductory consultation — so you know exactly what to expect.'},
         {q: 'How quickly will I see SEO results?', a: 'The first measurable improvements are usually visible after 8 to 16 weeks. Stable positions at the top of Google are typically achieved after 3 to 6 months. In less competitive markets this can happen faster. We report monthly on rankings, organic traffic and conversions.'},
         {q: 'Can an SEO agency guarantee Google positions?', a: 'Any agency that guarantees specific positions is lying. Google determines its own rankings based on hundreds of factors. What we guarantee: transparent working methods, proven techniques, monthly reporting and demonstrable growth in organic traffic. No empty promises.'},
         {q: 'What is the difference between SEO and SEA?', a: 'SEO (Search Engine Optimization) focuses on organic visibility — positions you earn through relevance and authority. SEA (Search Engine Advertising) involves paid ads in Google. SEO has a longer lead time but delivers sustainable results; SEA is immediately visible but stops when your budget runs out. We combine both for maximum effect.'},
@@ -41,16 +41,6 @@ function pageJsonLd(locale: string) {
           ? 'Professioneel SEO bureau voor het MKB in Nederland. Technische SEO, lokale SEO, zoekwoordonderzoek en Google Ads. Transparante rapportage, meetbare resultaten.'
           : 'Professional SEO agency for SMEs in the Netherlands. Technical SEO, local SEO, keyword research and Google Ads. Transparent reporting, measurable results.',
         url,
-        offers: {
-          '@type': 'Offer',
-          priceCurrency: 'EUR',
-          priceSpecification: {
-            '@type': 'PriceSpecification',
-            minPrice: '350',
-            priceCurrency: 'EUR',
-            unitText: isNl ? 'per maand' : 'per month',
-          },
-        },
       },
       {
         '@type': 'FAQPage',
@@ -161,14 +151,14 @@ export default async function SeoBureauPage({
 
   const faqs = isNl
     ? [
-        {q: 'Wat kost een SEO bureau in Nederland?', a: 'De kosten voor een SEO bureau in Nederland liggen gemiddeld tussen €300 en €1.500 per maand, afhankelijk van de omvang en competitiviteit van het project. Bij VDH Agency start onze SEO-dienstverlening vanaf €350 per maand voor lokale SEO, inclusief technische audit, zoekwoordonderzoek en maandelijkse rapportage.'},
+        {q: 'Wat kost een SEO bureau in Nederland?', a: 'De kosten voor een SEO bureau in Nederland liggen gemiddeld tussen €300 en €1.500 per maand, afhankelijk van de omvang en competitiviteit van het project. De exacte investering bij VDH Agency bespreken we altijd in een gratis kennismakingsgesprek — zo weet je precies wat je kunt verwachten.'},
         {q: 'Hoe snel zie ik resultaat van SEO?', a: 'De eerste meetbare verbeteringen zijn doorgaans zichtbaar na 8 tot 16 weken. Een stabiele positie in de top van Google bereik je meestal na 3 tot 6 maanden. In minder competitieve markten kan dit sneller gaan. Wij rapporteren maandelijks over posities, organisch verkeer en conversies.'},
         {q: 'Kan een SEO bureau Google-posities garanderen?', a: 'Elk bureau dat specifieke posities garandeert, liegt. Google bepaalt zijn eigen rankings op basis van honderden factoren. Wat wij garanderen: transparant werken, bewezen methodieken, maandelijkse rapportage en aantoonbare groei in organisch verkeer. Geen loze beloftes.'},
         {q: 'Wat is het verschil tussen SEO en SEA?', a: 'SEO (Search Engine Optimization) richt zich op organische vindbaarheid — posities die je verdient op basis van relevantie en autoriteit. SEA (Search Engine Advertising) zijn betaalde advertenties in Google. SEO heeft een langere aanlooptijd maar levert duurzaam resultaat; SEA is direct zichtbaar maar stopt zodra het budget op is. Wij combineren beide voor maximaal effect.'},
         {q: 'Werkt SEO ook voor lokale bedrijven?', a: 'Absoluut. Lokale SEO is juist bijzonder effectief voor MKB-bedrijven. 46% van alle Google-zoekopdrachten heeft een lokale intentie (Google, 2025). Door je Google Business Profile te optimaliseren, lokale zoekwoorden te targeten en consistente NAP-vermeldingen te bouwen, word je aantoonbaar beter gevonden in jouw regio.'},
       ]
     : [
-        {q: 'What does an SEO agency in the Netherlands cost?', a: 'SEO agency costs in the Netherlands typically range from €300 to €1,500 per month depending on project scope and competitiveness. At VDH Agency, our SEO services start from €350 per month for local SEO, including technical audit, keyword research and monthly reporting.'},
+        {q: 'What does an SEO agency in the Netherlands cost?', a: 'SEO agency costs in the Netherlands typically range from €300 to €1,500 per month depending on project scope and competitiveness. The exact investment at VDH Agency is always discussed in a free introductory consultation — so you know exactly what to expect.'},
         {q: 'How quickly will I see SEO results?', a: 'The first measurable improvements are usually visible after 8 to 16 weeks. Stable positions at the top of Google are typically achieved after 3 to 6 months. In less competitive markets this can happen faster. We report monthly on rankings, organic traffic and conversions.'},
         {q: 'Can an SEO agency guarantee Google positions?', a: 'Any agency that guarantees specific positions is lying. Google determines its own rankings based on hundreds of factors. What we guarantee: transparent working methods, proven techniques, monthly reporting and demonstrable growth in organic traffic. No empty promises.'},
         {q: 'What is the difference between SEO and SEA?', a: 'SEO (Search Engine Optimization) focuses on organic visibility — positions you earn through relevance and authority. SEA (Search Engine Advertising) involves paid ads in Google. SEO has a longer lead time but delivers sustainable results; SEA is immediately visible but stops when your budget runs out. We combine both for maximum effect.'},
@@ -205,8 +195,8 @@ export default async function SeoBureauPage({
             </h1>
             <p className="text-white/60 text-xl mb-10">
               {isNl
-                ? 'Meer organisch verkeer, betere posities in Google en een aantoonbare groei in aanvragen. Geen lege beloftes — alleen meetbare resultaten. Vanaf €350/maand.'
-                : 'More organic traffic, better positions in Google and demonstrable growth in enquiries. No empty promises — only measurable results. From €350/month.'}
+                ? 'Meer organisch verkeer, betere posities in Google en een aantoonbare groei in aanvragen. Geen lege beloftes — alleen meetbare resultaten.'
+                : 'More organic traffic, better positions in Google and demonstrable growth in enquiries. No empty promises — only measurable results.'}
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
@@ -262,12 +252,9 @@ export default async function SeoBureauPage({
                 <div className="w-14 h-14 rounded-sm bg-gold/10 flex items-center justify-center mb-6">
                   <Search size={26} className="text-gold" />
                 </div>
-                <h3 className="text-white font-bold text-xl mb-2">
+                <h3 className="text-white font-bold text-xl mb-5">
                   {isNl ? 'Wat is inbegrepen' : 'What is included'}
                 </h3>
-                <p className="text-gold text-sm mb-5">
-                  {isNl ? 'Vanaf €350/maand' : 'From €350/month'}
-                </p>
                 <ul className="flex flex-col gap-3">
                   {includes.map((item) => (
                     <li key={item} className="flex items-center gap-3">
@@ -388,118 +375,6 @@ export default async function SeoBureauPage({
               </div>
             </AnimatedSection>
           </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="bg-white py-24 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection className="max-w-2xl mb-12">
-            <SectionLabel>{isNl ? 'Tarieven' : 'Pricing'}</SectionLabel>
-            <h2 className="text-primary font-black text-3xl lg:text-4xl">
-              {isNl
-                ? 'Wat kost een SEO bureau in Nederland?'
-                : 'What does an SEO agency in the Netherlands cost?'}
-            </h2>
-            <p className="text-primary/60 mt-4 text-base leading-relaxed">
-              {isNl
-                ? 'Transparantie over kosten is een van onze kernwaarden. Hieronder een indicatie van onze tarieven. De exacte prijs hangt af van de omvang van het project en de competitiviteit van jouw markt.'
-                : 'Transparency about costs is one of our core values. Below is an indication of our rates. The exact price depends on the scope of the project and the competitiveness of your market.'}
-            </p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {(isNl ? [
-              {
-                name: 'Lokale SEO',
-                price: 'Vanaf €350',
-                period: '/maand',
-                desc: 'Voor bedrijven die lokaal beter gevonden willen worden in Google.',
-                items: ['Lokale SEO-audit', 'Google Business Profile', 'NAP-consistentie', 'Zoekwoordonderzoek lokaal', 'Maandelijkse rapportage'],
-              },
-              {
-                name: 'SEO & Content',
-                price: 'Vanaf €650',
-                period: '/maand',
-                desc: 'Voor bedrijven die nationaal willen groeien via organisch verkeer.',
-                items: ['Alles van Lokale SEO', 'Technische SEO-optimalisatie', 'Contentstrategie', 'Blogartikelen (2x/maand)', 'Link building basis'],
-                featured: true,
-              },
-              {
-                name: 'SEO + SEA Totaal',
-                price: 'Vanaf €950',
-                period: '/maand',
-                desc: 'Combineer organische SEO met betaalde Google Ads voor maximaal bereik.',
-                items: ['Alles van SEO & Content', 'Google Ads campagnebeheer', 'A/B-testing advertenties', 'Conversiemeting GA4', 'Wekelijkse SEA-rapportage'],
-              },
-            ] : [
-              {
-                name: 'Local SEO',
-                price: 'From €350',
-                period: '/month',
-                desc: 'For businesses that want to be found better locally in Google.',
-                items: ['Local SEO audit', 'Google Business Profile', 'NAP consistency', 'Local keyword research', 'Monthly reporting'],
-              },
-              {
-                name: 'SEO & Content',
-                price: 'From €650',
-                period: '/month',
-                desc: 'For businesses that want to grow nationally through organic traffic.',
-                items: ['Everything in Local SEO', 'Technical SEO optimisation', 'Content strategy', 'Blog articles (2x/month)', 'Basic link building'],
-                featured: true,
-              },
-              {
-                name: 'SEO + SEA Total',
-                price: 'From €950',
-                period: '/month',
-                desc: 'Combine organic SEO with paid Google Ads for maximum reach.',
-                items: ['Everything in SEO & Content', 'Google Ads campaign management', 'A/B testing ads', 'Conversion tracking GA4', 'Weekly SEA reporting'],
-              },
-            ]).map(({name, price, period, desc, items, featured}) => (
-              <AnimatedSection key={name}>
-                <div className={`rounded-sm p-8 h-full flex flex-col ${featured ? 'bg-primary border-2 border-gold' : 'bg-light border border-primary/10'}`}>
-                  {featured && (
-                    <span className="text-gold text-xs font-bold tracking-widest uppercase mb-4 block">
-                      {isNl ? 'Meest gekozen' : 'Most popular'}
-                    </span>
-                  )}
-                  <h3 className={`font-bold text-xl mb-1 ${featured ? 'text-white' : 'text-primary'}`}>{name}</h3>
-                  <div className="flex items-baseline gap-1 mb-3">
-                    <span className={`font-black text-3xl ${featured ? 'text-gold' : 'text-primary'}`}>{price}</span>
-                    <span className={`text-sm ${featured ? 'text-white/50' : 'text-primary/50'}`}>{period}</span>
-                  </div>
-                  <p className={`text-sm leading-relaxed mb-6 ${featured ? 'text-white/60' : 'text-primary/60'}`}>{desc}</p>
-                  <ul className="flex flex-col gap-2.5 mb-8 flex-1">
-                    {items.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
-                        <CheckCircle2 size={13} className="text-gold mt-0.5 shrink-0" />
-                        <span className={`text-xs leading-snug ${featured ? 'text-white/70' : 'text-primary/70'}`}>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={isNl ? '/contact' : '/en/contact'}
-                    className={`flex items-center justify-center gap-2 font-bold text-sm px-6 py-3 rounded-sm transition-colors ${
-                      featured
-                        ? 'bg-gold text-primary hover:bg-gold-light'
-                        : 'border border-primary/20 text-primary hover:border-gold hover:text-gold'
-                    }`}
-                  >
-                    {isNl ? 'Gratis gesprek aanvragen' : 'Request free consultation'}
-                    <ArrowRight size={13} />
-                  </Link>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection className="mt-8">
-            <p className="text-center text-primary/40 text-sm">
-              {isNl
-                ? '* Tarieven zijn indicatief. De exacte investering bespreken we in een gratis kennismakingsgesprek.'
-                : '* Rates are indicative. We discuss the exact investment in a free introductory consultation.'}
-            </p>
-          </AnimatedSection>
         </div>
       </section>
 
