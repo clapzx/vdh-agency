@@ -51,8 +51,7 @@ function FloatingDashboard() {
   const t = useTranslations('hero');
 
   const services = [
-    'SEO / SEA',
-    'Social Media',
+    'Social Media Beheer',
     'Online Marketing',
     'Website Maken',
     'Branding',
