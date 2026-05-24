@@ -188,7 +188,7 @@ export default async function BlogPostPage({
               Hoe Google bepaalt wie bovenaan staat
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Stel dat drie mensen vandaag zoeken op "loodgieter Haarlem." Ze zien allemaal hetzelfde rijtje bedrijven bovenaan. Niet willekeurig. Google heeft voor elke zoekterm berekend welke bedrijven het meest relevant zijn, op basis van honderden factoren tegelijk.
+              Als iemand googelt op "loodgieter Haarlem", verschijnen bovenaan niet de bedrijven die het beste werk leveren. Het zijn de bedrijven die Google als meest relevant beschouwt. Die beoordeling is gebaseerd op honderden factoren tegelijk, en wordt continu herberekend.
             </p>
             <p className="text-primary/70 leading-relaxed mb-6">
               Die factoren vallen globaal in vier groepen:
@@ -198,23 +198,23 @@ export default async function BlogPostPage({
               {[
                 {
                   icon: MapPin,
-                  title: 'Hoe volledig en actueel je profiel is',
-                  desc: 'Naam, adres en telefoonnummer zijn het minimum. Google kijkt ook naar je beschrijving, je diensten, de juiste categorie-indeling en of je profiel regelmatig wordt bijgehouden.',
+                  title: 'Je online bedrijfsprofiel',
+                  desc: 'Google kijkt naar veel meer dan naam en adres. Elk detail dat klopt of ontbreekt, weegt mee in hoe relevant jij gevonden wordt ten opzichte van je concurrent.',
                 },
                 {
                   icon: Star,
                   title: 'Je reviews',
-                  desc: 'Hoeveel je er hebt, hoe recent ze zijn, of je erop reageert en wat klanten precies schrijven. Een bedrijf zonder recente reviews zakt langzaam weg, ook al was het ooit goed zichtbaar.',
+                  desc: 'Google beoordeelt niet alleen hoeveel reviews je hebt. Ook het patroon eromheen telt mee. Dat is complexer dan het lijkt en vereist een doordachte aanpak.',
                 },
                 {
                   icon: BarChart2,
                   title: 'Vermeldingen op andere websites',
-                  desc: 'Google checkt of je bedrijfsnaam, adres en telefoonnummer consistent terugkomen op andere plekken online. Eén tikfout ergens telt al mee als een negatief signaal.',
+                  desc: 'Hoe consistent jouw bedrijf terugkomt op het internet als geheel, bepaalt mede hoe betrouwbaar Google jou vindt. Dit te monitoren is een vak apart.',
                 },
                 {
                   icon: RefreshCw,
-                  title: 'Hoe actief je bent',
-                  desc: 'Een profiel dat maanden stilstaat, verliest terrein. Google beloont bedrijven die actief blijven: nieuwe foto\'s, berichten, updates. Inactief zijn is hetzelfde als achteruitgaan.',
+                  title: 'Activiteit en relevantie in de tijd',
+                  desc: 'Lokale vindbaarheid is niet statisch. Wie niet actief bijhoudt en inspeelt op veranderingen, verliest terrein aan concurrenten die dat wel doen.',
                 },
               ].map(({icon: Icon, title, desc}) => (
                 <div key={title} className="bg-white border border-primary/10 rounded-sm p-6">
@@ -234,18 +234,21 @@ export default async function BlogPostPage({
               Het verschil zit in de details
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Stel je voor: een schilder in Nijmegen en een schilder in diezelfde stad, twee straten verderop. Beiden hebben een Google-profiel. Beiden leveren prima werk. Toch staat de een consequent bovenaan en krijgt de ander nauwelijks aanvragen via Google.
-            </p>
-            <p className="text-primary/70 leading-relaxed mb-4">
-              Dat verschil zit zelden in een grote fout. Het zit in tientallen kleine dingen: een categorie die niet klopt, reviews die onbeantwoord blijven, een telefoonnummer dat op een andere website net iets anders staat, foto's die al een jaar niet zijn bijgewerkt.
+              Twee vergelijkbare bedrijven, zelfde stad, zelfde kwaliteit. Toch staat de een consequent bovenaan en krijgt de ander nauwelijks aanvragen via Google. Dat is geen toeval en ook geen geluk.
             </p>
             <p className="text-primary/70 leading-relaxed mb-6">
-              Elk van die dingen afzonderlijk lijkt onbenullig. Samen bepalen ze of Google jou of jouw concurrent als meest betrouwbare keuze beschouwt.
+              Wat er precies speelt, is wat wij voor onze klanten uitzoeken en aanpakken. Lokale SEO is een van de diensten waarmee wij Nederlandse bedrijven helpen om structureel beter gevonden te worden in hun regio.
             </p>
-            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
+            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6 flex flex-col gap-4">
               <p className="text-primary text-sm leading-relaxed">
                 <span className="font-bold">Wat wij zien in de praktijk:</span> Als we een bestaand profiel doorlichten, vinden we gemiddeld meer dan twintig punten waar het beter kan. Dat geldt ook voor profielen waarvan de ondernemer dacht dat ze al goed stonden.
               </p>
+              <Link
+                href="/diensten/seo-sea"
+                className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:opacity-80 transition-opacity self-start"
+              >
+                Bekijk onze SEO-diensten <ArrowRight size={13} />
+              </Link>
             </div>
           </AnimatedSection>
 
@@ -271,10 +274,10 @@ export default async function BlogPostPage({
               Wat het je kost als je niet gevonden wordt
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Stel dat er elke week twintig mensen in jouw regio zoeken naar wat jij doet. De bovenste drie bedrijven in de zoekresultaten pakken samen het grootste deel van die klikken. Als jij daar niet bij staat, gaan die klanten naar iemand anders. Niet omdat die persoon beter is. Maar omdat die persoon zichtbaar is en jij niet.
+              Er zoeken elke week mensen in jouw regio naar wat jij aanbiedt. De bovenste bedrijven in de zoekresultaten pakken samen het grootste deel van die aandacht. Wie daar niet bij staat, wordt simpelweg niet gezien. Niet omdat je slechter bent, maar omdat je minder zichtbaar bent.
             </p>
             <p className="text-primary/70 leading-relaxed">
-              Tel dat op over een jaar. Dat zijn honderden mensen die jouw concurrent hebben gebeld in plaats van jou. En die klanten zijn er niet meer.
+              Tel dat op over een jaar en je begrijpt waarom lokale vindbaarheid geen bijzaak is. Het is de reden dat sommige bedrijven groeien zonder extra advertentiebudget, terwijl anderen in dezelfde markt achterblijven.
             </p>
           </AnimatedSection>
 
