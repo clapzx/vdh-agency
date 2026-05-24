@@ -66,6 +66,7 @@ export default async function Footer() {
             <ul className="flex flex-col gap-2.5">
               {[
                 {href: '/over-ons', label: t('about')},
+                {href: '/blog', label: 'Blog'},
                 {href: '/contact', label: t('contact')},
               ].map(({href, label}) => (
                 <li key={label}>
