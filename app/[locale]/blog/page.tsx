@@ -41,9 +41,9 @@ const posts = [
     dateTime: '2026-05-24',
     category: 'Lokale SEO',
     readTime: '8 min',
-    title: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt',
+    title: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen en niet jou',
     excerpt:
-      'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Hoe zit dat? We leggen uit wat er écht voor nodig is om bovenaan te staan, in gewone taal, zonder vakjargon.',
+      'Iemand googelt "kitbedrijf Zwolle" of "schilder Utrecht" en neemt contact op met jouw concurrent. Hoe komt dat? En wat is er nodig om lokaal te groeien via Google?',
   },
 ];
 

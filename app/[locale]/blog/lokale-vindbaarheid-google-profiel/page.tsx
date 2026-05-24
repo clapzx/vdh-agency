@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'Werkt dit ook voor mijn branche?',
-    a: 'Als mensen googelen op "[jouw dienst] + jouw plaatsnaam" of "[jouw dienst] bij mij in de buurt", dan is dit voor jou relevant. Dat geldt voor bijna elke ondernemer die lokaal werkt: van loodgieter tot tandarts, van kapper tot aannemer.',
+    a: 'Als mensen googelen op jouw dienst plus jouw plaatsnaam, dan is dit direct voor jou relevant. Dat geldt voor bijna elke ondernemer die lokaal werkt: van loodgieter tot tandarts, van kapper tot aannemer.',
   },
   {
     q: 'Wat kost het om dit uit te besteden?',
@@ -38,9 +38,9 @@ function blogJsonLd() {
     '@graph': [
       {
         '@type': 'BlogPosting',
-        headline: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt',
+        headline: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen en niet jou',
         description:
-          'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Hoe komt dat? En wat is er echt voor nodig om bovenaan te staan? We leggen het uit in gewone taal.',
+          'Iemand googelt op "kitbedrijf Zwolle" of "loodgieter Utrecht" en belt jouw concurrent. Hoe komt dat? En wat is er écht voor nodig om lokaal bovenaan te staan?',
         datePublished: PUBLISHED,
         dateModified: MODIFIED,
         author: {
@@ -66,7 +66,7 @@ function blogJsonLd() {
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: BASE},
           {'@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog`},
-          {'@type': 'ListItem', position: 3, name: 'Gevonden worden op Google Maps', item: `${BASE}${SLUG}`},
+          {'@type': 'ListItem', position: 3, name: 'Lokaal beter gevonden worden', item: `${BASE}${SLUG}`},
         ],
       },
     ],
@@ -82,9 +82,9 @@ export async function generateMetadata({
   const canonical = locale === 'nl' ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
 
   return {
-    title: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt | VDH Agency',
+    title: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen | VDH Agency',
     description:
-      'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Hoe komt dat? We leggen het uit in gewone taal, zonder vakjargon.',
+      'Iemand googelt op "kitbedrijf Zwolle" of "loodgieter Utrecht" en belt jouw concurrent. Wat gaat er mis? En hoe groei je lokaal via Google?',
     alternates: {
       canonical,
       languages: {
@@ -96,9 +96,9 @@ export async function generateMetadata({
     openGraph: {
       type: 'article',
       url: canonical,
-      title: 'Gevonden worden op Google Maps: waarom het lastiger is dan het lijkt',
+      title: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen en niet jou',
       description:
-        'Je hebt je bedrijf aangemeld bij Google, maar klanten vinden je niet. Wat gaat er mis? En wat is er écht voor nodig?',
+        'Iemand googelt op jouw dienst plus jouw stad, en belt jouw concurrent. Hoe komt dat? En hoe keer je dat om?',
       publishedTime: PUBLISHED,
       modifiedTime: MODIFIED,
       authors: ['Lars van der Hoek'],
@@ -131,11 +131,11 @@ export default async function BlogPostPage({
               </Link>
             </div>
             <h1 className="text-white font-black text-3xl lg:text-5xl leading-tight mb-6">
-              Gevonden worden op Google Maps:<br />
-              <span className="text-gold">waarom het lastiger is dan het lijkt</span>
+              Lokaal beter gevonden worden:{' '}
+              <span className="text-gold">waarom klanten jouw concurrent bellen en niet jou</span>
             </h1>
             <p className="text-white/60 text-lg">
-              Je hebt je bedrijf aangemeld bij Google. Toch vinden klanten je niet. Hoe zit dat? En wat is er écht voor nodig?
+              Iemand googelt "kitbedrijf Zwolle" of "schilder Utrecht" en neemt contact op met jouw concurrent. Hoe komt dat? En wat is er nodig om dat om te draaien?
             </p>
             <div className="flex items-center gap-4 mt-8 text-white/40 text-sm">
               <span>Lars van der Hoek</span>
@@ -155,13 +155,13 @@ export default async function BlogPostPage({
           {/* Intro */}
           <AnimatedSection>
             <p className="text-primary/80 text-lg leading-relaxed mb-4">
-              Stel: iemand in jouw stad zoekt op Google naar een loodgieter, een kapper of een boekhoudkantoor. Bovenaan verschijnt een kaartje met drie bedrijven. Die drie bedrijven pakken het grootste deel van de klikken. De rest, hoe goed ook, wordt nauwelijks gezien.
+              Elke dag zoeken mensen in jouw stad op Google naar wat jij aanbiedt. "Dakdekker Groningen." "Kapper Den Haag." "Boekhoudkantoor Eindhoven." Ze klikken op de eerste paar namen die ze zien, bellen en maken een afspraak.
             </p>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Dat kaartje heet de Google Bedrijfskaart, en die drie plekken zijn felbegeerd. In bijna elke branche dingen tientallen tot honderden bedrijven mee. Toch denken de meeste ondernemers dat ze er al bij horen zodra ze hun bedrijf hebben "aangemeld" bij Google.
+              Als jij niet bij die eerste namen staat, bestaat je bedrijf voor die zoeker simpelweg niet. Niet omdat je slechtere diensten levert. Niet omdat je duurder bent. Maar omdat iemand anders beter scoort in de zoekresultaten.
             </p>
             <p className="text-primary/70 leading-relaxed">
-              Dat is helaas niet zo. Aanmelden is het begin, niet het eindpunt.
+              Dat is lokale vindbaarheid. En het is een discipline op zich, met regels die de meeste ondernemers niet kennen.
             </p>
           </AnimatedSection>
 
@@ -169,7 +169,7 @@ export default async function BlogPostPage({
           <AnimatedSection>
             <div className="bg-primary rounded-sm p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
               {[
-                {num: '44%', label: 'van alle klikken gaat naar de bovenste 3 bedrijven op de kaart', src: 'Moz, 2025'},
+                {num: '46%', label: 'van alle Google-zoekopdrachten is lokaal van aard', src: 'Google, 2025'},
                 {num: '97%', label: 'van mensen zoekt online voordat ze een lokaal bedrijf bezoekt', src: 'BrightLocal, 2025'},
                 {num: '88%', label: 'van die zoekers neemt binnen 24 uur contact op of gaat langs', src: 'Google, 2024'},
               ].map(({num, label, src}) => (
@@ -185,33 +185,36 @@ export default async function BlogPostPage({
           {/* Sectie 1 */}
           <AnimatedSection>
             <h2 className="text-primary font-black text-2xl mb-4">
-              Wat kijkt Google eigenlijk naar?
+              Hoe Google bepaalt wie bovenaan staat
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Google bepaalt welke drie bedrijven bovenaan staan op basis van honderden factoren. Die zijn grofweg in te delen in vier groepen:
+              Stel dat drie mensen vandaag zoeken op "loodgieter Haarlem." Ze zien allemaal hetzelfde rijtje bedrijven bovenaan. Niet willekeurig. Google heeft voor elke zoekterm berekend welke bedrijven het meest relevant zijn, op basis van honderden factoren tegelijk.
+            </p>
+            <p className="text-primary/70 leading-relaxed mb-6">
+              Die factoren vallen globaal in vier groepen:
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
                   icon: MapPin,
-                  title: 'Hoe compleet je profiel is',
-                  desc: 'Niet alleen naam en adres, maar ook je openingstijden per seizoen, een beschrijving van al je diensten, de juiste categorieën en tientallen kleine details die de meeste ondernemers overslaan.',
+                  title: 'Hoe volledig en actueel je profiel is',
+                  desc: 'Naam, adres en telefoonnummer zijn het minimum. Google kijkt ook naar je beschrijving, je diensten, de juiste categorie-indeling en of je profiel regelmatig wordt bijgehouden.',
                 },
                 {
                   icon: Star,
                   title: 'Je reviews',
-                  desc: 'Hoeveel je er hebt, hoe recent ze zijn, of je erop reageert en wat klanten precies schrijven. Eén slechte maand zonder nieuwe reviews kan je positie al doen zakken.',
+                  desc: 'Hoeveel je er hebt, hoe recent ze zijn, of je erop reageert en wat klanten precies schrijven. Een bedrijf zonder recente reviews zakt langzaam weg, ook al was het ooit goed zichtbaar.',
                 },
                 {
                   icon: BarChart2,
-                  title: 'Of andere websites je vermelden',
-                  desc: 'Google checkt of je naam, adres en telefoonnummer overal op het internet hetzelfde staan. Eén tikfout op een andere site telt al mee tegen je.',
+                  title: 'Vermeldingen op andere websites',
+                  desc: 'Google checkt of je bedrijfsnaam, adres en telefoonnummer consistent terugkomen op andere plekken online. Eén tikfout ergens telt al mee als een negatief signaal.',
                 },
                 {
                   icon: RefreshCw,
                   title: 'Hoe actief je bent',
-                  desc: 'Stel je profiel in en laat het vervolgens staan? Dan zakt het weg. Google beloont bedrijven die regelmatig iets updaten, foto\'s toevoegen of berichten plaatsen.',
+                  desc: 'Een profiel dat maanden stilstaat, verliest terrein. Google beloont bedrijven die actief blijven: nieuwe foto\'s, berichten, updates. Inactief zijn is hetzelfde als achteruitgaan.',
                 },
               ].map(({icon: Icon, title, desc}) => (
                 <div key={title} className="bg-white border border-primary/10 rounded-sm p-6">
@@ -228,17 +231,20 @@ export default async function BlogPostPage({
           {/* Sectie 2 */}
           <AnimatedSection>
             <h2 className="text-primary font-black text-2xl mb-4">
-              Waarom "even invullen" niet genoeg is
+              Het verschil zit in de details
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Meer dan de helft van de Nederlandse bedrijven heeft het profiel nooit echt volledig ingesteld (BrightLocal, 2025). Ze hebben de basis staan, maar missen de tientallen kleine dingen die Google wél meewegen.
+              Stel je voor: een schilder in Nijmegen en een schilder in diezelfde stad, twee straten verderop. Beiden hebben een Google-profiel. Beiden leveren prima werk. Toch staat de een consequent bovenaan en krijgt de ander nauwelijks aanvragen via Google.
             </p>
             <p className="text-primary/70 leading-relaxed mb-4">
-              En dat is maar één kant van het verhaal. Want zelfs als je profiel vandaag perfect is, kan het over drie maanden alweer zijn weggezakt. Google past zijn regels meerdere keren per jaar aan. Je concurrenten zitten niet stil. Reviews heb je continu nodig, niet eenmalig.
+              Dat verschil zit zelden in een grote fout. Het zit in tientallen kleine dingen: een categorie die niet klopt, reviews die onbeantwoord blijven, een telefoonnummer dat op een andere website net iets anders staat, foto's die al een jaar niet zijn bijgewerkt.
+            </p>
+            <p className="text-primary/70 leading-relaxed mb-6">
+              Elk van die dingen afzonderlijk lijkt onbenullig. Samen bepalen ze of Google jou of jouw concurrent als meest betrouwbare keuze beschouwt.
             </p>
             <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
               <p className="text-primary text-sm leading-relaxed">
-                <span className="font-bold text-primary">Wat wij zien in de praktijk:</span> Als we een nieuw klantprofiel onder de loep nemen, vinden we gemiddeld meer dan twintig punten waar het beter kan. Dat geldt ook voor profielen waarvan de ondernemer dacht dat ze al goed stonden.
+                <span className="font-bold">Wat wij zien in de praktijk:</span> Als we een bestaand profiel doorlichten, vinden we gemiddeld meer dan twintig punten waar het beter kan. Dat geldt ook voor profielen waarvan de ondernemer dacht dat ze al goed stonden.
               </p>
             </div>
           </AnimatedSection>
@@ -246,13 +252,29 @@ export default async function BlogPostPage({
           {/* Sectie 3 */}
           <AnimatedSection>
             <h2 className="text-primary font-black text-2xl mb-4">
+              Lokale groei via Google is geen eenmalig klusje
+            </h2>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              Een veel gemaakte fout: het profiel eenmalig goed instellen en daarna niets meer doen. Het probleem is dat Google zijn regels regelmatig aanpast. Wat vorig jaar werkte, werkt nu misschien minder goed. En je concurrenten staan ook niet stil.
+            </p>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              Neem een installatiebedrijf in Arnhem. Goed vindbaar vorig jaar. Dit jaar zijn er drie nieuwe concurrenten bij gekomen, allemaal met verse reviews en actieve profielen. Zonder aanpassingen zakt het installatiebedrijf weg, terwijl ze verder niets veranderd hebben aan hun bedrijf.
+            </p>
+            <p className="text-primary/70 leading-relaxed">
+              Lokale vindbaarheid is geen instelling. Het is iets wat je bijhoudt, aanpast en optimaliseert. Maand na maand.
+            </p>
+          </AnimatedSection>
+
+          {/* Sectie 4 */}
+          <AnimatedSection>
+            <h2 className="text-primary font-black text-2xl mb-4">
               Wat het je kost als je niet gevonden wordt
             </h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Stel dat er in jouw stad elke dag tien mensen zoeken naar jouw soort bedrijf. De drie bovenste bedrijven pakken samen 44% van die klikken. Als jij daar niet bij zit, loop je dagelijks klanten mis aan iemand die het spel beter speelt. Niet per se beter werk levert.
+              Stel dat er elke week twintig mensen in jouw regio zoeken naar wat jij doet. De bovenste drie bedrijven in de zoekresultaten pakken samen het grootste deel van die klikken. Als jij daar niet bij staat, gaan die klanten naar iemand anders. Niet omdat die persoon beter is. Maar omdat die persoon zichtbaar is en jij niet.
             </p>
             <p className="text-primary/70 leading-relaxed">
-              Dat is de kern van lokale vindbaarheid. Het gaat er niet om wie het beste product heeft. Het gaat erom wie gevonden wordt. En dat is een discipline op zich.
+              Tel dat op over een jaar. Dat zijn honderden mensen die jouw concurrent hebben gebeld in plaats van jou. En die klanten zijn er niet meer.
             </p>
           </AnimatedSection>
 
@@ -263,10 +285,10 @@ export default async function BlogPostPage({
               <div className="relative z-10">
                 <p className="text-gold text-xs font-semibold tracking-widest uppercase mb-4">Gratis check</p>
                 <h3 className="text-white font-black text-2xl mb-4">
-                  Hoe staat jouw bedrijf er nu voor?
+                  Hoe scoort jouw bedrijf lokaal op dit moment?
                 </h3>
                 <p className="text-white/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
-                  We kijken gratis naar je huidige situatie en vertellen je eerlijk wat er beter kan. Geen verkooppraatje, gewoon een duidelijk beeld.
+                  We kijken gratis naar je huidige situatie en vertellen je eerlijk wat er beter kan en hoeveel je er lokaal mee kunt groeien.
                 </p>
                 <Link
                   href="/contact"
