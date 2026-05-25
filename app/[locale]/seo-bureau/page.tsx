@@ -76,8 +76,8 @@ export async function generateMetadata({
       ? 'SEO Bureau Nederland — Meer klanten via Google | VDH Agency'
       : 'SEO Agency Netherlands — More customers via Google | VDH Agency',
     description: isNl
-      ? 'VDH Agency is een SEO bureau voor het Nederlandse MKB. Technische SEO, lokale SEO, zoekwoordonderzoek en maandelijkse rapportage. Transparant, resultaatgericht. Gratis kennismakingsgesprek.'
-      : 'VDH Agency is an SEO agency for Dutch SMEs. Technical SEO, local SEO, keyword research and monthly reporting. Transparent, results-focused. Free introductory consultation.',
+      ? 'VDH Agency is een SEO bureau voor het MKB. Technische SEO, lokale SEO, zoekwoordonderzoek en maandelijkse rapportage. Transparant en resultaatgericht.'
+      : 'VDH Agency is an SEO agency for Dutch SMEs. Technical SEO, local SEO, keyword research and monthly reporting. Transparent and results-focused.',
     alternates: {
       canonical,
       languages: {

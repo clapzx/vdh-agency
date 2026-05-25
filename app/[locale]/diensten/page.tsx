@@ -24,7 +24,7 @@ function breadcrumbJsonLd(locale: string) {
         '@type': 'ListItem',
         position: 2,
         name: isNl ? 'Diensten' : 'Services',
-        item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`,
+        item: isNl ? `${BASE}/diensten` : `${BASE}/en/services`,
       },
     ],
   };
@@ -34,22 +34,22 @@ function serviceListJsonLd(locale: string) {
   const isNl = locale === 'nl';
   const base = isNl ? BASE : `${BASE}/en`;
   const items = [
-    {name: isNl ? 'Online Marketing' : 'Online Marketing', path: '/diensten/online-marketing'},
-    {name: isNl ? 'Website Maken' : 'Website Development', path: '/diensten/website-maken'},
-    {name: isNl ? 'Branding & Huisstijl' : 'Branding & Identity', path: '/diensten/branding'},
-    {name: isNl ? 'Digitale Analyse' : 'Digital Analytics', path: '/diensten/digitale-analyse'},
-    {name: isNl ? 'Social Media Beheer' : 'Social Media Management', path: '/diensten/social-media-beheer'},
-    {name: isNl ? 'SEO & SEA' : 'SEO & SEA', path: '/diensten/seo-sea'},
+    {name: isNl ? 'Online Marketing' : 'Online Marketing',          nlPath: '/diensten/online-marketing',       enPath: '/services/online-marketing'},
+    {name: isNl ? 'Website Maken' : 'Website Development',          nlPath: '/diensten/website-maken',          enPath: '/services/website-development'},
+    {name: isNl ? 'Branding & Huisstijl' : 'Branding & Identity',  nlPath: '/diensten/branding',               enPath: '/services/branding'},
+    {name: isNl ? 'Digitale Analyse' : 'Digital Analytics',         nlPath: '/diensten/digitale-analyse',       enPath: '/services/digital-analytics'},
+    {name: isNl ? 'Social Media Beheer' : 'Social Media Management',nlPath: '/diensten/social-media-beheer',    enPath: '/services/social-media-management'},
+    {name: 'SEO & SEA',                                             nlPath: '/diensten/seo-sea',                enPath: '/services/seo-sea'},
   ];
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: isNl ? 'Diensten van VDH Agency' : 'VDH Agency Services',
-    itemListElement: items.map(({name, path}, i) => ({
+    itemListElement: items.map(({name, nlPath, enPath}, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name,
-      url: `${base}${path}`,
+      url: isNl ? `${BASE}${nlPath}` : `${BASE}/en${enPath}`,
     })),
   };
 }
@@ -66,18 +66,18 @@ export async function generateMetadata({
       ? 'Onze Diensten — Online Marketing, Websites, Branding & Meer'
       : 'Our Services — Online Marketing, Websites, Branding & More',
     description: isNl
-      ? 'Ontdek alle diensten van VDH Agency: online marketing, websites op maat, branding, digitale analyse en social media beheer. Meetbaar resultaat, persoonlijk contact.'
-      : 'Explore VDH Agency services: online marketing, custom websites, branding, digital analytics and social media management. Measurable results, personal contact.',
+      ? 'Alle diensten van VDH Agency: online marketing, websites op maat, branding, digitale analyse en social media beheer. Meetbaar resultaat, direct contact.'
+      : 'Explore VDH Agency services: online marketing, custom websites, branding, digital analytics and social media management. Measurable results, direct contact.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`,
+      canonical: isNl ? `${BASE}/diensten` : `${BASE}/en/services`,
       languages: {
         nl: `${BASE}/diensten`,
-        en: `${BASE}/en/diensten`,
+        en: `${BASE}/en/services`,
         'x-default': `${BASE}/diensten`,
       },
     },
     openGraph: {
-      url: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`,
+      url: isNl ? `${BASE}/diensten` : `${BASE}/en/services`,
     },
   };
 }

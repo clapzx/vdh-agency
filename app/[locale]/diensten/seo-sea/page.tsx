@@ -22,14 +22,14 @@ function serviceJsonLd(locale: string) {
         description: isNl
           ? 'Zoekmachineoptimalisatie en Google Ads campagnes voor het MKB.'
           : 'Search engine optimisation and Google Ads campaigns for SMEs.',
-        url: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/diensten/seo-sea`,
+        url: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/services/seo-sea`,
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
-          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: 'SEO & SEA', item: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/diensten/seo-sea`},
+          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/services`},
+          {'@type': 'ListItem', position: 3, name: 'SEO & SEA', item: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/services/seo-sea`},
         ],
       },
     ],
@@ -48,18 +48,18 @@ export async function generateMetadata({
       ? 'SEO & SEA Bureau Nederland — Meer klanten via Google'
       : 'SEO & SEA Agency Netherlands — More customers via Google',
     description: isNl
-      ? 'VDH Agency verzorgt SEO-optimalisatie en Google Ads campagnes voor het Nederlandse MKB. Technische audit, zoekwoordonderzoek en maandelijkse rapportage. Vraag gratis offerte aan.'
-      : 'VDH Agency provides SEO optimisation and Google Ads campaigns for Dutch SMEs. Technical audit, keyword research and monthly reporting. Request a free quote.',
+      ? 'VDH Agency verzorgt SEO & Google Ads voor het MKB. Technische audit, zoekwoordonderzoek en maandelijkse rapportage. Vraag gratis offerte aan.'
+      : 'VDH Agency provides SEO & Google Ads for Dutch SMEs. Technical audit, keyword research and monthly reporting. Request a free quote.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/diensten/seo-sea`,
+      canonical: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/services/seo-sea`,
       languages: {
         nl: `${BASE}/diensten/seo-sea`,
-        en: `${BASE}/en/diensten/seo-sea`,
+        en: `${BASE}/en/services/seo-sea`,
         'x-default': `${BASE}/diensten/seo-sea`,
       },
     },
     openGraph: {
-      url: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/diensten/seo-sea`,
+      url: isNl ? `${BASE}/diensten/seo-sea` : `${BASE}/en/services/seo-sea`,
     },
   };
 }
@@ -120,7 +120,7 @@ export default async function SeoSeaPage({
           <AnimatedSection className="max-w-3xl">
             <Breadcrumb crumbs={[
               {label: 'Home', href: locale === 'nl' ? '/' : '/en/'},
-              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/diensten'},
+              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/services'},
               {label: 'SEO & SEA'},
             ]} />
             <div className="flex items-center gap-3 mb-6">
@@ -213,9 +213,9 @@ export default async function SeoSeaPage({
       <RelatedServices
         title={locale === 'nl' ? 'Combineer met' : 'Combine with'}
         services={[
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/website-maken`,     label: locale === 'nl' ? 'Website Maken' : 'Website Development',    desc: locale === 'nl' ? 'SEO-ready website op maat' : 'SEO-ready custom website'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/online-marketing`,  label: 'Online Marketing',                                           desc: locale === 'nl' ? 'Volledige digitale groeistrategie' : 'Full digital growth strategy'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/digitale-analyse`,  label: locale === 'nl' ? 'Digitale Analyse' : 'Digital Analytics',   desc: locale === 'nl' ? 'Meet je SEO-resultaten nauwkeurig' : 'Track your SEO results precisely'},
+          {href: locale === 'nl' ? '/diensten/website-maken'   : '/en/services/website-development', label: locale === 'nl' ? 'Website Maken' : 'Website Development',  desc: locale === 'nl' ? 'SEO-ready website op maat' : 'SEO-ready custom website'},
+          {href: locale === 'nl' ? '/diensten/online-marketing' : '/en/services/online-marketing',  label: 'Online Marketing',                                         desc: locale === 'nl' ? 'Volledige digitale groeistrategie' : 'Full digital growth strategy'},
+          {href: locale === 'nl' ? '/diensten/digitale-analyse' : '/en/services/digital-analytics', label: locale === 'nl' ? 'Digitale Analyse' : 'Digital Analytics', desc: locale === 'nl' ? 'Meet je SEO-resultaten nauwkeurig' : 'Track your SEO results precisely'},
         ]}
       />
       <CTA />

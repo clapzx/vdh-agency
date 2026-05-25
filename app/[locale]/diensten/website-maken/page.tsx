@@ -23,14 +23,14 @@ function serviceJsonLd(locale: string) {
         description: isNl
           ? 'Op maat gemaakte, SEO-geoptimaliseerde en mobielvriendelijke websites voor het MKB.'
           : 'Custom-built, SEO-optimised and mobile-friendly websites for SMEs.',
-        url: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/diensten/website-maken`,
+        url: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/services/website-development`,
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
-          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: isNl ? 'Website Maken' : 'Website Development', item: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/diensten/website-maken`},
+          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/services`},
+          {'@type': 'ListItem', position: 3, name: isNl ? 'Website Maken' : 'Website Development', item: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/services/website-development`},
         ],
       },
     ],
@@ -49,18 +49,18 @@ export async function generateMetadata({
       ? 'Website Laten Maken — Snel, SEO-proof & op maat | VDH Agency'
       : 'Have a Website Built — Fast, SEO-proof & custom | VDH Agency',
     description: isNl
-      ? 'VDH Agency bouwt professionele websites op maat voor het MKB. SEO-geoptimaliseerd, mobielvriendelijk en snel. Inclusief CMS en technisch SEO-fundament. Vraag gratis offerte aan.'
-      : 'VDH Agency builds professional custom websites for SMEs. SEO-optimised, mobile-friendly and fast. Including CMS and technical SEO foundation. Request a free quote.',
+      ? 'VDH Agency bouwt websites op maat voor het MKB. SEO-geoptimaliseerd, mobielvriendelijk en snel. Inclusief CMS en technisch SEO-fundament. Gratis offerte.'
+      : 'VDH Agency builds custom websites for SMEs. SEO-optimised, mobile-friendly and fast. Including CMS and technical SEO foundation. Request a free quote.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/diensten/website-maken`,
+      canonical: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/services/website-development`,
       languages: {
         nl: `${BASE}/diensten/website-maken`,
-        en: `${BASE}/en/diensten/website-maken`,
+        en: `${BASE}/en/services/website-development`,
         'x-default': `${BASE}/diensten/website-maken`,
       },
     },
     openGraph: {
-      url: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/diensten/website-maken`,
+      url: isNl ? `${BASE}/diensten/website-maken` : `${BASE}/en/services/website-development`,
     },
   };
 }
@@ -122,7 +122,7 @@ export default async function WebsiteMakenPage({
           <AnimatedSection className="max-w-3xl">
             <Breadcrumb crumbs={[
               {label: 'Home', href: locale === 'nl' ? '/' : '/en/'},
-              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/diensten'},
+              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/services'},
               {label: t('label')},
             ]} />
             <div className="flex items-center gap-3 mb-6">
@@ -218,9 +218,9 @@ export default async function WebsiteMakenPage({
       <RelatedServices
         title={locale === 'nl' ? 'Combineer met' : 'Combine with'}
         services={[
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/seo-sea`,           label: 'SEO & SEA',                                                      desc: locale === 'nl' ? 'Zet je website hoger in Google' : 'Rank higher in Google'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/digitale-analyse`,  label: locale === 'nl' ? 'Digitale Analyse' : 'Digital Analytics',       desc: locale === 'nl' ? 'Meet bezoekers en conversies' : 'Track visitors and conversions'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/branding`,          label: locale === 'nl' ? 'Branding & Huisstijl' : 'Branding & Identity', desc: locale === 'nl' ? 'Sterk visueel merk' : 'Strong visual brand'},
+          {href: locale === 'nl' ? '/diensten/seo-sea'          : '/en/services/seo-sea',          label: 'SEO & SEA',                                                      desc: locale === 'nl' ? 'Zet je website hoger in Google' : 'Rank higher in Google'},
+          {href: locale === 'nl' ? '/diensten/digitale-analyse' : '/en/services/digital-analytics', label: locale === 'nl' ? 'Digitale Analyse' : 'Digital Analytics',       desc: locale === 'nl' ? 'Meet bezoekers en conversies' : 'Track visitors and conversions'},
+          {href: locale === 'nl' ? '/diensten/branding'         : '/en/services/branding',          label: locale === 'nl' ? 'Branding & Huisstijl' : 'Branding & Identity', desc: locale === 'nl' ? 'Sterk visueel merk' : 'Strong visual brand'},
         ]}
       />
       <CTA />

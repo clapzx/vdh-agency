@@ -23,14 +23,14 @@ function serviceJsonLd(locale: string) {
         description: isNl
           ? 'SEO, Google Ads, Meta Ads, e-mail marketing en copywriting — alles onder één dak.'
           : 'SEO, Google Ads, Meta Ads, email marketing and copywriting — all under one roof.',
-        url: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/diensten/online-marketing`,
+        url: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/services/online-marketing`,
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
-          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: 'Online Marketing', item: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/diensten/online-marketing`},
+          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/services`},
+          {'@type': 'ListItem', position: 3, name: 'Online Marketing', item: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/services/online-marketing`},
         ],
       },
     ],
@@ -49,18 +49,18 @@ export async function generateMetadata({
       ? 'Online Marketing Bureau Nederland — SEO, Ads, E-mail & Copy'
       : 'Online Marketing Agency Netherlands — SEO, Ads, Email & Copy',
     description: isNl
-      ? 'VDH Agency verzorgt online marketing van A tot Z: SEO, Google Ads, Meta Ads (Facebook & Instagram), e-mail marketing en copywriting. Vraag gratis adviesgesprek aan.'
-      : 'VDH Agency handles online marketing end-to-end: SEO, Google Ads, Meta Ads (Facebook & Instagram), email marketing and copywriting. Request a free consultation.',
+      ? 'VDH Agency verzorgt online marketing van A tot Z: SEO, Google Ads, Meta Ads, e-mail marketing en copywriting. Vraag gratis adviesgesprek aan.'
+      : 'VDH Agency handles online marketing end-to-end: SEO, Google Ads, Meta Ads, email marketing and copywriting. Request a free consultation.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/diensten/online-marketing`,
+      canonical: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/services/online-marketing`,
       languages: {
         nl: `${BASE}/diensten/online-marketing`,
-        en: `${BASE}/en/diensten/online-marketing`,
+        en: `${BASE}/en/services/online-marketing`,
         'x-default': `${BASE}/diensten/online-marketing`,
       },
     },
     openGraph: {
-      url: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/diensten/online-marketing`,
+      url: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/services/online-marketing`,
     },
   };
 }
@@ -121,7 +121,7 @@ export default async function OnlineMarketingPage({
           <AnimatedSection className="max-w-3xl">
             <Breadcrumb crumbs={[
               {label: 'Home', href: locale === 'nl' ? '/' : '/en/'},
-              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/diensten'},
+              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/services'},
               {label: t('label')},
             ]} />
             <div className="flex items-center gap-3 mb-6">
@@ -217,9 +217,9 @@ export default async function OnlineMarketingPage({
       <RelatedServices
         title={locale === 'nl' ? 'Combineer met' : 'Combine with'}
         services={[
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/seo-sea`,              label: 'SEO & SEA',                                                    desc: locale === 'nl' ? 'Organisch verkeer via Google' : 'Organic traffic via Google'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/social-media-beheer`,  label: locale === 'nl' ? 'Social Media' : 'Social Media',              desc: locale === 'nl' ? 'Content en advertenties op social' : 'Content and ads on social'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/digitale-analyse`,     label: locale === 'nl' ? 'Digitale Analyse' : 'Digital Analytics',     desc: locale === 'nl' ? 'Meet je ROI per kanaal' : 'Measure ROI per channel'},
+          {href: locale === 'nl' ? '/diensten/social-media-beheer' : '/en/services/social-media-management', label: locale === 'nl' ? 'Social Media' : 'Social Media',          desc: locale === 'nl' ? 'Content en advertenties op social' : 'Content and ads on social'},
+          {href: locale === 'nl' ? '/diensten/website-maken'      : '/en/services/website-development',      label: locale === 'nl' ? 'Website Maken' : 'Website Development',    desc: locale === 'nl' ? 'SEO-ready website op maat' : 'SEO-ready custom website'},
+          {href: locale === 'nl' ? '/diensten/digitale-analyse'   : '/en/services/digital-analytics',        label: locale === 'nl' ? 'Digitale Analyse' : 'Digital Analytics',  desc: locale === 'nl' ? 'Meet je ROI per kanaal' : 'Measure ROI per channel'},
         ]}
       />
       <CTA />

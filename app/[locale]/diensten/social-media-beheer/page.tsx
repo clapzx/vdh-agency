@@ -23,14 +23,14 @@ function serviceJsonLd(locale: string) {
         description: isNl
           ? 'Volledig social media beheer: strategie, opnames op locatie, video editing, Meta Ads en wekelijkse publicatie.'
           : 'Full social media management: strategy, on-location filming, video editing, Meta Ads and weekly publishing.',
-        url: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`,
+        url: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/services/social-media-management`,
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
-          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: isNl ? 'Social Media Beheer' : 'Social Media Management', item: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`},
+          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/services`},
+          {'@type': 'ListItem', position: 3, name: isNl ? 'Social Media Beheer' : 'Social Media Management', item: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/services/social-media-management`},
         ],
       },
     ],
@@ -49,18 +49,18 @@ export async function generateMetadata({
       ? 'Social Media Beheer uitbesteden — Content, Video & Meta Ads | VDH Agency'
       : 'Outsource Social Media Management — Content, Video & Meta Ads | VDH Agency',
     description: isNl
-      ? 'VDH Agency neemt jouw social media volledig over: strategie, opnames op locatie, professionele video editing, Meta Ads en wekelijkse publicatie. Voor Instagram, LinkedIn, Facebook en TikTok.'
-      : 'VDH Agency fully takes over your social media: strategy, on-location filming, professional video editing, Meta Ads and weekly publishing. For Instagram, LinkedIn, Facebook and TikTok.',
+      ? 'VDH Agency beheert jouw social media: strategie, opnames op locatie, video editing en Meta Ads. Wekelijkse publicatie op Instagram, LinkedIn en TikTok.'
+      : 'VDH Agency manages your social media: strategy, on-location filming, video editing and Meta Ads. Weekly publishing on Instagram, LinkedIn and TikTok.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`,
+      canonical: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/services/social-media-management`,
       languages: {
         nl: `${BASE}/diensten/social-media-beheer`,
-        en: `${BASE}/en/diensten/social-media-beheer`,
+        en: `${BASE}/en/services/social-media-management`,
         'x-default': `${BASE}/diensten/social-media-beheer`,
       },
     },
     openGraph: {
-      url: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/diensten/social-media-beheer`,
+      url: isNl ? `${BASE}/diensten/social-media-beheer` : `${BASE}/en/services/social-media-management`,
     },
   };
 }
@@ -122,7 +122,7 @@ export default async function SocialMediaPage({
           <AnimatedSection className="max-w-3xl">
             <Breadcrumb crumbs={[
               {label: 'Home', href: locale === 'nl' ? '/' : '/en/'},
-              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/diensten'},
+              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/services'},
               {label: t('label')},
             ]} />
             <div className="flex items-center gap-3 mb-6">
@@ -218,9 +218,9 @@ export default async function SocialMediaPage({
       <RelatedServices
         title={locale === 'nl' ? 'Combineer met' : 'Combine with'}
         services={[
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/branding`,          label: locale === 'nl' ? 'Branding & Huisstijl' : 'Branding & Identity', desc: locale === 'nl' ? 'Consistente merkidentiteit' : 'Consistent brand identity'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/online-marketing`,  label: 'Online Marketing',                                              desc: locale === 'nl' ? 'Meer bereik via alle kanalen' : 'More reach across all channels'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/website-maken`,     label: locale === 'nl' ? 'Website Maken' : 'Website Development',        desc: locale === 'nl' ? 'Professionele landingspagina' : 'Professional landing page'},
+          {href: locale === 'nl' ? '/diensten/branding'         : '/en/services/branding',              label: locale === 'nl' ? 'Branding & Huisstijl' : 'Branding & Identity', desc: locale === 'nl' ? 'Consistente merkidentiteit' : 'Consistent brand identity'},
+          {href: locale === 'nl' ? '/diensten/online-marketing' : '/en/services/online-marketing',     label: 'Online Marketing',                                              desc: locale === 'nl' ? 'Meer bereik via alle kanalen' : 'More reach across all channels'},
+          {href: locale === 'nl' ? '/diensten/website-maken'    : '/en/services/website-development',  label: locale === 'nl' ? 'Website Maken' : 'Website Development',        desc: locale === 'nl' ? 'Professionele landingspagina' : 'Professional landing page'},
         ]}
       />
       <CTA />

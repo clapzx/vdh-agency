@@ -21,8 +21,8 @@ export async function generateMetadata({
       ? 'Marketing Bureau Nederland — SEO, Social Media & Webdesign'
       : 'Marketing Agency Netherlands — SEO, Social Media & Web Design',
     description: isNl
-      ? 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat. Vraag gratis een consult aan bij Lars van der Hoek.'
-      : 'VDH Agency helps Dutch businesses grow online through SEO, Social Media and professional websites. Request a free consultation with Lars van der Hoek.',
+      ? 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat. Vraag gratis een consult aan.'
+      : 'VDH Agency helps Dutch businesses grow online through SEO, Social Media and professional websites. Request a free consultation.',
     alternates: {
       canonical: isNl ? BASE : `${BASE}/en`,
       languages: {
