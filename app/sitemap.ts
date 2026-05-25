@@ -26,6 +26,23 @@ const staticRoutes: RouteEntry[] = [
   {path: '/blog',                                 lastModified: '2026-05-24'},
   {path: '/privacybeleid',                        lastModified: '2026-05-22'},
   {path: '/algemene-voorwaarden',                 lastModified: '2026-05-22'},
+  // Locatiepagina's
+  {path: '/marketing-bureau/heerde',              lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/hattem',              lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/epe',                 lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/wezep',               lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/oldebroek',           lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/vaassen',             lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/t-harde',             lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/elburg',              lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/wijhe',               lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/olst',                lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/apeldoorn',           lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/nunspeet',            lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/kampen',              lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/raalte',              lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/zwolle',              lastModified: '2026-05-25', nlOnly: true},
+  {path: '/marketing-bureau/harderwijk',          lastModified: '2026-05-25', nlOnly: true},
 ];
 
 function getBlogPostRoutes(): RouteEntry[] {

@@ -1,0 +1,365 @@
+import type {Metadata} from 'next';
+import {notFound} from 'next/navigation';
+import {ArrowRight, CheckCircle2, MapPin, Search, Share2, Globe, BarChart2} from 'lucide-react';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import SectionLabel from '@/components/ui/SectionLabel';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import CTA from '@/components/sections/CTA';
+import {Link} from '@/i18n/navigation';
+
+const BASE = 'https://www.vdh-agency.com';
+
+interface CityData {
+  slug: string;
+  name: string;
+  region: string;
+  intro: string;
+  body: string;
+  metaDescription: string;
+}
+
+const cities: CityData[] = [
+  {
+    slug: 'heerde',
+    name: 'Heerde',
+    region: 'Gelderland',
+    intro: 'VDH Agency is gevestigd in Heerde en kent de lokale markt als geen ander. Of je nu een ambacht, winkel of dienstverlener bent in het dorp of de omgeving: met de juiste online aanpak bereik je klanten die actief zoeken naar wat jij aanbiedt.',
+    body: 'Heerde telt veel lokale ondernemers die nog zonder serieuze online strategie werken. Dat is tegelijk een uitdaging en een kans: wie nu investeert in vindbaarheid, pakt een voorsprong die moeilijk in te halen is.',
+    metaDescription: 'Marketing bureau in Heerde. VDH Agency helpt lokale ondernemers groeien via SEO, social media en professionele websites. Gevestigd in Heerde, actief door heel Nederland.',
+  },
+  {
+    slug: 'hattem',
+    name: 'Hattem',
+    region: 'Gelderland',
+    intro: 'Hattem is een compacte vestingstad met een actief ondernemersleven. De concurrentie in de regio is scherp, en wie online niet zichtbaar is, mist klanten. VDH Agency helpt Hattemse ondernemers groeien via SEO, social media en een website die aanvragen oplevert.',
+    body: 'Als kleine maar levendige stad heeft Hattem ondernemers die zich kunnen onderscheiden via lokale vindbaarheid. Een goed geoptimaliseerde online aanwezigheid maakt het verschil tussen gevonden worden en onzichtbaar blijven.',
+    metaDescription: 'Marketing bureau voor Hattem. VDH Agency helpt ondernemers in Hattem groeien via SEO, social media en professionele websites. Vraag een gratis consult aan.',
+  },
+  {
+    slug: 'epe',
+    name: 'Epe',
+    region: 'Gelderland',
+    intro: 'Epe is een groene gemeente in de Veluwe met een mix van toerisme, detailhandel en lokale dienstverleners. Online gevonden worden in een regio met veel toeristische concurrentie vraagt om een gerichte aanpak. VDH Agency zorgt voor zichtbaarheid op de zoekopdrachten die er voor jouw bedrijf toe doen.',
+    body: 'De combinatie van toeristische bezoekers en vaste inwoners biedt Epese ondernemers een brede doelgroep. Met de juiste lokale SEO bereik je beide groepen precies op het moment dat ze op zoek zijn.',
+    metaDescription: 'Marketing bureau voor Epe en omgeving. VDH Agency helpt ondernemers in Epe groeien via SEO, social media en professionele websites op maat.',
+  },
+  {
+    slug: 'wezep',
+    name: 'Wezep',
+    region: 'Gelderland',
+    intro: 'Wezep is een groeiende woonkern in de gemeente Oldebroek, met een toenemend aantal lokale ondernemers. De nabijheid van Zwolle en Apeldoorn maakt de markt competitief. Met een sterke online aanwezigheid trek je de klanten die dichtbij zijn en snel willen handelen.',
+    body: 'Juist in groeiende kernen als Wezep is online marketing een effectief middel om als eerste de juiste positie in te nemen. VDH Agency helpt je dat moment te benutten voordat de concurrentie dat doet.',
+    metaDescription: 'Marketing bureau voor Wezep. VDH Agency helpt ondernemers in Wezep en gemeente Oldebroek groeien via SEO, social media en professionele websites.',
+  },
+  {
+    slug: 'oldebroek',
+    name: 'Oldebroek',
+    region: 'Gelderland',
+    intro: 'De gemeente Oldebroek heeft een divers mkb-landschap verspreid over meerdere kernen. Veel ondernemers werken nog zonder serieuze online strategie, wat kansen creëert voor wie wel investeert in vindbaarheid. VDH Agency helpt je die voorsprong te pakken.',
+    body: 'Van agrarische bedrijven tot lokale dienstverleners: in Oldebroek is de markt overzichtelijk maar de online concurrentie vanuit grotere steden merkbaar. Met gerichte lokale SEO zorg je dat jij als eerste gevonden wordt.',
+    metaDescription: 'Marketing bureau voor Oldebroek. VDH Agency helpt ondernemers in de gemeente Oldebroek groeien via SEO, social media en websites op maat.',
+  },
+  {
+    slug: 'vaassen',
+    name: 'Vaassen',
+    region: 'Gelderland',
+    intro: 'Vaassen ligt op de grens van de Veluwe en de IJsselvallei en heeft een actieve lokale economie met bouw, zorg en detailhandel. Online marketing die inspeelt op de lokale zoekintentie zorgt voor aanvragen van mensen die vlakbij zijn en klaar zijn om te kopen.',
+    body: 'De ligging van Vaassen tussen Epe en Apeldoorn betekent dat je als ondernemer concurreert met bedrijven uit een brede regio. Lokale SEO en een professionele website geven je het voordeel van herkenbaarheid en nabijheid.',
+    metaDescription: 'Marketing bureau voor Vaassen. VDH Agency helpt ondernemers in Vaassen groeien via SEO, social media en professionele websites. Vraag een gratis consult aan.',
+  },
+  {
+    slug: 't-harde',
+    name: "'t Harde",
+    region: 'Gelderland',
+    intro: "'t Harde is een kern in de gemeente Oldebroek met een mix van woningbouw en lokale bedrijvigheid. Ook hier geldt: wie gevonden wil worden, moet online zichtbaar zijn. Met lokale SEO en een professionele website zorg je dat potentiële klanten jou vinden en niet jouw concurrent.",
+    body: "De kleinschaligheid van 't Harde is een voordeel: de doelgroep is concreet en de concurrentie beperkt. Wie nu investeert in online zichtbaarheid, kan snel een dominante positie in de lokale zoekresultaten opbouwen.",
+    metaDescription: "Marketing bureau voor 't Harde en omgeving. VDH Agency helpt ondernemers in 't Harde groeien via SEO, social media en professionele websites.",
+  },
+  {
+    slug: 'elburg',
+    name: 'Elburg',
+    region: 'Gelderland',
+    intro: 'Elburg is een historische vestingstad met een levendige toeristische sector en een breed mkb-landschap. Als jouw bedrijf wil groeien in Elburg of de regio rondom het Veluwemeer, dan begint dat met online zichtbaarheid. VDH Agency bouwt de strategie die daarvoor nodig is.',
+    body: 'De combinatie van toerisme en vaste bewoners maakt Elburg een interessante markt. Zowel bezoekers als lokale klanten zoeken online naar diensten in de regio. Met de juiste aanpak bereik je beide doelgroepen effectief.',
+    metaDescription: 'Marketing bureau voor Elburg. VDH Agency helpt ondernemers in Elburg groeien via SEO, social media en professionele websites. Vraag een gratis consult aan.',
+  },
+  {
+    slug: 'wijhe',
+    name: 'Wijhe',
+    region: 'Overijssel',
+    intro: 'Wijhe is een dorpskern in de gemeente Olst-Wijhe, op de grens van Gelderland en Overijssel. De online concurrentie vanuit Deventer en Zwolle is merkbaar. Met een scherpe lokale SEO-aanpak zorg je dat jouw bedrijf verschijnt voor klanten die in de buurt zoeken.',
+    body: 'Als ondernemer in Wijhe profiteer je van een rustige markt met weinig directe concurrenten die serieus investeren in online marketing. Dat maakt het relatief eenvoudig om snel een sterke positie op te bouwen in de lokale zoekresultaten.',
+    metaDescription: 'Marketing bureau voor Wijhe en gemeente Olst-Wijhe. VDH Agency helpt ondernemers in Wijhe groeien via SEO, social media en professionele websites.',
+  },
+  {
+    slug: 'olst',
+    name: 'Olst',
+    region: 'Overijssel',
+    intro: 'Olst is een IJsseldorp in Overijssel met een mix van agrarische en ambachtelijke bedrijvigheid. Veel lokale ondernemers zijn nog niet volledig online zichtbaar, wat kansen biedt voor wie dat wel is. VDH Agency helpt je die positie in te nemen.',
+    body: 'De ligging van Olst langs de IJssel, dicht bij Deventer, maakt het een aantrekkelijke vestigingsplaats voor klanten uit een brede regio. Met goede online vindbaarheid hoef je niet alleen op mond-tot-mondreclame te vertrouwen.',
+    metaDescription: 'Marketing bureau voor Olst. VDH Agency helpt ondernemers in Olst groeien via SEO, social media en professionele websites. Vraag een gratis consult aan.',
+  },
+  {
+    slug: 'apeldoorn',
+    name: 'Apeldoorn',
+    region: 'Gelderland',
+    intro: 'Apeldoorn is een van de grotere steden in de regio, met een breed en competitief mkb-landschap. Online zichtbaar zijn in Apeldoorn vraagt om een doordachte strategie: de juiste zoekwoorden, een technisch sterke website en consistente social media aanwezigheid. VDH Agency levert dat, zonder bureaucratie.',
+    body: 'Met meer dan 160.000 inwoners is Apeldoorn een markt met veel potentie. Tegelijk is de concurrentie groter dan in kleinere gemeenten. Een professionele online aanpak is hier geen luxe, maar een noodzaak om op te vallen.',
+    metaDescription: 'Marketing bureau voor Apeldoorn. VDH Agency helpt ondernemers in Apeldoorn groeien via SEO, social media en professionele websites op maat.',
+  },
+  {
+    slug: 'nunspeet',
+    name: 'Nunspeet',
+    region: 'Gelderland',
+    intro: 'Nunspeet ligt aan de rand van de Veluwe en is een aantrekkelijke vestigingsplaats voor ondernemers die van rust én bereikbaarheid houden. De toeristische sector is actief, maar ook gewone mkb-bedrijven profiteren van goede online zichtbaarheid. VDH Agency zorgt voor een aanpak die past bij jouw markt.',
+    body: 'Nunspeet heeft een sterke lokale gemeenschap met loyale klanten. Wie online goed zichtbaar is, bouwt vertrouwen op bij zowel toeristen als vaste bewoners. Dat vertaalt zich direct naar meer aanvragen en omzet.',
+    metaDescription: 'Marketing bureau voor Nunspeet. VDH Agency helpt ondernemers in Nunspeet groeien via SEO, social media en professionele websites. Vraag een gratis consult aan.',
+  },
+  {
+    slug: 'kampen',
+    name: 'Kampen',
+    region: 'Overijssel',
+    intro: 'Kampen is een historische Hanzestad langs de IJssel met een actief ondernemersleven. De concurrentie met het nabijgelegen Zwolle is merkbaar, maar met lokale SEO en een sterke online aanwezigheid onderscheid jij je als de herkenbare lokale keuze voor klanten in Kampen en omgeving.',
+    body: 'De historische charme en groeiende bevolking van Kampen bieden kansen voor ondernemers die online goed zichtbaar zijn. Klanten zoeken steeds vaker lokaal, en wie bovenaan staat bij die zoekopdrachten, wint.',
+    metaDescription: 'Marketing bureau voor Kampen. VDH Agency helpt ondernemers in Kampen groeien via SEO, social media en professionele websites. Vraag een gratis consult aan.',
+  },
+  {
+    slug: 'raalte',
+    name: 'Raalte',
+    region: 'Overijssel',
+    intro: 'Raalte is een dynamische gemeente in Salland met een sterke agrarische en industriële sector. Ondernemers in Raalte die online willen groeien, profiteren van een lokale SEO-aanpak die inspeelt op de specifieke zoekpatronen in de regio. VDH Agency kent die markt.',
+    body: 'In Raalte en omgeving is de doelgroep concreet en de vraag naar lokale dienstverleners groot. Wie online vindbaar is, heeft een directe voorsprong op concurrenten die nog niet hebben geïnvesteerd in digitale zichtbaarheid.',
+    metaDescription: 'Marketing bureau voor Raalte. VDH Agency helpt ondernemers in Raalte groeien via SEO, social media en professionele websites. Vraag een gratis consult aan.',
+  },
+  {
+    slug: 'zwolle',
+    name: 'Zwolle',
+    region: 'Overijssel',
+    intro: 'Zwolle is de provinciehoofdstad van Overijssel en een van de snelst groeiende steden van Nederland. De online concurrentie is hoog, maar de markt is groot. Een sterke SEO-strategie, overtuigende website en actieve social media aanwezigheid zijn essentieel om op te vallen tussen honderden andere aanbieders.',
+    body: 'Zwolle trekt bedrijven en inwoners uit een brede regio. Wie in Zwolle goed gevonden wordt via Google, bereikt niet alleen Zwollenaren maar ook klanten uit Kampen, Meppel en de gehele regio. Dat maakt online investeren hier extra lonend.',
+    metaDescription: 'Marketing bureau voor Zwolle. VDH Agency helpt ondernemers in Zwolle groeien via SEO, social media en professionele websites op maat.',
+  },
+  {
+    slug: 'harderwijk',
+    name: 'Harderwijk',
+    region: 'Gelderland',
+    intro: 'Harderwijk is een compacte stad aan het Veluwemeer met een actief centrum en groeiende woonwijken. De toeristische sector is sterk, maar ook lokale dienstverleners profiteren van online zichtbaarheid. Met de juiste marketing bereik je zowel toeristen als de vaste lokale klantenkring die jij wilt bedienen.',
+    body: 'Harderwijk heeft een unieke mix van toerisme, wonen en ondernemen. Wie online sterk staat, profiteert van bezoekers aan het Dolfinarium en het Veluwemeer, maar ook van de groeiende bevolking die lokale dienstverleners zoekt.',
+    metaDescription: 'Marketing bureau voor Harderwijk. VDH Agency helpt ondernemers in Harderwijk groeien via SEO, social media en professionele websites. Vraag een gratis consult aan.',
+  },
+];
+
+const diensten = [
+  {Icon: Search,   title: 'SEO & Vindbaarheid',    desc: 'Hoger in Google voor zoekopdrachten in jouw stad en regio. Technische SEO, lokale optimalisatie en zoekwoordstrategie afgestemd op jouw markt.'},
+  {Icon: Share2,   title: 'Social Media Marketing', desc: 'Contentplanning, opnames, video editing en Meta Ads. Wij nemen jouw social media volledig uit handen, zodat jij je kunt focussen op je vak.'},
+  {Icon: Globe,    title: 'Website op Maat',        desc: 'Een snelle, mobielvriendelijke website die bezoekers omzet in klanten. Gebouwd op een sterk SEO-fundament, volledig op maat voor jouw bedrijf.'},
+  {Icon: BarChart2,title: 'Online Marketing',       desc: 'Google Ads, Meta Ads, e-mail marketing en copywriting. Alles wat nodig is om online te groeien, afgestemd op jouw budget en doelen.'},
+];
+
+function cityJsonLd(city: CityData) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${BASE}/marketing-bureau/${city.slug}`,
+        name: 'VDH Agency',
+        description: city.metaDescription,
+        url: `${BASE}/marketing-bureau/${city.slug}`,
+        telephone: '+31641027594',
+        email: 'lars@vdhagency.nl',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Heerde',
+          addressRegion: 'Gelderland',
+          addressCountry: 'NL',
+        },
+        areaServed: {
+          '@type': 'City',
+          name: city.name,
+          containedInPlace: {
+            '@type': 'State',
+            name: city.region,
+          },
+        },
+        priceRange: '€€',
+        knowsAbout: ['SEO', 'Google Ads', 'Social Media Marketing', 'Webdesign', 'Online Marketing'],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {'@type': 'ListItem', position: 1, name: 'Home', item: BASE},
+          {'@type': 'ListItem', position: 2, name: `Marketing Bureau ${city.name}`, item: `${BASE}/marketing-bureau/${city.slug}`},
+        ],
+      },
+    ],
+  };
+}
+
+export async function generateStaticParams() {
+  return cities.map(city => ({locale: 'nl', stad: city.slug}));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{locale: string; stad: string}>;
+}): Promise<Metadata> {
+  const {locale, stad} = await params;
+  if (locale !== 'nl') return {};
+  const city = cities.find(c => c.slug === stad);
+  if (!city) return {};
+
+  const url = `${BASE}/marketing-bureau/${city.slug}`;
+  return {
+    title: `Marketing Bureau ${city.name}: Online Marketing & SEO`,
+    description: city.metaDescription,
+    alternates: {
+      canonical: url,
+      languages: {'x-default': url, nl: url},
+    },
+    openGraph: {url},
+  };
+}
+
+export default async function LocatiePage({
+  params,
+}: {
+  params: Promise<{locale: string; stad: string}>;
+}) {
+  const {locale, stad} = await params;
+  if (locale !== 'nl') notFound();
+
+  const city = cities.find(c => c.slug === stad);
+  if (!city) notFound();
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(cityJsonLd(city))}}
+      />
+
+      {/* Hero */}
+      <section className="bg-primary pt-36 pb-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="max-w-3xl">
+            <Breadcrumb crumbs={[
+              {label: 'Home', href: '/'},
+              {label: `Marketing Bureau ${city.name}`},
+            ]} />
+            <div className="flex items-center gap-3 mb-6">
+              <span className="block w-6 h-px bg-gold" />
+              <span className="text-gold text-xs font-semibold tracking-widest uppercase flex items-center gap-2">
+                <MapPin size={12} />
+                {city.name}, {city.region}
+              </span>
+            </div>
+            <h1 className="text-white font-black text-4xl lg:text-6xl leading-tight mb-5">
+              Marketing Bureau {city.name}
+            </h1>
+            <p className="text-white/60 text-xl mb-4">
+              {city.intro}
+            </p>
+            <p className="text-white/40 text-base mb-10">
+              {city.body}
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 bg-gold text-primary font-bold text-sm px-7 py-3.5 rounded-sm hover:bg-gold-light transition-colors"
+              >
+                Gratis kennismakingsgesprek
+                <ArrowRight size={15} />
+              </Link>
+              <Link
+                href="/diensten"
+                className="flex items-center gap-2 border border-white/20 text-white font-semibold text-sm px-7 py-3.5 rounded-sm hover:border-gold hover:text-gold transition-colors"
+              >
+                Bekijk alle diensten
+              </Link>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Diensten */}
+      <section className="bg-light py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="max-w-2xl mb-16">
+            <SectionLabel>Wat wij doen</SectionLabel>
+            <h2 className="text-primary font-black text-3xl lg:text-4xl">
+              Online marketing voor ondernemers in {city.name}
+            </h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {diensten.map(({Icon, title, desc}, i) => (
+              <AnimatedSection key={title} delay={i * 0.08}>
+                <div className="bg-white border border-primary/10 rounded-sm p-8 hover:border-gold/30 transition-colors h-full">
+                  <div className="w-11 h-11 rounded-sm bg-gold/10 flex items-center justify-center mb-5">
+                    <Icon size={20} className="text-gold" />
+                  </div>
+                  <h3 className="text-primary font-bold text-base mb-3">{title}</h3>
+                  <p className="text-primary/60 text-sm leading-relaxed">{desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Waarom VDH */}
+      <section className="bg-primary py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection direction="left">
+              <SectionLabel light>Waarom VDH Agency</SectionLabel>
+              <h2 className="text-white font-black text-3xl lg:text-4xl mb-6">
+                Lokale kennis, meetbare resultaten
+              </h2>
+              <div className="flex flex-col gap-4">
+                <p className="text-white/60 text-base leading-relaxed">
+                  VDH Agency is gevestigd in Heerde en kent de regio. Wij begrijpen de markt in {city.name} en omgeving, welke zoekwoorden lokale klanten gebruiken en hoe je je onderscheidt van concurrenten in de buurt.
+                </p>
+                <p className="text-white/60 text-base leading-relaxed">
+                  Je werkt altijd direct met Lars van der Hoek. Geen accountmanagers, geen tussenlagen. Eerlijke communicatie, een realistisch plan en resultaten die je kunt meten.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-col gap-3">
+                {[
+                  'Direct contact met de specialist',
+                  'Transparante maandelijkse rapportage',
+                  'Geen vaste contracten, eerlijke prijzen',
+                  'Volledig online via videogesprek of telefoon',
+                ].map(point => (
+                  <div key={point} className="flex items-center gap-3">
+                    <CheckCircle2 size={15} className="text-gold shrink-0" />
+                    <span className="text-white/70 text-sm">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection direction="right" delay={0.15}>
+              <div className="bg-white/5 border border-white/10 rounded-sm p-10">
+                <h3 className="text-white font-bold text-lg mb-6">Klaar om te groeien in {city.name}?</h3>
+                <p className="text-white/50 text-sm leading-relaxed mb-8">
+                  Plan een gratis kennismakingsgesprek. We bespreken jouw situatie, doelen en wat online marketing voor jouw bedrijf in {city.name} kan betekenen. Zonder verkooppraatjes, gewoon een eerlijk gesprek.
+                </p>
+                <Link
+                  href="/contact"
+                  className="flex items-center justify-center gap-2 bg-gold text-primary font-bold text-sm px-7 py-3.5 rounded-sm hover:bg-gold-light transition-colors w-full"
+                >
+                  Gratis kennismakingsgesprek plannen
+                  <ArrowRight size={15} />
+                </Link>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      <CTA />
+    </>
+  );
+}
