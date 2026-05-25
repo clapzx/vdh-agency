@@ -140,6 +140,38 @@ function NlVersion() {
             </p>
           </div>
         </AnimatedSection>
+
+        <div className="mt-16 pt-8 border-t border-primary/5">
+          <p className="text-primary/20 text-xs mb-3">Servicegebied</p>
+          <div className="flex flex-wrap gap-x-3 gap-y-1">
+            {[
+              {slug: 'heerde',     label: 'Heerde'},
+              {slug: 'hattem',     label: 'Hattem'},
+              {slug: 'epe',        label: 'Epe'},
+              {slug: 'wezep',      label: 'Wezep'},
+              {slug: 'oldebroek',  label: 'Oldebroek'},
+              {slug: 'vaassen',    label: 'Vaassen'},
+              {slug: 't-harde',    label: "'t Harde"},
+              {slug: 'elburg',     label: 'Elburg'},
+              {slug: 'wijhe',      label: 'Wijhe'},
+              {slug: 'olst',       label: 'Olst'},
+              {slug: 'apeldoorn',  label: 'Apeldoorn'},
+              {slug: 'nunspeet',   label: 'Nunspeet'},
+              {slug: 'kampen',     label: 'Kampen'},
+              {slug: 'raalte',     label: 'Raalte'},
+              {slug: 'zwolle',     label: 'Zwolle'},
+              {slug: 'harderwijk', label: 'Harderwijk'},
+            ].map(({slug, label}) => (
+              <a
+                key={slug}
+                href={`/marketing-bureau/${slug}`}
+                className="text-primary/25 text-xs hover:text-primary/40 transition-colors"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
