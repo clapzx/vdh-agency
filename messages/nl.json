@@ -23,9 +23,11 @@
     "promiseTransparant": "Transparant"
   },
   "services": {
-    "label": "Wat wij doen",
-    "title": "Onze diensten",
-    "subtitle": "Alles wat je nodig hebt om online te groeien, op één plek.",
+    "label": "Populaire diensten",
+    "title": "Meest gevraagde diensten",
+    "subtitle": "Dit zijn onze drie populairste diensten — maar er is meer.",
+    "allServices": "Bekijk alle diensten",
+    "allServicesDesc": "Wij bieden ook: Online Marketing, Branding & Huisstijl en Digitale Analyse.",
     "seoTitle": "SEO / SEA Beheer",
     "seoDesc": "Meer zichtbaarheid in Google met een bewezen SEO-strategie en gerichte SEA-campagnes die direct resultaat leveren.",
     "socialTitle": "Social Media Marketing",

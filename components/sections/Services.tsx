@@ -12,9 +12,9 @@ export default async function Services() {
   const webTags    = [t('webTag1'),    t('webTag2'),    t('webTag3')];
 
   const services = [
-    {num: '01', icon: <Search size={28} />, title: t('seoTitle'),    desc: t('seoDesc'),    tags: seoTags,    dark: false},
-    {num: '02', icon: <Video  size={28} />, title: t('socialTitle'), desc: t('socialDesc'), tags: socialTags, dark: true },
-    {num: '03', icon: <Globe  size={28} />, title: t('webTitle'),    desc: t('webDesc'),    tags: webTags,    dark: false},
+    {num: '01', icon: <Search size={28} />, title: t('seoTitle'),    desc: t('seoDesc'),    tags: seoTags,    dark: false, href: '/diensten/seo-sea'},
+    {num: '02', icon: <Video  size={28} />, title: t('socialTitle'), desc: t('socialDesc'), tags: socialTags, dark: true,  href: '/diensten/social-media-beheer'},
+    {num: '03', icon: <Globe  size={28} />, title: t('webTitle'),    desc: t('webDesc'),    tags: webTags,    dark: false, href: '/diensten/website-maken'},
   ];
 
   return (
@@ -30,7 +30,7 @@ export default async function Services() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map(({num, icon, title, desc, tags, dark}, i) => (
+          {services.map(({num, icon, title, desc, tags, dark, href}, i) => (
             <AnimatedSection key={num} delay={i * 0.1}>
               <div className={[
                 'group relative h-full flex flex-col rounded-2xl p-8 overflow-hidden border',
@@ -101,7 +101,7 @@ export default async function Services() {
                 {/* CTA */}
                 <div className={`pt-5 border-t ${dark ? 'border-white/8' : 'border-primary/8'}`}>
                   <Link
-                    href="/diensten"
+                    href={href}
                     className="group/link inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-3 transition-all"
                   >
                     {t('readMore')}
@@ -112,6 +112,18 @@ export default async function Services() {
             </AnimatedSection>
           ))}
         </div>
+
+        {/* View all CTA */}
+        <AnimatedSection className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-primary/8 pt-10">
+          <p className="text-primary/50 text-sm max-w-sm">{t('allServicesDesc')}</p>
+          <Link
+            href="/diensten"
+            className="shrink-0 inline-flex items-center gap-2.5 bg-primary text-white font-semibold text-sm px-8 py-4 rounded-sm hover:bg-primary/90 transition-colors group/all"
+          >
+            {t('allServices')}
+            <ArrowRight size={15} className="group-hover/all:translate-x-1 transition-transform" />
+          </Link>
+        </AnimatedSection>
 
       </div>
     </section>

@@ -23,9 +23,11 @@
     "promiseTransparant": "Transparent"
   },
   "services": {
-    "label": "What we do",
-    "title": "Our services",
-    "subtitle": "Everything you need to grow online, in one place.",
+    "label": "Popular services",
+    "title": "Most requested services",
+    "subtitle": "These are our three most popular services — but there is more.",
+    "allServices": "View all services",
+    "allServicesDesc": "We also offer: Online Marketing, Branding & Identity and Digital Analytics.",
     "seoTitle": "SEO / SEA Management",
     "seoDesc": "More visibility in Google with a proven SEO strategy and targeted SEA campaigns that deliver direct results.",
     "socialTitle": "Social Media Management",
