@@ -31,6 +31,11 @@ export async function generateMetadata({
         'x-default': BASE,
       },
     },
+    openGraph: {
+      description: isNl
+        ? 'VDH Agency helpt zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland groeien via doelgerichte online marketing, plan nu een gratis consult.'
+        : 'VDH Agency helps Dutch businesses grow online through SEO, Social Media and professional websites. Request a free consultation.',
+    },
   };
 }
 
