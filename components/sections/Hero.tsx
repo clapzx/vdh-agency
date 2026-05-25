@@ -49,13 +49,19 @@ function MagneticCTA({children}: {children: React.ReactNode}) {
 
 function FloatingDashboard() {
   const t = useTranslations('hero');
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
+  const springX = useSpring(rotateX, {stiffness: 160, damping: 22});
+  const springY = useSpring(rotateY, {stiffness: 160, damping: 22});
 
   const services = [
-    'Social Media Beheer',
-    'Online Marketing',
-    'Website Maken',
-    'Branding',
-    'Digitale Analyse',
+    t('service1'),
+    t('service2'),
+    t('service3'),
+    t('service4'),
+    t('service5'),
   ];
 
   const promises = [
@@ -65,48 +71,59 @@ function FloatingDashboard() {
   ];
 
   return (
-    <motion.div
-      initial={{opacity: 0, x: 50, y: 10}}
-      animate={{opacity: 1, x: 0, y: 0}}
-      transition={{type: 'spring', stiffness: 120, damping: 22, delay: 0.5}}
-      className="relative"
-    >
+    <div style={{perspective: '1000px'}}>
       <motion.div
-        animate={{y: [0, -10, 0]}}
-        transition={{duration: 5, repeat: Infinity, ease: 'easeInOut'}}
-        className="bg-white/5 border border-white/10 rounded-2xl p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-sm"
+        ref={cardRef}
+        initial={{opacity: 0, x: 50, y: 10}}
+        animate={{opacity: 1, x: 0, y: 0}}
+        transition={{type: 'spring', stiffness: 120, damping: 22, delay: 0.5}}
+        style={{rotateX: springX, rotateY: springY}}
+        onMouseMove={(e) => {
+          if (!cardRef.current) return;
+          const rect = cardRef.current.getBoundingClientRect();
+          rotateY.set(((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 9);
+          rotateX.set(-((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * 9);
+        }}
+        onMouseLeave={() => { rotateX.set(0); rotateY.set(0); }}
+        className="relative"
       >
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <span className="text-white/50 text-xs font-medium tracking-widest uppercase">
-            {t('dashboardTitle')}
-          </span>
-        </div>
+        <motion.div
+          animate={{y: [0, -10, 0]}}
+          transition={{duration: 5, repeat: Infinity, ease: 'easeInOut'}}
+          className="bg-white/5 border border-white/10 rounded-2xl p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-sm"
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between mb-6">
+            <span className="text-white/50 text-xs font-medium tracking-widest uppercase">
+              {t('dashboardTitle')}
+            </span>
+          </div>
 
-        {/* Services */}
-        <div className="flex flex-col gap-2.5 mb-7">
-          {services.map((service) => (
-            <div key={service} className="flex items-center gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-gold/70 shrink-0" />
-              <span className="text-white/70 text-sm">{service}</span>
-            </div>
-          ))}
-        </div>
+          {/* Services */}
+          <div className="flex flex-col gap-2.5 mb-7">
+            {services.map((service) => (
+              <div key={service} className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-gold/70 shrink-0" />
+                <span className="text-white/70 text-sm">{service}</span>
+              </div>
+            ))}
+          </div>
 
-        {/* Promises */}
-        <div className="grid grid-cols-3 gap-2 pt-5 border-t border-white/5">
-          {promises.map(({value, label}) => (
-            <div key={label} className="bg-white/5 rounded-xl p-3 text-center">
-              <div className="text-gold font-black text-xl leading-none mb-1">{value}</div>
-              <div className="text-white/40 text-xs leading-snug">{label}</div>
-            </div>
-          ))}
-        </div>
+          {/* Promises */}
+          <div className="grid grid-cols-3 gap-2 pt-5 border-t border-white/5">
+            {promises.map(({value, label}) => (
+              <div key={label} className="bg-white/5 rounded-xl p-3 text-center">
+                <div className="text-gold font-black text-xl leading-none mb-1">{value}</div>
+                <div className="text-white/40 text-xs leading-snug">{label}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Ambient glow behind card */}
+        <div className="absolute -inset-6 bg-gold/8 rounded-3xl blur-3xl -z-10" />
       </motion.div>
-
-      {/* Ambient glow behind card */}
-      <div className="absolute -inset-6 bg-gold/8 rounded-3xl blur-3xl -z-10" />
-    </motion.div>
+    </div>
   );
 }
 
