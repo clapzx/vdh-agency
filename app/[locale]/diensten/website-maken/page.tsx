@@ -46,8 +46,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Website Laten Maken — Snel, SEO-proof & op maat | VDH Agency'
-      : 'Have a Website Built — Fast, SEO-proof & custom | VDH Agency',
+      ? 'Website Laten Maken, Snel, SEO-proof & op maat | VDH Agency'
+      : 'Have a Website Built, Fast, SEO-proof & custom | VDH Agency',
     description: isNl
       ? 'VDH Agency bouwt websites op maat voor het MKB. SEO-geoptimaliseerd, mobielvriendelijk en snel. Inclusief CMS en technisch SEO-fundament. Gratis offerte.'
       : 'VDH Agency builds custom websites for SMEs. SEO-optimised, mobile-friendly and fast. Including CMS and technical SEO foundation. Request a free quote.',

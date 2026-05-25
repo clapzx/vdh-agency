@@ -63,8 +63,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Onze Diensten — Online Marketing, Websites, Branding & Meer'
-      : 'Our Services — Online Marketing, Websites, Branding & More',
+      ? 'Onze Diensten, Online Marketing, Websites, Branding & Meer'
+      : 'Our Services, Online Marketing, Websites, Branding & More',
     description: isNl
       ? 'Alle diensten van VDH Agency: online marketing, websites op maat, branding, digitale analyse en social media beheer. Meetbaar resultaat, direct contact.'
       : 'Explore VDH Agency services: online marketing, custom websites, branding, digital analytics and social media management. Measurable results, direct contact.',

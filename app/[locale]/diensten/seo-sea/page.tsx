@@ -45,8 +45,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'SEO & SEA Bureau Nederland — Meer klanten via Google'
-      : 'SEO & SEA Agency Netherlands — More customers via Google',
+      ? 'SEO & SEA Bureau Nederland: Meer klanten via Google'
+      : 'SEO & SEA Agency Netherlands: More customers via Google',
     description: isNl
       ? 'VDH Agency verzorgt SEO & Google Ads voor het MKB. Technische audit, zoekwoordonderzoek en maandelijkse rapportage. Vraag gratis offerte aan.'
       : 'VDH Agency provides SEO & Google Ads for Dutch SMEs. Technical audit, keyword research and monthly reporting. Request a free quote.',

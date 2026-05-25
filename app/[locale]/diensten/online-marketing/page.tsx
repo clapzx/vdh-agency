@@ -21,8 +21,8 @@ function serviceJsonLd(locale: string) {
         provider: {'@id': `${BASE}/#organization`},
         areaServed: {'@type': 'Country', name: 'Netherlands'},
         description: isNl
-          ? 'SEO, Google Ads, Meta Ads, e-mail marketing en copywriting — alles onder één dak.'
-          : 'SEO, Google Ads, Meta Ads, email marketing and copywriting — all under one roof.',
+          ? 'SEO, Google Ads, Meta Ads, e-mail marketing en copywriting, alles onder één dak.'
+          : 'SEO, Google Ads, Meta Ads, email marketing and copywriting, all under one roof.',
         url: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/services/online-marketing`,
       },
       {
@@ -46,8 +46,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Online Marketing Bureau Nederland — SEO, Ads, E-mail & Copy'
-      : 'Online Marketing Agency Netherlands — SEO, Ads, Email & Copy',
+      ? 'Online Marketing Bureau Nederland, SEO, Ads, E-mail & Copy'
+      : 'Online Marketing Agency Netherlands, SEO, Ads, Email & Copy',
     description: isNl
       ? 'VDH Agency verzorgt online marketing van A tot Z: SEO, Google Ads, Meta Ads, e-mail marketing en copywriting. Vraag gratis adviesgesprek aan.'
       : 'VDH Agency handles online marketing end-to-end: SEO, Google Ads, Meta Ads, email marketing and copywriting. Request a free consultation.',

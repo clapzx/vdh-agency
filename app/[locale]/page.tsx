@@ -18,8 +18,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Marketing Bureau Nederland — SEO, Social Media & Webdesign'
-      : 'Marketing Agency Netherlands — SEO, Social Media & Web Design',
+      ? 'Marketing Bureau Nederland, SEO, Social Media & Webdesign'
+      : 'Marketing Agency Netherlands, SEO, Social Media & Web Design',
     description: isNl
       ? 'VDH Agency helpt zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland groeien via doelgerichte online marketing, plan nu een gratis consult.'
       : 'VDH Agency helps Dutch businesses grow online through SEO, Social Media and professional websites. Request a free consultation.',

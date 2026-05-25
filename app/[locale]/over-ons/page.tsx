@@ -60,8 +60,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Over VDH Agency — Lars van der Hoek'
-      : 'About VDH Agency — Lars van der Hoek',
+      ? 'Over VDH Agency, Lars van der Hoek'
+      : 'About VDH Agency, Lars van der Hoek',
     description: isNl
       ? 'Leer meer over VDH Agency en oprichter Lars van der Hoek. Persoonlijk betrokken bij elk project, gericht op meetbare online groei.'
       : 'Learn more about VDH Agency and founder Lars van der Hoek. Personally involved in every project, focused on measurable online growth.',

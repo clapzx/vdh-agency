@@ -207,7 +207,7 @@ export default async function BlogPostPage({
                 {
                   icon: BarChart2,
                   title: 'Vermeldingen op andere websites',
-                  desc: 'We controleren hoe jouw bedrijf terugkomt op het hele internet en zorgen dat dit consistent en betrouwbaar is — iets wat de meeste ondernemers nooit controleren.',
+                  desc: 'We controleren hoe jouw bedrijf terugkomt op het hele internet en zorgen dat dit consistent en betrouwbaar is, iets wat de meeste ondernemers nooit controleren.',
                 },
                 {
                   icon: RefreshCw,

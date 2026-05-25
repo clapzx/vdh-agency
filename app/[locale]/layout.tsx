@@ -23,8 +23,8 @@ export async function generateMetadata({
     metadataBase: new URL(BASE),
     title: {
       default: isNl
-        ? 'Marketing Bureau Nederland — SEO, Social Media & Webdesign | VDH Agency'
-        : 'Marketing Agency Netherlands — SEO, Social Media & Web Design | VDH Agency',
+        ? 'Marketing Bureau Nederland, SEO, Social Media & Webdesign | VDH Agency'
+        : 'Marketing Agency Netherlands, SEO, Social Media & Web Design | VDH Agency',
       template: '%s | VDH Agency',
     },
     description: isNl
@@ -40,8 +40,8 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isNl
-        ? 'Marketing Bureau Nederland — SEO, Social Media & Webdesign | VDH Agency'
-        : 'Marketing Agency Netherlands — SEO, Social Media & Web Design | VDH Agency',
+        ? 'Marketing Bureau Nederland, SEO, Social Media & Webdesign | VDH Agency'
+        : 'Marketing Agency Netherlands, SEO, Social Media & Web Design | VDH Agency',
       description: isNl
         ? 'VDH Agency helpt Nederlandse bedrijven online groeien via SEO, Social Media en professionele websites op maat. Vraag gratis een consult aan.'
         : 'VDH Agency helps businesses grow online through SEO, Social Media and professional custom websites. Request a free consultation.',
@@ -55,8 +55,8 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: isNl
-            ? 'VDH Agency — Marketing Bureau Nederland'
-            : 'VDH Agency — Marketing Agency Netherlands',
+            ? 'VDH Agency, Marketing Bureau Nederland'
+            : 'VDH Agency, Marketing Agency Netherlands',
         },
       ],
     },

@@ -16,17 +16,17 @@ function pageJsonLd(locale: string) {
 
   const faqs = isNl
     ? [
-        {q: 'Wat kost een SEO bureau in Nederland?', a: 'De kosten voor een SEO bureau in Nederland liggen gemiddeld tussen €300 en €1.500 per maand, afhankelijk van de omvang en competitiviteit van het project. De exacte investering bij VDH Agency bespreken we altijd in een gratis kennismakingsgesprek — zo weet je precies wat je kunt verwachten.'},
+        {q: 'Wat kost een SEO bureau in Nederland?', a: 'De kosten voor een SEO bureau in Nederland liggen gemiddeld tussen €300 en €1.500 per maand, afhankelijk van de omvang en competitiviteit van het project. De exacte investering bij VDH Agency bespreken we altijd in een gratis kennismakingsgesprek, zo weet je precies wat je kunt verwachten.'},
         {q: 'Hoe snel zie ik resultaat van SEO?', a: 'De eerste meetbare verbeteringen zijn doorgaans zichtbaar na 8 tot 16 weken. Een stabiele positie in de top van Google bereik je meestal na 3 tot 6 maanden. In minder competitieve markten kan dit sneller gaan. Wij rapporteren maandelijks over posities, organisch verkeer en conversies.'},
         {q: 'Kan een SEO bureau Google-posities garanderen?', a: 'Elk bureau dat specifieke posities garandeert, liegt. Google bepaalt zijn eigen rankings op basis van honderden factoren. Wat wij garanderen: transparant werken, bewezen methodieken, maandelijkse rapportage en aantoonbare groei in organisch verkeer. Geen loze beloftes.'},
-        {q: 'Wat is het verschil tussen SEO en SEA?', a: 'SEO (Search Engine Optimization) richt zich op organische vindbaarheid — posities die je verdient op basis van relevantie en autoriteit. SEA (Search Engine Advertising) zijn betaalde advertenties in Google. SEO heeft een langere aanlooptijd maar levert duurzaam resultaat; SEA is direct zichtbaar maar stopt zodra het budget op is. Wij combineren beide voor maximaal effect.'},
+        {q: 'Wat is het verschil tussen SEO en SEA?', a: 'SEO (Search Engine Optimization) richt zich op organische vindbaarheid, posities die je verdient op basis van relevantie en autoriteit. SEA (Search Engine Advertising) zijn betaalde advertenties in Google. SEO heeft een langere aanlooptijd maar levert duurzaam resultaat; SEA is direct zichtbaar maar stopt zodra het budget op is. Wij combineren beide voor maximaal effect.'},
         {q: 'Werkt SEO ook voor lokale bedrijven?', a: 'Absoluut. Lokale SEO is juist bijzonder effectief voor MKB-bedrijven. 46% van alle Google-zoekopdrachten heeft een lokale intentie (Google, 2025). Door je Google Business Profile te optimaliseren, lokale zoekwoorden te targeten en consistente NAP-vermeldingen te bouwen, word je aantoonbaar beter gevonden in jouw regio.'},
       ]
     : [
-        {q: 'What does an SEO agency in the Netherlands cost?', a: 'SEO agency costs in the Netherlands typically range from €300 to €1,500 per month depending on project scope and competitiveness. The exact investment at VDH Agency is always discussed in a free introductory consultation — so you know exactly what to expect.'},
+        {q: 'What does an SEO agency in the Netherlands cost?', a: 'SEO agency costs in the Netherlands typically range from €300 to €1,500 per month depending on project scope and competitiveness. The exact investment at VDH Agency is always discussed in a free introductory consultation, so you know exactly what to expect.'},
         {q: 'How quickly will I see SEO results?', a: 'The first measurable improvements are usually visible after 8 to 16 weeks. Stable positions at the top of Google are typically achieved after 3 to 6 months. In less competitive markets this can happen faster. We report monthly on rankings, organic traffic and conversions.'},
         {q: 'Can an SEO agency guarantee Google positions?', a: 'Any agency that guarantees specific positions is lying. Google determines its own rankings based on hundreds of factors. What we guarantee: transparent working methods, proven techniques, monthly reporting and demonstrable growth in organic traffic. No empty promises.'},
-        {q: 'What is the difference between SEO and SEA?', a: 'SEO (Search Engine Optimization) focuses on organic visibility — positions you earn through relevance and authority. SEA (Search Engine Advertising) involves paid ads in Google. SEO has a longer lead time but delivers sustainable results; SEA is immediately visible but stops when your budget runs out. We combine both for maximum effect.'},
+        {q: 'What is the difference between SEO and SEA?', a: 'SEO (Search Engine Optimization) focuses on organic visibility, positions you earn through relevance and authority. SEA (Search Engine Advertising) involves paid ads in Google. SEO has a longer lead time but delivers sustainable results; SEA is immediately visible but stops when your budget runs out. We combine both for maximum effect.'},
         {q: 'Does SEO work for local businesses?', a: 'Absolutely. Local SEO is particularly effective for SMEs. 46% of all Google searches have local intent (Google, 2025). By optimising your Google Business Profile, targeting local keywords and building consistent NAP citations, you can demonstrably improve your visibility in your region.'},
       ];
 
@@ -35,7 +35,7 @@ function pageJsonLd(locale: string) {
     '@graph': [
       {
         '@type': 'Service',
-        name: isNl ? 'SEO Bureau Nederland — VDH Agency' : 'SEO Agency Netherlands — VDH Agency',
+        name: isNl ? 'SEO Bureau Nederland, VDH Agency' : 'SEO Agency Netherlands, VDH Agency',
         provider: {'@id': `${BASE}/#organization`},
         areaServed: {'@type': 'Country', name: 'Netherlands'},
         description: isNl
@@ -73,8 +73,8 @@ export async function generateMetadata({
 
   return {
     title: isNl
-      ? 'SEO Bureau Nederland — Meer klanten via Google | VDH Agency'
-      : 'SEO Agency Netherlands — More customers via Google | VDH Agency',
+      ? 'SEO Bureau Nederland: Meer klanten via Google | VDH Agency'
+      : 'SEO Agency Netherlands: More customers via Google | VDH Agency',
     description: isNl
       ? 'VDH Agency is een SEO bureau voor het MKB. Technische SEO, lokale SEO, zoekwoordonderzoek en maandelijkse rapportage. Transparant en resultaatgericht.'
       : 'VDH Agency is an SEO agency for Dutch SMEs. Technical SEO, local SEO, keyword research and monthly reporting. Transparent and results-focused.',
@@ -106,7 +106,7 @@ const whatWeDoNl = [
   {
     Icon: TrendingUp,
     title: 'On-Page & Content Optimalisatie',
-    desc: 'Titels, meta-omschrijvingen, heading-structuur, interne links en content — alles wordt geoptimaliseerd voor de zoekwoorden die er echt toe doen. We schrijven ook nieuwe content die bezoekers aantrekt én converteert.',
+    desc: 'Titels, meta-omschrijvingen, heading-structuur, interne links en content, alles wordt geoptimaliseerd voor de zoekwoorden die er echt toe doen. We schrijven ook nieuwe content die bezoekers aantrekt én converteert.',
   },
   {
     Icon: BarChart2,
@@ -129,7 +129,7 @@ const whatWeDoEn = [
   {
     Icon: TrendingUp,
     title: 'On-Page & Content Optimisation',
-    desc: 'Titles, meta descriptions, heading structure, internal links and content — everything is optimised for the keywords that really matter. We also write new content that attracts visitors and converts them.',
+    desc: 'Titles, meta descriptions, heading structure, internal links and content, everything is optimised for the keywords that really matter. We also write new content that attracts visitors and converts them.',
   },
   {
     Icon: BarChart2,
@@ -152,17 +152,17 @@ export default async function SeoBureauPage({
 
   const faqs = isNl
     ? [
-        {q: 'Wat kost een SEO bureau in Nederland?', a: 'De kosten voor een SEO bureau in Nederland liggen gemiddeld tussen €300 en €1.500 per maand, afhankelijk van de omvang en competitiviteit van het project. De exacte investering bij VDH Agency bespreken we altijd in een gratis kennismakingsgesprek — zo weet je precies wat je kunt verwachten.'},
+        {q: 'Wat kost een SEO bureau in Nederland?', a: 'De kosten voor een SEO bureau in Nederland liggen gemiddeld tussen €300 en €1.500 per maand, afhankelijk van de omvang en competitiviteit van het project. De exacte investering bij VDH Agency bespreken we altijd in een gratis kennismakingsgesprek, zo weet je precies wat je kunt verwachten.'},
         {q: 'Hoe snel zie ik resultaat van SEO?', a: 'De eerste meetbare verbeteringen zijn doorgaans zichtbaar na 8 tot 16 weken. Een stabiele positie in de top van Google bereik je meestal na 3 tot 6 maanden. In minder competitieve markten kan dit sneller gaan. Wij rapporteren maandelijks over posities, organisch verkeer en conversies.'},
         {q: 'Kan een SEO bureau Google-posities garanderen?', a: 'Elk bureau dat specifieke posities garandeert, liegt. Google bepaalt zijn eigen rankings op basis van honderden factoren. Wat wij garanderen: transparant werken, bewezen methodieken, maandelijkse rapportage en aantoonbare groei in organisch verkeer. Geen loze beloftes.'},
-        {q: 'Wat is het verschil tussen SEO en SEA?', a: 'SEO (Search Engine Optimization) richt zich op organische vindbaarheid — posities die je verdient op basis van relevantie en autoriteit. SEA (Search Engine Advertising) zijn betaalde advertenties in Google. SEO heeft een langere aanlooptijd maar levert duurzaam resultaat; SEA is direct zichtbaar maar stopt zodra het budget op is. Wij combineren beide voor maximaal effect.'},
+        {q: 'Wat is het verschil tussen SEO en SEA?', a: 'SEO (Search Engine Optimization) richt zich op organische vindbaarheid, posities die je verdient op basis van relevantie en autoriteit. SEA (Search Engine Advertising) zijn betaalde advertenties in Google. SEO heeft een langere aanlooptijd maar levert duurzaam resultaat; SEA is direct zichtbaar maar stopt zodra het budget op is. Wij combineren beide voor maximaal effect.'},
         {q: 'Werkt SEO ook voor lokale bedrijven?', a: 'Absoluut. Lokale SEO is juist bijzonder effectief voor MKB-bedrijven. 46% van alle Google-zoekopdrachten heeft een lokale intentie (Google, 2025). Door je Google Business Profile te optimaliseren, lokale zoekwoorden te targeten en consistente NAP-vermeldingen te bouwen, word je aantoonbaar beter gevonden in jouw regio.'},
       ]
     : [
-        {q: 'What does an SEO agency in the Netherlands cost?', a: 'SEO agency costs in the Netherlands typically range from €300 to €1,500 per month depending on project scope and competitiveness. The exact investment at VDH Agency is always discussed in a free introductory consultation — so you know exactly what to expect.'},
+        {q: 'What does an SEO agency in the Netherlands cost?', a: 'SEO agency costs in the Netherlands typically range from €300 to €1,500 per month depending on project scope and competitiveness. The exact investment at VDH Agency is always discussed in a free introductory consultation, so you know exactly what to expect.'},
         {q: 'How quickly will I see SEO results?', a: 'The first measurable improvements are usually visible after 8 to 16 weeks. Stable positions at the top of Google are typically achieved after 3 to 6 months. In less competitive markets this can happen faster. We report monthly on rankings, organic traffic and conversions.'},
         {q: 'Can an SEO agency guarantee Google positions?', a: 'Any agency that guarantees specific positions is lying. Google determines its own rankings based on hundreds of factors. What we guarantee: transparent working methods, proven techniques, monthly reporting and demonstrable growth in organic traffic. No empty promises.'},
-        {q: 'What is the difference between SEO and SEA?', a: 'SEO (Search Engine Optimization) focuses on organic visibility — positions you earn through relevance and authority. SEA (Search Engine Advertising) involves paid ads in Google. SEO has a longer lead time but delivers sustainable results; SEA is immediately visible but stops when your budget runs out. We combine both for maximum effect.'},
+        {q: 'What is the difference between SEO and SEA?', a: 'SEO (Search Engine Optimization) focuses on organic visibility, positions you earn through relevance and authority. SEA (Search Engine Advertising) involves paid ads in Google. SEO has a longer lead time but delivers sustainable results; SEA is immediately visible but stops when your budget runs out. We combine both for maximum effect.'},
         {q: 'Does SEO work for local businesses?', a: 'Absolutely. Local SEO is particularly effective for SMEs. 46% of all Google searches have local intent (Google, 2025). By optimising your Google Business Profile, targeting local keywords and building consistent NAP citations, you can demonstrably improve your visibility in your region.'},
       ];
 
@@ -196,8 +196,8 @@ export default async function SeoBureauPage({
             </h1>
             <p className="text-white/60 text-xl mb-10">
               {isNl
-                ? 'Meer organisch verkeer, betere posities in Google en een aantoonbare groei in aanvragen. Geen lege beloftes — alleen meetbare resultaten.'
-                : 'More organic traffic, better positions in Google and demonstrable growth in enquiries. No empty promises — only measurable results.'}
+                ? 'Meer organisch verkeer, betere posities in Google en een aantoonbare groei in aanvragen. Geen lege beloftes, alleen meetbare resultaten.'
+                : 'More organic traffic, better positions in Google and demonstrable growth in enquiries. No empty promises, only measurable results.'}
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
@@ -232,8 +232,8 @@ export default async function SeoBureauPage({
               <div className="flex flex-col gap-4">
                 <p className="text-primary/70 text-base leading-relaxed">
                   {isNl
-                    ? 'Een SEO bureau zorgt ervoor dat jouw website beter gevonden wordt in Google — zonder dat je ervoor hoeft te betalen per klik. We optimaliseren de technische basis van je site, maken content die aansluit op wat jouw doelgroep zoekt, en bouwen autoriteit op via relevante vermeldingen.'
-                    : 'An SEO agency ensures your website ranks better in Google — without paying per click. We optimise the technical foundation of your site, create content that matches what your target audience searches for, and build authority through relevant citations.'}
+                    ? 'Een SEO bureau zorgt ervoor dat jouw website beter gevonden wordt in Google, zonder dat je ervoor hoeft te betalen per klik. We optimaliseren de technische basis van je site, maken content die aansluit op wat jouw doelgroep zoekt, en bouwen autoriteit op via relevante vermeldingen.'
+                    : 'An SEO agency ensures your website ranks better in Google, without paying per click. We optimise the technical foundation of your site, create content that matches what your target audience searches for, and build authority through relevant citations.'}
                 </p>
                 <p className="text-primary/70 text-base leading-relaxed">
                   {isNl

@@ -1,4 +1,4 @@
-{
+﻿{
   "nav": {
     "services": "Services",
     "about": "About",
@@ -9,7 +9,7 @@
     "label": "Marketing Agency Heerde",
     "line1": "We help your business",
     "highlight": "grow.",
-    "sub": "VDH Agency is an online marketing agency based in Heerde, the Netherlands. We help businesses in the region and across the Netherlands grow through SEO, social media and custom websites — fully remote, via video calls and online.",
+    "sub": "VDH Agency is an online marketing agency based in Heerde, the Netherlands. We help businesses in the region and across the Netherlands grow through SEO, social media and custom websites, fully remote, via video calls and online.",
     "cta1": "View services",
     "cta2": "Get in touch",
     "dashboardTitle": "What we do",
@@ -25,7 +25,7 @@
   "services": {
     "label": "Popular services",
     "title": "Most requested services",
-    "subtitle": "These are our three most popular services — but there is more.",
+    "subtitle": "These are our three most popular services, but there is more.",
     "allServices": "View all services",
     "allServicesDesc": "We also offer: Online Marketing, Branding & Identity and Digital Analytics.",
     "seoTitle": "SEO / SEA Management",
@@ -54,7 +54,7 @@
   "about": {
     "label": "About VDH Agency",
     "title": "Personal. Committed. Results-driven.",
-    "p1": "VDH Agency is a digital marketing agency based in Heerde (Gelderland), founded in 2026 by Lars van der Hoek. The agency helps SMEs, freelancers and startups across the Netherlands grow online — fully remote through online services and video consultations.",
+    "p1": "VDH Agency is a digital marketing agency based in Heerde (Gelderland), founded in 2026 by Lars van der Hoek. The agency helps SMEs, freelancers and startups across the Netherlands grow online, fully remote through online services and video consultations.",
     "p2": "You always have one dedicated point of contact and direct communication, with no middlemen or hidden costs.",
     "cta": "Learn more about us",
     "point1": "Direct communication, always reachable",
@@ -68,7 +68,7 @@
     "title": "Marketing for Dutch SMEs",
     "p1": "VDH Agency helps independent entrepreneurs, SMEs and startups across the Netherlands grow through targeted online marketing. Whether you're based in Amsterdam, Rotterdam, Utrecht, Eindhoven or anywhere else in the Netherlands: we work remotely and are flexible in how we collaborate.",
     "p2": "We combine SEO, SEA, social media marketing, web design and digital analytics into a coherent package. But you can also use a single service: we help you figure out what fits your situation and budget, without pushing you towards more than you need.",
-    "p3": "At VDH Agency you always work directly with the specialist on your project. No middlemen, no account managers — just clear communication and full involvement in your growth."
+    "p3": "At VDH Agency you always work directly with the specialist on your project. No middlemen, no account managers, just clear communication and full involvement in your growth."
   },
   "process": {
     "label": "How we work",
@@ -193,7 +193,7 @@
     "faq1Q": "How quickly will I see results from SEO?",
     "faq1A": "SEO is a long-term strategy. Initial improvements in rankings are typically visible after 3-6 months. Within 6-12 months you build a stable stream of organic traffic.",
     "faq2Q": "How much does an SEO agency or Google Ads cost at VDH Agency?",
-    "faq2A": "Our SEO packages start from €350 per month for local SEO and from €650 per month for national SEO including content. Google Ads management starts from €200 per month (excluding ad spend). Exact costs depend on your market and goals — we discuss it without obligation.",
+    "faq2A": "Our SEO packages start from €350 per month for local SEO and from €650 per month for national SEO including content. Google Ads management starts from €200 per month (excluding ad spend). Exact costs depend on your market and goals, we discuss it without obligation.",
     "faq3Q": "Do you guarantee a certain ranking?",
     "faq3A": "No. Any agency that guarantees ranking positions is lying. Google determines rankings based on hundreds of factors. We guarantee a professional, data-driven approach and transparent reporting.",
     "faq4Q": "Can I combine SEO and Google Ads?",
@@ -391,21 +391,21 @@
     "sub": "A passion for digital marketing, a mission to grow businesses.",
     "storyTitle": "Who is Lars van der Hoek?",
     "p1": "I'm Lars van der Hoek, founder of VDH Agency. After years of working in digital marketing for a range of businesses, I started my own agency in 2026. The reason: I kept seeing SMEs that wanted to grow online, but kept running into agencies that were too expensive, too opaque, or too impersonal.",
-    "p2": "At VDH Agency, you always work directly with me — not with an account manager who passes your brief to someone else. I write your SEO strategy, manage your Google Ads, and build or optimise your website. That means faster communication, less noise, and better results.",
-    "p3": "My approach always starts with listening. I want to understand how your business works, who your customers are, and what you actually need. Only then do I propose a strategy — not an off-the-shelf package, but something that genuinely fits your situation.",
-    "p4": "VDH Agency is based in Heerde (Gelderland) and works with freelancers, SMEs, and startups across the Netherlands. All services are delivered fully remotely — via video consultations, email and phone. Location is never a barrier: what counts is a dedicated specialist who understands your goals and goes the extra mile.",
+    "p2": "At VDH Agency, you always work directly with me, not with an account manager who passes your brief to someone else. I write your SEO strategy, manage your Google Ads, and build or optimise your website. That means faster communication, less noise, and better results.",
+    "p3": "My approach always starts with listening. I want to understand how your business works, who your customers are, and what you actually need. Only then do I propose a strategy, not an off-the-shelf package, but something that genuinely fits your situation.",
+    "p4": "VDH Agency is based in Heerde (Gelderland) and works with freelancers, SMEs, and startups across the Netherlands. All services are delivered fully remotely, via video consultations, email and phone. Location is never a barrier: what counts is a dedicated specialist who understands your goals and goes the extra mile.",
     "servicesTitle": "What I can do for you",
-    "servicesSub": "From search engine optimisation to web design — everything you need to grow online.",
+    "servicesSub": "From search engine optimisation to web design, everything you need to grow online.",
     "valuesTitle": "Our values",
     "v1title": "Results-driven",
-    "v1desc": "We always work with clear KPIs and measurable goals. No vague promises — concrete agreements about what we'll achieve and how we'll measure it.",
+    "v1desc": "We always work with clear KPIs and measurable goals. No vague promises, concrete agreements about what we'll achieve and how we'll measure it.",
     "v2title": "Transparent",
     "v2desc": "No hidden costs, no smoke and mirrors. You always know exactly what's being done, why, and what it delivers.",
     "v3title": "Personal",
     "v3desc": "Direct line with Lars, always. No account managers, no middlemen. You call or email the person who is actually working on your project.",
     "founderTitle": "Founder at VDH Agency",
-    "founderBio": "I help Dutch businesses grow through SEO, Social Media and web design. Honest about what works, direct in communication and personally involved in every project — from the first call to the final result.",
-    "p5": "My background covers the full digital marketing toolkit. I work daily with Google Analytics 4, Google Search Console, Google Ads, Meta Business Suite and WordPress. For websites I use modern technology that is fast, secure and easy to manage — so everything is technically sound and you never have to worry about the details.",
+    "founderBio": "I help Dutch businesses grow through SEO, Social Media and web design. Honest about what works, direct in communication and personally involved in every project, from the first call to the final result.",
+    "p5": "My background covers the full digital marketing toolkit. I work daily with Google Analytics 4, Google Search Console, Google Ads, Meta Business Suite and WordPress. For websites I use modern technology that is fast, secure and easy to manage, so everything is technically sound and you never have to worry about the details.",
     "p6": "What sets me apart from larger agencies: there's no handover. You have one person who knows your project inside out, from the first conversation to the monthly report. Nothing gets lost between what you want and what actually gets done.",
     "faqLabel": "FAQ",
     "faqTitle": "Questions about VDH Agency",
@@ -414,9 +414,9 @@
     "faq2Q": "Do you do everything yourself or work with others?",
     "faq2A": "I do everything myself: strategy, execution and communication. No external freelancers, no outsourced tasks. That means one point of contact, no surprises, and someone who is genuinely invested in your results.",
     "faq3Q": "Which cities and regions do you serve?",
-    "faq3A": "VDH Agency is based in Heerde (Gelderland) and works fully online for clients across the Netherlands. All conversations and consultations take place via video, email and phone — efficient collaboration without travel time. Clients in Amsterdam, Rotterdam, Utrecht, The Hague, Eindhoven and Groningen, as well as a growing number of businesses in the Veluwe region.",
+    "faq3A": "VDH Agency is based in Heerde (Gelderland) and works fully online for clients across the Netherlands. All conversations and consultations take place via video, email and phone, efficient collaboration without travel time. Clients in Amsterdam, Rotterdam, Utrecht, The Hague, Eindhoven and Groningen, as well as a growing number of businesses in the Veluwe region.",
     "faq4Q": "What does working with VDH Agency cost?",
-    "faq4A": "It depends on the service and scope. I don't work with fixed packages — I propose a price based on your specific situation. Request a no-obligation quote via the contact page and I'll send you a proposal within 24 hours."
+    "faq4A": "It depends on the service and scope. I don't work with fixed packages, I propose a price based on your specific situation. Request a no-obligation quote via the contact page and I'll send you a proposal within 24 hours."
   },
   "contactPage": {
     "label": "Contact",

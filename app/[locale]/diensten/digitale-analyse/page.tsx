@@ -46,8 +46,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Digitale Analyse & GA4 Setup Nederland — Data die werkt'
-      : 'Digital Analytics & GA4 Setup Netherlands — Data that works',
+      ? 'Digitale Analyse & GA4 Setup Nederland, Data die werkt'
+      : 'Digital Analytics & GA4 Setup Netherlands, Data that works',
     description: isNl
       ? 'VDH Agency verzorgt GA4-implementatie, Google Tag Manager, conversiemeting en heldere dashboards. Weet altijd hoe jouw marketing presteert.'
       : 'VDH Agency provides GA4 implementation, Google Tag Manager, conversion tracking and clear dashboards. Always know how your marketing performs.',

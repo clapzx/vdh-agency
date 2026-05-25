@@ -23,14 +23,14 @@ function serviceJsonLd(locale: string) {
         description: isNl
           ? 'Logo ontwerp, kleurenpalet, typografie en brand guidelines voor een professionele visuele identiteit.'
           : 'Logo design, colour palette, typography and brand guidelines for a professional visual identity.',
-        url: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/diensten/branding`,
+        url: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/services/branding`,
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
-          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: isNl ? 'Branding & Huisstijl' : 'Branding & Identity', item: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/diensten/branding`},
+          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/services`},
+          {'@type': 'ListItem', position: 3, name: isNl ? 'Branding & Huisstijl' : 'Branding & Identity', item: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/services/branding`},
         ],
       },
     ],
@@ -46,21 +46,21 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Logo & Huisstijl Laten Maken Nederland — Branding die werkt'
-      : 'Logo & Brand Identity Design Netherlands — Branding that works',
+      ? 'Logo & Huisstijl Laten Maken Nederland, Branding die werkt'
+      : 'Logo & Brand Identity Design Netherlands, Branding that works',
     description: isNl
-      ? 'VDH Agency ontwerpt professionele logo\'s en huisstijlen. Van merkstrategie tot brand guidelines — een visuele identiteit die vertrouwen uitstraalt en klanten aantrekt.'
-      : 'VDH Agency designs professional logos and brand identities. From brand strategy to brand guidelines — a visual identity that radiates trust and attracts customers.',
+      ? 'VDH Agency ontwerpt professionele logo\'s en huisstijlen. Van merkstrategie tot brand guidelines, een visuele identiteit die vertrouwen uitstraalt en klanten aantrekt.'
+      : 'VDH Agency designs professional logos and brand identities. From brand strategy to brand guidelines, a visual identity that radiates trust and attracts customers.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/diensten/branding`,
+      canonical: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/services/branding`,
       languages: {
         nl: `${BASE}/diensten/branding`,
-        en: `${BASE}/en/diensten/branding`,
+        en: `${BASE}/en/services/branding`,
         'x-default': `${BASE}/diensten/branding`,
       },
     },
     openGraph: {
-      url: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/diensten/branding`,
+      url: isNl ? `${BASE}/diensten/branding` : `${BASE}/en/services/branding`,
     },
   };
 }
@@ -121,7 +121,7 @@ export default async function BrandingPage({
           <AnimatedSection className="max-w-3xl">
             <Breadcrumb crumbs={[
               {label: 'Home', href: locale === 'nl' ? '/' : '/en/'},
-              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/diensten'},
+              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/services'},
               {label: t('label')},
             ]} />
             <div className="flex items-center gap-3 mb-6">
@@ -217,9 +217,9 @@ export default async function BrandingPage({
       <RelatedServices
         title={locale === 'nl' ? 'Combineer met' : 'Combine with'}
         services={[
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/website-maken`,        label: locale === 'nl' ? 'Website Maken' : 'Website Development',      desc: locale === 'nl' ? 'Zet jouw merk online neer' : 'Bring your brand online'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/social-media-beheer`,  label: locale === 'nl' ? 'Social Media' : 'Social Media',              desc: locale === 'nl' ? 'Consistente uitstraling op social' : 'Consistent look on social'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/online-marketing`,     label: 'Online Marketing',                                             desc: locale === 'nl' ? 'Bereik jouw doelgroep online' : 'Reach your audience online'},
+          {href: locale === 'nl' ? '/diensten/website-maken'      : '/en/services/website-development',      label: locale === 'nl' ? 'Website Maken' : 'Website Development', desc: locale === 'nl' ? 'Zet jouw merk online neer' : 'Bring your brand online'},
+          {href: locale === 'nl' ? '/diensten/social-media-beheer' : '/en/services/social-media-management', label: locale === 'nl' ? 'Social Media' : 'Social Media',          desc: locale === 'nl' ? 'Consistente uitstraling op social' : 'Consistent look on social'},
+          {href: locale === 'nl' ? '/diensten/online-marketing'    : '/en/services/online-marketing',        label: 'Online Marketing',                                         desc: locale === 'nl' ? 'Bereik jouw doelgroep online' : 'Reach your audience online'},
         ]}
       />
       <CTA />

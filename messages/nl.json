@@ -1,4 +1,4 @@
-{
+﻿{
   "nav": {
     "services": "Diensten",
     "about": "Over ons",
@@ -9,7 +9,7 @@
     "label": "Marketing Bureau Heerde",
     "line1": "Wij laten jouw bedrijf",
     "highlight": "groeien.",
-    "sub": "VDH Agency is een online marketing bureau gevestigd in Heerde. Wij helpen bedrijven in de regio en door heel Nederland online groeien via SEO, social media en op maat gemaakte websites — volledig op afstand, via videogesprekken en online.",
+    "sub": "VDH Agency is een online marketing bureau gevestigd in Heerde. Wij helpen bedrijven in de regio en door heel Nederland online groeien via SEO, social media en op maat gemaakte websites, volledig op afstand, via videogesprekken en online.",
     "cta1": "Bekijk diensten",
     "cta2": "Neem contact op",
     "dashboardTitle": "Wat wij doen",
@@ -25,7 +25,7 @@
   "services": {
     "label": "Populaire diensten",
     "title": "Meest gevraagde diensten",
-    "subtitle": "Dit zijn onze drie populairste diensten — maar er is meer.",
+    "subtitle": "Dit zijn onze drie populairste diensten, maar er is meer.",
     "allServices": "Bekijk alle diensten",
     "allServicesDesc": "Wij bieden ook: Online Marketing, Branding & Huisstijl en Digitale Analyse.",
     "seoTitle": "SEO / SEA Beheer",
@@ -54,7 +54,7 @@
   "about": {
     "label": "Over VDH Agency",
     "title": "Persoonlijk. Betrokken. Resultaatgericht.",
-    "p1": "VDH Agency is een digitaal marketingbureau gevestigd in Heerde (Gelderland), opgericht in 2026 door Lars van der Hoek. Het bureau helpt MKB-bedrijven, freelancers en startups door heel Nederland online groeien — volledig op afstand via online diensten en videoconsultaties.",
+    "p1": "VDH Agency is een digitaal marketingbureau gevestigd in Heerde (Gelderland), opgericht in 2026 door Lars van der Hoek. Het bureau helpt MKB-bedrijven, freelancers en startups door heel Nederland online groeien, volledig op afstand via online diensten en videoconsultaties.",
     "p2": "Jij hebt altijd één vast aanspreekpunt en directe communicatie, zonder tussenpersonen of verborgen kosten.",
     "cta": "Leer ons kennen",
     "point1": "Directe communicatie, altijd bereikbaar",
@@ -68,7 +68,7 @@
     "title": "Marketing voor het Nederlandse MKB",
     "p1": "VDH Agency helpt zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland groeien via doelgerichte online marketing. Of je nu in Amsterdam, Rotterdam, Utrecht, Eindhoven of elders in Nederland zit: we werken remote en zijn flexibel in hoe we samenwerken.",
     "p2": "We combineren SEO, SEA, social media marketing, webdesign en digitale analyse tot een samenhangend pakket. Maar je kunt ook één dienst afnemen: we helpen je bepalen wat bij jouw situatie en budget past, zonder je te pushen naar meer dan nodig is.",
-    "p3": "Bij VDH Agency werk je altijd direct met de specialist die aan jouw project werkt. Geen tussenpersonen, geen accountmanagers — alleen heldere communicatie en volledige betrokkenheid bij jouw groei."
+    "p3": "Bij VDH Agency werk je altijd direct met de specialist die aan jouw project werkt. Geen tussenpersonen, geen accountmanagers, alleen heldere communicatie en volledige betrokkenheid bij jouw groei."
   },
   "process": {
     "label": "Werkwijze",
@@ -193,7 +193,7 @@
     "faq1Q": "Hoe snel zie ik resultaat van SEO?",
     "faq1A": "SEO is een langetermijnstrategie. De eerste verbeteringen in rankings zijn doorgaans zichtbaar na 3-6 maanden. Binnen 6-12 maanden bouw je een stabiele stroom organisch verkeer op.",
     "faq2Q": "Wat kost een SEO bureau of Google Ads bij VDH Agency?",
-    "faq2A": "Onze SEO-pakketten starten vanaf €350 per maand voor lokale SEO, en vanaf €650 per maand voor nationale SEO inclusief content. Google Ads-beheer start vanaf €200 per maand (exclusief advertentiebudget). De exacte kosten hangen af van jouw markt en doelen — we bespreken het vrijblijvend.",
+    "faq2A": "Onze SEO-pakketten starten vanaf €350 per maand voor lokale SEO, en vanaf €650 per maand voor nationale SEO inclusief content. Google Ads-beheer start vanaf €200 per maand (exclusief advertentiebudget). De exacte kosten hangen af van jouw markt en doelen, we bespreken het vrijblijvend.",
     "faq3Q": "Garanderen jullie een bepaalde ranking?",
     "faq3A": "Nee. Elk bureau dat een garantie op rankingposities geeft, liegt. Google bepaalt rankings op basis van honderden factoren. Wij garanderen een professionele, datagedreven aanpak en transparante rapportage.",
     "faq4Q": "Kan ik SEO en Google Ads combineren?",
@@ -392,10 +392,10 @@
     "storyTitle": "Wie is Lars van der Hoek?",
     "p1": "Ik ben Lars van der Hoek, oprichter van VDH Agency. Na jaren digitale marketing te hebben gedaan voor uiteenlopende bedrijven, heb ik in 2026 mijn eigen bureau opgericht. De reden: ik merkte dat veel MKB-bedrijven wél wilden groeien online, maar vastliepen op bureaus die te duur, te ondoorzichtig of te onpersoonlijk waren.",
     "p2": "Bij VDH Agency werk je altijd direct met mij. Niet met een accountmanager die jouw brief doorgeeft aan iemand anders. Ik schrijf jouw SEO-strategie, beheer jouw Google Ads en bouw of optimaliseer jouw website. Dat betekent snellere lijnen, minder ruis en betere resultaten.",
-    "p3": "Mijn aanpak start altijd met luisteren. Ik wil begrijpen hoe jouw business werkt, wie jouw klanten zijn en wat jij nodig hebt. Pas daarna stel ik een strategie voor — geen kant-en-klaar pakket, maar iets wat écht bij jou past.",
-    "p4": "VDH Agency is gevestigd in Heerde (Gelderland) en werkt voor zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland. Alle diensten worden volledig op afstand geleverd — via videoconsultaties, mail en telefoon. Locatie maakt geen verschil: wat telt is een vaste specialist die jouw doelen begrijpt en er echt voor gaat.",
+    "p3": "Mijn aanpak start altijd met luisteren. Ik wil begrijpen hoe jouw business werkt, wie jouw klanten zijn en wat jij nodig hebt. Pas daarna stel ik een strategie voor, geen kant-en-klaar pakket, maar iets wat écht bij jou past.",
+    "p4": "VDH Agency is gevestigd in Heerde (Gelderland) en werkt voor zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland. Alle diensten worden volledig op afstand geleverd, via videoconsultaties, mail en telefoon. Locatie maakt geen verschil: wat telt is een vaste specialist die jouw doelen begrijpt en er echt voor gaat.",
     "servicesTitle": "Wat ik voor je kan doen",
-    "servicesSub": "Van zoekmachineoptimalisatie tot webdesign — alles wat je nodig hebt om online te groeien.",
+    "servicesSub": "Van zoekmachineoptimalisatie tot webdesign, alles wat je nodig hebt om online te groeien.",
     "valuesTitle": "Onze waarden",
     "v1title": "Resultaatgericht",
     "v1desc": "We werken altijd met duidelijke KPIs en meetbare doelen. Geen vage beloftes, maar concrete afspraken over wat we gaan bereiken en hoe we dat meten.",
@@ -404,8 +404,8 @@
     "v3title": "Persoonlijk",
     "v3desc": "Directe lijn met Lars, altijd. Geen accountmanager, geen tussenpersonen. Jij belt of mailt met de persoon die ook echt aan jouw project werkt.",
     "founderTitle": "Oprichter bij VDH Agency",
-    "founderBio": "Ik help Nederlandse ondernemers groeien via SEO, Social Media en webdesign. Eerlijk over wat werkt, direct in communicatie en persoonlijk betrokken bij elk project — van de eerste call tot het eindresultaat.",
-    "p5": "Mijn achtergrond ligt in de brede digitale marketing. Ik werk dagelijks met Google Analytics 4, Google Search Console, Google Ads, Meta Business Suite en WordPress. Voor websites gebruik ik moderne technologie die snel, veilig en gemakkelijk te beheren is — zodat alles technisch klopt en jij je geen zorgen hoeft te maken over de details.",
+    "founderBio": "Ik help Nederlandse ondernemers groeien via SEO, Social Media en webdesign. Eerlijk over wat werkt, direct in communicatie en persoonlijk betrokken bij elk project, van de eerste call tot het eindresultaat.",
+    "p5": "Mijn achtergrond ligt in de brede digitale marketing. Ik werk dagelijks met Google Analytics 4, Google Search Console, Google Ads, Meta Business Suite en WordPress. Voor websites gebruik ik moderne technologie die snel, veilig en gemakkelijk te beheren is, zodat alles technisch klopt en jij je geen zorgen hoeft te maken over de details.",
     "p6": "Wat mij onderscheidt van grotere bureaus: er is geen overdracht. Je hebt één persoon die jouw project door en door begrijpt, van het eerste gesprek tot de maandelijkse rapportage. Niets gaat verloren tussen wat jij wilt en wat er daadwerkelijk wordt uitgevoerd.",
     "faqLabel": "Veelgestelde vragen",
     "faqTitle": "Vragen over VDH Agency",
@@ -414,7 +414,7 @@
     "faq2Q": "Doe je alles zelf of werk je met anderen?",
     "faq2A": "Ik doe alles zelf: strategie, uitvoering en communicatie. Geen externe freelancers, geen uitbestede taken. Dat betekent één aanspreekpunt, geen verrassingen en iemand die echt betrokken is bij jouw resultaat.",
     "faq3Q": "In welke steden en regio's ben je actief?",
-    "faq3A": "VDH Agency is gevestigd in Heerde (Gelderland) en werkt volledig online voor klanten door heel Nederland. Alle gesprekken en consultaties vinden plaats via video, mail en telefoon — efficiënt samenwerken zonder reistijd. Klanten in Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven en Groningen, maar ook steeds meer in de Veluwe-regio.",
+    "faq3A": "VDH Agency is gevestigd in Heerde (Gelderland) en werkt volledig online voor klanten door heel Nederland. Alle gesprekken en consultaties vinden plaats via video, mail en telefoon, efficiënt samenwerken zonder reistijd. Klanten in Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven en Groningen, maar ook steeds meer in de Veluwe-regio.",
     "faq4Q": "Wat kost een samenwerking met VDH Agency?",
     "faq4A": "Dat hangt af van de dienst en de omvang. Ik werk niet met vaste pakketten, maar stel een prijs voor op basis van jouw specifieke situatie. Vraag een vrijblijvende offerte aan via de contactpagina, dan stuur ik je binnen 24 uur een voorstel."
   },
