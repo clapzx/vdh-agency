@@ -106,7 +106,7 @@ function buildSiteJsonLd(locale: string) {
           '@type': 'Person',
           '@id': `${BASE}/#lars`,
           name: 'Lars van der Hoek',
-          sameAs: 'https://www.linkedin.com/in/lars-van-der-hoek',
+          sameAs: 'https://www.linkedin.com/in/lars-van-der-hoek-a12881295/',
         },
         address: {
           '@type': 'PostalAddress',
