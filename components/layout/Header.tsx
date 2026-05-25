@@ -38,7 +38,7 @@ export default function Header() {
     {href: '/diensten', label: t('services')},
     {href: '/over-ons', label: t('about')},
     {href: '/contact', label: t('contact')},
-  ];
+  ] as const;
 
   const isScrolledOrOpen = scrolled || open;
 

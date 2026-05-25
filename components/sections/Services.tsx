@@ -12,9 +12,9 @@ export default async function Services() {
   const webTags    = [t('webTag1'),    t('webTag2'),    t('webTag3')];
 
   const services = [
-    {num: '01', icon: <Search size={28} />, title: t('seoTitle'),    desc: t('seoDesc'),    tags: seoTags,    dark: false, href: '/diensten/seo-sea'},
-    {num: '02', icon: <Video  size={28} />, title: t('socialTitle'), desc: t('socialDesc'), tags: socialTags, dark: true,  href: '/diensten/social-media-beheer'},
-    {num: '03', icon: <Globe  size={28} />, title: t('webTitle'),    desc: t('webDesc'),    tags: webTags,    dark: false, href: '/diensten/website-maken'},
+    {num: '01', icon: <Search size={28} />, title: t('seoTitle'),    desc: t('seoDesc'),    tags: seoTags,    dark: false, href: '/diensten/seo-sea'        as const},
+    {num: '02', icon: <Video  size={28} />, title: t('socialTitle'), desc: t('socialDesc'), tags: socialTags, dark: true,  href: '/diensten/social-media-beheer' as const},
+    {num: '03', icon: <Globe  size={28} />, title: t('webTitle'),    desc: t('webDesc'),    tags: webTags,    dark: false, href: '/diensten/website-maken'   as const},
   ];
 
   return (

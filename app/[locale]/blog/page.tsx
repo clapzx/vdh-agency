@@ -96,7 +96,7 @@ export default async function BlogIndexPage({
             {posts.map((post, i) => (
               <AnimatedSection key={post.slug} delay={i * 0.08}>
                 <Link
-                  href={post.slug}
+                  href={post.slug as '/blog'}
                   className="group bg-white border border-primary/10 rounded-sm p-7 flex flex-col h-full hover:border-gold/30 hover:shadow-lg transition-all duration-200 block"
                 >
                   <div className="flex items-center gap-3 mb-5">

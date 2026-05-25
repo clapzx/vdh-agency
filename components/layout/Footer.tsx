@@ -49,10 +49,10 @@ export default async function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">{t('colServices')}</h4>
             <ul className="flex flex-col gap-2.5">
-              {[
+              {([
                 {href: '/diensten/online-marketing', label: t('onlineMarketing')},
                 {href: '/diensten/website-maken', label: t('web')},
-              ].map(({href, label}) => (
+              ] as const).map(({href, label}) => (
                 <li key={label}>
                   <Link
                     href={href}
@@ -74,11 +74,11 @@ export default async function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">{t('colCompany')}</h4>
             <ul className="flex flex-col gap-2.5">
-              {[
+              {([
                 {href: '/over-ons', label: t('about')},
                 {href: '/blog', label: 'Blog'},
                 {href: '/contact', label: t('contact')},
-              ].map(({href, label}) => (
+              ] as const).map(({href, label}) => (
                 <li key={label}>
                   <Link
                     href={href}
@@ -95,10 +95,10 @@ export default async function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">{t('colLegal')}</h4>
             <ul className="flex flex-col gap-2.5">
-              {[
+              {([
                 {href: '/privacybeleid', label: t('privacy')},
                 {href: '/algemene-voorwaarden', label: t('terms')},
-              ].map(({href, label}) => (
+              ] as const).map(({href, label}) => (
                 <li key={label}>
                   <Link
                     href={href}

@@ -201,14 +201,14 @@ export default async function SeoBureauPage({
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
-                href={isNl ? '/contact' : '/en/contact'}
+                href="/contact"
                 className="flex items-center gap-2 bg-gold text-primary font-bold text-sm px-7 py-3.5 rounded-sm hover:bg-gold-light transition-colors"
               >
                 {isNl ? 'Gratis SEO-check aanvragen' : 'Request free SEO check'}
                 <ArrowRight size={15} />
               </Link>
               <Link
-                href={isNl ? '/diensten/seo-sea' : '/en/services/seo-sea'}
+                href="/diensten/seo-sea"
                 className="flex items-center gap-2 border border-white/20 text-white font-semibold text-sm px-7 py-3.5 rounded-sm hover:border-gold hover:text-gold transition-colors"
               >
                 {isNl ? 'Bekijk SEO & SEA dienst' : 'View SEO & SEA service'}
