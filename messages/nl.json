@@ -6,10 +6,10 @@
     "cta": "Gratis consult"
   },
   "hero": {
-    "label": "Marketing Bureau",
+    "label": "Marketing Bureau Heerde",
     "line1": "Wij laten jouw bedrijf",
     "highlight": "groeien.",
-    "sub": "VDH Agency helpt bedrijven groeien met bewezen SEO/SEA strategieën, social media marketing en op maat gemaakte websites.",
+    "sub": "VDH Agency is een online marketing bureau gevestigd in Heerde. Wij helpen bedrijven in de regio en door heel Nederland online groeien via SEO, social media en op maat gemaakte websites — volledig op afstand, via videogesprekken en online.",
     "cta1": "Bekijk diensten",
     "cta2": "Neem contact op",
     "dashboardTitle": "Wat wij doen",
@@ -54,7 +54,7 @@
   "about": {
     "label": "Over VDH Agency",
     "title": "Persoonlijk. Betrokken. Resultaatgericht.",
-    "p1": "VDH Agency is een Nederlands digitaal marketingbureau, opgericht in 2026 door Lars van der Hoek. Het bureau helpt MKB-bedrijven, freelancers en startups in heel Nederland online groeien via SEO, SEA, social media beheer, website-ontwikkeling en branding.",
+    "p1": "VDH Agency is een digitaal marketingbureau gevestigd in Heerde (Gelderland), opgericht in 2026 door Lars van der Hoek. Het bureau helpt MKB-bedrijven, freelancers en startups door heel Nederland online groeien — volledig op afstand via online diensten en videoconsultaties.",
     "p2": "Jij hebt altijd één vast aanspreekpunt en directe communicatie, zonder tussenpersonen of verborgen kosten.",
     "cta": "Leer ons kennen",
     "point1": "Directe communicatie, altijd bereikbaar",
@@ -108,7 +108,7 @@
     "terms": "Algemene voorwaarden",
     "kvk": "KvK: 95792414",
     "copy": "© {year} VDH Agency. Alle rechten voorbehouden.",
-    "location": "Nederland"
+    "location": "Heerde, Gelderland"
   },
   "dienstenPage": {
     "label": "Onze diensten",
@@ -393,7 +393,7 @@
     "p1": "Ik ben Lars van der Hoek, oprichter van VDH Agency. Na jaren digitale marketing te hebben gedaan voor uiteenlopende bedrijven, heb ik in 2026 mijn eigen bureau opgericht. De reden: ik merkte dat veel MKB-bedrijven wél wilden groeien online, maar vastliepen op bureaus die te duur, te ondoorzichtig of te onpersoonlijk waren.",
     "p2": "Bij VDH Agency werk je altijd direct met mij. Niet met een accountmanager die jouw brief doorgeeft aan iemand anders. Ik schrijf jouw SEO-strategie, beheer jouw Google Ads en bouw of optimaliseer jouw website. Dat betekent snellere lijnen, minder ruis en betere resultaten.",
     "p3": "Mijn aanpak start altijd met luisteren. Ik wil begrijpen hoe jouw business werkt, wie jouw klanten zijn en wat jij nodig hebt. Pas daarna stel ik een strategie voor — geen kant-en-klaar pakket, maar iets wat écht bij jou past.",
-    "p4": "VDH Agency werkt voor zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland. Van Amsterdam en Rotterdam tot Eindhoven, Utrecht en Groningen. Dankzij remote samenwerking maakt locatie geen verschil — wat wél verschil maakt is een vaste specialist die begrijpt wat jij nodig hebt.",
+    "p4": "VDH Agency is gevestigd in Heerde (Gelderland) en werkt voor zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland. Alle diensten worden volledig op afstand geleverd — via videoconsultaties, mail en telefoon. Locatie maakt geen verschil: wat telt is een vaste specialist die jouw doelen begrijpt en er echt voor gaat.",
     "servicesTitle": "Wat ik voor je kan doen",
     "servicesSub": "Van zoekmachineoptimalisatie tot webdesign — alles wat je nodig hebt om online te groeien.",
     "valuesTitle": "Onze waarden",
@@ -414,7 +414,7 @@
     "faq2Q": "Doe je alles zelf of werk je met anderen?",
     "faq2A": "Ik doe alles zelf: strategie, uitvoering en communicatie. Geen externe freelancers, geen uitbestede taken. Dat betekent één aanspreekpunt, geen verrassingen en iemand die echt betrokken is bij jouw resultaat.",
     "faq3Q": "In welke steden en regio's ben je actief?",
-    "faq3A": "VDH Agency werkt remote voor klanten door heel Nederland. Locatie maakt geen verschil. Klanten in Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven en Groningen. Alles gaat via video, mail en telefoon, zodat we efficiënt samenwerken zonder reistijd.",
+    "faq3A": "VDH Agency is gevestigd in Heerde (Gelderland) en werkt volledig online voor klanten door heel Nederland. Alle gesprekken en consultaties vinden plaats via video, mail en telefoon — efficiënt samenwerken zonder reistijd. Klanten in Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven en Groningen, maar ook steeds meer in de Veluwe-regio.",
     "faq4Q": "Wat kost een samenwerking met VDH Agency?",
     "faq4A": "Dat hangt af van de dienst en de omvang. Ik werk niet met vaste pakketten, maar stel een prijs voor op basis van jouw specifieke situatie. Vraag een vrijblijvende offerte aan via de contactpagina, dan stuur ik je binnen 24 uur een voorstel."
   },
@@ -436,7 +436,7 @@
     "successDesc": "Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.",
     "infoTitle": "Direct contact",
     "emailInfo": "lars@vdhagency.nl",
-    "locationInfo": "Nederland",
+    "locationInfo": "Heerde, Gelderland",
     "responseTime": "Reactietijd: < 24 uur",
     "fieldRequired": "Verplicht veld",
     "emailInvalid": "Ongeldig e-mailadres",
