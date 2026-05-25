@@ -1,6 +1,6 @@
 import {Link} from '@/i18n/navigation';
 import {getTranslations} from 'next-intl/server';
-import {Mail, MapPin, FileText} from 'lucide-react';
+import {Mail, MapPin, FileText, Phone} from 'lucide-react';
 
 export default async function Footer() {
   const t = await getTranslations('footer');
@@ -32,6 +32,12 @@ export default async function Footer() {
                 className="flex items-center gap-2 text-white/50 hover:text-gold text-sm transition-colors"
               >
                 <Mail size={14} /> lars@vdhagency.nl
+              </a>
+              <a
+                href="tel:+31641027594"
+                className="flex items-center gap-2 text-white/50 hover:text-gold text-sm transition-colors"
+              >
+                <Phone size={14} /> 06 41 02 75 94
               </a>
               <span className="flex items-center gap-2 text-white/50 text-sm">
                 <MapPin size={14} /> {t('location')}

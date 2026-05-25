@@ -4,7 +4,7 @@ import {useTranslations} from 'next-intl';
 import {useForm} from 'react-hook-form';
 import {z} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {Mail, MapPin, Clock, FileText, CheckCircle, ArrowRight} from 'lucide-react';
+import {Mail, MapPin, Clock, FileText, Phone, CheckCircle, ArrowRight} from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
 const schema = z.object({
@@ -162,6 +162,21 @@ export default function ContactPage() {
                       <p className="text-white/40 text-xs mb-0.5">{t('emailLabel')}</p>
                       <p className="text-white text-sm font-medium group-hover:text-gold transition-colors">
                         {t('emailInfo')}
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="tel:+31641027594"
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center shrink-0">
+                      <Phone size={16} className="text-gold" />
+                    </div>
+                    <div>
+                      <p className="text-white/40 text-xs mb-0.5">Telefoon / WhatsApp</p>
+                      <p className="text-white text-sm font-medium group-hover:text-gold transition-colors">
+                        06 41 02 75 94
                       </p>
                     </div>
                   </a>
