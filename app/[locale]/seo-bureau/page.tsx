@@ -7,11 +7,12 @@ import CTA from '@/components/sections/CTA';
 import {Link} from '@/i18n/navigation';
 
 const BASE = 'https://www.vdh-agency.com';
-const SLUG = '/seo-bureau';
+const NL_SLUG = '/seo-bureau';
+const EN_SLUG = '/seo-agency';
 
 function pageJsonLd(locale: string) {
   const isNl = locale === 'nl';
-  const url = isNl ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
+  const url = isNl ? `${BASE}${NL_SLUG}` : `${BASE}/en${EN_SLUG}`;
 
   const faqs = isNl
     ? [
@@ -68,7 +69,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const {locale = 'nl'} = params ? await params : {};
   const isNl = locale === 'nl';
-  const canonical = isNl ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
+  const canonical = isNl ? `${BASE}${NL_SLUG}` : `${BASE}/en${EN_SLUG}`;
 
   return {
     title: isNl
@@ -80,9 +81,9 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        nl: `${BASE}${SLUG}`,
-        en: `${BASE}/en${SLUG}`,
-        'x-default': `${BASE}${SLUG}`,
+        nl: `${BASE}${NL_SLUG}`,
+        en: `${BASE}/en${EN_SLUG}`,
+        'x-default': `${BASE}${NL_SLUG}`,
       },
     },
     openGraph: {
@@ -207,7 +208,7 @@ export default async function SeoBureauPage({
                 <ArrowRight size={15} />
               </Link>
               <Link
-                href={isNl ? '/diensten/seo-sea' : '/en/diensten/seo-sea'}
+                href={isNl ? '/diensten/seo-sea' : '/en/services/seo-sea'}
                 className="flex items-center gap-2 border border-white/20 text-white font-semibold text-sm px-7 py-3.5 rounded-sm hover:border-gold hover:text-gold transition-colors"
               >
                 {isNl ? 'Bekijk SEO & SEA dienst' : 'View SEO & SEA service'}

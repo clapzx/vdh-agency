@@ -21,7 +21,7 @@ function breadcrumbJsonLd(locale: string) {
         '@type': 'ListItem',
         position: 2,
         name: isNl ? 'Over ons' : 'About',
-        item: isNl ? `${BASE}/over-ons` : `${BASE}/en/over-ons`,
+        item: isNl ? `${BASE}/over-ons` : `${BASE}/en/about`,
       },
     ],
   };
@@ -66,15 +66,15 @@ export async function generateMetadata({
       ? 'Leer meer over VDH Agency en oprichter Lars van der Hoek. Persoonlijk betrokken bij elk project, gericht op meetbare online groei.'
       : 'Learn more about VDH Agency and founder Lars van der Hoek. Personally involved in every project, focused on measurable online growth.',
     alternates: {
-      canonical: isNl ? `${BASE}/over-ons` : `${BASE}/en/over-ons`,
+      canonical: isNl ? `${BASE}/over-ons` : `${BASE}/en/about`,
       languages: {
         nl: `${BASE}/over-ons`,
-        en: `${BASE}/en/over-ons`,
+        en: `${BASE}/en/about`,
         'x-default': `${BASE}/over-ons`,
       },
     },
     openGraph: {
-      url: isNl ? `${BASE}/over-ons` : `${BASE}/en/over-ons`,
+      url: isNl ? `${BASE}/over-ons` : `${BASE}/en/about`,
     },
   };
 }
@@ -92,7 +92,6 @@ export default async function OverOnsPage({
   const t = await getTranslations('overPage');
 
   const isNl = locale === 'nl';
-  const base = isNl ? '' : '/en';
 
   const values = [
     {Icon: Target, title: t('v1title'), desc: t('v1desc')},
@@ -101,12 +100,12 @@ export default async function OverOnsPage({
   ];
 
   const services = [
-    {href: `${base}/diensten/seo-sea`,             label: isNl ? 'SEO & SEA' : 'SEO & SEA',                       desc: isNl ? 'Meer zichtbaarheid in Google' : 'More visibility in Google'},
-    {href: `${base}/diensten/social-media-beheer`, label: isNl ? 'Social Media' : 'Social Media',                  desc: isNl ? 'Content, opnames en advertenties' : 'Content, shoots and ads'},
-    {href: `${base}/diensten/website-maken`,       label: isNl ? 'Website Maken' : 'Website Development',          desc: isNl ? 'Snel, mobiel en SEO-ready' : 'Fast, mobile and SEO-ready'},
-    {href: `${base}/diensten/online-marketing`,    label: isNl ? 'Online Marketing' : 'Online Marketing',          desc: isNl ? 'Volledige digitale groeistrategie' : 'Full digital growth strategy'},
-    {href: `${base}/diensten/branding`,            label: isNl ? 'Branding & Huisstijl' : 'Branding & Identity',  desc: isNl ? 'Logo, kleuren en merkidentiteit' : 'Logo, colours and brand identity'},
-    {href: `${base}/diensten/digitale-analyse`,    label: isNl ? 'Digitale Analyse' : 'Digital Analytics',        desc: isNl ? 'GA4, conversies en dashboards' : 'GA4, conversions and dashboards'},
+    {href: isNl ? '/diensten/seo-sea'             : '/en/services/seo-sea',                 label: isNl ? 'SEO & SEA' : 'SEO & SEA',                       desc: isNl ? 'Meer zichtbaarheid in Google' : 'More visibility in Google'},
+    {href: isNl ? '/diensten/social-media-beheer' : '/en/services/social-media-management', label: isNl ? 'Social Media' : 'Social Media',                  desc: isNl ? 'Content, opnames en advertenties' : 'Content, shoots and ads'},
+    {href: isNl ? '/diensten/website-maken'       : '/en/services/website-development',     label: isNl ? 'Website Maken' : 'Website Development',          desc: isNl ? 'Snel, mobiel en SEO-ready' : 'Fast, mobile and SEO-ready'},
+    {href: isNl ? '/diensten/online-marketing'    : '/en/services/online-marketing',        label: isNl ? 'Online Marketing' : 'Online Marketing',          desc: isNl ? 'Volledige digitale groeistrategie' : 'Full digital growth strategy'},
+    {href: isNl ? '/diensten/branding'            : '/en/services/branding',                label: isNl ? 'Branding & Huisstijl' : 'Branding & Identity',  desc: isNl ? 'Logo, kleuren en merkidentiteit' : 'Logo, colours and brand identity'},
+    {href: isNl ? '/diensten/digitale-analyse'    : '/en/services/digital-analytics',       label: isNl ? 'Digitale Analyse' : 'Digital Analytics',        desc: isNl ? 'GA4, conversies en dashboards' : 'GA4, conversions and dashboards'},
   ];
 
   const faqs = [

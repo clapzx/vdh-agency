@@ -23,14 +23,14 @@ function serviceJsonLd(locale: string) {
         description: isNl
           ? 'GA4 setup, conversiemeting, Google Tag Manager en heldere dashboards voor betere marketingbeslissingen.'
           : 'GA4 setup, conversion tracking, Google Tag Manager and clear dashboards for better marketing decisions.',
-        url: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/diensten/digitale-analyse`,
+        url: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/services/digital-analytics`,
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: isNl ? BASE : `${BASE}/en`},
-          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/diensten`},
-          {'@type': 'ListItem', position: 3, name: isNl ? 'Digitale Analyse' : 'Digital Analytics', item: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/diensten/digitale-analyse`},
+          {'@type': 'ListItem', position: 2, name: isNl ? 'Diensten' : 'Services', item: isNl ? `${BASE}/diensten` : `${BASE}/en/services`},
+          {'@type': 'ListItem', position: 3, name: isNl ? 'Digitale Analyse' : 'Digital Analytics', item: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/services/digital-analytics`},
         ],
       },
     ],
@@ -52,15 +52,15 @@ export async function generateMetadata({
       ? 'VDH Agency verzorgt GA4-implementatie, Google Tag Manager, conversiemeting en heldere dashboards. Weet altijd hoe jouw marketing presteert.'
       : 'VDH Agency provides GA4 implementation, Google Tag Manager, conversion tracking and clear dashboards. Always know how your marketing performs.',
     alternates: {
-      canonical: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/diensten/digitale-analyse`,
+      canonical: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/services/digital-analytics`,
       languages: {
         nl: `${BASE}/diensten/digitale-analyse`,
-        en: `${BASE}/en/diensten/digitale-analyse`,
+        en: `${BASE}/en/services/digital-analytics`,
         'x-default': `${BASE}/diensten/digitale-analyse`,
       },
     },
     openGraph: {
-      url: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/diensten/digitale-analyse`,
+      url: isNl ? `${BASE}/diensten/digitale-analyse` : `${BASE}/en/services/digital-analytics`,
     },
   };
 }
@@ -121,7 +121,7 @@ export default async function DigitaleAnalysePage({
           <AnimatedSection className="max-w-3xl">
             <Breadcrumb crumbs={[
               {label: 'Home', href: locale === 'nl' ? '/' : '/en/'},
-              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/diensten'},
+              {label: locale === 'nl' ? 'Diensten' : 'Services', href: locale === 'nl' ? '/diensten' : '/en/services'},
               {label: t('label')},
             ]} />
             <div className="flex items-center gap-3 mb-6">
@@ -217,9 +217,9 @@ export default async function DigitaleAnalysePage({
       <RelatedServices
         title={locale === 'nl' ? 'Combineer met' : 'Combine with'}
         services={[
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/seo-sea`,           label: 'SEO & SEA',                                                    desc: locale === 'nl' ? 'Gebruik data om hoger te ranken' : 'Use data to rank higher'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/online-marketing`,  label: 'Online Marketing',                                             desc: locale === 'nl' ? 'Stuur op cijfers, niet op gevoel' : 'Drive on numbers, not gut feeling'},
-          {href: `${locale === 'nl' ? '' : '/en'}/diensten/website-maken`,     label: locale === 'nl' ? 'Website Maken' : 'Website Development',      desc: locale === 'nl' ? 'Analyseer en optimaliseer je site' : 'Analyse and optimise your site'},
+          {href: locale === 'nl' ? '/diensten/seo-sea'          : '/en/services/seo-sea',           label: 'SEO & SEA',                                                    desc: locale === 'nl' ? 'Gebruik data om hoger te ranken' : 'Use data to rank higher'},
+          {href: locale === 'nl' ? '/diensten/online-marketing' : '/en/services/online-marketing',  label: 'Online Marketing',                                             desc: locale === 'nl' ? 'Stuur op cijfers, niet op gevoel' : 'Drive on numbers, not gut feeling'},
+          {href: locale === 'nl' ? '/diensten/website-maken'    : '/en/services/website-development', label: locale === 'nl' ? 'Website Maken' : 'Website Development',  desc: locale === 'nl' ? 'Analyseer en optimaliseer je site' : 'Analyse and optimise your site'},
         ]}
       />
       <CTA />

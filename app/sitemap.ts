@@ -8,20 +8,21 @@ type RouteEntry = {
   path: string;
   lastModified: string;
   nlOnly?: boolean;
+  enPath?: string;
 };
 
 const staticRoutes: RouteEntry[] = [
   {path: '',                                      lastModified: '2026-05-22'},
-  {path: '/diensten',                             lastModified: '2026-05-22'},
-  {path: '/over-ons',                             lastModified: '2026-05-22'},
+  {path: '/diensten',                             enPath: '/services',                       lastModified: '2026-05-22'},
+  {path: '/over-ons',                             enPath: '/about',                          lastModified: '2026-05-22'},
   {path: '/contact',                              lastModified: '2026-05-22'},
-  {path: '/diensten/seo-sea',                     lastModified: '2026-05-22'},
-  {path: '/diensten/social-media-beheer',         lastModified: '2026-05-22'},
-  {path: '/diensten/online-marketing',            lastModified: '2026-05-24'},
-  {path: '/diensten/website-maken',               lastModified: '2026-05-22'},
-  {path: '/diensten/branding',                    lastModified: '2026-05-24'},
-  {path: '/diensten/digitale-analyse',            lastModified: '2026-05-22'},
-  {path: '/seo-bureau',                           lastModified: '2026-05-24'},
+  {path: '/diensten/seo-sea',                     enPath: '/services/seo-sea',               lastModified: '2026-05-22'},
+  {path: '/diensten/social-media-beheer',         enPath: '/services/social-media-management', lastModified: '2026-05-22'},
+  {path: '/diensten/online-marketing',            enPath: '/services/online-marketing',      lastModified: '2026-05-24'},
+  {path: '/diensten/website-maken',               enPath: '/services/website-development',   lastModified: '2026-05-22'},
+  {path: '/diensten/branding',                    enPath: '/services/branding',              lastModified: '2026-05-24'},
+  {path: '/diensten/digitale-analyse',            enPath: '/services/digital-analytics',     lastModified: '2026-05-22'},
+  {path: '/seo-bureau',                           enPath: '/seo-agency',                     lastModified: '2026-05-25'},
   {path: '/blog',                                 lastModified: '2026-05-24'},
   {path: '/privacybeleid',                        lastModified: '2026-05-22'},
   {path: '/algemene-voorwaarden',                 lastModified: '2026-05-22'},
@@ -51,12 +52,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [...staticRoutes, ...getBlogPostRoutes()];
   const entries: MetadataRoute.Sitemap = [];
 
-  for (const {path, lastModified, nlOnly} of routes) {
+  for (const {path, lastModified, nlOnly, enPath} of routes) {
     for (const lang of LANGS) {
       if (nlOnly && lang !== 'nl') continue;
-      const url = lang === 'nl' ? `${BASE}${path}` : `${BASE}/en${path}`;
+      const effectiveEnPath = enPath ?? path;
+      const url = lang === 'nl' ? `${BASE}${path}` : `${BASE}/en${effectiveEnPath}`;
       const nlUrl = `${BASE}${path}`;
-      const enUrl = nlOnly ? undefined : `${BASE}/en${path}`;
+      const enUrl = nlOnly ? undefined : `${BASE}/en${effectiveEnPath}`;
       entries.push({
         url,
         lastModified: new Date(lastModified),
