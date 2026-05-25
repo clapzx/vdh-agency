@@ -29,7 +29,7 @@ export default async function Services() {
           <p className="text-primary/60 text-lg">{t('subtitle')}</p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map(({num, icon, title, desc, tags, dark, href}, i) => (
             <AnimatedSection key={num} delay={i * 0.1}>
               <div className={[
@@ -52,7 +52,6 @@ export default async function Services() {
 
                 {/* Number + icon row */}
                 <div className="flex items-start justify-between mb-8">
-                  {/* Number as design element */}
                   <span className={[
                     'text-6xl font-black leading-none tracking-tighter select-none transition-colors duration-300',
                     dark
@@ -61,10 +60,8 @@ export default async function Services() {
                   ].join(' ')}>
                     {num}
                   </span>
-
-                  {/* Icon */}
                   <div className={[
-                    'relative w-16 h-16 rounded-2xl flex items-center justify-center border',
+                    'relative w-14 h-14 rounded-2xl flex items-center justify-center border',
                     'transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_8px_24px_-6px_rgba(212,175,55,0.35)]',
                     dark
                       ? 'bg-gold/12 border-gold/25 text-gold'
@@ -74,17 +71,14 @@ export default async function Services() {
                   </div>
                 </div>
 
-                {/* Title */}
-                <h3 className={`font-black text-2xl mb-3 leading-tight ${dark ? 'text-white' : 'text-primary'}`}>
+                <h3 className={`font-black text-xl mb-3 leading-tight ${dark ? 'text-white' : 'text-primary'}`}>
                   {title}
                 </h3>
 
-                {/* Description — flex-1 ensures equal-height cards */}
                 <p className={`text-sm leading-relaxed flex-1 ${dark ? 'text-white/55' : 'text-primary/55'}`}>
                   {desc}
                 </p>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mt-6 mb-5">
                   {tags.map((tag) => (
                     <span key={tag} className={[
@@ -98,7 +92,6 @@ export default async function Services() {
                   ))}
                 </div>
 
-                {/* CTA */}
                 <div className={`pt-5 border-t ${dark ? 'border-white/8' : 'border-primary/8'}`}>
                   <Link
                     href={href}
@@ -111,19 +104,22 @@ export default async function Services() {
               </div>
             </AnimatedSection>
           ))}
-        </div>
 
-        {/* View all CTA */}
-        <AnimatedSection className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-primary/8 pt-10">
-          <p className="text-primary/50 text-sm max-w-sm">{t('allServicesDesc')}</p>
-          <Link
-            href="/diensten"
-            className="shrink-0 inline-flex items-center gap-2.5 bg-primary text-white font-semibold text-sm px-8 py-4 rounded-sm hover:bg-primary/90 transition-colors group/all"
-          >
-            {t('allServices')}
-            <ArrowRight size={15} className="group-hover/all:translate-x-1 transition-transform" />
-          </Link>
-        </AnimatedSection>
+          {/* 4th cell: view all services */}
+          <AnimatedSection delay={0.35}>
+            <Link
+              href="/diensten"
+              className="group h-full flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-primary/15 p-8 text-center hover:border-gold/50 hover:bg-gold/3 transition-all duration-300 min-h-[160px]"
+            >
+              <div className="w-12 h-12 rounded-full border border-primary/15 flex items-center justify-center mb-4 group-hover:border-gold/50 group-hover:bg-gold/8 transition-all duration-300">
+                <ArrowRight size={18} className="text-primary/35 group-hover:text-gold group-hover:translate-x-0.5 transition-all duration-300" />
+              </div>
+              <span className="text-primary/50 text-sm font-semibold group-hover:text-gold/80 transition-colors leading-snug">
+                {t('allServices')}
+              </span>
+            </Link>
+          </AnimatedSection>
+        </div>
 
       </div>
     </section>
