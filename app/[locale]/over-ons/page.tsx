@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {User, Target, Eye, Heart, ArrowRight, ChevronDown} from 'lucide-react';
+import {User, Target, Eye, Heart, ArrowRight, ChevronDown, MessageCircle} from 'lucide-react';
 import Link from 'next/link';
 
 const BASE = 'https://www.vdh-agency.com';
@@ -100,10 +100,9 @@ export default async function OverOnsPage({
   ];
 
   const services = [
-    {href: isNl ? '/diensten/seo-sea'             : '/en/services/seo-sea',                 label: isNl ? 'SEO & SEA' : 'SEO & SEA',                       desc: isNl ? 'Meer zichtbaarheid in Google' : 'More visibility in Google'},
+    {href: isNl ? '/diensten/online-marketing'    : '/en/services/online-marketing',        label: isNl ? 'Online Marketing' : 'Online Marketing',          desc: isNl ? 'Volledige digitale groeistrategie' : 'Full digital growth strategy'},
     {href: isNl ? '/diensten/social-media-beheer' : '/en/services/social-media-management', label: isNl ? 'Social Media' : 'Social Media',                  desc: isNl ? 'Content, opnames en advertenties' : 'Content, shoots and ads'},
     {href: isNl ? '/diensten/website-maken'       : '/en/services/website-development',     label: isNl ? 'Website Maken' : 'Website Development',          desc: isNl ? 'Snel, mobiel en SEO-ready' : 'Fast, mobile and SEO-ready'},
-    {href: isNl ? '/diensten/online-marketing'    : '/en/services/online-marketing',        label: isNl ? 'Online Marketing' : 'Online Marketing',          desc: isNl ? 'Volledige digitale groeistrategie' : 'Full digital growth strategy'},
     {href: isNl ? '/diensten/branding'            : '/en/services/branding',                label: isNl ? 'Branding & Huisstijl' : 'Branding & Identity',  desc: isNl ? 'Logo, kleuren en merkidentiteit' : 'Logo, colours and brand identity'},
     {href: isNl ? '/diensten/digitale-analyse'    : '/en/services/digital-analytics',       label: isNl ? 'Digitale Analyse' : 'Digital Analytics',        desc: isNl ? 'GA4, conversies en dashboards' : 'GA4, conversions and dashboards'},
   ];
@@ -203,6 +202,23 @@ export default async function OverOnsPage({
                 <ArrowRight size={14} className="text-gold shrink-0 group-hover:translate-x-1 transition-transform" />
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="group flex items-center justify-between gap-4 border border-dashed border-primary/20 rounded-sm px-6 py-5 hover:border-gold/50 hover:bg-gold/5 transition-colors"
+            >
+              <div className="flex items-center gap-3">
+                <MessageCircle size={15} className="text-primary/30 group-hover:text-gold shrink-0 transition-colors" />
+                <div>
+                  <p className="text-primary font-semibold text-sm mb-0.5">
+                    {isNl ? 'Staat wat je zoekt er niet bij?' : "Don't see what you're looking for?"}
+                  </p>
+                  <p className="text-primary/50 text-xs">
+                    {isNl ? 'Neem contact op, we kijken samen wat past.' : 'Get in touch and we will find the right fit.'}
+                  </p>
+                </div>
+              </div>
+              <ArrowRight size={14} className="text-gold shrink-0 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
