@@ -51,10 +51,10 @@ function FloatingDashboard() {
   const t = useTranslations('hero');
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const rotateX = useMotionValue(0);
-  const rotateY = useMotionValue(0);
-  const springX = useSpring(rotateX, {stiffness: 160, damping: 22});
-  const springY = useSpring(rotateY, {stiffness: 160, damping: 22});
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, {stiffness: 120, damping: 18});
+  const springY = useSpring(y, {stiffness: 120, damping: 18});
 
   const services = [
     t('service1'),
@@ -71,20 +71,21 @@ function FloatingDashboard() {
   ];
 
   return (
-    <div style={{perspective: '1000px'}}>
+    <motion.div
+      initial={{opacity: 0, x: 50, y: 10}}
+      animate={{opacity: 1, x: 0, y: 0}}
+      transition={{type: 'spring', stiffness: 120, damping: 22, delay: 0.5}}
+    >
       <motion.div
         ref={cardRef}
-        initial={{opacity: 0, x: 50, y: 10}}
-        animate={{opacity: 1, x: 0, y: 0}}
-        transition={{type: 'spring', stiffness: 120, damping: 22, delay: 0.5}}
-        style={{rotateX: springX, rotateY: springY}}
+        style={{x: springX, y: springY}}
         onMouseMove={(e) => {
           if (!cardRef.current) return;
           const rect = cardRef.current.getBoundingClientRect();
-          rotateY.set(((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 9);
-          rotateX.set(-((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * 9);
+          x.set((e.clientX - rect.left - rect.width / 2) * 0.25);
+          y.set((e.clientY - rect.top - rect.height / 2) * 0.25);
         }}
-        onMouseLeave={() => { rotateX.set(0); rotateY.set(0); }}
+        onMouseLeave={() => { x.set(0); y.set(0); }}
         className="relative"
       >
         <motion.div
@@ -123,7 +124,7 @@ function FloatingDashboard() {
         {/* Ambient glow behind card */}
         <div className="absolute -inset-6 bg-gold/8 rounded-3xl blur-3xl -z-10" />
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
