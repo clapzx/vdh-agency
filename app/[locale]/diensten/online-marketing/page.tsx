@@ -21,8 +21,8 @@ function serviceJsonLd(locale: string) {
         provider: {'@id': `${BASE}/#organization`},
         areaServed: {'@type': 'Country', name: 'Netherlands'},
         description: isNl
-          ? 'SEO, Google Ads, Meta Ads, e-mail marketing en copywriting, alles onder één dak.'
-          : 'SEO, Google Ads, Meta Ads, email marketing and copywriting, all under one roof.',
+          ? 'Complete digitale groeistrategie: betaald adverteren, contentstrategie en copywriting, alles onder één dak.'
+          : 'Complete digital growth strategy: paid advertising, content strategy and copywriting, all under one roof.',
         url: isNl ? `${BASE}/diensten/online-marketing` : `${BASE}/en/services/online-marketing`,
       },
       {
@@ -89,10 +89,10 @@ export default async function OnlineMarketingPage({
   ];
 
   const includes = [
-    'SEO & Google Ads',
+    'Betaald zoeken & adverteren',
     'Meta Ads (Facebook & Instagram)',
-    'E-mail marketing',
-    'Copywriting & webteksten',
+    'Contentstrategie & copywriting',
+    'Kanaalsturing & integratie',
     'Maandelijkse rapportage',
   ];
 
