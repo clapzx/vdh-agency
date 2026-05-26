@@ -64,6 +64,19 @@ export default async function Footer() {
                   </Link>
                 </li>
               ))}
+              {isNl && ([
+                {href: '/seo-bureau',              label: 'SEO Bureau'},
+                {href: '/google-ads-bureau',        label: 'Google Ads Bureau'},
+                {href: '/online-marketing-bureau',  label: 'Online Marketing Bureau'},
+                {href: '/webdesign-bureau',         label: 'Webdesign Bureau'},
+                {href: '/website-laten-maken',      label: 'Website Laten Maken'},
+              ]).map(({href, label}) => (
+                <li key={href}>
+                  <a href={href} className="text-white/50 hover:text-gold text-sm transition-colors">
+                    {label}
+                  </a>
+                </li>
+              ))}
               <li>
                 <Link href="/diensten" className="text-gold/70 hover:text-gold text-sm transition-colors">
                   {t('allServices')}
@@ -78,9 +91,13 @@ export default async function Footer() {
               <h4 className="text-white font-semibold text-sm mb-4">{t('colRegions')}</h4>
               <ul className="flex flex-col gap-2.5">
                 {([
-                  {href: '/marketing-bureau/heerde', label: t('regionHeerde')},
-                  {href: '/marketing-bureau/epe',    label: t('regionEpe')},
-                  {href: '/marketing-bureau/zwolle', label: t('regionZwolle')},
+                  {href: '/marketing-bureau/heerde',    label: t('regionHeerde')},
+                  {href: '/marketing-bureau/epe',       label: t('regionEpe')},
+                  {href: '/marketing-bureau/zwolle',    label: t('regionZwolle')},
+                  {href: '/marketing-bureau/apeldoorn', label: 'Marketing Bureau Apeldoorn'},
+                  {href: '/seo-zwolle',                 label: 'SEO Zwolle'},
+                  {href: '/google-ads-zwolle',           label: 'Google Ads Zwolle'},
+                  {href: '/seo-apeldoorn',              label: 'SEO Apeldoorn'},
                 ] as const).map(({href, label}) => (
                   <li key={href}>
                     <a
