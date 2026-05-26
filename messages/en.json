@@ -108,7 +108,12 @@
     "terms": "Terms & Conditions",
     "kvk": "CoC: 95792414",
     "copy": "© {year} VDH Agency. All rights reserved.",
-    "location": "Heerde, Gelderland"
+    "location": "Heerde, Gelderland",
+    "colRegions": "Service Areas",
+    "regionHeerde": "Marketing Bureau Heerde",
+    "regionEpe": "Marketing Bureau Epe",
+    "regionZwolle": "Marketing Bureau Zwolle",
+    "allRegions": "All areas →"
   },
   "dienstenPage": {
     "label": "Our services",

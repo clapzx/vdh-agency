@@ -26,6 +26,7 @@ const staticRoutes: RouteEntry[] = [
   {path: '/blog',                                 lastModified: '2026-05-24'},
   {path: '/privacybeleid',                        lastModified: '2026-05-22'},
   {path: '/algemene-voorwaarden',                 lastModified: '2026-05-22'},
+  {path: '/marketing-bureau',                     lastModified: '2026-05-26', nlOnly: true},
   // Locatiepagina's
   {path: '/marketing-bureau/heerde',              lastModified: '2026-05-25', nlOnly: true},
   {path: '/marketing-bureau/hattem',              lastModified: '2026-05-25', nlOnly: true},

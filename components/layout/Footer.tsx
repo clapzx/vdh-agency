@@ -1,15 +1,17 @@
 import {Link} from '@/i18n/navigation';
-import {getTranslations} from 'next-intl/server';
+import {getTranslations, getLocale} from 'next-intl/server';
 import {Mail, MapPin, FileText, Phone} from 'lucide-react';
 
 export default async function Footer() {
   const t = await getTranslations('footer');
+  const locale = await getLocale();
+  const isNl = locale === 'nl';
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-primary-dark bg-[#0D1117] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
+        <div className={`grid grid-cols-1 ${isNl ? 'md:grid-cols-6' : 'md:grid-cols-5'} gap-10 mb-12`}>
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-4">
@@ -69,6 +71,34 @@ export default async function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Werkgebied — NL only */}
+          {isNl && (
+            <div>
+              <h4 className="text-white font-semibold text-sm mb-4">{t('colRegions')}</h4>
+              <ul className="flex flex-col gap-2.5">
+                {([
+                  {href: '/marketing-bureau/heerde', label: t('regionHeerde')},
+                  {href: '/marketing-bureau/epe',    label: t('regionEpe')},
+                  {href: '/marketing-bureau/zwolle', label: t('regionZwolle')},
+                ] as const).map(({href, label}) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      className="text-white/50 hover:text-gold text-sm transition-colors"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+                <li>
+                  <a href="/marketing-bureau" className="text-gold/70 hover:text-gold text-sm transition-colors">
+                    {t('allRegions')}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
 
           {/* Company */}
           <div>

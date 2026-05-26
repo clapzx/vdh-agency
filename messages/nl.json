@@ -108,7 +108,12 @@
     "terms": "Algemene voorwaarden",
     "kvk": "KvK: 95792414",
     "copy": "© {year} VDH Agency. Alle rechten voorbehouden.",
-    "location": "Heerde, Gelderland"
+    "location": "Heerde, Gelderland",
+    "colRegions": "Werkgebied",
+    "regionHeerde": "Marketing Bureau Heerde",
+    "regionEpe": "Marketing Bureau Epe",
+    "regionZwolle": "Marketing Bureau Zwolle",
+    "allRegions": "Alle gebieden →"
   },
   "dienstenPage": {
     "label": "Onze diensten",

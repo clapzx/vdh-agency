@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {TrendingUp, Globe, Palette, BarChart2, Video, CheckCircle2, ArrowRight} from 'lucide-react';
+import {TrendingUp, Globe, Palette, BarChart2, Video, Search, CheckCircle2, ArrowRight} from 'lucide-react';
 import {Link} from '@/i18n/navigation';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import NoServiceCard from '@/components/ui/NoServiceCard';
@@ -91,6 +91,14 @@ export default async function DienstenPage({
   const t = await getTranslations('dienstenPage');
 
   const services = [
+    {
+      Icon: Search,
+      title: t('seoTitle'),
+      subtitle: t('seoSubtitle'),
+      desc: t('seoDesc'),
+      bullets: [t('seoBullet1'), t('seoBullet2'), t('seoBullet3'), t('seoBullet4')],
+      href: '/diensten/seo-sea' as const,
+    },
     {
       Icon: TrendingUp,
       title: t('onlineMarketingTitle'),
