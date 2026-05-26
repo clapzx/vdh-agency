@@ -11,20 +11,20 @@ const MODIFIED = '2026-05-26';
 
 const faqs = [
   {
-    q: 'Wat kost een eenvoudige zakelijke website?',
-    a: 'Een zakelijke website met 5 tot 10 pagina\'s kost bij een professioneel bureau gemiddeld tussen de €1.500 en €4.000. De prijs hangt af van de hoeveelheid maatwerk in design, of je een CMS wilt en de complexiteit van de inhoud.',
+    q: 'Geeft VDH Agency een vaste prijs of reken je op uurloon?',
+    a: 'Wij werken met een vaste prijs op basis van een offerte. Voordat we beginnen maken we een inschatting van het totale aantal uren dat een project vraagt — die uren vertalen we naar een totaalbedrag. Zo weet jij precies wat je betaalt, zonder rekening te worden verrast achteraf.',
   },
   {
-    q: 'Zijn er maandelijkse kosten naast de bouwprijs?',
-    a: 'Ja. Je betaalt doorlopend voor hosting (€5 tot €50 per maand afhankelijk van de provider en omvang), een domeinnaam (€10 tot €30 per jaar) en eventueel een onderhoudspakket voor updates en backups.',
+    q: 'Wat kost een spoedopdracht?',
+    a: 'Een spoedopdracht heeft hogere prioriteit en vergt dat we andere planning opzij schuiven. Dat brengt een toeslag met zich mee die we altijd vooraf bespreken. Als de standaard doorlooptijd van 3 tot 5 weken niet past bij jouw situatie, laten we weten wat het kost om te versnellen.',
   },
   {
-    q: 'Wat is het verschil tussen een goedkope en een dure website?',
-    a: 'Een goedkope website (€200 via een freelancer of websitebuilder) geeft je een basisopzet, maar vaak zonder SEO-fundament, maatwerk design of ondersteuning. Een professionele website is een investering die zichzelf terugverdient via betere vindbaarheid en hogere conversie.',
+    q: 'Zijn er doorlopende kosten naast de bouwprijs?',
+    a: 'Ja. Los van de eenmalige bouwkosten betaal je doorlopend voor hosting en je domeinnaam. Wij bespreken dit altijd transparant in de offerte, zodat je het totaalplaatje kent — niet alleen de bouwprijs.',
   },
   {
-    q: 'Kan ik een website ook zelf bouwen?',
-    a: 'Ja, met tools als Wix, Squarespace of WordPress.com. Dat kost weinig geld maar veel tijd, en het resultaat mist meestal de technische SEO en professionele uitstraling die klanten overtuigen. Voor een hobby is het prima; voor een serieus bedrijf is professionele hulp een betere investering.',
+    q: 'Wat als mijn wens technisch complex is?',
+    a: 'Complexere wensen — maatwerk integraties, specifieke koppelingen of functionaliteit buiten de standaard — vragen meer ontwikkeltijd. Die tijd wordt eerlijk meegenomen in de offerte. We bouwen nooit iets op stel en sprong: als een specifieke oplossing maatwerk onderzoek vraagt, verwerken we dat transparant in het prijsvoorstel.',
   },
 ];
 
@@ -34,8 +34,8 @@ function blogJsonLd() {
     '@graph': [
       {
         '@type': 'BlogPosting',
-        headline: 'Wat kost een website laten maken? Eerlijk overzicht voor het MKB',
-        description: 'Wat kost een professionele website laten maken in 2026? Van simpele zakelijke site tot webshop — een eerlijk overzicht van prijzen, wat je ervoor krijgt en waar je op moet letten.',
+        headline: 'Wat kost een website laten maken? Zo bepalen wij de prijs',
+        description: 'Hoe bepaalt VDH Agency de prijs van een website? Eerlijk uitgelegd: uren, complexiteit, doorlooptijd en spoedtoeslag. Geen verborgen kosten, geen verrassingen.',
         datePublished: PUBLISHED,
         dateModified: MODIFIED,
         author: {
@@ -72,8 +72,8 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   const canonical = locale === 'nl' ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
   return {
-    title: 'Wat Kost een Website Laten Maken? Eerlijk Overzicht 2026 | VDH Agency',
-    description: 'Wat kost een professionele website laten maken in 2026? Van simpele zakelijke site tot webshop — eerlijke prijzen, valkuilen en tips voor het MKB.',
+    title: 'Wat Kost een Website Laten Maken? Zo Bepalen Wij de Prijs | VDH Agency',
+    description: 'Hoe bepaalt VDH Agency de prijs van een website? Eerlijk uitgelegd: uren, complexiteit, doorlooptijd en spoed. Geen verborgen kosten. Vraag gratis een offerte aan.',
     ...(locale !== 'nl' && {robots: {index: false, follow: false}}),
     alternates: {
       canonical,
@@ -82,8 +82,8 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
     openGraph: {
       type: 'article',
       url: canonical,
-      title: 'Wat kost een website laten maken? Eerlijk overzicht voor het MKB',
-      description: 'Realistische prijzen, wat je ervoor krijgt en waarop je moet letten bij een website laten maken.',
+      title: 'Wat kost een website laten maken? Zo bepalen wij de prijs',
+      description: 'Eerlijk uitgelegd: hoe VDH Agency prijzen bepaalt op basis van uren, complexiteit en doorlooptijd.',
       publishedTime: PUBLISHED,
       modifiedTime: MODIFIED,
       authors: ['Lars van der Hoek'],
@@ -110,17 +110,17 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
             </div>
             <h1 className="text-white font-black text-3xl lg:text-5xl leading-tight mb-6">
               Wat kost een website laten maken?{' '}
-              <span className="text-gold">Eerlijk overzicht voor het MKB</span>
+              <span className="text-gold">Zo bepalen wij de prijs</span>
             </h1>
             <p className="text-white/60 text-lg">
-              Van simpele zakelijke site tot professionele webshop — wat betaal je werkelijk, wat krijg je ervoor en waar gaat het mis?
+              Geen vage ranges of vergelijkingslijstjes. Gewoon eerlijk uitgelegd hoe wij tot een prijs komen — en wat jouw wensen daarin bepalen.
             </p>
             <div className="flex items-center gap-4 mt-8 text-white/40 text-sm">
               <span>Lars van der Hoek</span>
               <span>·</span>
               <time dateTime={PUBLISHED}>26 mei 2026</time>
               <span>·</span>
-              <span>7 min leestijd</span>
+              <span>5 min leestijd</span>
             </div>
           </AnimatedSection>
         </div>
@@ -132,57 +132,41 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
 
           <AnimatedSection>
             <p className="text-primary/80 text-lg leading-relaxed mb-4">
-              Wie online gaat zoeken naar "wat kost een website laten maken", vindt antwoorden die variëren van €200 tot €20.000. Allebei kunnen correct zijn — maar ze beschrijven totaal verschillende producten.
+              De prijs van een website laten maken wordt bepaald door één ding: tijd. Hoeveel uur kost het om jouw website te bouwen — van de eerste schets tot de live-lancering? Die inschatting, vermenigvuldigd met ons uurtarief, vormt de basis van elk prijsvoorstel.
             </p>
             <p className="text-primary/70 leading-relaxed">
-              In dit artikel leg ik uit welke factoren de prijs bepalen, wat je kunt verwachten voor een MKB-budget en waarom de goedkoopste optie zelden de verstandigste is.
+              We werken altijd met een vaste prijs op basis van een offerte — geen rekening op uurloon, geen verrassingen achteraf. Maar om die vaste prijs eerlijk te kunnen bepalen, moeten we begrijpen wat jouw project vraagt. Hier lees je hoe dat werkt.
             </p>
           </AnimatedSection>
 
-          {/* Prijsoverzicht tabel */}
+          {/* Wat de prijs bepaalt */}
           <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-6">Wat kost een website? Een eerlijk overzicht</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="bg-primary text-white">
-                    <th className="text-left px-5 py-4 font-semibold">Type website</th>
-                    <th className="text-left px-5 py-4 font-semibold">Geschatte prijs</th>
-                    <th className="text-left px-5 py-4 font-semibold">Geschikt voor</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    {type: 'Websitebuilder (Wix, Squarespace)', prijs: '€0–€30/mnd', voor: 'Hobby, éénmanszaak, tijdelijk'},
-                    {type: 'Template op WordPress', prijs: '€800–€2.500', voor: 'Kleine MKB, beperkt budget'},
-                    {type: 'Professionele zakelijke site (maatwerk)', prijs: '€2.500–€7.000', voor: 'MKB dat serieus wil groeien'},
-                    {type: 'Webshop op Shopify of WooCommerce', prijs: '€3.000–€10.000+', voor: 'Productverkoop, e-commerce'},
-                    {type: 'Volledig maatwerk enterprise', prijs: '€10.000+', voor: 'Complexe systemen, integraties'},
-                  ].map(({type, prijs, voor}, i) => (
-                    <tr key={type} className={i % 2 === 0 ? 'bg-white' : 'bg-primary/3'}>
-                      <td className="px-5 py-4 text-primary font-medium border-b border-primary/8">{type}</td>
-                      <td className="px-5 py-4 text-gold font-semibold border-b border-primary/8">{prijs}</td>
-                      <td className="px-5 py-4 text-primary/60 border-b border-primary/8">{voor}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </AnimatedSection>
-
-          {/* Wat bepaalt de prijs */}
-          <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-4">Wat bepaalt de prijs?</h2>
+            <h2 className="text-primary font-black text-2xl mb-4">Wat bepaalt het aantal uur?</h2>
             <p className="text-primary/70 leading-relaxed mb-6">
-              Er zijn vijf factoren die de prijs van een website het meest bepalen. Als je begrijpt waar de kosten zitten, kun je ook beter beoordelen of een offerte redelijk is.
+              Elke website is anders. De ene ondernemer heeft een strakke vijf-pagina-site nodig; de andere wil een volledige webshop met klantenportaal en CRM-koppeling. Hier zijn de factoren die het meest bepalend zijn voor de benodigde tijd.
             </p>
             <div className="flex flex-col gap-4">
               {[
-                {title: '1. Aantal pagina\'s en complexiteit', desc: 'Een eenvoudige vijf-pagina-site is fundamenteel anders dan een website met twintig dienst- en locatiepagina\'s, een blog, een contactformulier met automatische opvolging en meerdere talen.'},
-                {title: '2. Maatwerk design vs. template', desc: 'Een template is een kant-en-klare layout die je aanpast. Maatwerk design begint bij een blanco vel en wordt op jouw merk gebouwd. Maatwerk kost meer, maar geeft ook een uniek resultaat dat converteert op jouw doelgroep.'},
-                {title: '3. CMS en beheersbaarheid', desc: 'Wil je zelf teksten aanpassen, blog-artikelen plaatsen en afbeeldingen uploaden? Dan bouw je met een CMS (Content Management Systeem). Dat voegt functionaliteit en daarmee ontwikkeltijd toe.'},
-                {title: '4. SEO-fundament en technische eisen', desc: 'Een goede website is technisch SEO-klaar: correcte heading-structuur, schema markup, snelle laadtijden, Core Web Vitals, sitemap. Bureaus die dit standaard meenemen bouwen anders (en iets duurder) dan bureaus die alleen een mooie voorkant bouwen.'},
-                {title: '5. Integraties', desc: 'Wil je een koppeling met een boekhoudpakket, een CRM, een reserveringstool, een betaalprovider of een webshop-backend? Elke integratie kost ontwikkeltijd.'},
+                {
+                  title: 'Aantal pagina\'s en structuur',
+                  desc: 'Een eenvoudige site met een homepagina, over ons, diensten en contact vraagt fundamenteel minder tijd dan een website met twintig dienst- en locatiepagina\'s, een blog en meertalige content. Elke extra pagina is extra ontwerp- en bouwtijd.',
+                },
+                {
+                  title: 'Maatwerk design',
+                  desc: 'Wil je een volledig uniek design dat gebouwd wordt vanuit jouw merk? Dan begint het ontwerp bij een blanco vel. Dat geeft het beste resultaat, maar vraagt ook meer uren dan werken met een bestaande structuur. Wij kiezen altijd voor maatwerk — maar de scope bepaalt de omvang.',
+                },
+                {
+                  title: 'Technisch SEO-fundament',
+                  desc: 'Een website die écht goed gevonden wordt in Google, heeft een sterk technisch fundament: de juiste heading-structuur, schema markup, snelle laadtijden, sitemap en meta-data per pagina. Dat is geen extra — bij ons zit het standaard in het proces. Maar het voegt wel uren toe ten opzichte van een eenvoudige voorkant bouwen.',
+                },
+                {
+                  title: 'CMS en zelfbeheer',
+                  desc: 'Wil je na oplevering zelf teksten aanpassen, blogartikelen plaatsen of afbeeldingen uploaden? Dan bouwen we met een beheersysteem (CMS). Dat geeft jou vrijheid, maar vraagt extra bouwtijd en een korte training bij oplevering.',
+                },
+                {
+                  title: 'Integraties en koppelingen',
+                  desc: 'Denk aan een koppeling met een boekingssysteem, CRM, betaalprovider of extern platform. Elke integratie is maatwerk en voegt ontwikkeltijd toe. Hoe specifieker de koppeling, hoe meer uur het kost om het goed te bouwen.',
+                },
               ].map(({title, desc}) => (
                 <div key={title} className="bg-white border border-primary/10 rounded-sm p-6">
                   <h3 className="text-primary font-bold text-sm mb-2">{title}</h3>
@@ -192,23 +176,66 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
             </div>
           </AnimatedSection>
 
-          {/* Waarschuwing goedkoop */}
+          {/* Doorlooptijd en spoed */}
           <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-4">Waarom de goedkoopste optie je meer kost</h2>
+            <h2 className="text-primary font-black text-2xl mb-4">Doorlooptijd en spoed</h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Een website voor €300 van een freelancer of via een websitebuilder klinkt aantrekkelijk. Maar er zijn serieuze risico's die je op voorhand meeneemt in je afweging.
+              Onze standaard doorlooptijd is 3 tot 5 weken — van intake tot live. Dat geeft ons de ruimte om zorgvuldig te werken, feedback te verwerken en jouw site goed op te leveren.
             </p>
-            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6 mb-4">
-              <p className="text-primary text-sm leading-relaxed mb-3">
-                <span className="font-bold">Wat je vaak mist bij een goedkope website:</span>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              Moet het sneller? Dat kan, maar een spoedopdracht heeft consequenties voor onze planning en prioriteit. Een kortere doorlooptijd betekent dat andere werkzaamheden worden opzijgeschoven — dat brengt een toeslag met zich mee die we altijd vooraf helder communiceren.
+            </p>
+            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
+              <p className="text-primary font-semibold text-sm mb-3">Standaard doorlooptijd vs. spoed</p>
+              <div className="flex flex-col gap-3">
+                {[
+                  {label: 'Standaard', value: '3–5 weken', note: 'Zorgvuldige aanpak, revisieronden inbegrepen'},
+                  {label: 'Spoed',     value: '1–2 weken', note: 'Hogere prioriteit, toeslag van toepassing'},
+                ].map(({label, value, note}) => (
+                  <div key={label} className="flex items-start gap-4">
+                    <span className="text-gold font-bold text-sm w-20 shrink-0">{label}</span>
+                    <div>
+                      <span className="text-primary font-semibold text-sm">{value}</span>
+                      <span className="text-primary/50 text-sm"> — {note}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Eerlijk over complexe wensen */}
+          <AnimatedSection>
+            <h2 className="text-primary font-black text-2xl mb-4">Eerlijk over complexe en specifieke wensen</h2>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              Webdevelopment evolueert snel. Nieuwe frameworks, specifieke integraties, maatwerk API-koppelingen — soms vraagt een project om oplossingen die verder gaan dan standaard bouw. Dat is geen uitzondering, dat is de norm voor elke serieuze digitale opdracht.
+            </p>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              Wanneer jouw wensen specifiek maatwerk onderzoek of het toepassen van een nieuwe technische aanpak vereisen, nemen we die uren eerlijk mee in de offerte. Dat is geen toeslag voor onzekerheid — het is investering in een oplossing die degelijk, schaalbaar en toekomstbestendig is. We nemen nooit shortcuts die jou later duur komen te staan.
+            </p>
+            <div className="bg-primary rounded-sm p-7">
+              <p className="text-gold text-xs font-semibold tracking-widest uppercase mb-3">Onze aanpak</p>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Voordat we een offerte opstellen, bespreken we jouw situatie grondig. Wij geven geen offerte af die we niet kunnen waarmaken. Als iets complex is, zeggen we dat eerlijk — inclusief wat het betekent voor de prijs en doorlooptijd. Liever een eerlijk gesprek vooraf dan een vervelende discussie achteraf.
               </p>
+            </div>
+          </AnimatedSection>
+
+          {/* Waarom goedkoop duur is */}
+          <AnimatedSection>
+            <h2 className="text-primary font-black text-2xl mb-4">Waarom de goedkoopste keuze je meer kost</h2>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              Een website die goedkoop wordt gebouwd, mist vrijwel altijd iets essentiëels. Dat klinkt als een verkoopverhaal — maar het is een praktisch feit. Bouw je een website zonder technisch SEO-fundament, dan kost het repareren dat SEO-fundament achteraf minstens evenveel als het initieel goed doen.
+            </p>
+            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
+              <p className="text-primary font-semibold text-sm mb-3">Wat je mist bij een te snel of te goedkoop gebouwde site:</p>
               <ul className="flex flex-col gap-2 text-primary/70 text-sm">
                 {[
-                  'Technisch SEO-fundament (pagina\'s die Google nooit goed indexeert)',
-                  'Mobiele optimalisatie (meer dan 60% van verkeer is mobiel)',
-                  'Snelle laadtijden (elke extra seconde kost je 7% conversie)',
-                  'Schaalbare structuur (uitbreiden wordt een verbouwing)',
-                  'Ondersteuning achteraf (als iets kapot gaat, sta je er alleen voor)',
+                  'Technisch SEO-fundament — pagina\'s die Google nooit goed indexeert',
+                  'Schaalbare structuur — uitbreiden wordt een verbouwing',
+                  'Snelle laadtijden — elke extra seconde kost je conversie',
+                  'Mobielvriendelijk op elk scherm — niet alleen op desktop getest',
+                  'Ondersteuning achteraf — als iets kapot gaat, sta je er alleen voor',
                 ].map(item => (
                   <li key={item} className="flex items-start gap-2">
                     <span className="text-gold mt-0.5">→</span> {item}
@@ -216,52 +243,29 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
                 ))}
               </ul>
             </div>
-            <p className="text-primary/70 leading-relaxed">
-              Een website die slecht gevonden wordt en bezoekers wegjaagt, is geen besparing. Het is een mislukte investering.
-            </p>
-          </AnimatedSection>
-
-          {/* Terugverdienen */}
-          <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-4">Hoe snel verdien je een website terug?</h2>
-            <p className="text-primary/70 leading-relaxed mb-4">
-              Een realistische berekening: stel dat je als loodgieter in Zwolle één extra opdracht per maand via je website binnenhaalt. Gemiddelde waarde: €400. Over een jaar is dat €4.800 — meer dan genoeg om de bouwkosten van een professionele site terug te verdienen.
-            </p>
-            <div className="bg-primary rounded-sm p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-              {[
-                {num: '75%', label: 'van zoekers klikt niet verder dan pagina 1 van Google'},
-                {num: '53%', label: 'van alle websiteverkeer komt via organisch zoeken'},
-                {num: '2,4×', label: 'hogere conversie bij sites die snel laden (onder 2 seconden)'},
-              ].map(({num, label}) => (
-                <div key={num}>
-                  <span className="text-gold font-black text-4xl block mb-2">{num}</span>
-                  <span className="text-white/70 text-sm leading-relaxed">{label}</span>
-                </div>
-              ))}
-            </div>
           </AnimatedSection>
 
           {/* Checklist */}
           <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-4">Checklist: dit moet in elke offerte staan</h2>
+            <h2 className="text-primary font-black text-2xl mb-4">Wat moet er in een goede offerte staan?</h2>
             <p className="text-primary/70 leading-relaxed mb-5">
-              Vraag je meerdere offertes op? Zorg dat je appels met appels vergelijkt. Dit zijn de punten die in elke serieuze website-offerte moeten staan:
+              Of je nou bij ons offreerd of ergens anders — een serieuze offerte voor een website bevat altijd deze punten. Ontbreekt iets? Vraag er expliciet naar voordat je tekent.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 'Aantal pagina\'s en structuur',
-                'Inclusief of exclusief teksten en afbeeldingen',
+                'Inclusief of exclusief teksten',
                 'CMS en beheermogelijkheden',
                 'Technisch SEO-fundament',
                 'Mobielvriendelijkheid',
                 'Laadsnelheid en performance',
-                'Hosting, domein en bijkomende kosten',
-                'Oplevertijd en revisieronden',
-                'Nazorg en ondersteuning',
+                'Hosting en domeinkosten',
+                'Doorlooptijd en revisieronden',
+                'Nazorg na oplevering',
                 'Eigendom van code en bestanden',
               ].map(item => (
                 <div key={item} className="flex items-center gap-3 bg-white border border-primary/8 rounded-sm px-4 py-3">
-                  <span className="text-gold font-bold">✓</span>
+                  <span className="text-gold font-bold text-sm">✓</span>
                   <span className="text-primary/70 text-sm">{item}</span>
                 </div>
               ))}
@@ -275,10 +279,10 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
               <div className="relative z-10">
                 <p className="text-gold text-xs font-semibold tracking-widest uppercase mb-4">Gratis offerte</p>
                 <h3 className="text-white font-black text-2xl mb-4">
-                  Benieuwd wat een website kost voor jouw situatie?
+                  Benieuwd wat jouw website kost?
                 </h3>
                 <p className="text-white/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
-                  Wij maken een vaste offerte op maat — geen rekening op uurloon, geen verborgen kosten. Plan een gratis gesprek en we vertellen je eerlijk wat het kost en oplevert.
+                  Vertel ons over jouw wensen, doelen en eventuele deadline. Wij maken een offerte op maat — vaste prijs, geen verborgen kosten en eerlijk advies over wat jouw project vraagt.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link href="/contact" className="inline-flex items-center gap-3 bg-gold text-primary font-bold text-sm px-8 py-4 rounded-sm hover:bg-gold-light transition-colors group">

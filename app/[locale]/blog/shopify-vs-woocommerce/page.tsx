@@ -12,19 +12,19 @@ const MODIFIED = '2026-05-26';
 const faqs = [
   {
     q: 'Is Shopify duurder dan WooCommerce?',
-    a: 'Shopify kost maandelijks geld (vanaf ca. €32/mnd). WooCommerce is gratis als plugin, maar je betaalt zelf voor hosting, SSL, betaalplugins en onderhoud. Op jaarbasis liggen de totale kosten vaak dicht bij elkaar. Shopify is transparanter; WooCommerce kan goedkoper zijn als je technisch sterk bent.',
+    a: 'Shopify kost een vast maandabonnement. WooCommerce is gratis als plugin, maar je betaalt zelf voor hosting, SSL, betaalplugins en onderhoud. Op jaarbasis liggen de totale kosten vaak dicht bij elkaar. Shopify is transparanter in kosten; WooCommerce is flexibeler maar vereist meer technisch beheer.',
+  },
+  {
+    q: 'Wat is het verschil tussen WordPress en WooCommerce?',
+    a: 'WordPress is een Content Management Systeem (CMS) — primair ontworpen voor websites en blogs. WooCommerce is een plugin die WordPress uitbreidt met webshop-functionaliteit. Samen vormen ze een krachtig platform, maar je bent verantwoordelijk voor hosting, beveiliging en updates van beide.',
   },
   {
     q: 'Welk platform is beter voor SEO?',
-    a: 'Beide platforms kunnen goed scoren in Google. Shopify heeft ingebouwde SEO-functies maar beperkt je in URL-structuur. WooCommerce geeft meer controle, maar vereist de juiste WordPress-plugins en technische kennis. Voor de meeste MKB-webshops maakt het weinig verschil als het goed is opgezet.',
-  },
-  {
-    q: 'Kan ik later van platform wisselen?',
-    a: 'Ja, maar het is geen kleine klus. Producten, klantdata, bestellingen en SEO-waarde meenemen kost tijd en aandacht. Maak de keuze dus zorgvuldig aan het begin — een migratie halverwege is altijd duurder dan de juiste keuze vooraf.',
+    a: 'Beide platforms kunnen goed scoren in Google. WooCommerce geeft via WordPress en plugins als Yoast volledige controle over je SEO-instellingen. Shopify heeft ingebouwde SEO-functies maar is iets beperkter in URL-structuur. Voor de meeste MKB-webshops maakt het weinig verschil als het platform goed is opgezet.',
   },
   {
     q: 'Welk platform raadt VDH Agency aan?',
-    a: 'Voor de meeste MKB-webshops adviseren wij Shopify. Het is sneller live, stabieler en makkelijker te beheren zonder technische kennis. WooCommerce adviseren we alleen als je al op WordPress zit of een specifieke plugin-integratie nodig hebt die Shopify niet biedt.',
+    a: 'Voor de meeste MKB-webshops adviseren wij Shopify. Het is sneller live, stabieler beheerd en makkelijker te onderhouden zonder diepgaande technische kennis. WooCommerce adviseren we als je al op WordPress werkt, specifieke integraties nodig hebt die alleen via WP-plugins beschikbaar zijn, of als je zowel een uitgebreid blog als een webshop onder één dak wilt.',
   },
 ];
 
@@ -35,7 +35,7 @@ function blogJsonLd() {
       {
         '@type': 'BlogPosting',
         headline: 'Shopify vs WooCommerce: welk platform past bij jouw webshop?',
-        description: 'Shopify of WooCommerce voor jouw webshop? Een eerlijke vergelijking op kosten, gebruiksgemak, SEO en schaalbaarheid — zodat jij de juiste keuze maakt.',
+        description: 'Shopify of WooCommerce voor je webshop? Eerlijke vergelijking: Shopify is gebouwd voor verkopen, WooCommerce bouwt voort op WordPress. Inclusief aanbeveling voor het MKB.',
         datePublished: PUBLISHED,
         dateModified: MODIFIED,
         author: {
@@ -73,7 +73,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const canonical = locale === 'nl' ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
   return {
     title: 'Shopify vs WooCommerce: Welk Platform Past bij Jouw Webshop? | VDH Agency',
-    description: 'Shopify of WooCommerce kiezen voor je webshop? Eerlijke vergelijking op kosten, gebruiksgemak, SEO en schaalbaarheid. Inclusief aanbeveling voor MKB.',
+    description: 'Shopify of WooCommerce kiezen? Shopify is gebouwd voor verkopen. WooCommerce draait op WordPress. Eerlijke vergelijking inclusief aanbeveling voor het MKB.',
     ...(locale !== 'nl' && {robots: {index: false, follow: false}}),
     alternates: {
       canonical,
@@ -83,7 +83,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
       type: 'article',
       url: canonical,
       title: 'Shopify vs WooCommerce: welk platform past bij jouw webshop?',
-      description: 'Een eerlijke vergelijking op kosten, gebruiksgemak, SEO en schaalbaarheid voor MKB-webshops.',
+      description: 'Shopify is gebouwd voor verkopen. WooCommerce bouwt voort op WordPress. Eerlijke vergelijking voor het MKB.',
       publishedTime: PUBLISHED,
       modifiedTime: MODIFIED,
       authors: ['Lars van der Hoek'],
@@ -113,7 +113,7 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
               <span className="text-gold">welk platform past bij jouw webshop?</span>
             </h1>
             <p className="text-white/60 text-lg">
-              Twee platforms, twee filosofieën. Jij hebt er één nodig. Een eerlijke vergelijking op kosten, beheer, SEO en schaalbaarheid.
+              Shopify is gebouwd om te verkopen. WooCommerce bouwt webshop-functionaliteit bovenop WordPress. Twee totaal verschillende filosofieën — hier lees je welke bij jou past.
             </p>
             <div className="flex items-center gap-4 mt-8 text-white/40 text-sm">
               <span>Lars van der Hoek</span>
@@ -132,16 +132,69 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
 
           <AnimatedSection>
             <p className="text-primary/80 text-lg leading-relaxed mb-4">
-              Shopify of WooCommerce — het is een van de meest gestelde vragen bij ondernemers die een webshop willen starten. Beide platforms draaien miljoenen webshops wereldwijd. Beide kunnen je producten verkopen. Maar ze doen dat op een fundamenteel andere manier.
+              Veel ondernemers die een webshop willen starten, vergelijken Shopify en WooCommerce alsof het twee gelijkwaardige webshop-platforms zijn. Dat is niet helemaal juist. De kern van het verschil zit in waar elk platform vandaan komt.
             </p>
             <p className="text-primary/70 leading-relaxed">
-              De juiste keuze hangt af van jouw situatie: technische kennis, budget, assortiment en ambities. Dit artikel zet de twee naast elkaar — zonder reclamepraat.
+              Shopify is van de grond af gebouwd als e-commerce platform. WooCommerce is een plugin voor WordPress — een systeem dat primair is ontworpen als CMS voor websites en blogs. Dat maakt WooCommerce krachtiger op vlakken waar WordPress sterk is, maar ook complexer als het gaat om beheer en onderhoud.
             </p>
+          </AnimatedSection>
+
+          {/* WordPress uitleg */}
+          <AnimatedSection>
+            <h2 className="text-primary font-black text-2xl mb-4">WordPress: van blog-platform naar alles-in-één</h2>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              WordPress begon als blogplatform en is uitgegroeid tot het meest gebruikte CMS ter wereld — goed voor ruim 40% van alle websites. Het is een open source systeem dat je zelf installeert op een server, aanpast met plugins en volledig naar eigen wens configureert.
+            </p>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              WooCommerce is een gratis plugin die WordPress uitbreidt met een complete webshop-omgeving: productpagina's, winkelwagen, afrekenen, voorraadbeheer en betalingen. Technisch gezien een krachtige combinatie — maar je beheert nu in feite twee systemen. WordPress én WooCommerce moeten beide up-to-date worden gehouden, beveiligd zijn en goed samenwerken met de plugins die je gebruikt.
+            </p>
+            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
+              <p className="text-primary font-semibold text-sm mb-2">Wanneer WooCommerce sterk is:</p>
+              <ul className="flex flex-col gap-1.5 text-primary/70 text-sm mt-2">
+                {[
+                  'Je hebt al een WordPress-website en wilt een webshop toevoegen',
+                  'Je wilt een uitgebreid blog én een webshop onder één dak',
+                  'Je hebt specifieke integraties nodig die alleen via WP-plugins beschikbaar zijn',
+                  'Je hebt technische kennis in huis of werkt met een bureau dat WordPress goed kent',
+                  'Je wilt maximale controle over elke technische instelling',
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-2"><span className="text-gold">→</span> {item}</li>
+                ))}
+              </ul>
+            </div>
+          </AnimatedSection>
+
+          {/* Shopify */}
+          <AnimatedSection>
+            <h2 className="text-primary font-black text-2xl mb-4">Shopify: gebouwd om te verkopen</h2>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              Shopify is een Software-as-a-Service platform dat volledig is ontworpen rondom één doel: producten verkopen. Je betaalt een maandabonnement en krijgt daarvoor hosting, beveiliging, updates, een betaalomgeving en ondersteuning — volledig beheerd.
+            </p>
+            <p className="text-primary/70 leading-relaxed mb-4">
+              Je hebt geen server nodig, geen kennis van WordPress of PHP en geen zorgen over beveiligingsupdates. Orders verwerken, producten toevoegen, kortingsacties instellen — dat doet de gemiddelde ondernemer na een korte introductie zelf. Het dashboard is gebouwd voor mensen die willen verkopen, niet voor mensen die willen programmeren.
+            </p>
+            <p className="text-primary/70 leading-relaxed mb-5">
+              De keerzijde: Shopify is een gesloten platform. Wil je iets dat buiten de standaard functionaliteit valt, dan ben je afhankelijk van beschikbare apps of betaalde ontwikkelaars. Je hebt minder vrijheid dan bij een open source CMS — maar voor de meeste webshops is die vrijheid niet nodig.
+            </p>
+            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
+              <p className="text-primary font-semibold text-sm mb-2">Wanneer Shopify de betere keuze is:</p>
+              <ul className="flex flex-col gap-1.5 text-primary/70 text-sm mt-2">
+                {[
+                  'Je wilt snel live zonder technische rompslomp',
+                  'Je hebt geen developer in huis',
+                  'Je focus ligt volledig op verkopen, niet op contentbeheer',
+                  'Je verwacht te schalen naar hogere ordervolumes',
+                  'Je wilt een stabiel, beheerd platform zonder onderhoudszorgen',
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-2"><span className="text-gold">→</span> {item}</li>
+                ))}
+              </ul>
+            </div>
           </AnimatedSection>
 
           {/* Vergelijkingstabel */}
           <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-6">Shopify vs WooCommerce: snelle vergelijking</h2>
+            <h2 className="text-primary font-black text-2xl mb-6">Snel vergelijken</h2>
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse">
                 <thead>
@@ -153,14 +206,14 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
                 </thead>
                 <tbody>
                   {[
-                    {factor: 'Hosting',          shopify: 'Ingebouwd, beheerd',   woo: 'Zelf regelen'},
-                    {factor: 'Beveiliging',      shopify: 'Automatisch',           woo: 'Zelf onderhouden'},
-                    {factor: 'Gebruiksgemak',    shopify: '★★★★★',               woo: '★★★☆☆'},
-                    {factor: 'Maandelijkse kosten', shopify: 'Vast (€32–€299)',    woo: 'Variabel (hosting + plugins)'},
-                    {factor: 'SEO-controle',     shopify: 'Beperkt',               woo: 'Volledig'},
-                    {factor: 'Schaalbaarheid',   shopify: 'Uitstekend',            woo: 'Goed'},
-                    {factor: 'Technische kennis nodig', shopify: 'Minimaal',       woo: 'Aanzienlijk'},
-                    {factor: 'Apps / plugins',   shopify: '8.000+ apps',           woo: '59.000+ plugins'},
+                    {factor: 'Basis platform',         shopify: 'E-commerce SaaS',       woo: 'WordPress CMS + plugin'},
+                    {factor: 'Hosting & beveiliging',  shopify: 'Volledig beheerd',       woo: 'Zelf regelen en onderhouden'},
+                    {factor: 'Gebruiksgemak',           shopify: 'Hoog',                  woo: 'Gemiddeld — technische kennis vereist'},
+                    {factor: 'Maandelijkse kosten',     shopify: 'Vast abonnement',        woo: 'Variabel (hosting + plugins + updates)'},
+                    {factor: 'Blogging / content',      shopify: 'Beperkt',               woo: 'Uitstekend (WordPress-kracht)'},
+                    {factor: 'SEO-controle',            shopify: 'Goed',                  woo: 'Volledig, via Yoast e.a.'},
+                    {factor: 'Schaalbaarheid',          shopify: 'Uitstekend',            woo: 'Goed'},
+                    {factor: 'Onderhoud vereist',       shopify: 'Minimaal',              woo: 'Regelmatig'},
                   ].map(({factor, shopify, woo}, i) => (
                     <tr key={factor} className={i % 2 === 0 ? 'bg-white' : 'bg-primary/3'}>
                       <td className="px-5 py-4 text-primary font-medium border-b border-primary/8">{factor}</td>
@@ -173,61 +226,17 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
             </div>
           </AnimatedSection>
 
-          {/* Shopify */}
-          <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-4">Shopify: verkopen zonder technische kopzorgen</h2>
-            <p className="text-primary/70 leading-relaxed mb-4">
-              Shopify is een Software-as-a-Service platform. Je betaalt een maandabonnement en krijgt daarvoor hosting, beveiliging, updates en ondersteuning. Je hebt geen server nodig, geen WordPress-kennis en geen angst voor crashes bij hoge traffic.
-            </p>
-            <p className="text-primary/70 leading-relaxed mb-4">
-              Het dashboard is intuïtief. Orders verwerken, producten toevoegen, kortingsacties instellen — dat doet de gemiddelde ondernemer zelf na een half uur training. Dat is precies waarom Shopify zo populair is bij ondernemers die willen verkopen, niet programmeren.
-            </p>
-            <p className="text-primary/70 leading-relaxed mb-5">
-              De keerzijde: je bent afhankelijk van Shopify. Wil je iets dat niet standaard kan, ben je aangewezen op apps (met bijkomende maandelijkse kosten) of betaalde ontwikkelaars.
-            </p>
-            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-5">
-              <p className="text-primary font-semibold text-sm mb-1">Kies Shopify als je:</p>
-              <ul className="flex flex-col gap-1.5 text-primary/70 text-sm mt-2">
-                {['Snel live wilt zonder technische kennis','Een stabiel beheerd platform wilt','Verwacht te schalen naar hoge volumes','Internationaal wilt verkopen via Shopify Markets'].map(item => (
-                  <li key={item} className="flex items-start gap-2"><span className="text-gold">→</span> {item}</li>
-                ))}
-              </ul>
-            </div>
-          </AnimatedSection>
-
-          {/* WooCommerce */}
-          <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-4">WooCommerce: maximale controle, meer verantwoordelijkheid</h2>
-            <p className="text-primary/70 leading-relaxed mb-4">
-              WooCommerce is een gratis plugin voor WordPress. De software zelf kost niets, maar je regelt zelf je hosting, SSL-certificaat, back-ups en beveiligingsupdates. Dat geeft maximale vrijheid — en maximale verantwoordelijkheid.
-            </p>
-            <p className="text-primary/70 leading-relaxed mb-4">
-              De kracht van WooCommerce zit in de flexibiliteit: met de juiste plugins en kennis bouw je vrijwel alles wat je nodig hebt. SEO-plugins als Yoast geven je volledige controle over titels, meta-beschrijvingen en schema markup. URL-structuur is volledig aanpasbaar.
-            </p>
-            <p className="text-primary/70 leading-relaxed mb-5">
-              Het nadeel is dat je die kennis nodig hebt. Of iemand hebt die het voor je beheert. Een WooCommerce-site die niet up-to-date gehouden wordt, is een beveiligingsrisico.
-            </p>
-            <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-5">
-              <p className="text-primary font-semibold text-sm mb-1">Kies WooCommerce als je:</p>
-              <ul className="flex flex-col gap-1.5 text-primary/70 text-sm mt-2">
-                {['Al een WordPress-website hebt','Specifieke integraties nodig hebt die alleen in WP-plugins bestaan','Volledige SEO-controle wilt','Een developer in huis hebt of een goed technisch bureau'].map(item => (
-                  <li key={item} className="flex items-start gap-2"><span className="text-gold">→</span> {item}</li>
-                ))}
-              </ul>
-            </div>
-          </AnimatedSection>
-
           {/* Conclusie */}
           <AnimatedSection>
-            <h2 className="text-primary font-black text-2xl mb-4">Onze eerlijke aanbeveling</h2>
+            <h2 className="text-primary font-black text-2xl mb-4">Onze aanbeveling</h2>
             <p className="text-primary/70 leading-relaxed mb-4">
-              Voor de meeste MKB-webshops adviseren wij Shopify. Niet omdat WooCommerce slecht is, maar omdat de meeste ondernemers baat hebben bij een platform dat gewoon werkt — zodat je aandacht naar je producten en klanten gaat, niet naar technisch beheer.
+              Voor de meeste MKB-webshops adviseren wij Shopify. Niet omdat WooCommerce inferieur is — het is een krachtig platform — maar omdat de meeste ondernemers baat hebben bij een systeem dat gewoon werkt. Geen hosting die uitvalt, geen plugin-conflicten, geen beveiligingslekken door een vergeten update.
             </p>
             <p className="text-primary/70 leading-relaxed mb-4">
-              WooCommerce adviseren we als je al op WordPress werkt, specifieke integraties nodig hebt die alleen via WP-plugins beschikbaar zijn, of als je een developer in huis hebt die het platform actief bijhoudt.
+              WooCommerce is de betere keuze als je content centraal staat naast je webshop. Denk aan een merk met een uitgebreide blog, een kennisbank of contentmarketing als primaire groeistrategie — WordPress is daarvoor het sterkste platform, en WooCommerce groeit daar logisch naast mee.
             </p>
             <p className="text-primary/70 leading-relaxed">
-              Twijfel je? Plan een gratis gesprek. We kijken naar jouw situatie en adviseren je welk platform écht bij je past.
+              Twijfel je? Plan een gratis gesprek. We kijken naar jouw assortiment, ambities en technische situatie — en adviseren je welk platform écht bij je past.
             </p>
           </AnimatedSection>
 
@@ -239,7 +248,7 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
                 <p className="text-gold text-xs font-semibold tracking-widest uppercase mb-4">Gratis advies</p>
                 <h3 className="text-white font-black text-2xl mb-4">Welk platform past bij jouw webshop?</h3>
                 <p className="text-white/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
-                  We denken gratis met je mee. Vertel ons over jouw assortiment, doelen en budget — dan geven we je een eerlijk advies.
+                  We denken gratis met je mee. Vertel ons over jouw assortiment, doelen en huidige situatie — dan geven we je een eerlijk advies over het beste platform.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link href="/contact" className="inline-flex items-center gap-3 bg-gold text-primary font-bold text-sm px-8 py-4 rounded-sm hover:bg-gold-light transition-colors group">
