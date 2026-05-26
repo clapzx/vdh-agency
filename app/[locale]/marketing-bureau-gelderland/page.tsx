@@ -134,8 +134,11 @@ export default async function MarketingBureauGelderlandPage({params}: {params: P
               <p className="text-white/60 text-base leading-relaxed mb-4">
                 Gelderland is de grootste provincie van Nederland en telt honderden actieve MKB-bedrijven die lokaal concurreren. De markten in Apeldoorn, Harderwijk en Zutphen gedragen zich anders dan in de Randstad — hogere persoonlijke betrokkenheid, sterkere lokale loyaliteit en een zoekgedrag dat vraagt om specifieke lokale SEO.
               </p>
+              <p className="text-white/60 text-base leading-relaxed mb-4">
+                VDH Agency is gevestigd in Heerde, midden in de regio. We kennen de lokale markt van binnenuit.
+              </p>
               <p className="text-white/60 text-base leading-relaxed mb-6">
-                VDH Agency is gevestigd in Heerde, midden in de regio. We rijden niet vanuit Amsterdam naar een gesprek. We zijn er al.
+                Maar we zijn niet regionaal gebonden. We werken voor bedrijven door heel Nederland en communiceren zowel in het <strong className="text-white">Nederlands als in het Engels</strong>. Wij denken in oplossingen, niet in beperkingen — kies VDH Agency.
               </p>
               <div className="flex flex-col gap-3">
                 {['Lokale SEO voor Gelderse zoektermen','Google Business Profile optimalisatie','Websites die converteren in de regio','Google Ads gericht op jouw gemeente'].map(p => (

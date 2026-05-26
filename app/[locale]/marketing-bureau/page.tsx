@@ -147,23 +147,64 @@ export default async function MarketingBureauOverviewPage({
 
       {/* Why VDH */}
       <section className="bg-light py-20 lg:py-28">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <SectionLabel>Lokale kennis</SectionLabel>
-            <h2 className="text-primary font-black text-2xl lg:text-3xl mb-6">
-              Gevestigd in Heerde, actief door de regio
-            </h2>
-            <p className="text-primary/60 text-base leading-relaxed mb-8">
-              VDH Agency is opgericht in Heerde en kent de lokale markt in Gelderland en Overijssel als geen ander. We begrijpen hoe lokale klanten zoeken, wat werkt in de regio en hoe je je onderscheidt van de concurrentie.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-gold text-primary font-bold text-sm px-7 py-3.5 rounded-sm hover:bg-gold-light transition-colors"
-            >
-              Gratis kennismakingsgesprek
-              <ArrowRight size={15} />
-            </Link>
-          </AnimatedSection>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection direction="left">
+              <SectionLabel>Niet regionaal gebonden</SectionLabel>
+              <h2 className="text-primary font-black text-2xl lg:text-3xl mb-6">
+                Gevestigd in Heerde. Actief voor heel Nederland.
+              </h2>
+              <p className="text-primary/60 text-base leading-relaxed mb-4">
+                We zijn lokaal geworteld maar werken voor bedrijven door heel Nederland — van Groningen tot Zeeland, van Amsterdam tot Enschede. Locatie speelt geen rol: wij werken volledig online via videoconsultaties, e-mail en telefoon.
+              </p>
+              <p className="text-primary/60 text-base leading-relaxed mb-6">
+                Wij communiceren zowel in het <strong className="text-primary">Nederlands als in het Engels</strong>. Internationale klanten of bedrijven met een Engelstalig team zijn bij ons aan het juiste adres.
+              </p>
+              <div className="flex flex-col gap-3 mb-8">
+                {[
+                  'Volledig online samenwerken — geen reistijd',
+                  'Vaste specialist, directe communicatie',
+                  'Wij denken in oplossingen, niet in beperkingen',
+                  'Resultaatgericht — geen vage beloftes',
+                ].map(p => (
+                  <div key={p} className="flex items-center gap-3 text-primary/70 text-sm">
+                    <span className="text-gold font-bold">→</span> {p}
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-gold text-primary font-bold text-sm px-7 py-3.5 rounded-sm hover:bg-gold-light transition-colors"
+              >
+                Gratis kennismakingsgesprek
+                <ArrowRight size={15} />
+              </Link>
+            </AnimatedSection>
+            <AnimatedSection direction="right" delay={0.15}>
+              <div className="bg-primary rounded-sm p-8">
+                <p className="text-gold text-xs font-semibold tracking-widest uppercase mb-6">Waarom VDH Agency</p>
+                <blockquote className="text-white font-black text-xl lg:text-2xl leading-snug mb-6">
+                  "Wij denken in oplossingen, niet in problemen."
+                </blockquote>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                  Veel bureaus zeggen wat er niet kan. VDH Agency kijkt naar wat er wél mogelijk is — binnen jouw budget, tijdlijn en situatie. Dat is de instelling waarmee we elke samenwerking starten.
+                </p>
+                <div className="flex flex-col gap-3">
+                  {[
+                    {label: 'Werkgebied', value: 'Heel Nederland + internationaal'},
+                    {label: 'Talen', value: 'Nederlands & Engels'},
+                    {label: 'Werkwijze', value: 'Volledig online, flexibel'},
+                    {label: 'Aanspreekpunt', value: 'Altijd dezelfde specialist'},
+                  ].map(({label, value}) => (
+                    <div key={label} className="flex items-start justify-between border-b border-white/10 pb-3">
+                      <span className="text-white/40 text-xs">{label}</span>
+                      <span className="text-white text-xs font-semibold text-right">{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 

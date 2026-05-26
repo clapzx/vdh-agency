@@ -128,8 +128,11 @@ export default async function MarketingBureauOverijsselPage({params}: {params: P
               <p className="text-white/60 text-base leading-relaxed mb-4">
                 Zwolle is een van de snelst groeiende steden van Nederland. Kampen, Raalte en Wijhe zijn kleinere markten met eigen zoekgedrag en een sterke ondernemersidentiteit. Wie hier lokaal vindbaar wil zijn, moet dat per gemeente aanpakken — niet met een generiek campagnetemplate.
               </p>
+              <p className="text-white/60 text-base leading-relaxed mb-4">
+                Vanuit Heerde rijden we in twintig minuten naar Zwolle. We kennen de regio en de kansen.
+              </p>
               <p className="text-white/60 text-base leading-relaxed mb-6">
-                Vanuit Heerde rijden we in twintig minuten naar Zwolle. We kennen de regio, de concurrentie en de kansen.
+                Maar we zijn niet regionaal gebonden. We werken voor bedrijven door heel Nederland en communiceren zowel in het <strong className="text-white">Nederlands als in het Engels</strong>. Wij denken in oplossingen, niet in beperkingen — kies VDH Agency.
               </p>
               <div className="flex flex-col gap-3">
                 {['Lokale SEO per Overijsselse gemeente','Google Business Profile inrichten en beheren','Websites gericht op lokale conversie','Google Ads met lokale targetingopties'].map(p => (
