@@ -52,28 +52,22 @@ export default async function Footer() {
             <h4 className="text-white font-semibold text-sm mb-4">{t('colServices')}</h4>
             <ul className="flex flex-col gap-2.5">
               {([
-                {href: '/diensten/online-marketing', label: t('onlineMarketing')},
-                {href: '/diensten/website-maken', label: t('web')},
+                {href: '/diensten/seo-sea',             label: t('seo')},
+                {href: '/diensten/online-marketing',    label: t('onlineMarketing')},
+                {href: '/diensten/website-maken',       label: t('web')},
+                {href: '/diensten/webshop-maken',       label: t('ecom')},
+                {href: '/diensten/social-media-beheer', label: t('social')},
+                {href: '/diensten/branding',            label: t('branding')},
+                {href: '/diensten/digitale-analyse',    label: t('analyse')},
+                {href: '/diensten/email-marketing',     label: t('email')},
               ] as const).map(({href, label}) => (
-                <li key={label}>
+                <li key={href}>
                   <Link
                     href={href}
                     className="text-white/50 hover:text-gold text-sm transition-colors"
                   >
                     {label}
                   </Link>
-                </li>
-              ))}
-              {isNl && ([
-                {href: '/website-laten-maken', label: 'Website Laten Maken'},
-                {href: '/shopify-webshop',     label: 'Shopify Webshop'},
-                {href: '/hoger-in-google',     label: 'Hoger in Google'},
-                {href: '/lokale-seo',          label: 'Lokale SEO'},
-              ]).map(({href, label}) => (
-                <li key={href}>
-                  <a href={href} className="text-white/50 hover:text-gold text-sm transition-colors">
-                    {label}
-                  </a>
                 </li>
               ))}
               <li>
