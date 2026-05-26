@@ -146,7 +146,7 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
               WordPress begon als blogplatform en is uitgegroeid tot het meest gebruikte CMS ter wereld — goed voor ruim 40% van alle websites. Het is een open source systeem dat je zelf installeert op een server, aanpast met plugins en volledig naar eigen wens configureert.
             </p>
             <p className="text-primary/70 leading-relaxed mb-4">
-              WooCommerce is een gratis plugin die WordPress uitbreidt met een complete webshop-omgeving: productpagina's, winkelwagen, afrekenen, voorraadbeheer en betalingen. Technisch gezien een krachtige combinatie — maar je beheert nu in feite twee systemen. WordPress én WooCommerce moeten beide up-to-date worden gehouden, beveiligd zijn en goed samenwerken met de plugins die je gebruikt.
+              WooCommerce is een gratis plugin die WordPress uitbreidt met een complete webshop-omgeving: productpagina's, winkelwagen, afrekenen, voorraadbeheer en betalingen. Technisch gezien een krachtige combinatie — maar je beheert in feite twee systemen tegelijk. WordPress én WooCommerce moeten beide up-to-date worden gehouden, beveiligd zijn en goed samenwerken met de plugins die je gebruikt. Wij nemen die technische verantwoordelijkheid voor onze klanten volledig over, zodat jij je kunt focussen op je assortiment en klanten.
             </p>
             <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
               <p className="text-primary font-semibold text-sm mb-2">Wanneer WooCommerce sterk is:</p>
@@ -174,7 +174,7 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
               Je hebt geen server nodig, geen kennis van WordPress of PHP en geen zorgen over beveiligingsupdates. Orders verwerken, producten toevoegen, kortingsacties instellen — dat doet de gemiddelde ondernemer na een korte introductie zelf. Het dashboard is gebouwd voor mensen die willen verkopen, niet voor mensen die willen programmeren.
             </p>
             <p className="text-primary/70 leading-relaxed mb-5">
-              De keerzijde: Shopify is een gesloten platform. Wil je iets dat buiten de standaard functionaliteit valt, dan ben je afhankelijk van beschikbare apps of betaalde ontwikkelaars. Je hebt minder vrijheid dan bij een open source CMS — maar voor de meeste webshops is die vrijheid niet nodig.
+              Heb je specifieke wensen die verder gaan dan de standaard? Shopify heeft een ecosysteem van meer dan 8.000 apps die de meeste behoeften afdekken. En voor echt maatwerk — een unieke productconfigurator, een externe koppeling of een specifieke flow — is dat precies het werk dat wij voor onze klanten doen. Shopify is geen beperking; het is een solide basis waarop je kunt bouwen.
             </p>
             <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6">
               <p className="text-primary font-semibold text-sm mb-2">Wanneer Shopify de betere keuze is:</p>
@@ -236,7 +236,7 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
               WooCommerce is de betere keuze als je content centraal staat naast je webshop. Denk aan een merk met een uitgebreide blog, een kennisbank of contentmarketing als primaire groeistrategie — WordPress is daarvoor het sterkste platform, en WooCommerce groeit daar logisch naast mee.
             </p>
             <p className="text-primary/70 leading-relaxed">
-              Twijfel je? Plan een gratis gesprek. We kijken naar jouw assortiment, ambities en technische situatie — en adviseren je welk platform écht bij je past.
+              De platformkeuze is misschien wel de belangrijkste beslissing bij het starten van een webshop. Wij kennen beide platforms van binnen en van buiten, bouwen webshops op beide en weten precies wanneer welke aanpak het beste resultaat geeft voor jouw situatie. Plan een gratis gesprek — geen verkooppraatje, gewoon een eerlijk advies op basis van wat jij nodig hebt.
             </p>
           </AnimatedSection>
 
