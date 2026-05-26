@@ -70,13 +70,6 @@ export async function generateMetadata({
         : 'VDH Agency helps businesses grow online through SEO, Social Media and professional custom websites.',
       images: [isNl ? `${BASE}/opengraph-image` : `${BASE}/en/opengraph-image`],
     },
-    icons: {
-      icon: [
-        {url: '/icon.svg', type: 'image/svg+xml'},
-      ],
-      apple: '/icon.svg',
-      shortcut: '/icon.svg',
-    },
     verification: {
       google: 'kg9q-mJMSAnhPF5GgYtIZJ0KAEU_2riXpv8P4UFCSF8',
     },
