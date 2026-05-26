@@ -48,6 +48,36 @@ const posts = [
     excerpt:
       'Iemand googelt "kitbedrijf Zwolle" of "schilder Utrecht" en neemt contact op met jouw concurrent. Hoe komt dat? En wat is er nodig om lokaal te groeien via Google?',
   },
+  {
+    slug: '/blog/google-ads-vs-seo',
+    date: '26 mei 2026',
+    dateTime: '2026-05-26',
+    category: 'Google Ads & SEO',
+    readTime: '7 min',
+    title: 'Google Ads vs SEO: wat werkt beter voor jouw bedrijf?',
+    excerpt:
+      'Betalen voor clicks of organisch scoren? Beide werken — maar niet voor iedereen op hetzelfde moment. Een eerlijke vergelijking op snelheid, kosten en rendement.',
+  },
+  {
+    slug: '/blog/wat-kost-een-website-laten-maken',
+    date: '26 mei 2026',
+    dateTime: '2026-05-26',
+    category: 'Website',
+    readTime: '7 min',
+    title: 'Wat kost een website laten maken? Eerlijk overzicht voor het MKB',
+    excerpt:
+      'Van simpele zakelijke site tot webshop — realistische prijzen, wat je ervoor krijgt en waarom de goedkoopste optie je meer kost dan je denkt.',
+  },
+  {
+    slug: '/blog/shopify-vs-woocommerce',
+    date: '26 mei 2026',
+    dateTime: '2026-05-26',
+    category: 'E-commerce',
+    readTime: '6 min',
+    title: 'Shopify vs WooCommerce: welk platform past bij jouw webshop?',
+    excerpt:
+      'Twee platforms, twee filosofieën. Jij hebt er één nodig. Een eerlijke vergelijking op kosten, gebruiksgemak, SEO en schaalbaarheid — inclusief onze aanbeveling.',
+  },
 ];
 
 export default async function BlogIndexPage({
