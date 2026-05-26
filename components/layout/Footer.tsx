@@ -91,13 +91,12 @@ export default async function Footer() {
               <h4 className="text-white font-semibold text-sm mb-4">{t('colRegions')}</h4>
               <ul className="flex flex-col gap-2.5">
                 {([
-                  {href: '/marketing-bureau/heerde',    label: t('regionHeerde')},
-                  {href: '/marketing-bureau/epe',       label: t('regionEpe')},
-                  {href: '/marketing-bureau/zwolle',    label: t('regionZwolle')},
-                  {href: '/marketing-bureau/apeldoorn', label: 'Marketing Bureau Apeldoorn'},
-                  {href: '/seo-zwolle',                 label: 'SEO Zwolle'},
-                  {href: '/google-ads-zwolle',           label: 'Google Ads Zwolle'},
-                  {href: '/seo-apeldoorn',              label: 'SEO Apeldoorn'},
+                  {href: '/marketing-bureau/heerde',    label: 'Heerde'},
+                  {href: '/marketing-bureau/epe',       label: 'Epe'},
+                  {href: '/marketing-bureau/zwolle',    label: 'Zwolle'},
+                  {href: '/marketing-bureau/apeldoorn', label: 'Apeldoorn'},
+                  {href: '/marketing-bureau/kampen',    label: 'Kampen'},
+                  {href: '/marketing-bureau/harderwijk',label: 'Harderwijk'},
                 ] as const).map(({href, label}) => (
                   <li key={href}>
                     <a
