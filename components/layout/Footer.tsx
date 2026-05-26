@@ -65,11 +65,10 @@ export default async function Footer() {
                 </li>
               ))}
               {isNl && ([
-                {href: '/seo-bureau',              label: 'SEO Bureau'},
-                {href: '/google-ads-bureau',        label: 'Google Ads Bureau'},
-                {href: '/online-marketing-bureau',  label: 'Online Marketing Bureau'},
-                {href: '/webdesign-bureau',         label: 'Webdesign Bureau'},
-                {href: '/website-laten-maken',      label: 'Website Laten Maken'},
+                {href: '/website-laten-maken', label: 'Website Laten Maken'},
+                {href: '/shopify-webshop',     label: 'Shopify Webshop'},
+                {href: '/hoger-in-google',     label: 'Hoger in Google'},
+                {href: '/lokale-seo',          label: 'Lokale SEO'},
               ]).map(({href, label}) => (
                 <li key={href}>
                   <a href={href} className="text-white/50 hover:text-gold text-sm transition-colors">
