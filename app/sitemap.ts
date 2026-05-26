@@ -43,6 +43,7 @@ const staticRoutes: RouteEntry[] = [
   {path: '/google-ads-zwolle',                     lastModified: '2026-05-26', nlOnly: true},
   {path: '/website-laten-maken-zwolle',            lastModified: '2026-05-26', nlOnly: true},
   {path: '/website-laten-maken-apeldoorn',         lastModified: '2026-05-26', nlOnly: true},
+  {path: '/google-ads-apeldoorn',                  lastModified: '2026-05-26', nlOnly: true},
   {path: '/marketing-bureau',                      lastModified: '2026-05-26', nlOnly: true},
   // Locatiepagina's
   {path: '/marketing-bureau/heerde',              lastModified: '2026-05-25', nlOnly: true},

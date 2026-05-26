@@ -66,6 +66,7 @@ export const routing = defineRouting({
     '/google-ads-zwolle': '/google-ads-zwolle',
     '/website-laten-maken-zwolle': '/website-laten-maken-zwolle',
     '/website-laten-maken-apeldoorn': '/website-laten-maken-apeldoorn',
+    '/google-ads-apeldoorn': '/google-ads-apeldoorn',
     '/contact': '/contact',
     '/blog': '/blog',
     '/privacybeleid': '/privacybeleid',
