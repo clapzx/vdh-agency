@@ -17,6 +17,8 @@ const staticRoutes: RouteEntry[] = [
   {path: '/over-ons',                             enPath: '/about',                          lastModified: '2026-05-22'},
   {path: '/contact',                              lastModified: '2026-05-22'},
   {path: '/diensten/seo-sea',                     enPath: '/services/seo-sea',               lastModified: '2026-05-22'},
+  {path: '/diensten/webshop-maken',               enPath: '/services/ecommerce',             lastModified: '2026-05-26'},
+  {path: '/diensten/email-marketing',             enPath: '/services/email-marketing',       lastModified: '2026-05-26'},
   {path: '/diensten/social-media-beheer',         enPath: '/services/social-media-management', lastModified: '2026-05-22'},
   {path: '/diensten/online-marketing',            enPath: '/services/online-marketing',      lastModified: '2026-05-24'},
   {path: '/diensten/website-maken',               enPath: '/services/website-development',   lastModified: '2026-05-22'},

@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {TrendingUp, Globe, Palette, BarChart2, Video, CheckCircle2, ArrowRight} from 'lucide-react';
+import {TrendingUp, Globe, Palette, BarChart2, Video, Search, ShoppingCart, Mail, CheckCircle2, ArrowRight} from 'lucide-react';
 import {Link} from '@/i18n/navigation';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import NoServiceCard from '@/components/ui/NoServiceCard';
@@ -92,6 +92,14 @@ export default async function DienstenPage({
 
   const services = [
     {
+      Icon: Search,
+      title: t('seoTitle'),
+      subtitle: t('seoSubtitle'),
+      desc: t('seoDesc'),
+      bullets: [t('seoBullet1'), t('seoBullet2'), t('seoBullet3'), t('seoBullet4')],
+      href: '/diensten/seo-sea' as const,
+    },
+    {
       Icon: TrendingUp,
       title: t('onlineMarketingTitle'),
       subtitle: t('onlineMarketingSubtitle'),
@@ -106,6 +114,14 @@ export default async function DienstenPage({
       desc: t('webDesc'),
       bullets: [t('webBullet1'), t('webBullet2'), t('webBullet3'), t('webBullet4')],
       href: '/diensten/website-maken' as const,
+    },
+    {
+      Icon: ShoppingCart,
+      title: t('ecomTitle'),
+      subtitle: t('ecomSubtitle'),
+      desc: t('ecomDesc'),
+      bullets: [t('ecomBullet1'), t('ecomBullet2'), t('ecomBullet3'), t('ecomBullet4')],
+      href: '/diensten/webshop-maken' as const,
     },
     {
       Icon: Palette,
@@ -130,6 +146,14 @@ export default async function DienstenPage({
       desc: t('socialDesc'),
       bullets: [t('socialBullet1'), t('socialBullet2'), t('socialBullet3'), t('socialBullet4')],
       href: '/diensten/social-media-beheer' as const,
+    },
+    {
+      Icon: Mail,
+      title: t('emailTitle'),
+      subtitle: t('emailSubtitle'),
+      desc: t('emailDesc'),
+      bullets: [t('emailBullet1'), t('emailBullet2'), t('emailBullet3'), t('emailBullet4')],
+      href: '/diensten/email-marketing' as const,
     },
   ];
 
