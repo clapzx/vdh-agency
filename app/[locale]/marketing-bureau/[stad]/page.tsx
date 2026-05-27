@@ -300,7 +300,7 @@ function cityJsonLd(city: CityData) {
         description: city.metaDescription,
         url: `${BASE}/marketing-bureau/${city.slug}`,
         telephone: '+31641027594',
-        email: 'lars@vdhagency.nl',
+        email: 'larsvanderhoek@gmail.com',
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Heerde',

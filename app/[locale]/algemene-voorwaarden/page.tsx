@@ -135,7 +135,7 @@ function NlVersion() {
             <h2>11. Contact</h2>
             <p>
               Voor vragen over deze algemene voorwaarden kunt u contact opnemen via{' '}
-              <a href="mailto:lars@vdhagency.nl">lars@vdhagency.nl</a>.
+              <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>.
             </p>
           </div>
         </AnimatedSection>
@@ -236,7 +236,7 @@ function EnVersion() {
             <h2>11. Contact</h2>
             <p>
               For questions about these terms and conditions, please contact us at{' '}
-              <a href="mailto:lars@vdhagency.nl">lars@vdhagency.nl</a>.
+              <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>.
             </p>
           </div>
         </AnimatedSection>

@@ -59,7 +59,7 @@ function NlVersion() {
             <p>
               <strong>Contactgegevens:</strong><br />
               VDH Agency<br />
-              E-mail: lars@vdhagency.nl<br />
+              E-mail: larsvanderhoek@gmail.com<br />
               Website: www.vdh-agency.com
             </p>
 
@@ -123,7 +123,7 @@ function NlVersion() {
               <li><strong>Recht op bezwaar:</strong> u kunt bezwaar maken tegen de verwerking</li>
             </ul>
             <p>
-              Stuur uw verzoek naar <a href="mailto:lars@vdhagency.nl">lars@vdhagency.nl</a>. Wij reageren
+              Stuur uw verzoek naar <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>. Wij reageren
               binnen 30 dagen.
             </p>
 
@@ -198,7 +198,7 @@ function EnVersion() {
             <p>
               <strong>Contact details:</strong><br />
               VDH Agency<br />
-              Email: lars@vdhagency.nl<br />
+              Email: larsvanderhoek@gmail.com<br />
               Website: www.vdh-agency.com
             </p>
 
@@ -258,7 +258,7 @@ function EnVersion() {
               <li><strong>Right to object:</strong> you can object to processing</li>
             </ul>
             <p>
-              Send your request to <a href="mailto:lars@vdhagency.nl">lars@vdhagency.nl</a>. We will
+              Send your request to <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>. We will
               respond within 30 days.
             </p>
 
