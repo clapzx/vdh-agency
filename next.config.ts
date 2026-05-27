@@ -44,6 +44,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Favicon: /favicon.ico → /icon (Next.js app/icon.tsx serves at /icon, not /favicon.ico)
+      {source: '/favicon.ico', destination: '/icon', permanent: false},
       // Domain redirects
       {
         source: '/:path*',
