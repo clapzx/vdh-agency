@@ -17,14 +17,17 @@ const cities = [
   {slug: 'vaassen',    name: 'Vaassen',     region: 'Gelderland'},
   {slug: 't-harde',    name: "'t Harde",    region: 'Gelderland'},
   {slug: 'elburg',     name: 'Elburg',      region: 'Gelderland'},
-  {slug: 'wijhe',      name: 'Wijhe',       region: 'Overijssel'},
-  {slug: 'olst',       name: 'Olst',        region: 'Overijssel'},
   {slug: 'apeldoorn',  name: 'Apeldoorn',   region: 'Gelderland'},
   {slug: 'nunspeet',   name: 'Nunspeet',    region: 'Gelderland'},
+  {slug: 'harderwijk', name: 'Harderwijk',  region: 'Gelderland'},
+  {slug: 'zutphen',    name: 'Zutphen',     region: 'Gelderland'},
+  {slug: 'wijhe',      name: 'Wijhe',       region: 'Overijssel'},
+  {slug: 'olst',       name: 'Olst',        region: 'Overijssel'},
   {slug: 'kampen',     name: 'Kampen',      region: 'Overijssel'},
   {slug: 'raalte',     name: 'Raalte',      region: 'Overijssel'},
   {slug: 'zwolle',     name: 'Zwolle',      region: 'Overijssel'},
-  {slug: 'harderwijk', name: 'Harderwijk',  region: 'Gelderland'},
+  {slug: 'deventer',   name: 'Deventer',    region: 'Overijssel'},
+  {slug: 'dalfsen',    name: 'Dalfsen',     region: 'Overijssel'},
 ];
 
 export async function generateMetadata({
@@ -37,7 +40,7 @@ export async function generateMetadata({
   const url = `${BASE}/marketing-bureau`;
   return {
     title: 'Marketing Bureau per Stad & Regio | Gelderland & Overijssel | VDH Agency',
-    description: 'VDH Agency is actief als marketing bureau in Heerde, Epe, Zwolle, Apeldoorn, Kampen en 11 andere steden in Gelderland en Overijssel. Bekijk alle werkgebieden.',
+    description: 'VDH Agency is actief als marketing bureau in Heerde, Zwolle, Apeldoorn, Deventer en 15 andere steden in Gelderland en Overijssel. Bekijk alle werkgebieden.',
     alternates: {
       canonical: url,
       languages: {'x-default': url, nl: url},
@@ -89,7 +92,7 @@ export default async function MarketingBureauOverviewPage({
               Marketing Bureau per Stad & Regio
             </h1>
             <p className="text-white/60 text-xl">
-              VDH Agency is actief in Gelderland en Overijssel. We helpen lokale ondernemers groeien via SEO, social media en professionele websites op maat.
+              VDH Agency is actief in 19 steden en dorpen in Gelderland en Overijssel — van Heerde en Zwolle tot Deventer, Zutphen en Dalfsen. We helpen lokale ondernemers groeien via SEO, social media en professionele websites op maat.
             </p>
           </AnimatedSection>
         </div>
