@@ -48,12 +48,12 @@ function NlVersion() {
             <span className="text-gold text-xs font-semibold tracking-widest uppercase">Juridisch</span>
           </div>
           <h1 className="text-primary font-black text-4xl mb-3">Algemene Voorwaarden</h1>
-          <p className="text-primary/50 text-sm mb-10">Laatst bijgewerkt: 22 mei 2026</p>
+          <p className="text-primary/50 text-sm mb-10">Laatst bijgewerkt: 27 mei 2026</p>
 
           <div className="prose-legal">
             <h2>1. Definities</h2>
             <p>
-              <strong>VDH Agency:</strong> de eenmanszaak gedreven door Lars van der Hoek, gevestigd in Nederland.<br />
+              <strong>VDH Agency:</strong> de eenmanszaak gedreven door Lars van der Hoek, ingeschreven bij de Kamer van Koophandel onder nummer 95792414, gevestigd in Nederland.<br />
               <strong>Opdrachtgever:</strong> de natuurlijke of rechtspersoon die een overeenkomst aangaat met VDH Agency.<br />
               <strong>Diensten:</strong> alle werkzaamheden die VDH Agency uitvoert, waaronder SEO/SEA, social media marketing en website-ontwikkeling.
             </p>
@@ -128,11 +128,21 @@ function NlVersion() {
             <h2>10. Toepasselijk recht en geschillen</h2>
             <p>
               Op alle overeenkomsten is Nederlands recht van toepassing. Geschillen worden bij voorkeur
-              in onderling overleg opgelost. Indien dit niet lukt, is de bevoegde rechter in Nederland
-              exclusief bevoegd.
+              in onderling overleg opgelost. Indien dit niet lukt, is de bevoegde rechter in het
+              arrondissement Gelderland exclusief bevoegd.
             </p>
 
-            <h2>11. Contact</h2>
+            <h2>11. Overmacht</h2>
+            <p>
+              VDH Agency is niet gehouden tot het nakomen van enige verplichting indien zij daartoe
+              verhinderd is als gevolg van een omstandigheid die niet te wijten is aan haar schuld.
+              Onder overmacht worden onder meer verstaan: storingen in systemen of netwerken van derden,
+              uitval van internet, plotselinge ziekte en overheidsmaatregelen. Bij overmacht van meer dan
+              30 dagen hebben beide partijen het recht de overeenkomst schriftelijk te ontbinden, zonder
+              recht op schadevergoeding.
+            </p>
+
+            <h2>12. Contact</h2>
             <p>
               Voor vragen over deze algemene voorwaarden kunt u contact opnemen via{' '}
               <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>.
@@ -154,12 +164,12 @@ function EnVersion() {
             <span className="text-gold text-xs font-semibold tracking-widest uppercase">Legal</span>
           </div>
           <h1 className="text-primary font-black text-4xl mb-3">Terms and Conditions</h1>
-          <p className="text-primary/50 text-sm mb-10">Last updated: 22 May 2026</p>
+          <p className="text-primary/50 text-sm mb-10">Last updated: 27 May 2026</p>
 
           <div className="prose-legal">
             <h2>1. Definitions</h2>
             <p>
-              <strong>VDH Agency:</strong> the sole proprietorship operated by Lars van der Hoek, established in the Netherlands.<br />
+              <strong>VDH Agency:</strong> the sole proprietorship operated by Lars van der Hoek, registered with the Dutch Chamber of Commerce under number 95792414, established in the Netherlands.<br />
               <strong>Client:</strong> the natural or legal person entering into an agreement with VDH Agency.<br />
               <strong>Services:</strong> all work performed by VDH Agency, including SEO/SEA, social media management and website development.
             </p>
@@ -230,10 +240,20 @@ function EnVersion() {
             <h2>10. Governing Law and Disputes</h2>
             <p>
               All agreements are governed by Dutch law. Disputes will preferably be resolved by mutual
-              agreement. If this fails, the competent court in the Netherlands has exclusive jurisdiction.
+              agreement. If this fails, the competent court in the district of Gelderland has exclusive
+              jurisdiction.
             </p>
 
-            <h2>11. Contact</h2>
+            <h2>11. Force Majeure</h2>
+            <p>
+              VDH Agency shall not be obliged to fulfil any obligation if prevented from doing so by
+              circumstances not attributable to its fault. Force majeure includes, among other things,
+              failures in third-party systems or networks, internet outages, sudden illness and
+              government measures. In the event of force majeure lasting more than 30 days, either
+              party has the right to dissolve the agreement in writing without any right to compensation.
+            </p>
+
+            <h2>12. Contact</h2>
             <p>
               For questions about these terms and conditions, please contact us at{' '}
               <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>.

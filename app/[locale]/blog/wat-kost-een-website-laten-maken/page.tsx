@@ -292,6 +292,9 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
                   <a href="/website-laten-maken" className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold text-sm px-6 py-4 rounded-sm hover:border-gold hover:text-gold transition-colors">
                     Meer over website laten maken
                   </a>
+                  <Link href="/diensten/website-maken" className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold text-sm px-6 py-4 rounded-sm hover:border-gold hover:text-gold transition-colors">
+                    Onze websitediensten
+                  </Link>
                 </div>
               </div>
             </div>

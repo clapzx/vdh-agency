@@ -255,6 +255,12 @@ export default async function BlogPostPage({params}: {params: Promise<{locale: s
                 <a href="/seo-bureau" className="flex items-center gap-2 text-gold text-sm font-semibold hover:opacity-80 transition-opacity">
                   SEO bureau <ArrowRight size={13} />
                 </a>
+                <Link href="/diensten/seo-sea" className="flex items-center gap-2 text-gold text-sm font-semibold hover:opacity-80 transition-opacity">
+                  SEO &amp; SEA diensten <ArrowRight size={13} />
+                </Link>
+                <a href="/online-marketing-bureau" className="flex items-center gap-2 text-gold text-sm font-semibold hover:opacity-80 transition-opacity">
+                  Online marketing bureau <ArrowRight size={13} />
+                </a>
               </div>
             </div>
           </AnimatedSection>

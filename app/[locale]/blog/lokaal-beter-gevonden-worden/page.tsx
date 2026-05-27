@@ -235,18 +235,30 @@ export default async function BlogPostPage({
               Twee vergelijkbare bedrijven, zelfde stad, zelfde kwaliteit. Toch staat de een consequent bovenaan en krijgt de ander nauwelijks aanvragen via Google. Dat is geen toeval en ook geen geluk.
             </p>
             <p className="text-primary/70 leading-relaxed mb-6">
-              Wat er precies speelt, is wat wij voor onze klanten uitzoeken en aanpakken. Lokale SEO is een van de diensten waarmee wij Nederlandse bedrijven helpen om structureel beter gevonden te worden in hun regio.
+              Wat er precies speelt, is wat wij voor onze klanten uitzoeken en aanpakken.{' '}
+              <a href="/lokale-seo" className="text-gold hover:underline">Lokale SEO</a> is een van de diensten waarmee wij Nederlandse bedrijven helpen om structureel beter gevonden te worden in hun regio.
             </p>
             <div className="bg-primary/5 border-l-4 border-gold rounded-sm p-6 flex flex-col gap-4">
               <p className="text-primary text-sm leading-relaxed">
                 <span className="font-bold">Wat wij zien in de praktijk:</span> Als we een bestaand profiel doorlichten, vinden we gemiddeld meer dan twintig punten waar het beter kan. Dat geldt ook voor profielen waarvan de ondernemer dacht dat ze al goed stonden.
               </p>
-              <Link
-                href="/diensten/seo-sea"
-                className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:opacity-80 transition-opacity self-start"
-              >
-                Bekijk onze SEO-diensten <ArrowRight size={13} />
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/diensten/seo-sea"
+                  className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:opacity-80 transition-opacity"
+                >
+                  SEO-diensten <ArrowRight size={13} />
+                </Link>
+                <a href="/seo-bureau" className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:opacity-80 transition-opacity">
+                  SEO bureau <ArrowRight size={13} />
+                </a>
+                <a href="/lokale-seo" className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:opacity-80 transition-opacity">
+                  Lokale SEO <ArrowRight size={13} />
+                </a>
+                <a href="/marketing-bureau" className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:opacity-80 transition-opacity">
+                  Werkgebied <ArrowRight size={13} />
+                </a>
+              </div>
             </div>
           </AnimatedSection>
 
