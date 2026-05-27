@@ -1,7 +1,6 @@
 import {NextRequest, NextResponse} from 'next/server';
 import {z} from 'zod';
 
-// In-memory rate limiter: max 5 submissions per IP per hour
 const rl = new Map<string, {n: number; reset: number}>();
 const RL_LIMIT = 5;
 const RL_WINDOW = 60 * 60 * 1000;
@@ -23,7 +22,7 @@ const schema = z.object({
   email: z.string().email().max(200),
   company: z.string().max(100).optional(),
   message: z.string().min(10).max(5000),
-  _hp: z.string().optional(), // honeypot field
+  _hp: z.string().optional(),
 });
 
 function esc(s: string) {
@@ -35,72 +34,79 @@ function esc(s: string) {
 }
 
 export async function POST(req: NextRequest) {
-  // Reject oversized payloads before parsing
-  const contentLength = req.headers.get('content-length');
-  if (contentLength && parseInt(contentLength) > 10_000) {
-    return NextResponse.json({error: 'Payload te groot'}, {status: 413});
+  try {
+    const contentLength = req.headers.get('content-length');
+    if (contentLength && parseInt(contentLength) > 10_000) {
+      return NextResponse.json({error: 'Payload te groot'}, {status: 413});
+    }
+
+    const ip =
+      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+
+    if (!checkRate(ip)) {
+      return NextResponse.json(
+        {error: 'Te veel verzoeken, probeer later opnieuw'},
+        {status: 429},
+      );
+    }
+
+    const body = await req.json().catch(() => null);
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({error: 'Ongeldige invoer'}, {status: 400});
+    }
+
+    if (body._hp) return NextResponse.json({ok: true});
+
+    const parsed = schema.safeParse(body);
+    if (!parsed.success) {
+      return NextResponse.json(
+        {error: 'Validatie mislukt: ' + parsed.error.issues[0]?.message},
+        {status: 400},
+      );
+    }
+    const {name, email, company, message} = parsed.data;
+
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('[contact] RESEND_API_KEY is not set');
+      return NextResponse.json({error: 'E-mail niet geconfigureerd'}, {status: 500});
+    }
+
+    const html = [
+      `<p><strong>Naam:</strong> ${esc(name)}</p>`,
+      `<p><strong>E-mail:</strong> ${esc(email)}</p>`,
+      company ? `<p><strong>Bedrijf:</strong> ${esc(company)}</p>` : '',
+      `<p><strong>Bericht:</strong></p><p>${esc(message)}</p>`,
+      `<hr><p style="color:#888;font-size:12px">IP: ${esc(ip)}</p>`,
+    ].join('');
+
+    const resendRes = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        from: 'VDH Agency <contact@vdh-agency.com>',
+        to: ['larsvanderhoek@gmail.com'],
+        subject: `Nieuw bericht van ${name}${company ? ` (${company})` : ''}`,
+        html,
+        reply_to: email,
+      }),
+    });
+
+    if (!resendRes.ok) {
+      const resendError = await resendRes.text().catch(() => 'unknown');
+      console.error('[contact] Resend error:', resendRes.status, resendError);
+      return NextResponse.json(
+        {error: `Verzenden mislukt (${resendRes.status})`},
+        {status: 500},
+      );
+    }
+
+    return NextResponse.json({ok: true});
+  } catch (err) {
+    console.error('[contact] Unexpected error:', err);
+    return NextResponse.json({error: 'Serverfout'}, {status: 500});
   }
-
-  // Require JSON content-type
-  if (!req.headers.get('content-type')?.includes('application/json')) {
-    return NextResponse.json({error: 'Ongeldig verzoek'}, {status: 415});
-  }
-
-  const ip =
-    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
-
-  if (!checkRate(ip)) {
-    return NextResponse.json(
-      {error: 'Te veel verzoeken, probeer later opnieuw'},
-      {status: 429},
-    );
-  }
-
-  const body = await req.json().catch(() => null);
-  if (!body || typeof body !== 'object') {
-    return NextResponse.json({error: 'Ongeldige invoer'}, {status: 400});
-  }
-
-  // Honeypot: bots fill hidden fields, humans don't — silent accept so bots don't retry
-  if (body._hp) return NextResponse.json({ok: true});
-
-  const parsed = schema.safeParse(body);
-  if (!parsed.success) {
-    return NextResponse.json({error: 'Ongeldige invoer'}, {status: 400});
-  }
-  const {name, email, company, message} = parsed.data;
-
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json({error: 'E-mail niet geconfigureerd'}, {status: 500});
-  }
-
-  const html = [
-    `<p><strong>Naam:</strong> ${esc(name)}</p>`,
-    `<p><strong>E-mail:</strong> ${esc(email)}</p>`,
-    company ? `<p><strong>Bedrijf:</strong> ${esc(company)}</p>` : '',
-    `<p><strong>Bericht:</strong></p><p>${esc(message)}</p>`,
-    `<hr><p style="color:#888;font-size:12px">IP: ${esc(ip)}</p>`,
-  ].join('');
-
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      from: 'VDH Agency <contact@vdh-agency.com>',
-      to: ['larsvanderhoek@gmail.com'],
-      subject: `Nieuw bericht van ${name}${company ? ` (${company})` : ''}`,
-      html,
-      reply_to: email,
-    }),
-  });
-
-  if (!res.ok) {
-    return NextResponse.json({error: 'Verzenden mislukt'}, {status: 500});
-  }
-
-  return NextResponse.json({ok: true});
 }
