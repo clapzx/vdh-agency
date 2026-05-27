@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: 'VDH Agency <onboarding@resend.dev>',
+        from: 'VDH Agency <contact@vdh-agency.com>',
         to: ['larsvanderhoek@gmail.com'],
         subject: `Nieuw bericht van ${name}${company ? ` (${company})` : ''}`,
         html,
