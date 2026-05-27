@@ -21,6 +21,10 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     metadataBase: new URL(BASE),
+    icons: {
+      icon: [{url: '/icon', sizes: '96x96', type: 'image/png'}],
+      apple: [{url: '/apple-icon', sizes: '180x180', type: 'image/png'}],
+    },
     title: {
       default: isNl
         ? 'Marketing Bureau Nederland, SEO, Social Media & Webdesign | VDH Agency'
