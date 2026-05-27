@@ -70,16 +70,6 @@ export default async function Footer() {
                   </Link>
                 </li>
               ))}
-              {isNl && (
-                <>
-                  <li><a href="/hoger-in-google"    className="text-white/50 hover:text-gold text-sm transition-colors">Hoger in Google</a></li>
-                  <li><a href="/lokale-seo"          className="text-white/50 hover:text-gold text-sm transition-colors">Lokale SEO</a></li>
-                  <li><a href="/shopify-webshop"     className="text-white/50 hover:text-gold text-sm transition-colors">Shopify Webshop</a></li>
-                  <li><a href="/social-media-bureau" className="text-white/50 hover:text-gold text-sm transition-colors">Social Media Bureau</a></li>
-                  <li><a href="/webdesign-bureau"    className="text-white/50 hover:text-gold text-sm transition-colors">Webdesign Bureau</a></li>
-                  <li><a href="/google-ads-bureau"   className="text-white/50 hover:text-gold text-sm transition-colors">Google Ads Bureau</a></li>
-                </>
-              )}
               <li>
                 <Link href="/diensten" className="text-gold/70 hover:text-gold text-sm transition-colors">
                   {t('allServices')}
