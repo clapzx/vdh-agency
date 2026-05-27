@@ -48,7 +48,7 @@ function NlVersion() {
             <span className="text-gold text-xs font-semibold tracking-widest uppercase">Juridisch</span>
           </div>
           <h1 className="text-primary font-black text-4xl mb-3">Privacybeleid</h1>
-          <p className="text-primary/50 text-sm mb-10">Laatst bijgewerkt: 22 mei 2026</p>
+          <p className="text-primary/50 text-sm mb-10">Laatst bijgewerkt: 27 mei 2026</p>
 
           <div className="prose-legal">
             <h2>1. Verwerkingsverantwoordelijke</h2>
@@ -58,14 +58,15 @@ function NlVersion() {
             </p>
             <p>
               <strong>Contactgegevens:</strong><br />
-              VDH Agency<br />
+              VDH Agency (eenmanszaak)<br />
+              KvK-nummer: 95792414<br />
               E-mail: larsvanderhoek@gmail.com<br />
               Website: www.vdh-agency.com
             </p>
 
             <h2>2. Persoonsgegevens die wij verwerken</h2>
             <p>
-              VDH Agency verwerkt uw persoonsgegevens uitsluitend wanneer u deze zelf heeft verstrekt via
+              VDH Agency verwerkt persoonsgegevens uitsluitend wanneer u deze zelf heeft verstrekt via
               het contactformulier op onze website. Het betreft de volgende gegevens:
             </p>
             <ul>
@@ -73,6 +74,7 @@ function NlVersion() {
               <li>E-mailadres</li>
               <li>Bedrijfsnaam (optioneel)</li>
               <li>Inhoud van uw bericht</li>
+              <li>IP-adres (uitsluitend voor beveiliging en spampreventie, niet gekoppeld aan uw identiteit)</li>
             </ul>
 
             <h2>3. Doel en grondslag van de verwerking</h2>
@@ -94,8 +96,15 @@ function NlVersion() {
             <h2>5. Delen met derden</h2>
             <p>
               VDH Agency verkoopt uw gegevens niet aan derden. Gegevens worden uitsluitend gedeeld met
-              verwerkers die noodzakelijk zijn voor de dienstverlening (zoals e-mailproviders), en uitsluitend
-              op basis van een verwerkersovereenkomst.
+              de volgende verwerkers, uitsluitend voor de in dit beleid beschreven doeleinden:
+            </p>
+            <ul>
+              <li><strong>Resend</strong> (e-mailbezorging) — gevestigd in de VS; verwerking op basis van standaard contractbepalingen (SCC&apos;s)</li>
+              <li><strong>Vercel</strong> (website-hosting) — gevestigd in de VS; verwerking op basis van standaard contractbepalingen (SCC&apos;s)</li>
+            </ul>
+            <p>
+              Met beide verwerkers zijn verwerkersovereenkomsten van toepassing. Uw gegevens worden niet
+              doorgegeven aan andere derde partijen, tenzij wettelijk verplicht.
             </p>
 
             <h2>6. Cookies en tracking</h2>
@@ -187,7 +196,7 @@ function EnVersion() {
             <span className="text-gold text-xs font-semibold tracking-widest uppercase">Legal</span>
           </div>
           <h1 className="text-primary font-black text-4xl mb-3">Privacy Policy</h1>
-          <p className="text-primary/50 text-sm mb-10">Last updated: 22 May 2026</p>
+          <p className="text-primary/50 text-sm mb-10">Last updated: 27 May 2026</p>
 
           <div className="prose-legal">
             <h2>1. Data Controller</h2>
@@ -197,7 +206,8 @@ function EnVersion() {
             </p>
             <p>
               <strong>Contact details:</strong><br />
-              VDH Agency<br />
+              VDH Agency (sole proprietorship)<br />
+              Chamber of Commerce: 95792414<br />
               Email: larsvanderhoek@gmail.com<br />
               Website: www.vdh-agency.com
             </p>
@@ -212,6 +222,7 @@ function EnVersion() {
               <li>Email address</li>
               <li>Company name (optional)</li>
               <li>Content of your message</li>
+              <li>IP address (solely for security and spam prevention, not linked to your identity)</li>
             </ul>
 
             <h2>3. Purpose and Legal Basis</h2>
@@ -230,9 +241,16 @@ function EnVersion() {
 
             <h2>5. Sharing with Third Parties</h2>
             <p>
-              VDH Agency does not sell your data to third parties. Data is only shared with processors
-              necessary for service delivery (such as email providers), and only under a data processing
-              agreement.
+              VDH Agency does not sell your data to third parties. Data is only shared with the following
+              processors, solely for the purposes described in this policy:
+            </p>
+            <ul>
+              <li><strong>Resend</strong> (email delivery) — based in the US; processing under Standard Contractual Clauses (SCCs)</li>
+              <li><strong>Vercel</strong> (website hosting) — based in the US; processing under Standard Contractual Clauses (SCCs)</li>
+            </ul>
+            <p>
+              Data processing agreements are in place with both processors. Your data is not transferred
+              to any other third parties unless legally required.
             </p>
 
             <h2>6. Cookies and Tracking</h2>

@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {User, Target, Eye, Heart, ArrowRight, ChevronDown, MessageCircle} from 'lucide-react';
+import {User, Target, Eye, Heart, ArrowRight, ChevronDown, MessageCircle, Headphones, MapPin, UserCheck} from 'lucide-react';
 import Link from 'next/link';
 
 const BASE = 'https://www.vdh-agency.com';
@@ -83,6 +83,15 @@ import SectionLabel from '@/components/ui/SectionLabel';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import CTA from '@/components/sections/CTA';
 
+const tools = [
+  'Google Analytics 4',
+  'Google Search Console',
+  'Google Ads',
+  'Meta Business Suite',
+  'WordPress',
+  'Next.js',
+];
+
 export default async function OverOnsPage({
   params,
 }: {
@@ -112,6 +121,24 @@ export default async function OverOnsPage({
     {q: t('faq2Q'), a: t('faq2A')},
     {q: t('faq3Q'), a: t('faq3A')},
     {q: t('faq4Q'), a: t('faq4A')},
+  ];
+
+  const approach = [
+    {
+      Icon: Headphones,
+      title: isNl ? 'Ik luister eerst' : 'I listen first',
+      text: t('p3'),
+    },
+    {
+      Icon: MapPin,
+      title: isNl ? 'Heel Nederland' : 'All of the Netherlands',
+      text: t('p4'),
+    },
+    {
+      Icon: UserCheck,
+      title: isNl ? 'Geen overdracht' : 'No handover',
+      text: t('p6'),
+    },
   ];
 
   return (
@@ -151,19 +178,15 @@ export default async function OverOnsPage({
         </div>
       </section>
 
-      {/* Story */}
+      {/* Story — intro only (p1 + p2) */}
       <section className="bg-light py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <AnimatedSection direction="left">
               <SectionLabel>{t('storyTitle')}</SectionLabel>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-5">
                 <p className="text-primary/70 text-base leading-relaxed">{t('p1')}</p>
                 <p className="text-primary/70 text-base leading-relaxed">{t('p2')}</p>
-                <p className="text-primary/70 text-base leading-relaxed">{t('p3')}</p>
-                <p className="text-primary/70 text-base leading-relaxed">{t('p4')}</p>
-                <p className="text-primary/70 text-base leading-relaxed">{t('p5')}</p>
-                <p className="text-primary/70 text-base leading-relaxed">{t('p6')}</p>
               </div>
             </AnimatedSection>
 
@@ -174,7 +197,63 @@ export default async function OverOnsPage({
                 </div>
                 <h3 className="text-white font-bold text-2xl mb-1">Lars van der Hoek</h3>
                 <p className="text-gold text-sm mb-4">{t('founderTitle')}</p>
-                <p className="text-white/50 text-sm leading-relaxed">{t('founderBio')}</p>
+                <p className="text-white/50 text-sm leading-relaxed mb-6">{t('founderBio')}</p>
+                <div className="flex items-center gap-2 text-white/30 text-xs">
+                  <MapPin size={11} />
+                  <span>Heerde, Gelderland &middot; {isNl ? 'Heel Nederland' : 'All of the Netherlands'}</span>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Aanpak — 3 cards (p3, p4, p6) */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="max-w-2xl mb-12">
+            <SectionLabel>{isNl ? 'Werkwijze' : 'Approach'}</SectionLabel>
+            <h2 className="text-primary font-black text-3xl lg:text-4xl">
+              {isNl ? 'Zo pak ik het aan' : 'How I approach it'}
+            </h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {approach.map(({Icon, title, text}, i) => (
+              <AnimatedSection key={i} delay={i * 0.08}>
+                <div className="bg-light border border-primary/8 rounded-sm p-8 h-full hover:border-gold/30 transition-colors">
+                  <div className="w-11 h-11 rounded-sm bg-gold/10 flex items-center justify-center mb-5">
+                    <Icon size={20} className="text-gold" />
+                  </div>
+                  <h3 className="text-primary font-bold text-base mb-3">{title}</h3>
+                  <p className="text-primary/60 text-sm leading-relaxed">{text}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise — toolset (p5) */}
+      <section className="bg-light border-y border-primary/8 py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <AnimatedSection direction="left">
+              <SectionLabel>{isNl ? 'Expertise' : 'Expertise'}</SectionLabel>
+              <h2 className="text-primary font-black text-2xl lg:text-3xl mb-4">
+                {isNl ? 'Mijn dagelijkse toolset' : 'My daily toolkit'}
+              </h2>
+              <p className="text-primary/60 text-sm leading-relaxed">{t('p5')}</p>
+            </AnimatedSection>
+            <AnimatedSection direction="right" delay={0.1}>
+              <div className="flex flex-wrap gap-3">
+                {tools.map(tool => (
+                  <span
+                    key={tool}
+                    className="bg-white border border-primary/10 text-primary font-semibold text-sm px-5 py-2.5 rounded-sm hover:border-gold/40 transition-colors"
+                  >
+                    {tool}
+                  </span>
+                ))}
               </div>
             </AnimatedSection>
           </div>
