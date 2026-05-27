@@ -12,9 +12,9 @@ type RouteEntry = {
 };
 
 const staticRoutes: RouteEntry[] = [
-  {path: '',                                      lastModified: '2026-05-22'},
+  {path: '',                                      lastModified: '2026-05-27'},
   {path: '/diensten',                             enPath: '/services',                       lastModified: '2026-05-22'},
-  {path: '/over-ons',                             enPath: '/about',                          lastModified: '2026-05-22'},
+  {path: '/over-ons',                             enPath: '/about',                          lastModified: '2026-05-27'},
   {path: '/contact',                              lastModified: '2026-05-22'},
   {path: '/diensten/seo-sea',                     enPath: '/services/seo-sea',               lastModified: '2026-05-22'},
   {path: '/diensten/webshop-maken',               enPath: '/services/ecommerce',             lastModified: '2026-05-26'},
@@ -26,11 +26,11 @@ const staticRoutes: RouteEntry[] = [
   {path: '/diensten/digitale-analyse',            enPath: '/services/digital-analytics',     lastModified: '2026-05-22'},
   {path: '/seo-bureau',                           enPath: '/seo-agency',                     lastModified: '2026-05-25'},
   {path: '/blog',                                 lastModified: '2026-05-24'},
-  {path: '/privacybeleid',                        lastModified: '2026-05-22'},
+  {path: '/privacybeleid',                        lastModified: '2026-05-27'},
   {path: '/algemene-voorwaarden',                 lastModified: '2026-05-22'},
   {path: '/website-laten-maken',                  lastModified: '2026-05-26', nlOnly: true},
   {path: '/hoger-in-google',                       lastModified: '2026-05-26', nlOnly: true},
-  {path: '/google-ads-bureau',                     lastModified: '2026-05-26', nlOnly: true},
+  {path: '/google-ads-bureau',                       lastModified: '2026-05-26', nlOnly: true},
   {path: '/lokale-seo',                            lastModified: '2026-05-26', nlOnly: true},
   {path: '/marketing-bureau-gelderland',           lastModified: '2026-05-26', nlOnly: true},
   {path: '/marketing-bureau-overijssel',           lastModified: '2026-05-26', nlOnly: true},

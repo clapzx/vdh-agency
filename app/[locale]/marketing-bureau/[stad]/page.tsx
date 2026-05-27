@@ -344,14 +344,15 @@ export async function generateMetadata({
   if (!city) return {};
 
   const url = `${BASE}/marketing-bureau/${city.slug}`;
+  const description = `Marketing bureau ${city.name}. VDH Agency helpt ondernemers groeien via SEO, Google Ads, social media en webdesign. Plan nu een gratis consult.`;
   return {
     title: `Marketing Bureau ${city.name}: Online Marketing & SEO`,
-    description: city.metaDescription,
+    description,
     alternates: {
       canonical: url,
       languages: {'x-default': url, nl: url},
     },
-    openGraph: {url},
+    openGraph: {url, description},
   };
 }
 
