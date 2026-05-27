@@ -19,6 +19,7 @@ type FormData = z.infer<typeof schema>;
 export default function ContactPage() {
   const t = useTranslations('contactPage');
   const [sent, setSent] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const {
     register,
@@ -26,9 +27,18 @@ export default function ContactPage() {
     formState: {errors, isSubmitting},
   } = useForm<FormData>({resolver: zodResolver(schema)});
 
-  const onSubmit = async (_data: FormData) => {
-    await new Promise((r) => setTimeout(r, 800));
-    setSent(true);
+  const onSubmit = async (data: FormData) => {
+    setSubmitError(false);
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data),
+    });
+    if (res.ok) {
+      setSent(true);
+    } else {
+      setSubmitError(true);
+    }
   };
 
   return (
@@ -127,6 +137,11 @@ export default function ContactPage() {
                       )}
                     </div>
 
+                    {submitError && (
+                      <p className="text-red-500 text-sm text-center">
+                        Er ging iets mis. Probeer het opnieuw of mail direct naar lars@vdhagency.nl.
+                      </p>
+                    )}
                     <button
                       type="submit"
                       disabled={isSubmitting}

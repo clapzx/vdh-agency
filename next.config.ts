@@ -3,8 +3,28 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
+const csp = [
+  "default-src 'self'",
+  // 'unsafe-inline' needed for Next.js hydration scripts and JSON-LD blocks
+  "script-src 'self' 'unsafe-inline'",
+  // 'unsafe-inline' needed for Tailwind CSS and Next.js style injection
+  "style-src 'self' 'unsafe-inline'",
+  // Next.js self-hosts Google Fonts; data: for icon SVGs
+  "font-src 'self' data:",
+  // Allow external images (og-images, etc.) + data URIs
+  "img-src 'self' data: https:",
+  // API calls are server-side only; no third-party client fetches
+  "connect-src 'self'",
+  // Prevent this site from being embedded anywhere
+  "frame-ancestors 'none'",
+  // Lock down form targets and base URL
+  "base-uri 'self'",
+  "form-action 'self'",
+].join('; ');
+
 const securityHeaders = [
-  {key: 'X-Frame-Options', value: 'SAMEORIGIN'},
+  {key: 'Content-Security-Policy', value: csp},
+  {key: 'X-Frame-Options', value: 'DENY'},
   {key: 'X-Content-Type-Options', value: 'nosniff'},
   {key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin'},
   {key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), payment=()'},
