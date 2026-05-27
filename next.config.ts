@@ -30,6 +30,12 @@ const securityHeaders = [
   {key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), payment=()'},
   {key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload'},
   {key: 'X-DNS-Prefetch-Control', value: 'on'},
+  // Isolate browsing context — prevents cross-origin window attacks
+  {key: 'Cross-Origin-Opener-Policy', value: 'same-origin'},
+  // Prevent other sites from embedding our resources (images, scripts)
+  {key: 'Cross-Origin-Resource-Policy', value: 'same-origin'},
+  // Legacy XSS filter for old browsers (IE/Edge pre-Chromium)
+  {key: 'X-XSS-Protection', value: '1; mode=block'},
 ];
 
 const nextConfig: NextConfig = {

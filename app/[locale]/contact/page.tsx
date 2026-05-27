@@ -1,5 +1,5 @@
 'use client';
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 import {useTranslations} from 'next-intl';
 import {useForm} from 'react-hook-form';
 import {z} from 'zod';
@@ -20,6 +20,7 @@ export default function ContactPage() {
   const t = useTranslations('contactPage');
   const [sent, setSent] = useState(false);
   const [submitError, setSubmitError] = useState(false);
+  const hpRef = useRef<HTMLInputElement>(null);
 
   const {
     register,
@@ -32,7 +33,7 @@ export default function ContactPage() {
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data),
+      body: JSON.stringify({...data, _hp: hpRef.current?.value ?? ''}),
     });
     if (res.ok) {
       setSent(true);
@@ -80,6 +81,16 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+                    {/* Honeypot: hidden from humans, filled by bots */}
+                    <input
+                      ref={hpRef}
+                      type="text"
+                      name="_hp"
+                      style={{display: 'none'}}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                    />
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className="text-primary/70 text-sm font-medium block mb-1.5">
@@ -139,7 +150,7 @@ export default function ContactPage() {
 
                     {submitError && (
                       <p className="text-red-500 text-sm text-center">
-                        Er ging iets mis. Probeer het opnieuw of mail direct naar lars@vdhagency.nl.
+                        Er ging iets mis. Probeer het opnieuw of mail direct naar larsvanderhoek@gmail.com.
                       </p>
                     )}
                     <button

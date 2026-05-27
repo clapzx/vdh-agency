@@ -1,11 +1,29 @@
 import {NextRequest, NextResponse} from 'next/server';
 import {z} from 'zod';
 
+// In-memory rate limiter: max 5 submissions per IP per hour
+const rl = new Map<string, {n: number; reset: number}>();
+const RL_LIMIT = 5;
+const RL_WINDOW = 60 * 60 * 1000;
+
+function checkRate(ip: string): boolean {
+  const now = Date.now();
+  const entry = rl.get(ip);
+  if (!entry || now > entry.reset) {
+    rl.set(ip, {n: 1, reset: now + RL_WINDOW});
+    return true;
+  }
+  if (entry.n >= RL_LIMIT) return false;
+  entry.n++;
+  return true;
+}
+
 const schema = z.object({
   name: z.string().min(2).max(100),
   email: z.string().email().max(200),
   company: z.string().max(100).optional(),
   message: z.string().min(10).max(5000),
+  _hp: z.string().optional(), // honeypot field
 });
 
 function esc(s: string) {
@@ -17,7 +35,35 @@ function esc(s: string) {
 }
 
 export async function POST(req: NextRequest) {
+  // Reject oversized payloads before parsing
+  const contentLength = req.headers.get('content-length');
+  if (contentLength && parseInt(contentLength) > 10_000) {
+    return NextResponse.json({error: 'Payload te groot'}, {status: 413});
+  }
+
+  // Require JSON content-type
+  if (!req.headers.get('content-type')?.includes('application/json')) {
+    return NextResponse.json({error: 'Ongeldig verzoek'}, {status: 415});
+  }
+
+  const ip =
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+
+  if (!checkRate(ip)) {
+    return NextResponse.json(
+      {error: 'Te veel verzoeken, probeer later opnieuw'},
+      {status: 429},
+    );
+  }
+
   const body = await req.json().catch(() => null);
+  if (!body || typeof body !== 'object') {
+    return NextResponse.json({error: 'Ongeldige invoer'}, {status: 400});
+  }
+
+  // Honeypot: bots fill hidden fields, humans don't — silent accept so bots don't retry
+  if (body._hp) return NextResponse.json({ok: true});
+
   const parsed = schema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json({error: 'Ongeldige invoer'}, {status: 400});
@@ -34,6 +80,7 @@ export async function POST(req: NextRequest) {
     `<p><strong>E-mail:</strong> ${esc(email)}</p>`,
     company ? `<p><strong>Bedrijf:</strong> ${esc(company)}</p>` : '',
     `<p><strong>Bericht:</strong></p><p>${esc(message)}</p>`,
+    `<hr><p style="color:#888;font-size:12px">IP: ${esc(ip)}</p>`,
   ].join('');
 
   const res = await fetch('https://api.resend.com/emails', {
@@ -43,7 +90,7 @@ export async function POST(req: NextRequest) {
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      from: 'VDH Agency <noreply@vdh-agency.com>',
+      from: 'VDH Agency <contact@vdh-agency.com>',
       to: ['larsvanderhoek@gmail.com'],
       subject: `Nieuw bericht van ${name}${company ? ` (${company})` : ''}`,
       html,
