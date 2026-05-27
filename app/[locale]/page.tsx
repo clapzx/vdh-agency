@@ -21,7 +21,7 @@ export async function generateMetadata({
       ? 'Marketing Bureau Nederland, SEO, Social Media & Webdesign'
       : 'Marketing Agency Netherlands, SEO, Social Media & Web Design',
     description: isNl
-      ? 'VDH Agency helpt ondernemers, MKB-bedrijven en startups in Nederland groeien via doelgerichte online marketing. Plan nu een gratis consult.'
+      ? 'Marketing bureau uit Heerde, actief door heel Nederland. VDH Agency helpt MKB-bedrijven via SEO, Google Ads, social media en webdesign. Plan een gratis consult.'
       : 'VDH Agency helps Dutch businesses grow online through SEO, Social Media and professional websites. Request a free consultation.',
     alternates: {
       canonical: isNl ? BASE : `${BASE}/en`,
@@ -33,7 +33,7 @@ export async function generateMetadata({
     },
     openGraph: {
       description: isNl
-        ? 'VDH Agency helpt ondernemers, MKB-bedrijven en startups in Nederland groeien via doelgerichte online marketing. Plan nu een gratis consult.'
+        ? 'Marketing bureau uit Heerde, actief door heel Nederland. VDH Agency helpt MKB-bedrijven via SEO, Google Ads, social media en webdesign. Plan een gratis consult.'
         : 'VDH Agency helps Dutch businesses grow online through SEO, Social Media and professional websites. Request a free consultation.',
     },
   };
