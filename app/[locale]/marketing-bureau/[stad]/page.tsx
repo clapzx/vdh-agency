@@ -62,7 +62,7 @@ const cities: CityData[] = [
     type: 'gemeente',
     intro: 'VDH Agency is gevestigd in Heerde en kent de lokale markt als geen ander. Of je nu een ambacht, winkel of dienstverlener bent in het dorp of de omgeving: met de juiste online aanpak bereik je klanten die actief zoeken naar wat jij aanbiedt.',
     body: 'Heerde telt veel lokale ondernemers die nog zonder serieuze online strategie werken. Dat is tegelijk een uitdaging en een kans: wie nu investeert in vindbaarheid, pakt een voorsprong die moeilijk in te halen is.',
-    metaDescription: 'Marketing bureau in Heerde. VDH Agency helpt lokale ondernemers groeien via SEO, Google Ads, social media en webdesign. Gevestigd in Heerde, actief door heel Nederland.',
+    metaDescription: 'Marketing bureau Heerde. VDH Agency helpt ondernemers in Heerde via SEO, Google Ads, social media en webdesign. Plan nu een gratis consult.',
     population: '~18.000',
     sectors: ['Lokale ambachten', 'Bouw & installatie', 'Agrarisch', 'Detailhandel'],
     marketInsight: 'Heerde heeft een hechte lokale economie gedomineerd door ambachtelijke bedrijven, bouwbedrijven en agrariërs. De meeste ondernemers werken nog op mond-tot-mondbasis — maar Google-zoekopdrachten voor lokale diensten groeien ook hier snel. Wie als eerste online zichtbaar is in Heerde, pakt een positie die lang standhoud.',
