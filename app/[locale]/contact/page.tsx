@@ -19,7 +19,7 @@ type FormData = z.infer<typeof schema>;
 export default function ContactPage() {
   const t = useTranslations('contactPage');
   const [sent, setSent] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const hpRef = useRef<HTMLInputElement>(null);
 
   const {
@@ -29,16 +29,21 @@ export default function ContactPage() {
   } = useForm<FormData>({resolver: zodResolver(schema)});
 
   const onSubmit = async (data: FormData) => {
-    setSubmitError(false);
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({...data, _hp: hpRef.current?.value ?? ''}),
-    });
-    if (res.ok) {
-      setSent(true);
-    } else {
-      setSubmitError(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({...data, _hp: hpRef.current?.value ?? ''}),
+      });
+      if (res.ok) {
+        setSent(true);
+      } else {
+        const json = await res.json().catch(() => ({}));
+        setSubmitError(json.error ?? 'Onbekende fout');
+      }
+    } catch {
+      setSubmitError('Geen verbinding. Controleer je internet en probeer opnieuw.');
     }
   };
 
@@ -150,7 +155,7 @@ export default function ContactPage() {
 
                     {submitError && (
                       <p className="text-red-500 text-sm text-center">
-                        Er ging iets mis. Probeer het opnieuw of mail direct naar larsvanderhoek@gmail.com.
+                        {submitError} — of mail direct naar larsvanderhoek@gmail.com.
                       </p>
                     )}
                     <button
