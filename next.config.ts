@@ -46,10 +46,15 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{source: '/(.*)', headers: securityHeaders}];
   },
+  async rewrites() {
+    return [
+      // Favicon: rewrite (not redirect) so /favicon.ico returns 200 with icon content.
+      // Google's favicon crawler does not follow redirects; a rewrite ensures direct 200.
+      {source: '/favicon.ico', destination: '/icon'},
+    ];
+  },
   async redirects() {
     return [
-      // Favicon: /favicon.ico → /icon (Next.js app/icon.tsx serves at /icon, not /favicon.ico)
-      {source: '/favicon.ico', destination: '/icon', permanent: false},
       // Domain redirects
       {
         source: '/:path*',
