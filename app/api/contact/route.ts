@@ -1,6 +1,8 @@
 import {NextRequest, NextResponse} from 'next/server';
 import {z} from 'zod';
 
+// NOTE: in-memory — per serverless instance, not shared across Vercel instances.
+// Good enough for warm-start reuse; use Upstash KV for cross-instance enforcement.
 const rl = new Map<string, {n: number; reset: number}>();
 const RL_LIMIT = 5;
 const RL_WINDOW = 60 * 60 * 1000;
