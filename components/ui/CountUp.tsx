@@ -43,5 +43,5 @@ export default function CountUp({to, suffix = '', prefix = '', duration = 1800, 
     };
   }, [isInView, to, duration, delay]);
 
-  return <span ref={ref}>{prefix}{count}{suffix}</span>;
+  return <span ref={ref}>{`${prefix}${count}${suffix}`}</span>;
 }
