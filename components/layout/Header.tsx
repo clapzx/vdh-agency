@@ -4,7 +4,29 @@ import {Link} from '@/i18n/navigation';
 import {useLocale, useTranslations} from 'next-intl';
 import {usePathname, useRouter} from '@/i18n/navigation';
 import {Menu, X, ArrowRight} from 'lucide-react';
-import {NL, GB} from 'country-flag-icons/react/3x2';
+function NLFlag({className}: {className?: string}) {
+  return (
+    <svg className={className} viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#AE1C28" width="3" height="0.667"/>
+      <rect fill="#fff" width="3" height="0.667" y="0.667"/>
+      <rect fill="#21468B" width="3" height="0.666" y="1.334"/>
+    </svg>
+  );
+}
+function GBFlag({className}: {className?: string}) {
+  return (
+    <svg className={className} viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+      <rect width="60" height="30" fill="#012169"/>
+      <path d="M0 0l60 30M60 0L0 30" stroke="#fff" strokeWidth="6"/>
+      <path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10"/>
+      <path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6"/>
+      <path d="M0 0l60 30" stroke="#C8102E" strokeWidth="4" clipPath="url(#s)"/>
+      <path d="M60 0L0 30" stroke="#C8102E" strokeWidth="4" clipPath="url(#s2)"/>
+      <clipPath id="s"><path d="M30 15h30v15z"/></clipPath>
+      <clipPath id="s2"><path d="M30 15H0V0z"/></clipPath>
+    </svg>
+  );
+}
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -86,7 +108,7 @@ export default function Header() {
                 locale === 'nl' ? 'opacity-100' : 'opacity-40 hover:opacity-70'
               }`}
             >
-              <NL className="w-5 h-auto rounded-sm" />
+              <NLFlag className="w-5 h-auto rounded-sm" />
               <span className={locale === 'nl' ? 'text-gold' : 'text-white'}>NL</span>
             </button>
             <span className="text-white/30">|</span>
@@ -96,7 +118,7 @@ export default function Header() {
                 locale === 'en' ? 'opacity-100' : 'opacity-40 hover:opacity-70'
               }`}
             >
-              <GB className="w-5 h-auto rounded-sm" />
+              <GBFlag className="w-5 h-auto rounded-sm" />
               <span className={locale === 'en' ? 'text-gold' : 'text-white'}>EN</span>
             </button>
           </div>
@@ -140,7 +162,7 @@ export default function Header() {
                 onClick={() => switchLocale('nl')}
                 className={`flex items-center gap-1.5 transition-opacity ${locale === 'nl' ? 'opacity-100' : 'opacity-40'}`}
               >
-                <NL className="w-5 h-auto rounded-sm" />
+                <NLFlag className="w-5 h-auto rounded-sm" />
                 <span className={locale === 'nl' ? 'text-gold' : 'text-white'}>NL</span>
               </button>
               <span className="text-white/30">|</span>
@@ -148,7 +170,7 @@ export default function Header() {
                 onClick={() => switchLocale('en')}
                 className={`flex items-center gap-1.5 transition-opacity ${locale === 'en' ? 'opacity-100' : 'opacity-40'}`}
               >
-                <GB className="w-5 h-auto rounded-sm" />
+                <GBFlag className="w-5 h-auto rounded-sm" />
                 <span className={locale === 'en' ? 'text-gold' : 'text-white'}>EN</span>
               </button>
             </div>
