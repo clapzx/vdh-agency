@@ -7,6 +7,7 @@ import {routing} from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CookieConsent from '@/components/ui/CookieConsent';
+import NextTopLoader from 'nextjs-toploader';
 import '../globals.css';
 
 const outfit = Outfit({subsets: ['latin'], variable: '--font-outfit'});
@@ -160,6 +161,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{__html: JSON.stringify(buildSiteJsonLd(locale))}}
         />
         <NextIntlClientProvider messages={messages}>
+          <NextTopLoader color="#D4AF37" height={2} showSpinner={false} />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
