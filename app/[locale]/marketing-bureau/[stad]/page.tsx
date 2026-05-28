@@ -399,7 +399,7 @@ function cityJsonLd(city: CityData) {
         description: city.metaDescription,
         url: `${BASE}/marketing-bureau/${city.slug}`,
         telephone: '+31641027594',
-        email: 'larsvanderhoek@gmail.com',
+        email: 'contact@vdh-agency.com',
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Heerde',

@@ -96,7 +96,7 @@ function buildSiteJsonLd(locale: string) {
         description: isNl
           ? 'Nederlands marketing bureau gespecialiseerd in SEO/SEA, social media marketing en websites op maat voor het MKB.'
           : 'Dutch marketing agency specialising in SEO/SEA, social media marketing and custom websites for SMEs.',
-        email: 'larsvanderhoek@gmail.com',
+        email: 'contact@vdh-agency.com',
         telephone: '+31641027594',
         taxID: 'KvK 95792414',
         priceRange: '€€',

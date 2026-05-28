@@ -145,7 +145,7 @@ function NlVersion() {
             <h2>12. Contact</h2>
             <p>
               Voor vragen over deze algemene voorwaarden kunt u contact opnemen via{' '}
-              <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>.
+              <a href="mailto:contact@vdh-agency.com">contact@vdh-agency.com</a>.
             </p>
           </div>
         </AnimatedSection>
@@ -256,7 +256,7 @@ function EnVersion() {
             <h2>12. Contact</h2>
             <p>
               For questions about these terms and conditions, please contact us at{' '}
-              <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>.
+              <a href="mailto:contact@vdh-agency.com">contact@vdh-agency.com</a>.
             </p>
           </div>
         </AnimatedSection>

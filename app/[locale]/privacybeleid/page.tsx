@@ -60,7 +60,7 @@ function NlVersion() {
               <strong>Contactgegevens:</strong><br />
               VDH Agency (eenmanszaak)<br />
               KvK-nummer: 95792414<br />
-              E-mail: larsvanderhoek@gmail.com<br />
+              E-mail: contact@vdh-agency.com<br />
               Website: www.vdh-agency.com
             </p>
 
@@ -132,7 +132,7 @@ function NlVersion() {
               <li><strong>Recht op bezwaar:</strong> u kunt bezwaar maken tegen de verwerking</li>
             </ul>
             <p>
-              Stuur uw verzoek naar <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>. Wij reageren
+              Stuur uw verzoek naar <a href="mailto:contact@vdh-agency.com">contact@vdh-agency.com</a>. Wij reageren
               binnen 30 dagen.
             </p>
 
@@ -177,7 +177,7 @@ function EnVersion() {
               <strong>Contact details:</strong><br />
               VDH Agency (sole proprietorship)<br />
               Chamber of Commerce: 95792414<br />
-              Email: larsvanderhoek@gmail.com<br />
+              Email: contact@vdh-agency.com<br />
               Website: www.vdh-agency.com
             </p>
 
@@ -245,7 +245,7 @@ function EnVersion() {
               <li><strong>Right to object:</strong> you can object to processing</li>
             </ul>
             <p>
-              Send your request to <a href="mailto:larsvanderhoek@gmail.com">larsvanderhoek@gmail.com</a>. We will
+              Send your request to <a href="mailto:contact@vdh-agency.com">contact@vdh-agency.com</a>. We will
               respond within 30 days.
             </p>
 

@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from: 'VDH Agency <contact@vdh-agency.com>',
-        to: ['larsvanderhoek@gmail.com'],
+        to: ['contact@vdh-agency.com'],
         subject: `Nieuw bericht van ${name}${company ? ` (${company})` : ''}`,
         html,
         reply_to: email,

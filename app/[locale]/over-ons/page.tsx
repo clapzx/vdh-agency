@@ -34,7 +34,7 @@ const personJsonLd = {
   name: 'Lars van der Hoek',
   jobTitle: 'Founder & Marketing Specialist',
   worksFor: {'@id': `${BASE}/#organization`},
-  email: 'larsvanderhoek@gmail.com',
+  email: 'contact@vdh-agency.com',
   url: `${BASE}/over-ons`,
   knowsAbout: ['SEO', 'Google Ads', 'Social Media Marketing', 'Web Development'],
 };

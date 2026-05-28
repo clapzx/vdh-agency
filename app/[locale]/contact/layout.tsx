@@ -10,7 +10,7 @@ function professionalServiceJsonLd(locale: string) {
     '@id': `${BASE}/#organization`,
     name: 'VDH Agency',
     url: `${BASE}/`,
-    email: 'larsvanderhoek@gmail.com',
+    email: 'contact@vdh-agency.com',
     taxID: 'KvK 95792414',
     priceRange: '€€',
     address: {

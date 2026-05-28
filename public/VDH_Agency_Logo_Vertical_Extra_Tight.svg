@@ -1,0 +1,25 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" fill="transparent"/>
+
+  <!-- VDH -->
+  <text x="600" y="520"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="250"
+        font-weight="700"
+        letter-spacing="0"
+        text-anchor="middle"
+        fill="#111827">
+    VDH
+  </text>
+
+  <!-- AGENCY -->
+  <text x="600" y="600"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="54"
+        font-weight="400"
+        letter-spacing="8"
+        text-anchor="middle"
+        fill="#111827">
+    AGENCY
+  </text>
+</svg>

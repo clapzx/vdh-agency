@@ -178,7 +178,7 @@ export default function ContactPage() {
 
                     {submitError && (
                       <p className="text-red-500 text-sm text-center">
-                        {submitError} — of mail direct naar larsvanderhoek@gmail.com.
+                        {submitError} — of mail direct naar contact@vdh-agency.com.
                       </p>
                     )}
                     <button

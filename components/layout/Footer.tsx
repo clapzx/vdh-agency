@@ -31,10 +31,10 @@ export default async function Footer() {
             </p>
             <div className="flex flex-col gap-2 mt-5">
               <a
-                href="mailto:larsvanderhoek@gmail.com"
+                href="mailto:contact@vdh-agency.com"
                 className="flex items-center gap-2 text-white/50 hover:text-gold text-sm transition-colors"
               >
-                <Mail size={14} /> larsvanderhoek@gmail.com
+                <Mail size={14} /> contact@vdh-agency.com
               </a>
               <a
                 href="tel:+31641027594"
