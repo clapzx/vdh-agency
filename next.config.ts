@@ -6,15 +6,18 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 const csp = [
   "default-src 'self'",
   // 'unsafe-inline' needed for Next.js hydration scripts and JSON-LD blocks
-  "script-src 'self' 'unsafe-inline'",
+  // Cloudflare beacon (analytics) + Turnstile CAPTCHA widget
+  "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com",
   // 'unsafe-inline' needed for Tailwind CSS and Next.js style injection
   "style-src 'self' 'unsafe-inline'",
   // Next.js self-hosts Google Fonts; data: for icon SVGs
   "font-src 'self' data:",
   // Allow external images (og-images, etc.) + data URIs
   "img-src 'self' data: https:",
-  // API calls are server-side only; no third-party client fetches
-  "connect-src 'self'",
+  // Cloudflare beacon reporting + Turnstile verification
+  "connect-src 'self' https://static.cloudflareinsights.com https://challenges.cloudflare.com",
+  // Turnstile renders in an iframe
+  "frame-src https://challenges.cloudflare.com",
   // Prevent this site from being embedded anywhere
   "frame-ancestors 'none'",
   // Lock down form targets and base URL
