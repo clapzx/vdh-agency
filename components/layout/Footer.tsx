@@ -1,6 +1,7 @@
 import {Link} from '@/i18n/navigation';
 import {getTranslations, getLocale} from 'next-intl/server';
 import {Mail, MapPin, FileText, Phone} from 'lucide-react';
+import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
 
 export default async function Footer() {
   const t = await getTranslations('footer');
@@ -147,6 +148,9 @@ export default async function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <CookieSettingsButton />
+              </li>
             </ul>
           </div>
         </div>

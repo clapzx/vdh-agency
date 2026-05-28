@@ -25,6 +25,7 @@ const schema = z.object({
   company: z.string().max(100).optional(),
   message: z.string().min(10).max(5000),
   _hp: z.string().optional(),
+  _captcha: z.string().optional(),
 });
 
 function esc(s: string) {
@@ -58,6 +59,24 @@ export async function POST(req: NextRequest) {
     }
 
     if (body._hp) return NextResponse.json({ok: true});
+
+    // Turnstile CAPTCHA verification
+    // Replace TURNSTILE_SECRET_KEY in Vercel env vars with key from dash.cloudflare.com/turnstile
+    const captchaToken = body._captcha;
+    const secretKey =
+      process.env.TURNSTILE_SECRET_KEY ?? '1x0000000000000000000000000000000AA';
+    const captchaRes = await fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({secret: secretKey, response: captchaToken, remoteip: ip}),
+      },
+    );
+    const captchaData = await captchaRes.json().catch(() => ({success: false}));
+    if (!captchaData.success) {
+      return NextResponse.json({error: 'CAPTCHA verificatie mislukt'}, {status: 400});
+    }
 
     const parsed = schema.safeParse(body);
     if (!parsed.success) {

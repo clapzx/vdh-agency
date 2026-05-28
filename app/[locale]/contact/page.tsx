@@ -5,7 +5,13 @@ import {useForm} from 'react-hook-form';
 import {z} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {Mail, MapPin, Clock, FileText, Phone, CheckCircle, ArrowRight} from 'lucide-react';
+import {Turnstile} from '@marsidev/react-turnstile';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+
+// Cloudflare Turnstile — replace with real keys from dash.cloudflare.com/turnstile
+// Test keys (always pass) are used as fallback during development
+const TURNSTILE_SITE_KEY =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA';
 
 const schema = z.object({
   name: z.string().min(2),
@@ -20,6 +26,7 @@ export default function ContactPage() {
   const t = useTranslations('contactPage');
   const [sent, setSent] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const hpRef = useRef<HTMLInputElement>(null);
 
   const {
@@ -30,11 +37,19 @@ export default function ContactPage() {
 
   const onSubmit = async (data: FormData) => {
     setSubmitError(null);
+    if (!captchaToken) {
+      setSubmitError('Bevestig dat je geen robot bent.');
+      return;
+    }
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({...data, _hp: hpRef.current?.value ?? ''}),
+        body: JSON.stringify({
+          ...data,
+          _hp: hpRef.current?.value ?? '',
+          _captcha: captchaToken,
+        }),
       });
       if (res.ok) {
         setSent(true);
@@ -152,6 +167,14 @@ export default function ContactPage() {
                         <p className="text-red-500 text-xs mt-1">{t('minChars')}</p>
                       )}
                     </div>
+
+                    <Turnstile
+                      siteKey={TURNSTILE_SITE_KEY}
+                      onSuccess={setCaptchaToken}
+                      onError={() => setCaptchaToken(null)}
+                      onExpire={() => setCaptchaToken(null)}
+                      options={{theme: 'light', size: 'normal'}}
+                    />
 
                     {submitError && (
                       <p className="text-red-500 text-sm text-center">
