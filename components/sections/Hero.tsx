@@ -153,8 +153,7 @@ export default function Hero() {
               variants={item}
               className="text-white font-black text-5xl sm:text-6xl xl:text-7xl leading-[1.03] tracking-tight mb-6"
             >
-              {t('line1')}{' '}
-              <span className="text-gold italic">{t('highlight')}</span>
+              {`${t('line1')} `}<span className="text-gold italic">{t('highlight')}</span>
             </motion.h1>
 
             <motion.p
