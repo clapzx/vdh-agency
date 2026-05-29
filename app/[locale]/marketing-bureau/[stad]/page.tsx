@@ -643,7 +643,7 @@ export async function generateMetadata({
   const url = `${BASE}/marketing-bureau/${city.slug}`;
   const description = `Marketing bureau ${city.name}. VDH Agency helpt ondernemers in ${city.name} via SEO, Google Ads, social media en webdesign. Plan nu een gratis consult.`;
   return {
-    title: `Marketing Bureau ${city.name}: Online Marketing & SEO`,
+    title: `Marketing ${city.name} | Bureau voor SEO, Google Ads & Webdesign | VDH Agency`,
     description,
     alternates: {
       canonical: url,
@@ -752,7 +752,7 @@ export default async function LocatiePage({
             <AnimatedSection>
               <SectionLabel>Lokale aanpak</SectionLabel>
               <h2 className="text-primary font-black text-3xl mb-6">
-                SEO en online marketing in {city.name}
+                Marketing in {city.name} — SEO, Google Ads en webdesign
               </h2>
               <div className="flex flex-col gap-4">
                 {city.citySpecific.map((para, i) => (
