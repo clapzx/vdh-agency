@@ -21,6 +21,7 @@ interface CityData {
   sectors: string[];
   marketInsight: string;
   citySpecific: string[];
+  faqs: {q: string; a: string}[];
   relatedLinks?: {href: string; label: string}[];
 }
 
@@ -32,28 +33,6 @@ function typeArticle(type: CityData['type']) {
   return type === 'dorp' ? 'het' : 'de';
 }
 
-function getCityFaqs(city: CityData) {
-  const inType = `${typeArticle(city.type)} ${city.type}`;
-  const regionSuffix = city.type === 'gemeente' ? ' en de omliggende kernen' : '';
-  return [
-    {
-      q: `Werkt VDH Agency ook voor bedrijven in ${city.name}?`,
-      a: `Ja. VDH Agency werkt volledig online voor ondernemers door heel Nederland, ook in ${city.name}${regionSuffix}. Alle gesprekken verlopen via video of telefoon, locatie maakt geen verschil. We kennen de regio en weten welke zoekwoorden lokale klanten gebruiken.`,
-    },
-    {
-      q: `Welke diensten zijn het meest relevant voor ${inType} ${city.name}?`,
-      a: `Dat hangt af van jouw situatie, maar voor ondernemers in ${city.name} — actief in sectoren als ${city.sectors.slice(0, 2).join(' en ')} — is lokale SEO vrijwel altijd de sterkste investering. Aanvullend helpen wij met Google Ads, social media en een website op maat.`,
-    },
-    {
-      q: `Hoe snel zie ik resultaat met online marketing in ${city.name}?`,
-      a: `Lokale SEO in ${city.name} levert de eerste zichtbare resultaten doorgaans binnen 2 tot 4 maanden. Google Ads werkt sneller: zodra de campagne live is, verschijn je bovenaan. In het kennismakingsgesprek bespreken we eerlijk wat realistisch is voor jouw bedrijf en markt.`,
-    },
-    {
-      q: `Wat kost samenwerken met VDH Agency voor een bedrijf in ${city.name}?`,
-      a: `Wij werken niet met vaste pakketten. Na een gratis kennismakingsgesprek sturen we een voorstel op maat, afgestemd op jouw dienst, doelen en budget. Er is geen minimumbedrag — wel een eerlijk gesprek over wat haalbaar is.`,
-    },
-  ];
-}
 
 const cities: CityData[] = [
   {
@@ -70,7 +49,13 @@ const cities: CityData[] = [
     citySpecific: [
       'VDH Agency is gevestigd in Heerde. Dat maakt ons het marketing bureau dat de Heerdense ondernemersmarkt het beste kent — van de ambachtelijke bedrijven in het buitengebied tot de winkels en dienstverleners in het centrum. We werken voor ondernemers in de gehele gemeente: Heerde, Wapenveld, Veessen, Vorchten en omliggende kernen.',
       'Voor ondernemers in Heerde is lokale SEO de sterkste investering. De meeste lokale aanbieders zijn online nauwelijks zichtbaar, terwijl klanten actief zoeken naar diensten in de eigen gemeente. Wie nu investeert in vindbaarheid op termen als "aannemer Heerde", "installateur Wapenveld" of "website laten maken gemeente Heerde", pakt een positie die zijn waarde voor jaren behoudt.',
-      'Als marketing bureau in Heerde combineren wij lokale kennis met professionele online marketingdiensten: SEO, Google Ads, social media beheer en websites op maat. Altijd direct contact met Lars van der Hoek, zonder tussenlagen of vaste contracten. Plan een gratis kennismakingsgesprek en ontdek wat wij voor jouw bedrijf in Heerde kunnen betekenen.',
+      'Het voordeel van de Heerdense markt is de lage online concurrentie in combinatie met een groeiende vraag naar lokale diensten. Veel bedrijven in de gemeente werken nog uitsluitend op mond-tot-mondbasis — maar het zoekgedrag verandert. Wie nu een sterke online positie opbouwt in Heerde en omliggende kernen, profiteert van deze transitie en behoudt die positie voor de lange termijn.',
+    ],
+    faqs: [
+      {q: 'VDH Agency is gevestigd in Heerde — betekent dat dat jullie ook fysiek langskomen?', a: 'Wij werken volledig online via videogesprekken, telefoon en e-mail. Dat houdt de kosten laag en maakt snelle communicatie mogelijk. Dat je in Heerde zit is voor ons wel een voordeel: we kennen de lokale markt, de namen van de kernen en de sectoren die hier actief zijn.'},
+      {q: 'Welke bedrijven in Heerde hebben het meeste baat bij lokale SEO?', a: 'Bedrijven die lokale klanten bedienen — zoals aannemers, installateurs, kappers of fysiotherapeuten — profiteren het meest van lokale SEO in Heerde. Zodra iemand zoekt op "[jouw dienst] Heerde" of "[jouw dienst] Wapenveld", wil je bovenaan staan.'},
+      {q: 'Is er veel concurrentie op Google voor zoekopdrachten in Heerde?', a: 'In Heerde is de online concurrentie voor lokale diensten laag vergeleken met grotere steden. Wie nu investeert in lokale vindbaarheid in Heerde en de omliggende kernen, pakt een positie die moeilijk te evenaren is — zeker nu het digitale zoekgedrag van inwoners snel groeit.'},
+      {q: 'Wat is het verschil tussen een groot nationaal bureau en VDH Agency voor een Heerdense ondernemer?', a: 'Een groot bureau werkt met accountmanagers die jouw dossier doorspelen. Bij VDH Agency werk je direct met Lars van der Hoek: de specialist die jouw strategie bouwt, uitvoert en rapporteert. Geen overhead, geen vertraging. Voor een lokale ondernemer in Heerde is dat het verschil.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -92,7 +77,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Hattem ligt vijf kilometer ten zuiden van Zwolle — en dat is tegelijk de uitdaging én de kans voor lokale ondernemers. Klanten die zoeken naar een marketing bureau in Hattem willen geen anoniem groot bureau, maar een specialist die de lokale markt kent. VDH Agency biedt precies dat: persoonlijke aanpak, directe communicatie en een strategie specifiek gericht op Hattem en omgeving.',
       'De zoekwoorden rondom "marketing bureau Hattem" en "SEO Hattem" zijn minder competitief dan in Zwolle, maar trekken klanten aan die klaar zijn om zaken te doen. Voor ondernemers in horeca, toerisme, bouw en zakelijke dienstverlening is online zichtbaarheid in Hattem een onderscheidende factor: veel lokale concurrenten zijn nog niet vindbaar op Google. Dat is jouw kans om de positie in te nemen die ze later moeilijk kunnen pakken.',
-      'Met gerichte lokale SEO, een professionele website en eventuele Google Ads-campagnes zorg je voor aanvragen uit Hattem en de directe regio. VDH Agency werkt volledig online en staat je altijd direct te woord — geen wachttijden of accountmanagers.',
+      'Hattem heeft het karakter van een compacte, zelfstandige stad met een eigen identiteit naast het grotere Zwolle. Die identiteit is commercieel waardevol: klanten die bewust zoeken op "Hattem" willen een lokale aanbieder. De online markt voor Hattemse zoektermen is nog relatief onaangeroerd — wie nu instapt, pakt een positie die later moeilijker te bereiken is.',
+    ],
+    faqs: [
+      {q: 'Is Hattem te klein voor een serieuze online marketingstrategie?', a: 'Absoluut niet. Juist voor een stad als Hattem is lokale SEO effectief: het zoekvolume is substantieel, terwijl de concurrentie in de zoekresultaten veel lager is dan in Zwolle. Een ondernemer in Hattem die goed vindbaar is op Google, trekt klanten van zowel in de stad als uit de omgeving.'},
+      {q: 'Hoe concurreer ik als Hattemse ondernemer met bedrijven uit Zwolle?', a: 'Door specifiek te focussen op "Hattem" als zoekterm. Klanten die zoeken op "[jouw dienst] Hattem" willen bewust een lokale aanbieder. Met een geoptimaliseerde website en lokale SEO verschijn jij bovenaan — terwijl Zwolse bedrijven op die specifieke zoekopdracht niet vindbaar zijn.'},
+      {q: 'Wat zijn de sterkste online kansen voor de Hattemse horeca en toerisme?', a: 'Hattems vestingstadprofiel en de nabijheid van de IJssel trekken dagjesmensen. Voor horeca in Hattem werken Google Maps-optimalisatie, goede reviews en content rondom "dagje Hattem" het best. Wij helpen je zichtbaar te worden op precies de zoekopdrachten die toeristen gebruiken.'},
+      {q: 'Hoe lang duurt het voordat ik resultaat zie van SEO in Hattem?', a: 'Voor lokale SEO in Hattem zie je doorgaans binnen 2 tot 3 maanden meetbare verbeteringen in positie en verkeer. Hattem heeft een relatief lage concurrentie op lokale zoektermen, waardoor resultaten sneller zichtbaar zijn dan in grotere steden. Google Ads geeft direct resultaat, al vanaf de eerste dag.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -114,7 +105,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Epe is een groene gemeente in de Veluwe met ruim 33.000 inwoners en een bijzondere combinatie van toerisme, detailhandel en lokale dienstverleners. Online marketing in Epe vraagt om twee benaderingen tegelijk: bereikbaar zijn voor vaste bewoners die lokale diensten zoeken, én zichtbaar zijn voor toeristen die accommodatie, horeca of activiteiten zoeken in de Veluwe.',
       'Voor een installateur of bouwbedrijf in Epe is lokale SEO op termen als "installateur Epe" of "aannemer gemeente Epe" de sterkste strategie. Voor een vakantiehuis, restaurant of activiteitencentrum werken seizoensgerichte content en Google Ads het best om toeristische zoekopdrachten vanuit de hele Randstad te onderscheppen. Als marketing bureau voor Epe begrijpen wij beide werelden.',
-      'VDH Agency helpt ondernemers in Epe en de gehele Veluweregio met SEO, Google Ads, social media en websites op maat. Geen vaste pakketten, maar een strategie die aansluit bij jouw branche, doelgroep en budget. Neem contact op voor een gratis kennismakingsgesprek.',
+      'De gemeente Epe heeft een marktprofiel dat het hele jaar door actief is: de vaste bevolking zorgt voor continue vraag naar diensten, terwijl toeristen van april tot oktober het volume verhogen. Online marketing die inspeelt op beide doelgroepen creëert een constante aanvraagenstroom — ook buiten het toeristische seizoen.',
+    ],
+    faqs: [
+      {q: 'Wat is de beste online marketingstrategie voor een Veluws toeristenbedrijf in Epe?', a: 'Een combinatie van seizoensgerichte SEO-content (zoals "vakantiehuisje Epe zomer" of "fietsverhuur Veluwe"), Google Maps-optimalisatie en gerichte Google Ads in de piekmaanden. Wij bouwen een strategie die ook buiten het hoogseizoen aanvragen genereert — via content voor de stillere periodes.'},
+      {q: 'Heeft online marketing zin voor een lokale dienstverlener in de gemeente Epe?', a: 'Ja. Zoekopdrachten als "loodgieter Epe" of "boekhoudkantoor gemeente Epe" worden regelmatig ingevoerd door inwoners die lokale specialisten zoeken. Met lokale SEO en een goede Google Business-pagina sta jij bovenaan wanneer potentiële klanten zoeken.'},
+      {q: 'Is er concurrentie voor toeristische zoektermen rondom Epe en de Veluwe?', a: 'Zeker. Accommodaties en restaurants van de gehele Veluwe concurreren op dezelfde toeristische zoektermen. Wij helpen je je te onderscheiden via een sterke website, unieke content en gerichte SEO die inspeelt op de specifieke charme van de Epe-regio.'},
+      {q: 'Werkt VDH Agency ook voor agrarische bedrijven in Epe?', a: 'Ja. De gemeente Epe heeft een sterke agrarische sector en steeds meer boerderijbedrijven en agri-toerismebedrijven ontdekken online marketing. Wij helpen agrarische ondernemers in Epe met een website en SEO die inspeelt op directe verkoop, recreatie of B2B-inkoop.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -136,7 +133,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Wezep is een van de snelst groeiende woonkernen in de regio, met een toenemend aantal ondernemers en een sterk groeiende lokale vraag naar diensten. De ligging langs de A28 en directe verbindingen naar Zwolle en Apeldoorn maken Wezep aantrekkelijk als vestigingsplaats — maar de online concurrentie voor lokale zoektermen is nog beperkt.',
       'Ondernemers die nú investeren in lokale SEO op termen als "marketing bureau Wezep" en "[jouw dienst] Wezep", bouwen een online positie op die moeilijk te evenaren is zodra de concurrentie wakker wordt. Met de juiste aanpak sta je snel bovenaan voor klanten die dichtbij zijn en klaar zijn te kopen — in Wezep én de gehele gemeente Oldebroek.',
-      'VDH Agency helpt Wezepse ondernemers met SEO, Google Ads, social media en websites op maat. Volledig online werken, directe communicatie en resultaten die je kunt meten. Plan een gratis kennismakingsgesprek en ontdek wat online marketing voor jouw bedrijf in Wezep kan betekenen.',
+      'Wezep bevindt zich in een gunstige groeifase: de kern groeit, de lokale bedrijvigheid neemt toe en de online markt is nog beperkt ingericht. Wie nú een sterke digitale positie opbouwt in Wezep, legt een fundament dat steeds meer waard wordt naarmate de kern verder groeit. De combinatie van groei én lage concurrentie is een zeldzame combinatie in de regio.',
+    ],
+    faqs: [
+      {q: 'Is Wezep groot genoeg om op te focussen voor lokale SEO?', a: 'Ja. Wezep groeit snel als woonkern langs de A28 en heeft een toenemend aantal ondernemers en inwoners. Zoekopdrachten met "Wezep" als locatie hebben weinig concurrentie, wat het relatief eenvoudig maakt om snel bovenaan te staan. Wie nu instapt, pakt een vroege voorsprong.'},
+      {q: 'Moet ik als Wezeps ondernemer ook focussen op de gemeente Oldebroek?', a: 'Dat hangt af van jouw werkgebied. Als je klanten bedient in de gehele gemeente, is het slim om zowel op "Wezep" als op "gemeente Oldebroek" te optimaliseren. VDH Agency helpt je bepalen welke zoektermen en locaties de meeste aanvragen opleveren voor jouw specifieke situatie.'},
+      {q: 'Concurreer ik als Wezeps bedrijf ook met aanbieders uit Zwolle?', a: 'In de bredere zoekresultaten wel. Maar op hyperlocale termen als "installateur Wezep" of "bouwbedrijf gemeente Oldebroek" zijn Zwolse bedrijven minder zichtbaar. Dat zijn de zoekopdrachten waarbij klanten bewust kiezen voor een lokale aanbieder.'},
+      {q: 'Kan ik als startende ondernemer in Wezep al beginnen met online marketing?', a: 'Absoluut. Juist voor startende ondernemers in Wezep is een goede website met basis-SEO de sterkste investering. Je hoeft niet groot te zijn om vindbaar te zijn. VDH Agency werkt zonder minimumsdrempel en stelt een aanpak op die past bij jouw budget en fase.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland',  label: 'Marketing Bureau Gelderland'},
@@ -158,7 +161,13 @@ const cities: CityData[] = [
     citySpecific: [
       "De gemeente Oldebroek omvat meerdere kernen: Oldebroek, Wezep, 't Harde, Oosterwolde en Noordeinde. Samen hebben zij ruim 23.000 inwoners en een actieve ondernemersgemeenschap, met name in de agrarische, bouw- en transportsector. Online marketing in Oldebroek vraagt om kennis van die lokale diversiteit en de specifieke zoekpatronen per kern.",
       "Als marketing bureau voor bedrijven in de gemeente Oldebroek adviseren wij een gelaagde aanpak: een solide website met pagina's per dienst of kern, aangevuld met lokale SEO die jou vindbaar maakt voor klanten in de gehele gemeente. Aangevuld met Google Ads voor snelle resultaten heb je een strategie die zowel op korte als lange termijn werkt.",
-      'VDH Agency werkt voor ondernemers in de gemeente Oldebroek via SEO, Google Ads, social media en professionele websites op maat. Geen vaste contracten, wel een eerlijk gesprek over wat haalbaar is. Neem contact op voor een gratis kennismakingsgesprek.',
+      'De gemeente Oldebroek biedt een markt die bij uitstek geschikt is voor een gefaseerde aanpak: begin met de kern met het hoogste zoekvolume (Wezep), en breid daarna uit naar de andere kernen. Die aanpak maximaliseert het rendement in elke fase en bouwt stap voor stap naar een brede gemeentebrede aanwezigheid.',
+    ],
+    faqs: [
+      {q: 'Welke kern van de gemeente Oldebroek heeft de meeste online kansen?', a: 'Wezep heeft het grootste inwonersaantal en het meeste groei qua zoekopdrachten. Maar ook Oldebroek zelf en \'t Harde hebben specifieke zoektermen met weinig concurrentie. VDH Agency analyseert per kern welke zoektermen en strategie het meeste opleveren voor jouw bedrijf.'},
+      {q: 'Is online marketing geschikt voor agrarische bedrijven in Oldebroek?', a: 'Ja. De gemeente Oldebroek heeft een sterke agrarische sector en steeds meer boeren, loonwerkers en agrarische toeleveranciers zoeken naar online klanten of medewerkers. Wij helpen met een gerichte aanpak: van een professionele bedrijfswebsite tot campagnes gericht op B2B-inkoop of directe verkoop.'},
+      {q: 'Hoeveel zoekvolume is er voor lokale termen in de gemeente Oldebroek?', a: 'Per kern is het zoekvolume beperkt maar aanwezig — en met weinig concurrenten is zelfs een klein volume waardevol. Door de kernen samen te behandelen bouw je een solide lokale aanwezigheid die in de gehele gemeente aanvragen genereert.'},
+      {q: 'Wat is voor een transportbedrijf in Oldebroek de beste online aanpak?', a: 'Transportbedrijven in Oldebroek profiteren het meest van B2B-gerichte content en gerichte Google Ads-campagnes op sectorspecifieke termen. Lokale SEO is voor B2B-transport minder relevant; een professionele website die vertrouwen wekt en gerichte advertenties zijn hier effectiever.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -180,7 +189,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Vaassen is een dorp op de grens van de Veluwe en de IJsselvallei, ingeklemd tussen Epe en Apeldoorn. Die ligging biedt een interessante marktkans: klanten zoeken vaak lokaler dan je verwacht. Een goed geoptimaliseerde pagina voor "installateur Vaassen" of "aannemer Vaassen" trekt klanten die bewust kiezen voor de nabijheid — in plaats van een anoniem bureau uit Apeldoorn.',
       'Voor ondernemers in Vaassen is lokale SEO de meest directe weg naar nieuwe aanvragen. Met een relatief beperkt zoekvolume maar ook beperkte concurrentie, is het haalbaar om binnen 2 tot 4 maanden bovenaan te staan in de lokale zoekresultaten voor Vaassen en omgeving. Aangevuld met een professionele website die vertrouwen wekt, zet je dat verkeer direct om in klanten.',
-      'VDH Agency helpt ondernemers in Vaassen en de regio met een aanpak die past bij de lokale markt. Directe communicatie, transparante rapportage en eerlijke afspraken. Plan gratis een kennismakingsgesprek.',
+      'De ligging van Vaassen tussen twee grotere plaatsen is een strategisch voordeel voor lokale SEO: je concurreert niet direct met het grote volume in Apeldoorn, maar bent wél zichtbaar voor klanten die in de Vaassen-omgeving zoeken. De concurrentiedruk op hyperlokale Vaassen-zoektermen is laag — een kleine investering levert hier relatief snel resultaat.',
+    ],
+    faqs: [
+      {q: 'Zijn er genoeg potentiële klanten in Vaassen om lokale SEO de moeite waard te maken?', a: 'Voor de meeste sectoren zeker. Vaassen heeft meer dan 10.000 inwoners, en voor een installateur, kapper of bouwbedrijf is zelfs een handvol lokale klanten per maand al waardevol. Bovendien bereik je ook klanten uit Epe en de directe omgeving.'},
+      {q: 'Hoe positioneer ik mijn bouw- of installatiebedrijf in Vaassen online?', a: 'Door te focussen op lokale zoektermen zoals "installateur Vaassen", "aannemer Vaassen" of "dakdekker Epe-Vaassen". Aangevuld met een goede Google Business-pagina en reviews van lokale klanten ben je snel de eerste keuze voor inwoners die iemand uit de buurt zoeken.'},
+      {q: 'Heeft het zin om ook te optimaliseren voor Apeldoorn als ik in Vaassen zit?', a: 'Als je ook klanten in Apeldoorn bedient, ja. Apeldoorn heeft een groter zoekvolume maar ook meer concurrentie. Begin met Vaassen en directe omgeving (weinig concurrentie, snelle resultaten) en breid daarna richting Apeldoorn uit op langere termijn.'},
+      {q: 'Werkt Google Ads ook voor een klein bedrijf in Vaassen?', a: 'Ja. Google Ads werkt ook met een beperkt budget, zeker in een markt als Vaassen waar de kosten per klik laag zijn. Je betaalt alleen als iemand echt klikt, en je kunt de advertenties strak inrichten op Vaassen en omliggende plaatsen. Wij helpen je een campagne opzetten die past bij jouw budget.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -202,7 +217,13 @@ const cities: CityData[] = [
     citySpecific: [
       "'t Harde is een kleine kern in de gemeente Oldebroek met een beperkt aantal ondernemers. Dat is juist het voordeel: de concurrentie voor lokale zoektermen als \"marketing bureau 't Harde\" is laag. Wie nú investeert in een goede website en lokale SEO, kan binnen korte tijd de eerste positie in Google bereiken voor relevante zoekopdrachten in de kern en directe omgeving.",
       "Voor ondernemers in 't Harde werkt een combinatie van lokale SEO en een professionele website het best. Kleine kernen als 't Harde scoren goed op hyperlocale zoektermen — en met weinig concurrenten is het relatief eenvoudig om een sterke positie in te nemen. Aangevuld met Google Ads ben je ook direct zichtbaar voor klanten die nú op zoek zijn.",
-      "VDH Agency helpt ondernemers in 't Harde en de gemeente Oldebroek met online marketing op maat. Geen vaste pakketten of contracten — wel een eerlijk gesprek over wat haalbaar is voor jouw bedrijf. Plan gratis een kennismakingsgesprek.",
+      "In 't Harde zijn de meeste ondernemers nog niet actief met serieuze online marketing. Dat is een unieke kans voor wie als eerste een sterke digitale positie inneemt. Met een beperkt budget is het in 't Harde haalbaar om binnen enkele maanden de dominante online aanwezigheid op te bouwen voor relevante lokale zoekopdrachten.",
+    ],
+    faqs: [
+      {q: "Is 't Harde te klein voor een effectieve SEO-aanpak?", a: "Juist niet. In kleine kernen als 't Harde is de online concurrentie minimaal. Dat betekent dat je met een relatief beperkt budget snel de eerste positie kunt bereiken voor lokale zoekopdrachten. Een installateur of bouwbedrijf in 't Harde die bovenaan staat op Google, trekt klanten die anders nergens heen gaan."},
+      {q: "Welke sectoren zijn het meest actief in 't Harde en omgeving?", a: "In 't Harde en de gemeente Oldebroek zijn bouw, zakelijke dienstverlening en wonen & vastgoed de meest prominente sectoren. Ondernemers in deze sectoren profiteren sterk van online zichtbaarheid, omdat klanten steeds vaker via Google zoeken naar lokale aanbieders."},
+      {q: "Moet ik als ondernemer in 't Harde ook focussen op aangrenzende plaatsen?", a: "Dat is slim als je een werkgebied hebt dat verder reikt dan 't Harde zelf. Zoektermen als 'aannemer gemeente Oldebroek' of 'dienstverlener Wezep' zijn aanvullingen die meer bereik geven zonder dat je de lokale focus verliest."},
+      {q: "Hoe snel kan ik bovenaan Google staan voor zoekopdrachten in 't Harde?", a: "In 't Harde is de concurrentie voor lokale zoektermen laag. Met een goede website en gerichte SEO is het realistisch om binnen 2 tot 4 maanden een top 3-positie te bereiken voor de relevante termen in en rond 't Harde. Google Ads geeft direct resultaat vanaf dag één."},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -224,7 +245,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Elburg is een historische vestingstad aan het Veluwemeer met ruim 23.000 inwoners en een levendige toeristische sector. Online marketing in Elburg vraagt om een aanpak die inspeelt op twee doelgroepen: vaste bewoners die lokale diensten zoeken, én toeristen die Elburg bezoeken voor het Veluwemeer, de vestingstad of watersportactiviteiten.',
       'Als marketing bureau voor ondernemers in Elburg zetten wij in op een aanpak die beide segmenten bedient. Voor lokale dienstverleners in bouw, zorg en handel is SEO op termen als "marketing bureau Elburg" en gerelateerde zoekwoorden de sterkste investering. Voor horeca en recreatiebedrijven werkt een combinatie van seizoensgerichte content en Google Ads het best om op het juiste moment zichtbaar te zijn.',
-      'VDH Agency helpt ondernemers in Elburg en de regio Veluwemeer met SEO, Google Ads en professionele websites. Altijd direct contact met de specialist, transparante werkwijze en een strategie op maat. Plan een gratis kennismakingsgesprek om te ontdekken wat wij voor jouw bedrijf in Elburg kunnen betekenen.',
+      'De combinatie van een historische vestingstad en een watersportbestemming maakt Elburg online interessant vanuit twee hoeken: toeristische content rond de vestingwal en het Veluwemeer enerzijds, en lokale dienstverlening voor de vaste bevolking anderzijds. Ondernemers die beide angles benutten, bouwen een online aanwezigheid die het hele jaar door relevant is.',
+    ],
+    faqs: [
+      {q: 'Hoe onderscheid ik mijn horecabedrijf in Elburg online van de concurrentie?', a: 'Door te focussen op wat Elburg uniek maakt: de vestingstad, het Veluwemeer en de watersportcultuur. Content die inspeelt op "restaurant Elburg vestingstad" of "terras aan het Veluwemeer" trekt toeristen die bewust naar Elburg reizen. Google Maps-optimalisatie en actieve reviews versterken dit effect.'},
+      {q: 'Is er veel concurrentie voor online marketing in Elburg?', a: 'Voor algemene zoektermen als "marketing bureau Elburg" is de concurrentie beperkt — weinig bureaus richten zich specifiek op Elburg. Voor toeristische termen is de concurrentie groter, maar met de juiste content en SEO-aanpak is een goede positie haalbaar binnen enkele maanden.'},
+      {q: 'Werkt VDH Agency ook voor watersportbedrijven of jachthavens bij Elburg?', a: 'Ja. De watersportsector rond het Veluwemeer heeft specifieke zoekpatronen: "jachthaven Veluwemeer", "zeilschool Elburg" of "sloepverhuur Elburg". Met gerichte SEO en seizoensgerichte content zorg je dat jij die bezoekers aantrekt in de periodes dat zij zoeken.'},
+      {q: 'Moet ik naast lokale SEO ook Google Ads inzetten voor mijn bedrijf in Elburg?', a: 'Dat hangt af van jouw doelstellingen en seizoenspatroon. Voor toeristische bedrijven in Elburg zijn Google Ads in het voor- en hoogseizoen effectief om piekperiodes maximaal te benutten. Voor lokale dienstverleners gericht op bewoners is SEO doorgaans een duurzamere investering.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland',  label: 'Marketing Bureau Gelderland'},
@@ -246,7 +273,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Wijhe is een dorpskern in de gemeente Olst-Wijhe met ruim 17.000 inwoners — en een lokale markt met opvallend weinig online concurrentie. Ondernemers die zoektermen als "marketing bureau Wijhe" of "[jouw dienst] Wijhe" goed optimaliseren, kunnen snel bovenaan staan in Google. De concurrentie komt hoofdzakelijk uit Deventer en Zwolle, maar lokale klanten geven de voorkeur aan een herkenbare aanbieder dicht bij huis.',
       'Juist in een gemeente als Olst-Wijhe, waar de online markt nog relatief onaangeroerd is, loont vroeg investeren. Een professionele website op een sterk SEO-fundament, aangevuld met eventuele Google Ads-campagnes voor directe zichtbaarheid, geeft je een voorsprong die moeilijk in te halen is. Als marketing bureau voor Wijhe helpen wij je die positie snel in te nemen.',
-      'VDH Agency werkt voor ondernemers in Wijhe, Olst en de gehele gemeente Olst-Wijhe. Volledig online samenwerken, directe communicatie en een aanpak die aansluit bij jouw markt en budget. Plan gratis een kennismakingsgesprek.',
+      'Wijhe en de gemeente Olst-Wijhe bevinden zich in een marktfase die gunstig is voor vroege movers. Online marketing voor Wijhese zoektermen is nog nauwelijks ingezet door lokale concurrenten, terwijl het zoekgedrag van de bevolking snel digitaliseert. Wie nu handelt, bouwt een voorsprong die moeilijk in te halen is als de markt maturder wordt.',
+    ],
+    faqs: [
+      {q: 'Is er veel online concurrentie voor bedrijven in Wijhe?', a: 'De online concurrentie voor lokale zoektermen in Wijhe is laag. Met relatief weinig investering kun je snel bovenaan staan in Google voor relevante zoekopdrachten in Wijhe en de gemeente Olst-Wijhe. Concurrenten komen hoofdzakelijk uit Deventer en Zwolle, maar die focussen zelden specifiek op Wijhe.'},
+      {q: 'Hoe bereik ik als ondernemer in Wijhe ook klanten uit Deventer of Zwolle?', a: 'Door naast "Wijhe" ook te optimaliseren voor bredere regiozoekopdrachten. Een installateur in Wijhe kan ook klanten trekken die zoeken op "installateur regio Deventer" of "bouwbedrijf IJsselstreek". Wij helpen je bepalen welke combinatie het meeste oplevert voor jouw situatie.'},
+      {q: 'Wat maakt de markt in de gemeente Olst-Wijhe interessant voor online marketing?', a: 'De gemeente heeft bijna 18.000 inwoners en een diverse economie met agrarische, ambachtelijke en dienstverlenende bedrijven. Online marketing is hier nog weinig ingezet, wat vroege movers een structurele voorsprong geeft die moeilijk is in te halen als de markt eenmaal rijper wordt.'},
+      {q: 'Werkt VDH Agency ook voor agrarische ondernemers langs de IJssel in Wijhe?', a: 'Ja. De IJsselstreek heeft een sterke agrarische sector, en steeds meer agrariërs ontdekken de kracht van online marketing — of het nu gaat om directe verkoop, agri-toerisme of het aantrekken van personeel. Wij bouwen een aanpak die past bij het specifieke karakter van het agrarische bedrijf in Wijhe.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-overijssel', label: 'Marketing Bureau Overijssel'},
@@ -268,7 +301,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Olst is een IJsseldorp in Overijssel, deel van de gemeente Olst-Wijhe, met een sterke agrarische en ambachtelijke identiteit. De fruitteelt langs de IJssel geeft Olst een eigen karakter — maar ook andere sectoren, waaronder bouw, zorg en recreatie, profiteren van een sterkere online aanwezigheid in deze regio.',
       'In de gemeente Olst-Wijhe is de online concurrentie voor lokale zoektermen laag. Bedrijven die investeren in lokale SEO op "marketing bureau Olst" en gerelateerde zoekwoorden, kunnen snel een dominante positie opbouwen. Aangevuld met een professionele website die vertrouwen wekt, zet je bezoekers direct om in aanvragen — ook vanuit omliggende kernen en gemeenten.',
-      'VDH Agency helpt ondernemers in Olst, Wijhe en de gehele regio Salland. Volledig online werkend, altijd direct contact en een strategie die past bij jouw bedrijf en budget. Neem contact op voor een gratis kennismakingsgesprek.',
+      'De agrarische identiteit van Olst en de toeristische waarde van de IJsselstreek creëren een interessante marktdualiteit. Bedrijven die beide elementen combineren in hun online aanwezigheid — lokale dienstverlening én IJsselstreektoerisme — bereiken een breder en meer divers publiek dan concurrenten die maar één van beide aanpakken.',
+    ],
+    faqs: [
+      {q: 'Heeft online marketing zin voor een agrarisch bedrijf in Olst?', a: 'Ja. De fruitteelt en agrarische sector in Olst-Wijhe bieden diverse online kansen: directe verkoop, agri-toerisme en het werven van seizoenpersoneel. Met de juiste website en SEO bereik je klanten die bewust kiezen voor streekproducten uit de IJsselstreek.'},
+      {q: 'Wat zijn de beste zoektermen voor ondernemers in Olst?', a: 'Dat hangt af van jouw sector. Voor dienstverleners gericht op inwoners werken termen als "[dienst] Olst" of "[dienst] gemeente Olst-Wijhe". Voor toeristische bedrijven zijn termen als "IJsseldorp Olst", "fruitpluk Overijssel" of "uitje IJsselstreek" effectief. Wij doen een gratis zoekwoordanalyse als startpunt.'},
+      {q: 'Is Olst een te kleine kern om effectief online te marketen?', a: 'Nee. In kleine kernen als Olst is de concurrentie juist laag, wat het makkelijker maakt om snel bovenaan te staan. Als je Olst combineert met de bredere gemeente Olst-Wijhe als doelgebied, heb je een markt van bijna 18.000 inwoners met relatief weinig online concurrentie.'},
+      {q: 'Hoe onderscheid ik mijn recreatiebedrijf langs de IJssel in Olst?', a: 'Door in te spelen op de unieke positie van Olst aan de IJssel. Content over "kanotochten IJssel", "fietsen IJsseldal" of "uitje Olst aan de IJssel" trekt bezoekers die gericht zoeken naar recreatie in deze regio. Wij bouwen een contentstrategie die aansluit bij de seizoensvraag én het unieke karakter van de IJsselstreek.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-overijssel', label: 'Marketing Bureau Overijssel'},
@@ -290,7 +329,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Apeldoorn is de grootste stad van de Veluwe met meer dan 165.000 inwoners en een van de meest gevarieerde mkb-markten van de regio. ICT-bedrijven, zakelijke dienstverleners, zorginstellingen, retailers en horecaondernemers concurreren allemaal om zichtbaarheid in de Apeldoornse zoekresultaten. In een markt als Apeldoorn maakt het verschil tussen een generieke website en een professionele online strategie.',
       "Voor ondernemers in Apeldoorn is SEO op stadsniveau — zoals \"marketing bureau Apeldoorn\" — het startpunt, aangevuld met specifieke landingspagina's per dienst of wijk voor meer gerichte zichtbaarheid. Google Ads zorgt op de kortere termijn voor directe aanvragen, terwijl SEO de duurzame basis legt. Wij analyseren de concurrentie in Apeldoorn en bouwen een strategie die realistisch en effectief is.",
-      'VDH Agency werkt voor ondernemers in Apeldoorn met een aanpak die past bij de schaal van de stad. Ambitieus, resultaatgericht en zonder bureaucratie. Altijd direct contact met Lars van der Hoek. Plan een gratis kennismakingsgesprek.',
+      'In een grote markt als Apeldoorn is differentiatie essentieel. Concurreren op brede termen als "marketing bureau Apeldoorn" is haalbaar maar tijdrovend. Een slimmere aanpak combineert sterke posities op niche- en dienstspecifieke zoektermen — sneller bereikbaar, hogere koopintentie — met geleidelijke opbouw van autoriteit op bredere termen. Dat geeft op beide tijdshorizonnen resultaat.',
+    ],
+    faqs: [
+      {q: 'Hoe val ik op als ondernemer in een grote stad als Apeldoorn?', a: 'Door te kiezen voor een bureau dat jou behandelt als individu. VDH Agency werkt direct met jou, zonder accountmanagers. In een stad als Apeldoorn is dat onderscheid merkbaar: je krijgt een strategie op maat in plaats van een standaardpakket.'},
+      {q: 'Welke sectoren in Apeldoorn zijn het meest competitief online?', a: 'ICT, zakelijke dienstverlening en zorg hebben in Apeldoorn de hoogste online concurrentie. Retailers en horecaondernemers hebben doorgaans een iets makkelijker startpositie. In alle sectoren geldt: een sterk SEO-fundament en gerichte Google Ads-campagnes zijn essentieel om op te vallen.'},
+      {q: 'Is lokale SEO effectief voor een B2B-bedrijf in Apeldoorn?', a: 'Ja, maar de aanpak verschilt van B2C. Voor B2B in Apeldoorn werkt een combinatie van sector-specifieke landingspagina\'s en gerichte Google Ads beter dan pure lokale SEO. Wij bouwen een B2B-strategie die past bij de schaal en het profiel van jouw bedrijf.'},
+      {q: 'Hoe lang duurt het om een merkbare positie op te bouwen in Apeldoorn?', a: 'In een grote stad als Apeldoorn duurt het langer dan in kleinere gemeenten: reken op 3 tot 6 maanden voor SEO-resultaten op competitieve termen. Google Ads geeft direct bereik. Wij combineren beide voor een aanpak die zowel op korte als lange termijn werkt.'},
     ],
     relatedLinks: [
       {href: '/seo-apeldoorn',                  label: 'SEO Apeldoorn'},
@@ -312,7 +357,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Nunspeet combineert de rust van de Veluwe met uitstekende bereikbaarheid via de A28 en NS-verbindingen naar Amsterdam en Zwolle. Met ruim 27.000 inwoners en een actieve toeristische sector biedt Nunspeet ondernemers een dubbele markt: vaste klanten uit de gemeente én toeristen die de Veluwe bezoeken.',
       'Als marketing bureau voor ondernemers in Nunspeet zetten wij in op een aanpak die beide doelgroepen bedient. Lokale SEO voor de vaste klantenkring — gericht op termen als "marketing bureau Nunspeet" en "[dienst] Nunspeet" — vormt de duurzame basis. Seizoensgerichte content en Google Ads trekken toeristische bezoekers in de juiste periodes. Samen zorgen zij voor aanvragen het hele jaar door.',
-      'VDH Agency helpt ondernemers in Nunspeet en de omgeving van het Veluwemeer met online marketing op maat. Directe communicatie, transparante aanpak en meetbare resultaten. Plan een gratis kennismakingsgesprek.',
+      'Het toeristische profiel van Nunspeet creëert een waardevolle aanvulling op de vaste lokale klantenkring. Ondernemers die goed scoren op toeristische zoekwoorden, bereiken klanten die al op weg zijn naar de Veluwe en spontaan beslissingen nemen over horeca, winkelen en activiteiten. Die combinatie van locals en bezoekers maakt Nunspeet een markt met breed jaarrond potentieel.',
+    ],
+    faqs: [
+      {q: 'Hoe profiteer ik als Nunspeets ondernemer optimaal van het toerisme op de Veluwe?', a: 'Door in te spelen op toeristische zoekopdrachten die bezoekers gebruiken vóór vertrek: "dagje Veluwe", "restaurant Nunspeet", "kamperen Veluwe". Seizoensgerichte content en Google Ads die draaien in het voor- en hoogseizoen zorgen dat jij zichtbaar bent op het moment dat toeristen beslissingen nemen.'},
+      {q: 'Is de vaste klantenkring in Nunspeet groot genoeg voor een stabiele omzet via SEO?', a: 'De gemeente Nunspeet heeft ruim 27.000 inwoners — meer dan genoeg voor een stabiele lokale klantenkring voor de meeste sectoren. Aangevuld met toeristische bezoekers in de drukkere periodes is Nunspeet een markt met het hele jaar door potentieel voor online aanvragen.'},
+      {q: 'Werkt Google Ads in Nunspeet ook buiten het toeristisch seizoen?', a: 'Ja. Google Ads is ook effectief voor lokale dienstverleners gericht op vaste bewoners, los van het toerisme. Een dakdekker, fysiotherapeut of bouwbedrijf in Nunspeet heeft het hele jaar door klanten nodig — Google Ads zorgt voor zichtbaarheid precies wanneer die klanten zoeken.'},
+      {q: 'Heeft Nunspeet specifieke online concurrenten waar ik rekening mee moet houden?', a: 'In de lokale zoekresultaten concurreer je met aanbieders uit Harderwijk, Elburg en Putten. Maar voor specifieke "Nunspeet"-zoekopdrachten zijn die concurrenten minder zichtbaar. Met een gerichte lokale SEO-aanpak positioneer jij jezelf als de eerste keuze voor klanten in Nunspeet en directe omgeving.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -334,7 +385,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Kampen is een historische Hanzestad met ruim 54.000 inwoners, gelegen aan de IJssel op 15 kilometer van Zwolle. De stad heeft een breed palet aan mkb-bedrijven in handel, bouw, zorg, logistiek en zakelijke dienstverlening. Voor online marketing is Kampen een aantrekkelijke markt: het zoekvolume voor lokale termen is substantieel, terwijl de concurrentie in de zoekresultaten merkbaar lager is dan in Zwolle zelf.',
       'Als marketing bureau voor ondernemers in Kampen zetten wij in op lokale SEO die focust op Kampen als zoeklocatie. Termen als "marketing bureau Kampen", "SEO Kampen" en "[jouw dienst] Kampen" worden maandelijks opgezocht — maar worden door de meeste lokale bedrijven niet serieus aangepakt. Wie dat wél doet met een goede website en gerichte SEO-strategie, staat snel bovenaan en trekt aanvragen die anders naar Zwolle gaan.',
-      'VDH Agency werkt voor bedrijven in Kampen via SEO, Google Ads en professionele websites op maat. Volledig online samenwerken, directe communicatie met de specialist en transparante rapportage. Benieuwd wat wij voor jouw bedrijf in Kampen kunnen doen? Plan gratis een kennismakingsgesprek.',
+      'Kampen profiteert van de groeiende interesse in de IJssel-regio als toeristische bestemming én van de continue aanwas van nieuwe bewoners in de snel groeiende stad. Die groei vertaalt zich naar meer online zoekopdrachten voor lokale diensten. Voor ondernemers die nu investeren in SEO in Kampen, groeit de waarde van die positie mee met de stad.',
+    ],
+    faqs: [
+      {q: 'Hoe verschilt de online concurrentie in Kampen van Zwolle?', a: 'Kampen heeft substantieel zoekvolume voor lokale termen, maar met merkbaar minder concurrentie dan Zwolle. Dat maakt lokale SEO in Kampen relatief efficiënt: je bereikt een markt van 54.000 inwoners met minder investering dan in de provinciehoofdstad.'},
+      {q: 'Heeft de historische uitstraling van Kampen invloed op de online marketingstrategie?', a: 'Voor toeristische sectoren zeker. Kampens Hanzestad-profiel en historische binnenstad trekken bezoekers. Content die inspeelt op "dagje Kampen" of "hotspot IJsselstad" werkt goed voor horeca en recreatie. Voor regulier mkb focussen we op lokale klantenzoekopdrachten.'},
+      {q: 'Is een Google Business-profiel belangrijk voor mijn bedrijf in Kampen?', a: 'Ja. Een goed geoptimaliseerd Google Business-profiel zorgt dat je verschijnt in de lokale kaartresultaten wanneer mensen zoeken op "[jouw dienst] Kampen". Dat levert direct klikken en belletjes op. VDH Agency helpt je dit profiel volledig te optimaliseren als onderdeel van een bredere SEO-aanpak.'},
+      {q: 'Hoe snel zie ik resultaat van lokale SEO in Kampen?', a: 'Kampen heeft een lagere concurrentiedruk dan Zwolle, waardoor SEO-resultaten hier sneller zichtbaar zijn. Reken op 2 tot 3 maanden voor merkbare verbeteringen in positie. Google Ads geeft direct bereik als je sneller wilt starten. Wij combineren beide voor een aanpak die direct én duurzaam werkt.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-overijssel', label: 'Marketing Bureau Overijssel'},
@@ -356,7 +413,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Raalte is een gemeente in Salland met ruim 37.000 inwoners en een sterke agrarische en industriële economie. De gemeente bestaat uit meerdere kernen — Raalte, Heino, Broekland en andere dorpen — met elk hun eigen ondernemersgemeenschap. Online marketing in Raalte vraagt om kennis van de lokale marktstructuur en de specifieke sectoren die hier actief zijn.',
       'Voor bedrijven in Raalte is de keuze tussen SEO en Google Ads sterk afhankelijk van de doelgroep. Lokale dienstverleners gericht op consumenten profiteren het meest van lokale SEO op termen als "marketing bureau Raalte". B2B-bedrijven in de industrie en agrarische sector hebben meer baat bij gerichte Google Ads-campagnes die op sectorniveau werken. Als marketing bureau voor Raalte helpen wij met beide aanpakken.',
-      'VDH Agency werkt voor ondernemers in Raalte en de regio Salland. Geen vaste pakketten, wel een eerlijke analyse van wat voor jouw situatie werkt. Plan een gratis kennismakingsgesprek.',
+      'De economische structuur van Raalte — verspreid over meerdere kernen met diverse sectoren — vraagt om een gelaagde online strategie. Bedrijven actief in meerdere kernen profiteren van aparte lokale pagina\'s per kern. Bedrijven die sectoraal werken (agri, industrie), leunen meer op gerichte campagnes. VDH Agency helpt je bepalen welke mix voor jouw situatie het meest rendabel is.',
+    ],
+    faqs: [
+      {q: 'Hoe bereik ik als bedrijf in Raalte klanten in de agrarische sector?', a: 'De agrarische sector in Raalte zoekt steeds vaker online naar leveranciers en diensten. Gerichte Google Ads-campagnes op sectorspecifieke zoektermen — zoals "loonwerker Salland" of "agrarisch adviseur Raalte" — zijn hier het effectiefst, aangevuld met een professionele website die vertrouwen wekt bij agrarische ondernemers.'},
+      {q: 'Zijn er genoeg online zoekopdrachten voor bedrijven in de gemeente Raalte?', a: 'Het zoekvolume in Raalte en omgeving is substantieel voor de belangrijkste sectoren: agri, industrie, bouw en dienstverlening. Bovendien concurreer je in Salland met minder aanbieders dan in Zwolle of Deventer. Wie investeert in lokale SEO, pakt snel een sterke positie.'},
+      {q: 'Werkt online marketing voor industriële bedrijven in Raalte?', a: 'Ja, maar de aanpak verschilt. Industriële bedrijven in Raalte profiteren het meest van een B2B-gerichte website en gerichte Google Ads voor inkopende partijen. Lokale SEO is minder relevant voor zuivere B2B-industrie; zichtbaarheid op vakspecifieke termen is dat wel.'},
+      {q: 'Heeft het zin om als Raaltens bedrijf ook op Zwolle te optimaliseren?', a: 'Als jouw werkgebied Zwolle omvat, zeker. Prioriteer eerst Raalte en omgeving (weinig concurrentie, snelle winst), en bouw daarna richting Zwolle (meer concurrentie, groter bereik). Stap voor stap naar een breder bereik zonder de lokale basis te verliezen.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-overijssel', label: 'Marketing Bureau Overijssel'},
@@ -378,7 +441,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Zwolle is de provinciehoofdstad van Overijssel met meer dan 130.000 inwoners en een van de snelst groeiende economieën van Nederland. Als marketing bureau actief in Zwolle begrijpen wij de hoge online concurrentie in deze markt: ICT-bedrijven, logistieke dienstverleners, retailers, horecaondernemers en zakelijke dienstverleners concurreren allemaal om de eerste pagina van Google.',
       "Lokale SEO in Zwolle vraagt om meer dan een standaard aanpak. Naast de hoofdterm \"marketing bureau Zwolle\" is het optimaliseren van specifieke dienst- en wijkpagina's essentieel. Aangevuld met Google Ads-campagnes zorg je voor directe zichtbaarheid terwijl SEO de duurzame positie opbouwt. Wij analyseren de concurrentie in Zwolle en bouwen een strategie die ook voor een newcomer werkt.",
-      'VDH Agency werkt voor ondernemers in Zwolle en de omliggende regio. Geen groot bureau met accountmanagers — direct contact met Lars van der Hoek, transparante maandrapportage en een plan op maat. Plan een gratis kennismakingsgesprek en ontdek wat online marketing voor jouw bedrijf in Zwolle kan betekenen.',
+      'In de sterk concurrerende Zwolse markt geldt één duidelijke les: consistentie wint. Bedrijven die continu investeren in SEO, regelmatig nieuwe content publiceren en hun Google-profiel actief bijhouden, bouwen een positie die maand na maand versterkt. Wie start met een solide strategie en er vervolgens mee doorgaat, ziet in Zwolle op een jaar significant meer resultaat dan wie ad hoc te werk gaat.',
+    ],
+    faqs: [
+      {q: 'Hoe kan een kleinere ondernemer in Zwolle concurreren met grote bedrijven op Google?', a: 'Door slimmer te zijn in zoekwoordkeuze. Grote spelers domineren brede termen als "marketing Zwolle". Jij wint op specifieke niche- of wijkzoekopdrachten: "SEO-specialist Zwolle", "webdesign Zwolle-Noord" of "[jouw dienst] omgeving Zwolle". Wij vinden de gaten die jou aanvragen opleveren.'},
+      {q: 'Heeft het zin om als Zwollenaar zowel op SEO als Google Ads in te zetten?', a: 'In Zwolle absoluut. SEO bouwt een duurzame basis die maandelijks gratis verkeer genereert. Google Ads geeft direct bereik, ook terwijl je SEO nog groeit. De combinatie is in een competitieve markt als Zwolle de sterkste aanpak.'},
+      {q: 'Werkt lokale SEO ook voor een Zwols bedrijf dat regionaal opereert?', a: 'Ja. Veel Zwolse bedrijven bedienen ook Kampen, Meppel, Hardenberg en de brede regio. Wij bouwen een strategie die zowel op "Zwolle" als op relevante omringende plaatsen inspeelt — zodat jij ook klanten uit de regio bereikt zonder de Zwolse positie te verwaarlozen.'},
+      {q: 'Wat zijn realistische verwachtingen voor SEO in Zwolle op een jaar?', a: 'In een competitieve stad als Zwolle rekenen wij op 4 tot 8 maanden om merkbare posities te bereiken op de hoofdtermen. Op langetermijn — na 12 maanden gerichte SEO — zijn topposities voor specifieke dienst+locatiecombinaties haalbaar. Google Ads geeft ondertussen direct zichtbaarheid. Wij rapporteren maandelijks transparant over voortgang.'},
     ],
     relatedLinks: [
       {href: '/seo-zwolle',                    label: 'SEO Zwolle'},
@@ -401,7 +470,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Harderwijk combineert een groeiende woonstad met bijna 49.000 inwoners en een van de best bezochte toeristische attracties van Nederland: het Dolfinarium. Als marketing bureau voor ondernemers in Harderwijk kennen wij de dubbele markt die dit oplevert: bedrijven gericht op vaste bewoners enerzijds, en horecaondernemers en recreatiebedrijven die inspelen op toeristen anderzijds.',
       'Voor lokale dienstverleners in Harderwijk is SEO op termen als "marketing bureau Harderwijk" en gerelateerde zoekwoorden de sterkste investering. Voor toeristische ondernemingen werkt een combinatie van seizoensgerichte content en Google Ads het best: zorg dat je bovenaan staat op het moment dat bezoekers zoeken naar activiteiten in Harderwijk en omgeving. Wij bouwen de strategie die past bij jouw specifieke situatie.',
-      'VDH Agency helpt ondernemers in Harderwijk en de regio Veluwemeer met SEO, Google Ads en professionele websites op maat. Altijd direct contact, nooit vaste contracten. Plan een gratis kennismakingsgesprek en ontdek wat wij voor jouw bedrijf kunnen doen.',
+      'Harderwijk heeft een demografisch profiel dat gunstig is voor ondernemers: een jong en groeiend inwonersaantal, een actieve toeristische instroom en een relatief hoge besteedkracht. Die combinatie maakt lokale online marketing in Harderwijk bijzonder effectief voor zowel dienstverleners als toeristische bedrijven die alle segmenten van de markt willen bereiken.',
+    ],
+    faqs: [
+      {q: 'Hoe zet ik online marketing in voor zowel toeristen als vaste inwoners in Harderwijk?', a: 'Met een tweeledige strategie. Voor toeristen: seizoensgerichte content, Google Ads rondom piekperiodes en optimalisatie op termen als "uitje Harderwijk" of "hotel Veluwemeer". Voor bewoners: lokale SEO op dienstgerichte termen als "klussenbedrijf Harderwijk" of "fysiotherapeut Harderwijk". Wij bouwen beide aanpakken in één samenhangende strategie.'},
+      {q: 'Is de concurrentie voor "marketing bureau Harderwijk" hoog?', a: 'Nee. Harderwijk is een middelgrote stad maar er zijn weinig bureaus die specifiek op Harderwijk gefocust zijn. Dat maakt het relatief eenvoudig om snel bovenaan te staan op lokale marketinggerelateerde zoekopdrachten. Voor jouw sector in Harderwijk doen we eerst een concurrentieanalyse.'},
+      {q: 'Wat is de beste manier om meer bezoekers van het Dolfinarium naar mijn bedrijf te trekken?', a: 'Door aanwezig te zijn op zoekopdrachten die dagjesmensen gebruiken rondom een bezoek aan Harderwijk: "lunch Harderwijk", "parkeren centrum Harderwijk" of "souvenir Harderwijk". Met de juiste content en Maps-optimalisatie profiteer je van het Dolfinarium-verkeer.'},
+      {q: 'Hoe snel zie ik resultaat van SEO voor mijn bedrijf in Harderwijk?', a: 'Harderwijk heeft een redelijk competitieve markt maar minder dan Zwolle of Apeldoorn. Reken op 2 tot 4 maanden voor merkbare positioneringsverbeteringen op lokale termen. Toeristische termen zijn seizoensgevoelig: wie zijn SEO in het najaar opzet, staat klaar voor het volgende voor- en zomerseizoen.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -423,7 +498,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Deventer is een Hanzestad met ruim 100.000 inwoners op de grens van Gelderland en Overijssel. De stad heeft een gevarieerde economie met een opvallend sterke ICT-sector, naast zakelijke dienstverlening, onderwijs, zorg en retail. Als marketing bureau voor ondernemers in Deventer weten wij hoe competitief de lokale zoekresultaten zijn — en hoe je je als ondernemer toch onderscheidt.',
       "Online marketing in Deventer vraagt om specificiteit. Niet alleen \"marketing bureau Deventer\" als trefwoord, maar gerichte landingspagina's per dienst en doelgroep. Voor B2B-bedrijven in de Deventer ICT-sector zijn LinkedIn-advertenties en sectorgerichte content waardevolle aanvullingen op SEO en Google Ads. Wij bouwen een aanpak die inspeelt op de specifieke kenmerken van de Deventer markt.",
-      'VDH Agency werkt voor ondernemers in Deventer met een resultaatgerichte aanpak. Direct contact, transparante rapportage en een strategie die inspeelt op jouw markt. Plan gratis een kennismakingsgesprek.',
+      'Met de groeiende Saxion-populatie en een toenemend aantal young professionals heeft Deventer een demografisch profiel dat steeds digitaler wordt. Dat betekent dat online aanwezigheid voor Deventer-bedrijven voor veel sectoren onmisbaar is om de komende generatie klanten te bereiken. Wie nu investeert in een sterke digitale positie, zit goed voor de komende jaren.',
+    ],
+    faqs: [
+      {q: 'Is Deventer\'s ICT-sector goed bereikbaar via online marketing?', a: 'Ja, maar met een B2B-aanpak. ICT-bedrijven in Deventer zoeken leveranciers en partners via LinkedIn, sectorplatformen en gerichte Google-zoekopdrachten. Een combinatie van een sterke website, thought leadership content en gerichte Google Ads op zakelijke termen geeft de beste resultaten in Deventer\'s ICT-markt.'},
+      {q: 'Concurreer ik in Deventer ook met bedrijven uit Zwolle en Apeldoorn?', a: 'In de zoekresultaten soms. Voor specifieke "Deventer"-zoekopdrachten is de overlap echter beperkt. Klanten die zoeken op "[dienst] Deventer" willen bewust een Deventer of regionale aanbieder. Met gerichte lokale SEO positioneer jij jezelf als de logische keuze voor klanten in de stad en regio.'},
+      {q: 'Heeft de universitaire bevolking in Deventer invloed op de online marketingkansen?', a: 'Saxion-studenten en jonge professionals maken Deventer een actieve stad met een jongere doelgroep. Voor horeca, retail en dienstverleners gericht op deze groep werken social media marketing en Google Ads effectiever dan puur organische SEO.'},
+      {q: 'Wat zijn de meest kansrijke sectoren voor online groei in Deventer?', a: 'ICT, zakelijke dienstverlening en de zorgsector hebben in Deventer het hoogste online zoekvolume. Detailhandel en horeca profiteren sterk van Google Maps-optimalisatie en lokale SEO. Wij doen bij de start altijd een markt- en concurrentieanalyse voor jouw specifieke sector in Deventer.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-overijssel', label: 'Marketing Bureau Overijssel'},
@@ -445,7 +526,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Zutphen is een historische vestingstad in Gelderland met ruim 47.000 inwoners, deel van de Stedendriehoek Apeldoorn-Deventer-Zutphen. De stad heeft een levendige binnenstad, een sterke juridische en zorgsector, en een actieve ondernemersgemeenschap. Een belangrijk voordeel voor lokale online marketing: de concurrentie in de Zutphense zoekresultaten is merkbaar lager dan in Apeldoorn of Deventer.',
       'Voor ondernemers in Zutphen is dit de ideale markt om snel een sterke online positie op te bouwen. Termen als "marketing bureau Zutphen" en "[dienst] Zutphen" hebben een substantieel zoekvolume, maar worden door de meeste lokale bedrijven niet serieus aangepakt. Wie investeert in lokale SEO en een professionele website, staat snel bovenaan en trekt aanvragen van klanten die bewust kiezen voor een lokale specialist.',
-      'VDH Agency helpt ondernemers in Zutphen en de Stedendriehoek-regio met SEO, Google Ads en websites op maat. Direct contact, transparante aanpak en meetbare resultaten. Plan gratis een kennismakingsgesprek.',
+      'Zutphens positie in de Stedendriehoek biedt een strategisch voordeel: je kunt klanten bereiken vanuit drie stedelijke markten tegelijk, terwijl de concurrentie in de zoekresultaten specifiek voor Zutphen laag blijft. Dat maakt Zutphen een van de aantrekkelijkste markten in de regio voor ondernemers die snel een sterke online positie willen opbouwen.',
+    ],
+    faqs: [
+      {q: 'Hoe profiteert de juridische sector in Zutphen van online marketing?', a: 'Advocatenkantoren en juridische dienstverleners in Zutphen kunnen sterk profiteren van lokale SEO op termen als "advocaat Zutphen" of "juridisch advies Zutphen". Dit zijn searches met hoge koopintentie: mensen die zoeken willen snel een specialist vinden. Een professionele website met duidelijke specialisaties en goede SEO is de basis.'},
+      {q: 'Is Zutphen een gunstige markt voor een startende ondernemer die online wil groeien?', a: 'Ja. Zutphen heeft minder online concurrentie dan Apeldoorn of Deventer, terwijl het zoekvolume substantieel is. Voor een startende ondernemer is dat een gunstige combinatie: je kunt sneller resultaat boeken en een goede positie opbouwen voordat grotere spelers de markt ontdekken.'},
+      {q: 'Werkt VDH Agency ook voor Zutphense bedrijven die de gehele Stedendriehoek bedienen?', a: 'Ja. Veel bedrijven in Zutphen bedienen ook klanten in Apeldoorn, Deventer en omliggende gemeenten. Wij bouwen een strategie die inspeelt op Zutphen als basis én de bredere Stedendriehoek als werkgebied — zodat je regionaal zichtbaar bent zonder de lokale focus te verliezen.'},
+      {q: 'Hoe onderscheid ik mijn winkel of horecazaak in Zutphens historische binnenstad?', a: 'Door de unieke sfeer van Zutphen te benutten in je online aanwezigheid. Content rondom "historisch Zutphen", "winkelen binnenstad Zutphen" of "terras Zutphen" trekt bezoekers die bewust voor de stad kiezen. Aangevuld met Google Maps-optimalisatie en actieve reviews ben je goed zichtbaar voor zowel inwoners als bezoekers.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-gelderland', label: 'Marketing Bureau Gelderland'},
@@ -467,7 +554,13 @@ const cities: CityData[] = [
     citySpecific: [
       'Dalfsen is een landelijke gemeente in de regio Salland met ruim 30.000 inwoners, verspreid over kernen als Dalfsen, Lemelerveld en Nieuwleusen. De economie is sterk agrarisch en industrieel, met een groeiende toeristische sector langs de Vecht. Online marketing biedt lokale ondernemers in Dalfsen een directe kans: de concurrentie voor lokale zoektermen is beperkt.',
       'Als marketing bureau voor bedrijven in de gemeente Dalfsen focussen wij op lokale SEO die inspeelt op de specifieke zoekpatronen in de Vechtdal-regio. Termen als "marketing bureau Dalfsen" en "[dienst] gemeente Dalfsen" trekken klanten die lokaal zoeken en bereid zijn te kopen. Met een professionele website als basis en gerichte SEO of Google Ads als vliegwiel, positioneer je je als de herkenbare lokale specialist.',
-      'VDH Agency werkt voor ondernemers in Dalfsen en de gehele Vechtdalregio. Volledig online, direct contact en een aanpak op maat. Plan een gratis kennismakingsgesprek en ontdek wat wij voor jouw bedrijf kunnen betekenen.',
+      'De Vechtdal-regio heeft de afgelopen jaren een sterke groei doorgemaakt als toeristische bestemming, wat ook de online vraag naar lokale diensten verhoogt. Dalfsen-bedrijven die inspelen op deze groei — via content over Vechtdal-toerisme én lokale dienstverlening — bereiken zowel toeristen als vaste bewoners en bouwen zo een breed en duurzaam online bereik.',
+    ],
+    faqs: [
+      {q: 'Is er genoeg online vraag voor een bedrijf in de gemeente Dalfsen?', a: 'Ja. De gemeente heeft 30.000 inwoners verspreid over meerdere kernen, met een sterke agrarische en industriële economie. Voor lokale dienstverleners, bouwbedrijven en agrarische aanbieders is er voldoende zoekvolume — en weinig concurrenten die het serieus aanpakken.'},
+      {q: 'Hoe bereik ik als ondernemer in Dalfsen ook toeristen in het Vechtdal?', a: 'Door in te spelen op toeristische zoekopdrachten rondom de Vecht: "kanoën Vechtdal", "fietsen Dalfsen", "vakantiehuis Vecht". Seizoensgerichte content en Google Ads in het voorjaar en zomer zorgen dat jij zichtbaar bent op het moment dat toeristen hun Vechtdal-bezoek plannen.'},
+      {q: 'Heeft een agrarisch bedrijf in Dalfsen baat bij een professionele website?', a: 'Ja. Agrariërs in Dalfsen die klanten, personeel of zakelijke partners willen bereiken, hebben baat bij een professionele website. Of het nu gaat om directe verkoop, agri-toerisme of het aantrekken van seizoenswerkers: een duidelijke online aanwezigheid verlaagt de drempel voor contact.'},
+      {q: 'Is er concurrentie voor "marketing bureau Dalfsen" als zoekterm?', a: 'Nauwelijks. Er zijn weinig bureaus die specifiek op Dalfsen en de Vechtdal-regio gefocust zijn. Wie ons inschakelt, krijgt een specialist die de regio serieus neemt en een aanpak bouwt die echt past bij de Dalfsen-markt.'},
     ],
     relatedLinks: [
       {href: '/marketing-bureau-overijssel', label: 'Marketing Bureau Overijssel'},
@@ -571,8 +664,6 @@ export default async function LocatiePage({
   const city = cities.find(c => c.slug === stad);
   if (!city) notFound();
 
-  const faqs = getCityFaqs(city);
-
   return (
     <>
       <script
@@ -581,7 +672,7 @@ export default async function LocatiePage({
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{__html: JSON.stringify(faqJsonLd(faqs))}}
+        dangerouslySetInnerHTML={{__html: JSON.stringify(faqJsonLd(city.faqs))}}
       />
 
       {/* Hero */}
@@ -773,7 +864,7 @@ export default async function LocatiePage({
             </h2>
           </AnimatedSection>
           <div className="flex flex-col gap-4">
-            {faqs.map(({q, a}, i) => (
+            {city.faqs.map(({q, a}, i) => (
               <AnimatedSection key={i} delay={i * 0.06}>
                 <details className="bg-white border border-primary/10 rounded-sm group">
                   <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-primary text-sm">
