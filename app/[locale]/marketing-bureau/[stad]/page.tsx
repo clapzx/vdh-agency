@@ -641,7 +641,7 @@ export async function generateMetadata({
   if (!city) return {};
 
   const url = `${BASE}/marketing-bureau/${city.slug}`;
-  const description = `Marketing bureau ${city.name}. VDH Agency helpt ondernemers in ${city.name} via SEO, Google Ads, social media en webdesign. Plan nu een gratis consult.`;
+  const description = `Marketing bureau ${city.name} · SEO ${city.name} & Google Ads. VDH Agency helpt lokale ondernemers in ${city.name} online groeien via webdesign en social media. Gratis consult.`;
   return {
     title: `Marketing ${city.name} | Bureau voor SEO, Google Ads & Webdesign | VDH Agency`,
     description,
@@ -720,6 +720,20 @@ export default async function LocatiePage({
         </div>
       </section>
 
+      {/* Diensten-strip: keyword coverage voor alle [dienst] + [stad] combinaties */}
+      <div className="bg-white border-b border-primary/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-primary/40 text-xs uppercase tracking-widest font-medium mr-1">In {city.name}:</span>
+            {['Marketing bureau', 'SEO', 'Google Ads', 'Social media', 'Website laten maken', 'Online marketing'].map(d => (
+              <span key={d} className="text-primary/60 text-xs bg-primary/4 px-3 py-1 rounded-sm border border-primary/8">
+                {d} {city.name}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Diensten */}
       <section className="bg-light py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -750,9 +764,9 @@ export default async function LocatiePage({
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
             <AnimatedSection>
-              <SectionLabel>Lokale aanpak</SectionLabel>
+              <SectionLabel>{`SEO & marketing ${city.name}`}</SectionLabel>
               <h2 className="text-primary font-black text-3xl mb-6">
-                Marketing in {city.name} — SEO, Google Ads en webdesign
+                SEO {city.name} en online marketing: onze aanpak
               </h2>
               <div className="flex flex-col gap-4">
                 {city.citySpecific.map((para, i) => (
@@ -808,7 +822,7 @@ export default async function LocatiePage({
             <AnimatedSection direction="left">
               <SectionLabel light>Waarom VDH Agency</SectionLabel>
               <h2 className="text-white font-black text-3xl lg:text-4xl mb-6">
-                Lokale kennis, meetbare resultaten
+                Marketing bureau {city.name}: lokale kennis, meetbare resultaten
               </h2>
               <div className="flex flex-col gap-4">
                 <p className="text-white/60 text-base leading-relaxed">
@@ -860,7 +874,7 @@ export default async function LocatiePage({
           <AnimatedSection className="mb-12">
             <SectionLabel>Veelgestelde vragen</SectionLabel>
             <h2 className="text-primary font-black text-3xl lg:text-4xl">
-              Vragen over online marketing in {city.name}
+              Vragen over SEO en marketing in {city.name}
             </h2>
           </AnimatedSection>
           <div className="flex flex-col gap-4">
