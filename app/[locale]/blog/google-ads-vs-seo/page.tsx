@@ -7,7 +7,7 @@ import {Link} from '@/i18n/navigation';
 const BASE = 'https://www.vdh-agency.com';
 const SLUG = '/blog/google-ads-vs-seo';
 const PUBLISHED = '2026-05-26';
-const MODIFIED = '2026-05-26';
+const MODIFIED = '2026-05-30';
 
 const faqs = [
   {

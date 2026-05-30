@@ -29,6 +29,31 @@ function pageJsonLd() {
         ],
       },
       {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Wat is lokale SEO?',
+            acceptedAnswer: {'@type': 'Answer', text: 'Lokale SEO is de optimalisatie van je online aanwezigheid zodat je gevonden wordt bij zoekopdrachten met een lokale intentie, zoals "loodgieter Zwolle" of "marketing bureau Heerde". Het omvat Google Business Profile optimalisatie, lokale zoekwoordstrategie en het bouwen van consistente vermeldingen op lokale directories.'},
+          },
+          {
+            '@type': 'Question',
+            name: 'Hoe snel werkt lokale SEO?',
+            acceptedAnswer: {'@type': 'Answer', text: 'De eerste resultaten van lokale SEO zijn doorgaans zichtbaar na 4 tot 8 weken. In minder competitieve gemeenten zoals Heerde of Wijhe kan dit sneller gaan (2-4 weken). In grotere steden als Zwolle of Apeldoorn duurt het langer vanwege meer concurrentie.'},
+          },
+          {
+            '@type': 'Question',
+            name: 'Werkt lokale SEO ook zonder fysiek adres?',
+            acceptedAnswer: {'@type': 'Answer', text: 'Ja, ook dienstverlenende bedrijven zonder winkel of kantoor aan huis kunnen lokale SEO inzetten. Je stelt een werkgebied in via Google Business Profile en optimaliseert je website voor de steden en regio\'s waar je actief bent. VDH Agency werkt zelf volledig online en is toch goed vindbaar in de regio.'},
+          },
+          {
+            '@type': 'Question',
+            name: 'Wat kost lokale SEO?',
+            acceptedAnswer: {'@type': 'Answer', text: 'De kosten voor lokale SEO bij VDH Agency zijn afhankelijk van het werkgebied, de concurrentie en de huidige staat van je online aanwezigheid. We werken zonder vaste pakketten: na een gratis kennismakingsgesprek ontvang je een voorstel op maat, afgestemd op jouw budget en doelen.'},
+          },
+        ],
+      },
+      {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {'@type': 'ListItem', position: 1, name: 'Home', item: BASE},

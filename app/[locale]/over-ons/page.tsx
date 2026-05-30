@@ -32,11 +32,19 @@ const personJsonLd = {
   '@type': 'Person',
   '@id': `${BASE}/#lars`,
   name: 'Lars van der Hoek',
-  jobTitle: 'Founder & Marketing Specialist',
+  jobTitle: 'Founder & Online Marketing Specialist',
   worksFor: {'@id': `${BASE}/#organization`},
   email: 'contact@vdh-agency.com',
   url: `${BASE}/over-ons`,
-  knowsAbout: ['SEO', 'Google Ads', 'Social Media Marketing', 'Web Development'],
+  description: 'Online marketing specialist gevestigd in Heerde, Gelderland. Oprichter van VDH Agency, gespecialiseerd in SEO, Google Ads, social media en webdesign voor het MKB.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Heerde',
+    addressRegion: 'Gelderland',
+    addressCountry: 'NL',
+  },
+  sameAs: ['https://www.linkedin.com/in/lars-van-der-hoek-a12881295/'],
+  knowsAbout: ['SEO', 'Lokale SEO', 'Google Ads', 'Social Media Marketing', 'Web Development', 'Online Marketing', 'Webdesign'],
 };
 
 function faqJsonLd(faqs: {q: string; a: string}[]) {
@@ -60,11 +68,11 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Over VDH Agency, Lars van der Hoek'
-      : 'About VDH Agency, Lars van der Hoek',
+      ? 'Over VDH Agency | Marketing Bureau Heerde | Lars van der Hoek'
+      : 'About VDH Agency | Marketing Bureau Heerde | Lars van der Hoek',
     description: isNl
-      ? 'Leer meer over VDH Agency en oprichter Lars van der Hoek. Persoonlijk betrokken bij elk project, gericht op meetbare online groei.'
-      : 'Learn more about VDH Agency and founder Lars van der Hoek. Personally involved in every project, focused on measurable online growth.',
+      ? 'VDH Agency is het marketing bureau van Lars van der Hoek uit Heerde. Specialist in SEO, Google Ads en webdesign voor lokale ondernemers in Gelderland en Overijssel.'
+      : 'VDH Agency is the marketing bureau of Lars van der Hoek, based in Heerde. Specialist in SEO, Google Ads and web design for local businesses in the Netherlands.',
     alternates: {
       canonical: isNl ? `${BASE}/over-ons` : `${BASE}/en/about`,
       languages: {

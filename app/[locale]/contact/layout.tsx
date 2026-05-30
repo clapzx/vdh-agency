@@ -11,11 +11,27 @@ function professionalServiceJsonLd(locale: string) {
     name: 'VDH Agency',
     url: `${BASE}/`,
     email: 'contact@vdh-agency.com',
+    telephone: '+31641027594',
     taxID: 'KvK 95792414',
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',
+      addressLocality: 'Heerde',
+      addressRegion: 'Gelderland',
       addressCountry: 'NL',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      telephone: '+31641027594',
+      email: 'contact@vdh-agency.com',
+      availableLanguage: ['Dutch', 'English'],
+      hoursAvailable: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00',
+      },
     },
     areaServed: {'@type': 'Country', name: 'Netherlands'},
     hasOfferCatalog: {
@@ -63,10 +79,12 @@ export async function generateMetadata({
   const {locale = 'nl'} = params ? await params : {};
   const isNl = locale === 'nl';
   return {
-    title: isNl ? 'Contact, Vrijblijvend Gesprek' : 'Contact, Free Consultation',
+    title: isNl
+      ? 'Gratis Kennismakingsgesprek | VDH Agency Marketing Bureau Heerde'
+      : 'Free Consultation | VDH Agency Marketing Bureau Netherlands',
     description: isNl
-      ? 'Neem contact op met VDH Agency voor een vrijblijvend gesprek. Reactie binnen 24 uur.'
-      : 'Get in touch with VDH Agency for a free consultation. Response within 24 hours.',
+      ? 'Plan een gratis kennismakingsgesprek met VDH Agency. Marketing bureau uit Heerde voor SEO, Google Ads en webdesign. Reactie binnen 24 uur.'
+      : 'Book a free consultation with VDH Agency. Marketing bureau from Heerde for SEO, Google Ads and web design. Response within 24 hours.',
     alternates: {
       canonical: isNl ? `${BASE}/contact` : `${BASE}/en/contact`,
       languages: {
