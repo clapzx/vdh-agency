@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
-import {ArrowRight, MapPin} from 'lucide-react';
+import {ArrowRight, MapPin, ChevronDown} from 'lucide-react';
 import {Link} from '@/i18n/navigation';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -135,10 +135,10 @@ export default async function MarketingBureauGelderlandPage({params}: {params: P
                 Gelderland is de grootste provincie van Nederland en telt honderden actieve MKB-bedrijven die lokaal concurreren. De markten in Apeldoorn, Harderwijk en Zutphen gedragen zich anders dan in de Randstad — hogere persoonlijke betrokkenheid, sterkere lokale loyaliteit en een zoekgedrag dat vraagt om specifieke lokale SEO.
               </p>
               <p className="text-white/60 text-base leading-relaxed mb-4">
-                VDH Agency is gevestigd in Heerde, midden in de regio. We kennen de lokale markt van binnenuit.
+                VDH Agency is gevestigd in Heerde — midden in Gelderland. We rijden niet vanuit de Randstad aan. We kennen de Gelderse markt, de steden, de sectoren en het zoekgedrag van lokale klanten.
               </p>
               <p className="text-white/60 text-base leading-relaxed mb-6">
-                Maar we zijn niet regionaal gebonden. We werken voor bedrijven door heel Nederland en communiceren zowel in het <strong className="text-white">Nederlands als in het Engels</strong>. Wij denken in oplossingen, niet in beperkingen — kies VDH Agency.
+                Gelderland is de grootste provincie van Nederland met een van de meest gevarieerde MKB-markten: ICT-bedrijven in Apeldoorn, toeristische ondernemers op de Veluwe, agrariërs in de Achterhoek en bouwbedrijven in de regio Arnhem-Nijmegen. Die diversiteit vraagt om een aanpak die per gemeente en per sector verschilt — niet één generiek template voor heel Gelderland.
               </p>
               <div className="flex flex-col gap-3">
                 {['Lokale SEO voor Gelderse zoektermen','Google Business Profile optimalisatie','Websites die converteren in de regio','Google Ads gericht op jouw gemeente'].map(p => (
@@ -166,6 +166,34 @@ export default async function MarketingBureauGelderlandPage({params}: {params: P
                 ))}
               </div>
             </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-light py-20 lg:py-28">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="mb-10">
+            <SectionLabel>Veelgestelde vragen</SectionLabel>
+            <h2 className="text-primary font-black text-3xl">Marketing bureau Gelderland: jouw vragen</h2>
+          </AnimatedSection>
+          <div className="flex flex-col gap-4">
+            {[
+              {q: 'Werkt VDH Agency ook voor bedrijven buiten de steden in de lijst?', a: 'Ja. De lijst toont onze meest actieve werkgebieden in Gelderland, maar we werken voor ondernemers door de gehele provincie. Of je nu in Doetinchem, Nijmegen of een kleinere Gelderse gemeente zit: neem contact op en we bespreken wat we voor jouw situatie kunnen betekenen.'},
+              {q: 'Welke sectoren in Gelderland hebben het meeste baat bij lokale SEO?', a: 'In Gelderland zijn dat met name: toerisme en recreatie op de Veluwe, bouw en installatietechniek, zorg en welzijn, agrariërs en ICT-dienstverleners in Apeldoorn en omgeving. Al deze sectoren worden steeds vaker online gezocht — wie vindbaar is, wint aanvragen die anders naar concurrenten gaan.'},
+              {q: 'Hoe verschilt online marketing in Gelderland van de Randstad?', a: 'Gelderse klanten zijn loyaal aan lokale aanbieders zodra die goed vindbaar zijn. De concurrentie in Google is lager dan in de Randstad, maar groeit snel. Wie nu investeert in lokale SEO in Gelderland, bouwt een voorsprong op die moeilijk is in te halen naarmate de markt rijper wordt.'},
+              {q: 'Kan VDH Agency ook voor meerdere vestigingen in Gelderland werken?', a: 'Ja. Heeft jouw bedrijf meerdere locaties in Gelderland, dan bouwen wij een strategie die per vestiging inspeelt op lokaal zoekgedrag. Aparte landingspagina\'s per locatie, gecombineerd met een centrale SEO-strategie, zorgen voor maximale dekking in de provincie.'},
+            ].map(({q, a}, i) => (
+              <AnimatedSection key={i} delay={i * 0.06}>
+                <details className="bg-white border border-primary/10 rounded-sm group">
+                  <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-primary text-sm">
+                    {q}
+                    <ChevronDown size={16} className="text-gold shrink-0 group-open:rotate-180 transition-transform" />
+                  </summary>
+                  <p className="px-6 pb-5 text-primary/60 text-sm leading-relaxed">{a}</p>
+                </details>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>

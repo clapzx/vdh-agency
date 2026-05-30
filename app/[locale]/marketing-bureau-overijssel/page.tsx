@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
-import {ArrowRight, MapPin} from 'lucide-react';
+import {ArrowRight, MapPin, ChevronDown} from 'lucide-react';
 import {Link} from '@/i18n/navigation';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -129,10 +129,10 @@ export default async function MarketingBureauOverijsselPage({params}: {params: P
                 Zwolle is een van de snelst groeiende steden van Nederland. Kampen, Raalte en Wijhe zijn kleinere markten met eigen zoekgedrag en een sterke ondernemersidentiteit. Wie hier lokaal vindbaar wil zijn, moet dat per gemeente aanpakken — niet met een generiek campagnetemplate.
               </p>
               <p className="text-white/60 text-base leading-relaxed mb-4">
-                Vanuit Heerde rijden we in twintig minuten naar Zwolle. We kennen de regio en de kansen.
+                Vanuit Heerde staan wij in twintig minuten in Zwolle. We werken niet vanuit de Randstad — we kennen de Overijsselse markt, de concurrentieverhoudingen en de kansen per gemeente.
               </p>
               <p className="text-white/60 text-base leading-relaxed mb-6">
-                Maar we zijn niet regionaal gebonden. We werken voor bedrijven door heel Nederland en communiceren zowel in het <strong className="text-white">Nederlands als in het Engels</strong>. Wij denken in oplossingen, niet in beperkingen — kies VDH Agency.
+                Overijssel combineert een van de snelst groeiende steden van Nederland (Zwolle) met een sterke industriële en agrarische economie in Salland, en kleine gemeenten langs de IJssel en de Vecht waar lokale loyaliteit en persoonlijk contact doorslaggevend zijn. Die diversiteit vraagt om een marketingaanpak die per gemeente verschilt — met Zwolle als anker en de regio als kans.
               </p>
               <div className="flex flex-col gap-3">
                 {['Lokale SEO per Overijsselse gemeente','Google Business Profile inrichten en beheren','Websites gericht op lokale conversie','Google Ads met lokale targetingopties'].map(p => (
@@ -160,6 +160,34 @@ export default async function MarketingBureauOverijsselPage({params}: {params: P
                 ))}
               </div>
             </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-light py-20 lg:py-28">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="mb-10">
+            <SectionLabel>Veelgestelde vragen</SectionLabel>
+            <h2 className="text-primary font-black text-3xl">Marketing bureau Overijssel: jouw vragen</h2>
+          </AnimatedSection>
+          <div className="flex flex-col gap-4">
+            {[
+              {q: 'Werkt VDH Agency ook voor bedrijven in kleinere Overijsselse gemeenten?', a: 'Ja. Naast Zwolle, Kampen, Raalte, Wijhe en Olst werken wij voor ondernemers door heel Overijssel. Of je nu in Steenwijk, Ommen of Hellendoorn zit: we bespreken in een gratis kennismakingsgesprek wat we voor jouw markt kunnen doen.'},
+              {q: 'Wat maakt online marketing in Overijssel anders dan in andere provincies?', a: 'Overijssel combineert een van de snelst groeiende steden van Nederland (Zwolle) met een sterke landelijke economie langs de IJssel en de Vecht. Klanten in deze regio zoeken bewust naar lokale aanbieders. Wie specifiek op Overijsselse locaties en zoektermen is geoptimaliseerd, heeft een aantoonbaar voordeel ten opzichte van generieke nationale bureaus.'},
+              {q: 'Welke sectoren in Overijssel profiteren het meest van lokale SEO?', a: 'In Overijssel zijn dat met name logistiek en transport in de Zwolle-regio, industrie en agrifood in Salland, zakelijke dienstverlening en bouw. Maar ook zorgaanbieders, horecaondernemers en detailhandel zien steeds meer aanvragen via Google — zeker in de groeiende Zwolle-regio.'},
+              {q: 'Hoe lang duurt het om resultaat te zien van online marketing in Overijssel?', a: 'Dat verschilt per kanaal en gemeente. Lokale SEO in een kleinere gemeente als Raalte geeft doorgaans sneller resultaat (2–3 maanden) dan in het competitievere Zwolle (4–6 maanden). Google Ads is direct: zodra de campagne live is, verschijnt je advertentie. Wij bespreken in het kennismakingsgesprek wat realistisch is voor jouw situatie.'},
+            ].map(({q, a}, i) => (
+              <AnimatedSection key={i} delay={i * 0.06}>
+                <details className="bg-white border border-primary/10 rounded-sm group">
+                  <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-primary text-sm">
+                    {q}
+                    <ChevronDown size={16} className="text-gold shrink-0 group-open:rotate-180 transition-transform" />
+                  </summary>
+                  <p className="px-6 pb-5 text-primary/60 text-sm leading-relaxed">{a}</p>
+                </details>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
