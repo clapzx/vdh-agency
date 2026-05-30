@@ -56,7 +56,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Website Laten Maken voor MKB: Snel, SEO-proof & op Maat | VDH Agency',
+    title: 'Website Laten Maken voor MKB: Snel, SEO-proof & op Maat',
     description: 'Website laten maken? VDH Agency bouwt professionele, snelle en SEO-geoptimaliseerde websites voor het MKB. Transparante prijs, direct contact met de specialist. Gratis offerte.',
     alternates: {
       canonical: `${BASE}/website-laten-maken`,

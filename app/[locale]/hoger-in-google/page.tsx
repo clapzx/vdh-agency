@@ -54,7 +54,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Hoger in Google Komen: SEO & Ads voor het MKB | VDH Agency',
+    title: 'Hoger in Google Komen: SEO & Ads voor het MKB',
     description: 'Hoger in Google komen? VDH Agency helpt MKB-bedrijven ranken via bewezen SEO-strategieën en Google Ads. Lokale focus, meetbare resultaten. Gratis adviesgesprek.',
     alternates: {
       canonical: `${BASE}/hoger-in-google`,

@@ -46,7 +46,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Marketing Bureau Overijssel: Online Groei in jouw Regio | VDH Agency',
+    title: 'Marketing Bureau Overijssel: Online Groei in jouw Regio',
     description: 'VDH Agency is jouw marketing bureau in Overijssel. Actief in Zwolle, Kampen, Raalte, Wijhe en Olst. SEO, Google Ads en professionele websites voor het MKB.',
     alternates: {
       canonical: `${BASE}/marketing-bureau-overijssel`,

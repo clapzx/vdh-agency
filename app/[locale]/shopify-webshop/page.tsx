@@ -60,7 +60,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Shopify Webshop Laten Maken: Snel, Schaalbaar & Klaar voor Groei | VDH Agency',
+    title: 'Shopify Webshop Laten Maken: Snel, Schaalbaar & Klaar voor Groei',
     description: 'Shopify webshop laten maken? VDH Agency bouwt professionele Shopify webshops voor het MKB. Google Shopping ready, mobielvriendelijk en eenvoudig zelf te beheren. Gratis adviesgesprek.',
     alternates: {
       canonical: `${BASE}/shopify-webshop`,

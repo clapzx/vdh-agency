@@ -68,7 +68,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Lokale SEO: Bovenaan in Google in Jouw Stad of Regio | VDH Agency',
+    title: 'Lokale SEO: Bovenaan in Google in Jouw Stad of Regio',
     description: 'Lokale SEO voor MKB-bedrijven in Gelderland en Overijssel. VDH Agency optimaliseert je Google Profiel, reviews en lokale vermeldingen. Actief in 16 gemeenten.',
     alternates: {
       canonical: `${BASE}/lokale-seo`,

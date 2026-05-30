@@ -88,9 +88,6 @@ const staticRoutes: RouteEntry[] = [
   {path: '/marketing-bureau/zutphen',          nlOnly: true, lastModified: '2026-05-30', changeFrequency: 'monthly', priority: 0.7},
   {path: '/marketing-bureau/dalfsen',          nlOnly: true, lastModified: '2026-05-30', changeFrequency: 'monthly', priority: 0.7},
 
-  // ── Juridisch ─────────────────────────────────────────────────────────────
-  {path: '/privacybeleid',        lastModified: '2026-05-27', changeFrequency: 'yearly',  priority: 0.3},
-  {path: '/algemene-voorwaarden', lastModified: '2026-05-22', changeFrequency: 'yearly',  priority: 0.3},
 ];
 
 function getBlogPostRoutes(): RouteEntry[] {

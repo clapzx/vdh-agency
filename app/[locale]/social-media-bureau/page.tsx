@@ -56,7 +56,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Social Media Bureau: Content, Video & Meta Ads | VDH Agency',
+    title: 'Social Media Bureau: Content, Video & Meta Ads',
     description: 'Social media bureau voor het MKB. VDH Agency verzorgt contentplanning, video-opnames, editing en Meta Ads op Instagram en Facebook. Volledig uit handen. Gratis adviesgesprek.',
     alternates: {
       canonical: `${BASE}/social-media-bureau`,

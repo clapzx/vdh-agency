@@ -37,7 +37,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Website Laten Maken Apeldoorn: Professioneel & SEO-Klaar | VDH Agency',
+    title: 'Website Laten Maken Apeldoorn: Professioneel & SEO-Klaar',
     description: 'Website laten maken in Apeldoorn? VDH Agency is gevestigd vlakbij Apeldoorn en bouwt websites voor de Veluwe-regio. Snel, vindbaar en op maat. Gratis offerte.',
     alternates: {
       canonical: `${BASE}/website-laten-maken-apeldoorn`,

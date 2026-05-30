@@ -39,7 +39,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Google Ads Apeldoorn: Direct Zichtbaar bij Apeldoornse Zoekopdrachten | VDH Agency',
+    title: 'Google Ads Apeldoorn: Direct Zichtbaar bij Apeldoornse Zoekopdrachten',
     description: 'Google Ads voor bedrijven in Apeldoorn en de Veluwe-regio. VDH Agency beheert campagnes gericht op Apeldoorn en omgeving. Transparante prijs, geen % over je budget. Gratis campagneadvies.',
     alternates: {
       canonical: `${BASE}/google-ads-apeldoorn`,

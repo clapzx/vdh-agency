@@ -56,7 +56,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Online Marketing Bureau: Groei via Alle Digitale Kanalen | VDH Agency',
+    title: 'Online Marketing Bureau: Groei via Alle Digitale Kanalen',
     description: 'Online marketing bureau voor het MKB. VDH Agency combineert SEO, Google Ads, Meta Ads en e-mail marketing tot een strategie die meetbaar resultaat levert. Gratis adviesgesprek.',
     alternates: {
       canonical: `${BASE}/online-marketing-bureau`,

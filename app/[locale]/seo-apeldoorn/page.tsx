@@ -42,7 +42,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: `SEO Apeldoorn: Meer Bezoekers uit Apeldoorn en de Veluwe | VDH Agency`,
+    title: `SEO Apeldoorn: Meer Bezoekers uit Apeldoorn en de Veluwe`,
     description: `SEO bureau voor Apeldoorn. VDH Agency helpt Apeldoornse bedrijven hoger ranken in Google via lokale SEO, zoekwoordstrategie en optimalisatie. Gratis lokale SEO-check.`,
     alternates: {
       canonical: `${BASE}/${SLUG}`,

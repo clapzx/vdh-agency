@@ -10,6 +10,8 @@ import CookieConsent from '@/components/ui/CookieConsent';
 import NextTopLoader from 'nextjs-toploader';
 import '../globals.css';
 
+export const revalidate = 3600;
+
 const outfit = Outfit({subsets: ['latin'], variable: '--font-outfit'});
 
 const BASE = 'https://www.vdh-agency.com';
@@ -98,7 +100,11 @@ function buildSiteJsonLd(locale: string) {
           : 'Dutch marketing agency specialising in SEO/SEA, social media marketing and custom websites for SMEs.',
         email: 'contact@vdh-agency.com',
         telephone: '+31641027594',
-        taxID: 'KvK 95792414',
+        identifier: {
+          '@type': 'PropertyValue',
+          name: 'KvK',
+          value: '95792414',
+        },
         priceRange: '€€',
         foundingDate: '2026',
         founder: {
@@ -109,14 +115,20 @@ function buildSiteJsonLd(locale: string) {
         },
         address: {
           '@type': 'PostalAddress',
+          addressLocality: 'Heerde',
+          addressRegion: 'Gelderland',
           addressCountry: 'NL',
-          addressRegion: 'Nederland',
         },
-        areaServed: {'@type': 'Country', name: 'Netherlands'},
-        sameAs: [
-          'https://www.linkedin.com/company/vdh-agency',
-          'https://www.google.com/maps/search/VDH+Agency',
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '09:00',
+            closes: '18:00',
+          },
         ],
+        areaServed: {'@type': 'Country', name: 'Netherlands'},
+        sameAs: ['https://www.linkedin.com/company/vdh-agency'],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: isNl ? 'Marketing Diensten' : 'Marketing Services',

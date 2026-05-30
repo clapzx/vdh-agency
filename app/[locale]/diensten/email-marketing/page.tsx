@@ -45,8 +45,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'E-mail Marketing voor het MKB, Mailchimp & Klaviyo | VDH Agency'
-      : 'Email Marketing for SMEs, Mailchimp & Klaviyo | VDH Agency',
+      ? 'E-mail Marketing voor het MKB, Mailchimp & Klaviyo'
+      : 'Email Marketing for SMEs, Mailchimp & Klaviyo',
     description: isNl
       ? 'VDH Agency verzorgt e-mail marketing voor het MKB. Automated flows, nieuwsbrieven en segmentatie via Mailchimp of Klaviyo. Vraag gratis offerte aan.'
       : 'VDH Agency provides email marketing for SMEs. Automated flows, newsletters and segmentation via Mailchimp or Klaviyo. Request a free quote.',

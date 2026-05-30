@@ -79,7 +79,7 @@ export async function generateMetadata({
   const canonical = locale === 'nl' ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
 
   return {
-    title: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen | VDH Agency',
+    title: 'Lokaal beter gevonden worden: waarom klanten jouw concurrent bellen',
     description:
       'Iemand googelt op "kitbedrijf Zwolle" en belt jouw concurrent. Wat gaat er mis? En hoe groei je lokaal via Google?',
     ...(locale !== 'nl' && {robots: {index: false, follow: false}}),

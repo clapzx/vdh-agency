@@ -42,7 +42,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: `SEO Zwolle: Bovenaan in Google in Zwolle en Omgeving | VDH Agency`,
+    title: `SEO Zwolle: Bovenaan in Google in Zwolle en Omgeving`,
     description: `SEO bureau voor Zwolle. VDH Agency helpt Zwolse bedrijven hoger ranken in Google via lokale SEO, zoekwoordstrategie en technische optimalisatie. Gratis lokale SEO-check.`,
     alternates: {
       canonical: `${BASE}/${SLUG}`,

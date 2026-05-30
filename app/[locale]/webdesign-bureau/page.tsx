@@ -56,7 +56,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Webdesign Bureau: Websites die Klanten Binnenhalen | VDH Agency',
+    title: 'Webdesign Bureau: Websites die Klanten Binnenhalen',
     description: 'Webdesign bureau voor het MKB. VDH Agency bouwt websites die niet alleen mooi zijn, maar ook snel laden, goed scoren in Google en bezoekers converteren. Gratis offerte.',
     alternates: {
       canonical: `${BASE}/webdesign-bureau`,

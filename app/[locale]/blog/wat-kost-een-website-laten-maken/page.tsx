@@ -72,7 +72,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   const canonical = locale === 'nl' ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
   return {
-    title: 'Wat Kost een Website Laten Maken? Zo Bepalen Wij de Prijs | VDH Agency',
+    title: 'Wat Kost een Website Laten Maken? Zo Bepalen Wij de Prijs',
     description: 'Hoe bepaalt VDH Agency de prijs van een website? Eerlijk uitgelegd: uren, complexiteit, doorlooptijd en spoed. Geen verborgen kosten. Vraag gratis een offerte aan.',
     ...(locale !== 'nl' && {robots: {index: false, follow: false}}),
     alternates: {

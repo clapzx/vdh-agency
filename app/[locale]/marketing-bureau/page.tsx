@@ -39,7 +39,7 @@ export async function generateMetadata({
   if (locale !== 'nl') return {};
   const url = `${BASE}/marketing-bureau`;
   return {
-    title: 'Marketing Bureau Gelderland & Overijssel | SEO, Google Ads & Webdesign per Stad | VDH Agency',
+    title: 'Marketing Bureau Gelderland & Overijssel | SEO, Google Ads & Webdesign per Stad',
     description: 'Marketing bureau in Gelderland & Overijssel. VDH Agency helpt MKB-ondernemers in Heerde, Zwolle, Apeldoorn, Kampen en 15+ andere steden via SEO, Google Ads en webdesign.',
     alternates: {
       canonical: url,

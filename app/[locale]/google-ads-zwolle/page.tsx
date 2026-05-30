@@ -39,7 +39,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Google Ads Zwolle: Direct Bovenaan bij Zwolse Zoekopdrachten | VDH Agency',
+    title: 'Google Ads Zwolle: Direct Bovenaan bij Zwolse Zoekopdrachten',
     description: 'Google Ads voor bedrijven in Zwolle. VDH Agency beheert campagnes gericht op Zwolle en omgeving. Transparante prijs, geen % over je budget. Gratis campagneadvies.',
     alternates: {
       canonical: `${BASE}/google-ads-zwolle`,

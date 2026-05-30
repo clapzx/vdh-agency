@@ -72,7 +72,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   const canonical = locale === 'nl' ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
   return {
-    title: 'Shopify vs WooCommerce: Welk Platform Past bij Jouw Webshop? | VDH Agency',
+    title: 'Shopify vs WooCommerce: Welk Platform Past bij Jouw Webshop?',
     description: 'Shopify of WooCommerce kiezen? Shopify is gebouwd voor verkopen. WooCommerce draait op WordPress. Eerlijke vergelijking inclusief aanbeveling voor het MKB.',
     ...(locale !== 'nl' && {robots: {index: false, follow: false}}),
     alternates: {

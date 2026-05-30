@@ -55,7 +55,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Google Ads Bureau voor MKB: Meer Aanvragen, Eerlijke Prijs | VDH Agency',
+    title: 'Google Ads Bureau voor MKB: Meer Aanvragen, Eerlijke Prijs',
     description: 'Google Ads bureau dat resultaat levert voor het MKB. VDH Agency beheert campagnes transparant, zonder percentage over je budget. Geen lange contracten. Gratis eerste advies.',
     alternates: {
       canonical: `${BASE}/google-ads-bureau`,

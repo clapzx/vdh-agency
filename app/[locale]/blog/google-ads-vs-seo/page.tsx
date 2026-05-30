@@ -72,7 +72,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   const canonical = locale === 'nl' ? `${BASE}${SLUG}` : `${BASE}/en${SLUG}`;
   return {
-    title: 'Google Ads vs SEO: Wat Werkt Beter voor Jouw Bedrijf? | VDH Agency',
+    title: 'Google Ads vs SEO: Wat Werkt Beter voor Jouw Bedrijf?',
     description: 'Google Ads of SEO kiezen? Vergelijking op snelheid, kosten en rendement voor MKB. Inclusief advies over de optimale combinatie.',
     ...(locale !== 'nl' && {robots: {index: false, follow: false}}),
     alternates: {

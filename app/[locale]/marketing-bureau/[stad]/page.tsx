@@ -643,7 +643,7 @@ export async function generateMetadata({
   const url = `${BASE}/marketing-bureau/${city.slug}`;
   const description = `Marketing bureau en SEO voor ondernemers in ${city.name}. VDH Agency helpt lokaal groeien via Google Ads, social media en webdesign. Gratis kennismakingsgesprek.`;
   return {
-    title: `Marketing ${city.name} | Bureau voor SEO, Google Ads & Webdesign | VDH Agency`,
+    title: `Marketing ${city.name} | Bureau voor SEO, Google Ads & Webdesign`,
     description,
     alternates: {
       canonical: url,

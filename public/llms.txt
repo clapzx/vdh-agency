@@ -5,8 +5,10 @@
 
 Opgericht door: Lars van der Hoek
 KvK-nummer: 95792414
-Contact: larsvanderhoek@gmail.com
+Contact: contact@vdh-agency.com
+Telefoon: +31641027594
 Website: https://www.vdh-agency.com/
+Locatie: Heerde, Gelderland, Nederland
 Taal: Nederlands (primair), Engels (secundair)
 Prijsindicatie: €€ (MKB-gericht)
 Werkgebied: Heel Nederland
@@ -17,9 +19,23 @@ Werkgebied: Heel Nederland
 - [SEO & SEA](https://www.vdh-agency.com/diensten/seo-sea): Zoekmachineoptimalisatie en betaalde Google Ads campagnes voor meer organisch en betaald verkeer. Inclusief technische audit, zoekwoordonderzoek en maandelijkse rapportage.
 - [Social Media Beheer](https://www.vdh-agency.com/diensten/social-media-beheer): Strategie, opnames op locatie, professionele videobewerking en wekelijkse publicatie op Instagram, Facebook, LinkedIn en TikTok. Inclusief Meta Ads.
 - [Website Maken](https://www.vdh-agency.com/diensten/website-maken): Op maat gebouwde websites, SEO-geoptimaliseerd en mobiel-vriendelijk, met CMS-integratie.
+- [Webshop Maken](https://www.vdh-agency.com/diensten/webshop-maken): E-commerce oplossingen inclusief Shopify webshops, productpagina's en betaalfunctionaliteit.
+- [E-mail Marketing](https://www.vdh-agency.com/diensten/email-marketing): Campagneontwerp, segmentatie, automatisering en rapportage.
 - [Online Marketing](https://www.vdh-agency.com/diensten/online-marketing): Combinatie van SEO, Google Ads, Meta Ads, e-mail marketing en copywriting.
 - [Branding & Huisstijl](https://www.vdh-agency.com/diensten/branding): Logo ontwerp, kleurenpalet, typografie en brand guidelines.
 - [Digitale Analyse](https://www.vdh-agency.com/diensten/digitale-analyse): GA4 setup, Google Tag Manager, conversiemeting en dashboards.
+
+## Blog
+
+- [Lokaal beter gevonden worden](https://www.vdh-agency.com/blog/lokaal-beter-gevonden-worden): Waarom klanten jouw concurrent bellen en niet jou — lokale SEO uitgelegd.
+- [Google Ads vs SEO](https://www.vdh-agency.com/blog/google-ads-vs-seo): Wat werkt beter voor jouw bedrijf?
+- [Shopify vs WooCommerce](https://www.vdh-agency.com/blog/shopify-vs-woocommerce): Welk platform past bij jouw webshop?
+- [Wat kost een website laten maken?](https://www.vdh-agency.com/blog/wat-kost-een-website-laten-maken): Zo bepalen wij de prijs voor MKB.
+
+## Doelgroep
+
+Zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland.
+Regio-focus: Gelderland en Overijssel (Heerde, Zwolle, Apeldoorn, Deventer, Harderwijk e.o.)
 
 ## Over ons
 
@@ -27,10 +43,6 @@ VDH Agency werkt direct met ondernemers zonder tussenlagen.
 Kernwaarden: resultaatgericht, transparant, persoonlijk contact.
 Oprichter Lars van der Hoek is persoonlijk betrokken bij elk project.
 Geen grote bureaustructuur — directe lijn met de specialist die aan jouw project werkt.
-
-## Doelgroep
-
-Zelfstandige ondernemers, MKB-bedrijven en startups door heel Nederland.
 
 ## Gratis consult aanvragen
 

@@ -45,8 +45,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Webshop Laten Maken, Shopify & WooCommerce op Maat | VDH Agency'
-      : 'Have a Webshop Built, Shopify & WooCommerce Custom | VDH Agency',
+      ? 'Webshop Laten Maken, Shopify & WooCommerce op Maat'
+      : 'Have a Webshop Built, Shopify & WooCommerce Custom',
     description: isNl
       ? 'VDH Agency bouwt webshops op maat op Shopify of WooCommerce. SEO-geoptimaliseerd, Google Shopping-klaar en mobielvriendelijk. Gratis offerte aanvragen.'
       : 'VDH Agency builds custom webshops on Shopify or WooCommerce. SEO-optimised, Google Shopping-ready and mobile-friendly. Request a free quote.',

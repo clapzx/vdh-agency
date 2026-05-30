@@ -52,7 +52,7 @@ export async function generateMetadata({params}: {params?: Promise<{locale: stri
   const {locale = 'nl'} = params ? await params : {};
   if (locale !== 'nl') return {};
   return {
-    title: 'Marketing Bureau Gelderland: Online Groei in jouw Regio | VDH Agency',
+    title: 'Marketing Bureau Gelderland: Online Groei in jouw Regio',
     description: 'VDH Agency is jouw marketing bureau in Gelderland. Actief in Heerde, Apeldoorn, Harderwijk, Epe en 7 andere gemeenten. SEO, Google Ads en websites voor het MKB.',
     alternates: {
       canonical: `${BASE}/marketing-bureau-gelderland`,

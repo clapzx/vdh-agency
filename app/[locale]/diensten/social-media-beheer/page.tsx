@@ -46,8 +46,8 @@ export async function generateMetadata({
   const isNl = locale === 'nl';
   return {
     title: isNl
-      ? 'Social Media Beheer uitbesteden, Content, Video & Meta Ads | VDH Agency'
-      : 'Outsource Social Media Management, Content, Video & Meta Ads | VDH Agency',
+      ? 'Social Media Beheer uitbesteden, Content, Video & Meta Ads'
+      : 'Outsource Social Media Management, Content, Video & Meta Ads',
     description: isNl
       ? 'VDH Agency beheert jouw social media: strategie, opnames op locatie, video editing en Meta Ads. Wekelijkse publicatie op Instagram, LinkedIn en TikTok.'
       : 'VDH Agency manages your social media: strategy, on-location filming, video editing and Meta Ads. Weekly publishing on Instagram, LinkedIn and TikTok.',
