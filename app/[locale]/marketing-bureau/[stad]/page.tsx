@@ -641,7 +641,7 @@ export async function generateMetadata({
   if (!city) return {};
 
   const url = `${BASE}/marketing-bureau/${city.slug}`;
-  const description = `Marketing bureau ${city.name} · SEO ${city.name} & Google Ads. VDH Agency helpt lokale ondernemers in ${city.name} online groeien via webdesign en social media. Gratis consult.`;
+  const description = `Marketing bureau en SEO voor ondernemers in ${city.name}. VDH Agency helpt lokaal groeien via Google Ads, social media en webdesign. Gratis kennismakingsgesprek.`;
   return {
     title: `Marketing ${city.name} | Bureau voor SEO, Google Ads & Webdesign | VDH Agency`,
     description,
@@ -727,7 +727,7 @@ export default async function LocatiePage({
             <span className="text-primary/40 text-xs uppercase tracking-widest font-medium mr-1">In {city.name}:</span>
             {['Marketing bureau', 'SEO', 'Google Ads', 'Social media', 'Website laten maken', 'Online marketing'].map(d => (
               <span key={d} className="text-primary/60 text-xs bg-primary/4 px-3 py-1 rounded-sm border border-primary/8">
-                {d} {city.name}
+                {d}
               </span>
             ))}
           </div>
@@ -822,7 +822,7 @@ export default async function LocatiePage({
             <AnimatedSection direction="left">
               <SectionLabel light>Waarom VDH Agency</SectionLabel>
               <h2 className="text-white font-black text-3xl lg:text-4xl mb-6">
-                Marketing bureau {city.name}: lokale kennis, meetbare resultaten
+                Lokale kennis, meetbare resultaten
               </h2>
               <div className="flex flex-col gap-4">
                 <p className="text-white/60 text-base leading-relaxed">
@@ -920,7 +920,7 @@ export default async function LocatiePage({
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <h2 className="text-primary font-black text-lg mb-1">
-              Alle diensten van VDH Agency in {city.name}
+              Alle diensten van VDH Agency
             </h2>
             <p className="text-primary/40 text-sm mb-6">Volledig online · direct contact · geen vaste contracten</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
