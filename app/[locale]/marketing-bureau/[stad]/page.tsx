@@ -915,6 +915,39 @@ export default async function LocatiePage({
         </section>
       )}
 
+      {/* Alle diensten */}
+      <section className="bg-light py-14 border-t border-primary/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="text-primary font-black text-lg mb-1">
+              Alle diensten van VDH Agency in {city.name}
+            </h2>
+            <p className="text-primary/40 text-sm mb-6">Volledig online · direct contact · geen vaste contracten</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                {href: '/diensten/seo-sea',             label: 'SEO & SEA',            sub: 'Organisch + betaald zoeken'},
+                {href: '/diensten/social-media-beheer', label: 'Social Media',          sub: 'Content, video & Meta Ads'},
+                {href: '/diensten/online-marketing',    label: 'Online Marketing',      sub: 'Strategie & kanaaloverzicht'},
+                {href: '/diensten/website-maken',       label: 'Website laten maken',   sub: 'Snel, SEO-proof & op maat'},
+                {href: '/diensten/branding',            label: 'Branding & Huisstijl',  sub: 'Logo & merkidentiteit'},
+                {href: '/diensten/digitale-analyse',    label: 'Digitale Analyse',      sub: 'GA4, dashboards & data'},
+                {href: '/diensten/webshop-maken',       label: 'Webshop maken',         sub: 'Shopify & e-commerce'},
+                {href: '/diensten/email-marketing',     label: 'E-mail Marketing',      sub: 'Flows & nieuwsbrieven'},
+              ].map(({href, label, sub}) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="group bg-white border border-primary/8 rounded-sm px-4 py-4 hover:border-gold/40 hover:shadow-sm transition-all"
+                >
+                  <span className="text-primary font-semibold text-sm group-hover:text-gold transition-colors block">{label}</span>
+                  <span className="text-primary/40 text-xs mt-0.5 block">{sub}</span>
+                </a>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       <CTA />
     </>
   );
