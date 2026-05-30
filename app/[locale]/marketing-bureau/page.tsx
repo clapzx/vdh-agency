@@ -39,8 +39,8 @@ export async function generateMetadata({
   if (locale !== 'nl') return {};
   const url = `${BASE}/marketing-bureau`;
   return {
-    title: 'Marketing Bureau per Stad & Regio | Gelderland & Overijssel | VDH Agency',
-    description: 'VDH Agency is actief als marketing bureau in Heerde, Zwolle, Apeldoorn, Deventer en 15 andere steden in Gelderland en Overijssel. Bekijk alle werkgebieden.',
+    title: 'Marketing Bureau Gelderland & Overijssel | SEO, Google Ads & Webdesign per Stad | VDH Agency',
+    description: 'Marketing bureau in Gelderland & Overijssel. VDH Agency helpt MKB-ondernemers in Heerde, Zwolle, Apeldoorn, Kampen en 15+ andere steden via SEO, Google Ads en webdesign.',
     alternates: {
       canonical: url,
       languages: {'x-default': url, nl: url},
@@ -89,10 +89,10 @@ export default async function MarketingBureauOverviewPage({
               </span>
             </div>
             <h1 className="text-white font-black text-4xl lg:text-6xl leading-tight mb-5">
-              Marketing Bureau per Stad & Regio
+              Marketing Bureau Gelderland & Overijssel
             </h1>
             <p className="text-white/60 text-xl">
-              VDH Agency is actief in 19 steden en dorpen in Gelderland en Overijssel — van Heerde en Zwolle tot Deventer, Zutphen en Dalfsen. We helpen lokale ondernemers groeien via SEO, social media en professionele websites op maat.
+              VDH Agency is actief als marketing bureau in 19 steden in Gelderland en Overijssel — van Heerde en Zwolle tot Deventer, Zutphen en Dalfsen. SEO, Google Ads, social media en professionele websites op maat voor lokale ondernemers.
             </p>
           </AnimatedSection>
         </div>
